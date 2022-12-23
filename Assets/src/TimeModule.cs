@@ -141,7 +141,7 @@ public class TimeModule
     /// <summary>
     /// Class that is for Year, Month, Day
     /// </summary>
-    internal class Date
+    public class Date
     {
         private static int[] _dayList = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         public float Day { get; set; }
