@@ -8,7 +8,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     private string _timeTextContent; 
     [SerializeField] private TimeController _timeControllerRef; 
-    [SerializeField] private TextMeshProUGUI _timeText; 
+    [SerializeField] private TextMeshProUGUI _timeText;
+    [SerializeField] private TextMeshProUGUI _dateText; 
     private void Start()
     {
         
@@ -17,6 +18,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        //Time UI:
         _timeTextContent = string.Empty;
         if (_timeControllerRef.GameTime.Hour < 10) //two digits
         {
@@ -36,5 +38,7 @@ public class UIManager : MonoBehaviour
             _timeTextContent += (int)_timeControllerRef.GameTime.Minute; 
         }
         _timeText.text = _timeTextContent;
+        //Date UI:
+        _dateText.text = (string)_timeControllerRef.GameDate;
     }
 }

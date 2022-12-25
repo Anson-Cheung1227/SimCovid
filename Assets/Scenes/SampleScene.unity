@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -568, y: 3.6}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -662.8, y: 3.6}
+  m_SizeDelta: {x: 192.5695, y: 57.6036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306106399
 MonoBehaviour:
@@ -595,6 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeControllerRef: {fileID: 1415731499}
   _timeText: {fileID: 889345425}
+  _dateText: {fileID: 306106399}
 --- !u!4 &675114451
 Transform:
   m_ObjectHideFlags: 0
@@ -645,8 +646,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -814, y: 3.6}
-  m_SizeDelta: {x: 276.0365, y: 57.6036}
+  m_AnchoredPosition: {x: -855.7335, y: 3.6}
+  m_SizeDelta: {x: 192.5695, y: 57.6036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &889345425
 MonoBehaviour:
