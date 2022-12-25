@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using UnityEngine;
 public class TimeModule
 {
     /// <summary>
@@ -133,8 +134,8 @@ public class TimeModule
         }
         public static explicit operator string(Time origin)
         {
-            return (origin.Hour.ToString(CultureInfo.InvariantCulture) + "," +
-                    origin.Minute.ToString(CultureInfo.InvariantCulture) + "," +
+            return (origin.Hour.ToString(CultureInfo.InvariantCulture) + ":" +
+                    origin.Minute.ToString(CultureInfo.InvariantCulture) + ":" +
                     origin.Second.ToString(CultureInfo.InvariantCulture));
         }
     }
@@ -155,154 +156,192 @@ public class TimeModule
         }
         public static Date operator +(Date a, Date b)
         {
-            var resultDate = new Date(0, 0, 0);
-            resultDate.Day += a.Day + b.Day;
-            while (resultDate.Day > _dayList[(int)resultDate.Month - 1])
+            var resultDate = new Date(0,0,0);
+            resultDate.Day = a.Day + b.Day;
+            resultDate.Month = a.Month;
+            resultDate.Year = a.Year;
+            while (resultDate.Day > _dayList[((int)resultDate.Month - 1) % 12])
             {
-                resultDate.Day -= _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month++;
+                resultDate.Day -= _dayList[((int)resultDate.Month - 1) % 12];
+                ++resultDate.Month;
             }
             while (resultDate.Day < 1)
             {
-                resultDate.Day += _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month--;
+                --resultDate.Month;
                 if (resultDate.Month < 1)
                 {
-                    resultDate.Month += 12;
-                    resultDate.Year--;
+                    resultDate.Month += 12; 
+                    --resultDate.Year;
                 }
+                resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
-            resultDate.Month += a.Month + b.Month;
-            int multi = (int)Math.Truncate(resultDate.Month);
-            resultDate.Month += multi * 12 * -1;
-            resultDate.Year += multi;
-            resultDate.Year += a.Year + b.Year;
-            return resultDate;
+            resultDate.Month += b.Month; 
+            if (resultDate.Month > 12 || resultDate.Month < 1)
+            {
+                int multi = (int)Math.Truncate(resultDate.Month / 12);
+                resultDate.Month -= 12 * multi;
+                resultDate.Year += multi;
+                if (resultDate.Month == 0)
+                {
+                    resultDate.Month += 12; 
+                    --resultDate.Year;
+                } 
+            }
+            resultDate.Year += b.Year;
+            return resultDate; 
         }
         public static Date operator -(Date a, Date b)
         {
-            var resultDate = new Date(0, 0, 0);
-            resultDate.Day -= (a.Day + b.Day);
-            while (resultDate.Day > _dayList[(int)resultDate.Month])
+            var resultDate = new Date(0,0,0);
+            resultDate.Day = a.Day - b.Day;
+            resultDate.Month = a.Month;
+            resultDate.Year = a.Year;
+            while (resultDate.Day > _dayList[((int)resultDate.Month - 1) % 12])
             {
-                resultDate.Day -= _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month++;
+                resultDate.Day -= _dayList[((int)resultDate.Month - 1) % 12];
+                ++resultDate.Month;
             }
             while (resultDate.Day < 1)
             {
-                resultDate.Day += _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month--;
+                --resultDate.Month;
                 if (resultDate.Month < 1)
                 {
                     resultDate.Month += 12;
-                    resultDate.Year--;
+                    --resultDate.Year;
                 }
+                resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
-            resultDate.Month -= (a.Month + b.Month);
-            int multi = (int)Math.Truncate(resultDate.Month);
-            resultDate.Month += multi * 12 * -1;
-            resultDate.Year += multi;
-            resultDate.Year += a.Year + b.Year;
-            resultDate.Year -= (a.Year + b.Year);
+            resultDate.Month -= b.Month; 
+            if (resultDate.Month > 12 || resultDate.Month < 1)
+            {
+                int multi = (int)Math.Truncate(resultDate.Month / 12);
+                resultDate.Month -= 12 * multi;
+                resultDate.Year += multi;
+                if (resultDate.Month == 0)
+                {
+                    resultDate.Month += 12; 
+                    --resultDate.Year;
+                } 
+            }
+            resultDate.Year -= b.Year;
             return resultDate;
         }
         public static Date operator *(Date a, float multiplier)
         {
-            var resultDate = new Date(0, 0, 0);
-            resultDate.Day += a.Day * multiplier;
-            while (resultDate.Day > _dayList[(int)resultDate.Month])
+            var resultDate = new Date(0,0,0);
+            resultDate.Day = a.Day * multiplier; 
+            resultDate.Month = a.Month;
+            resultDate.Year = a.Year;
+            while (resultDate.Day > _dayList[((int)resultDate.Month - 1) % 12])
             {
-                resultDate.Day -= _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month++;
+                resultDate.Day -= _dayList[((int)resultDate.Month - 1) % 12];
+                ++resultDate.Month;
             }
             while (resultDate.Day < 1)
             {
-                resultDate.Day += _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month--;
+                --resultDate.Month;
                 if (resultDate.Month < 1)
                 {
-                    resultDate.Month += 12;
-                    resultDate.Year--;
+                    resultDate.Month += 12; 
+                    --resultDate.Year;
                 }
+                resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
-            resultDate.Month -= (a.Month + multiplier);
-            int multi = (int)Math.Truncate(resultDate.Month);
-            resultDate.Month += multi * 12 * -1;
-            resultDate.Year += multi;
-            resultDate.Year += a.Year + multiplier;
-            resultDate.Year -= (a.Year + multiplier);
+            resultDate.Month *= multiplier; 
+            if (resultDate.Month > 12 || resultDate.Month < 1)
+            {
+                int multi = (int)Math.Truncate(resultDate.Month / 12);
+                resultDate.Month -= 12 * multi;
+                resultDate.Year += multi;
+                if (resultDate.Month == 0)
+                {
+                    resultDate.Month += 12; 
+                    --resultDate.Year;
+                } 
+            }
+            resultDate.Year *= multiplier;
             return resultDate;
         }
         public static Date operator *(Date a, Date multiplier)
         {
-            var resultDate = new Date(0, 0, 0);
-            resultDate.Day += a.Day * multiplier.Day;
-            while (resultDate.Day > _dayList[(int)resultDate.Month])
+            var resultDate = new Date(0,0,0);
+            resultDate.Day = a.Day * multiplier.Day;
+            resultDate.Month = a.Month;
+            resultDate.Year = a.Year;
+            while (resultDate.Day > _dayList[((int)resultDate.Month - 1) % 12])
             {
-                resultDate.Day -= _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month++;
+                resultDate.Day -= _dayList[((int)resultDate.Month - 1) % 12];
+                ++resultDate.Month;
             }
             while (resultDate.Day < 1)
             {
-                resultDate.Day += _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month--;
+                --resultDate.Month;
                 if (resultDate.Month < 1)
                 {
-                    resultDate.Month += 12;
-                    resultDate.Year--;
+                    resultDate.Month += 12; 
+                    --resultDate.Year;
                 }
+                resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
-            resultDate.Month -= (a.Month + multiplier.Month);
-            int multi = (int)Math.Truncate(resultDate.Month);
-            resultDate.Month += multi * 12 * -1;
-            resultDate.Year += multi;
-            resultDate.Year += a.Year + multiplier.Year;
-            resultDate.Year -= (a.Year + multiplier.Year);
+            resultDate.Month *= multiplier.Month; 
+            if (resultDate.Month > 12 || resultDate.Month < 1)
+            {
+                int multi = (int)Math.Truncate(resultDate.Month / 12);
+                resultDate.Month -= 12 * multi;
+                resultDate.Year += multi;
+                if (resultDate.Month <= 0)
+                {
+                    resultDate.Month += 12; 
+                    --resultDate.Year;
+                } 
+            }
+            resultDate.Year *= multiplier.Year;
             return resultDate;
         }
 
         public static Date operator /(Date a, Date divisor)
         {
-            var resultDate = new Date(0, 0, 0);
-            if (!(Double.IsInfinity(a.Day / divisor.Day) || Double.IsNaN(a.Day / divisor.Day)))
-                resultDate.Day = a.Day / divisor.Day;
-            else
-                resultDate.Day = a.Day;
-            while (resultDate.Day > _dayList[(int)resultDate.Month])
+            var resultDate = new Date(0,0,0);
+            if (divisor.Day == 0) resultDate.Day = a.Day;
+            else resultDate.Day = a.Day / divisor.Day;
+            resultDate.Month = a.Month;
+            resultDate.Year = a.Year;
+            while (resultDate.Day > _dayList[((int)resultDate.Month - 1) % 12])
             {
-                resultDate.Day -= _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month++;
+                resultDate.Day -= _dayList[((int)resultDate.Month - 1) % 12];
+                ++resultDate.Month;
             }
             while (resultDate.Day < 1)
             {
-                resultDate.Day += _dayList[(int)resultDate.Month] - 1;
-                resultDate.Month--;
+                --resultDate.Month;
                 if (resultDate.Month < 1)
                 {
-                    resultDate.Month += 12;
-                    resultDate.Year--;
+                    resultDate.Month += 12; 
+                    --resultDate.Year;
                 }
+                resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
-            if (!(Double.IsInfinity(a.Month / divisor.Month) || Double.IsNaN(a.Month / divisor.Month)))
-                resultDate.Month = a.Month / divisor.Month;
-            else
-                resultDate.Month = a.Month;
-            float multi = (float)Math.Truncate((resultDate.Month) / 12);
-            if (multi != 0)
+            if (divisor.Month == 0) resultDate.Month = a.Month;
+            else resultDate.Month = a.Month / divisor.Month; 
+            if (resultDate.Month > 12 || resultDate.Month < 1)
             {
-                resultDate.Month += multi * 12 * -1;
+                int multi = (int)Math.Truncate(resultDate.Month / 12);
+                resultDate.Month -= 12 * multi;
                 resultDate.Year += multi;
+                if (resultDate.Month == 0)
+                {
+                    resultDate.Month += 12; 
+                    --resultDate.Year;
+                } 
             }
-            if (!(Double.IsInfinity(a.Year / divisor.Year) || Double.IsNaN(a.Year / divisor.Year)))
-                resultDate.Year += (a.Year / divisor.Year);
-            else
-                resultDate.Year = a.Year;
+            if (divisor.Year == 0) resultDate.Year = a.Year;
+            else resultDate.Year = a.Year / divisor.Year;
             return resultDate;
         }
         public static explicit operator string(Date origin)
         {
-            return (origin.Year.ToString(CultureInfo.InvariantCulture) + "," +
-                    origin.Month.ToString(CultureInfo.InvariantCulture) + "," +
+            return (origin.Year.ToString(CultureInfo.InvariantCulture) + "." +
+                    origin.Month.ToString(CultureInfo.InvariantCulture) + "." +
                     origin.Day.ToString(CultureInfo.InvariantCulture));
         }
     }
