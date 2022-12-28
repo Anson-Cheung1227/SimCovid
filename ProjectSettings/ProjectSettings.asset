@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 23
+<<<<<<< HEAD
   productGUID: a3979ed9d00883d449743d31d6e9fc7c
+=======
+  productGUID: 6cd5f0a614a527d4ca08fc9f2dd08645
+>>>>>>> bec4ec95d09320265235874a4a3308436392ee71
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -553,8 +557,13 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
+<<<<<<< HEAD
   metroPackageName: 2D_URP
   metroPackageVersion: 
+=======
+  metroPackageName: 2DURP
+  metroPackageVersion: 1.0.0.0
+>>>>>>> bec4ec95d09320265235874a4a3308436392ee71
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -562,7 +571,11 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: 2D_URP
   wsaImages: {}
+<<<<<<< HEAD
   metroTileShortName: 
+=======
+  metroTileShortName: SimCovid
+>>>>>>> bec4ec95d09320265235874a4a3308436392ee71
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
