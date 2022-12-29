@@ -1,9 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class State : MonoBehaviour
+[System.Serializable]
+public class State
 {
-    [field: SerializeField] public int Infections {get; set;} 
-    [field: SerializeField] public int InHospital {get; private set;}
-    [field: SerializeField] public List<Airport> AirportList {get; private set;} = new List<Airport>();
+    [field: SerializeField] public string Name {get;set;}
+    [field: SerializeField] public long Population {get; set;}
+    [field: SerializeField] public long DailyIncomingPeople {get; set;}
+    [field: SerializeField] public long Infections {get; set;} 
+    [field: SerializeField] public long InHospital {get; set;}
+    [field: SerializeField] public List<Airport> AirportList {get; set;} = new List<Airport>();
 }
