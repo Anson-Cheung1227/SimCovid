@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db84360f98b6ded448e8f73a09f7e634, type: 3}
-  m_Name: MO-Mississippi
+  m_Name: MO-Missouri
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Mississippi
+  <Name>k__BackingField: 
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: 0
   <InHospital>k__BackingField: 0
-  <AirportList>k__BackingField:
-  - {fileID: 11400000, guid: e90f23cbd2fb26f47afae0184a5ce338, type: 2}
+  <AirportList>k__BackingField: []
