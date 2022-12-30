@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Washington Dulles International Airport
   m_EditorClassIdentifier: 
   Airport:
-    <Name>k__BackingField: 
-    <IATACode>k__BackingField: 
-    <YearlyPassengers>k__BackingField: 0
-    <CityServed>k__BackingField: 
+    <Name>k__BackingField: Washington Dulles International Airport
+    <IATACode>k__BackingField: IAD
+    <YearlyPassengers>k__BackingField: 11621623
+    <CityServed>k__BackingField: Washington, D.C. / Dulles / Chantilly

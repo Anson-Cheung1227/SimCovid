@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Milwaukee Mitchell International Airport
   m_EditorClassIdentifier: 
   Airport:
-    <Name>k__BackingField: 
-    <IATACode>k__BackingField: 
-    <YearlyPassengers>k__BackingField: 0
-    <CityServed>k__BackingField: 
+    <Name>k__BackingField: Milwaukee Mitchell International Airport
+    <IATACode>k__BackingField: MKE
+    <YearlyPassengers>k__BackingField: 3496724
+    <CityServed>k__BackingField: Milwaukee

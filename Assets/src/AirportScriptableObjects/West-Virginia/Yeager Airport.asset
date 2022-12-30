@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Yeager Airport
   m_EditorClassIdentifier: 
   Airport:
-    <Name>k__BackingField: 
-    <IATACode>k__BackingField: 
-    <YearlyPassengers>k__BackingField: 0
-    <CityServed>k__BackingField: 
+    <Name>k__BackingField: Yeager Airport
+    <IATACode>k__BackingField: CRW
+    <YearlyPassengers>k__BackingField: 216873
+    <CityServed>k__BackingField: Charleston

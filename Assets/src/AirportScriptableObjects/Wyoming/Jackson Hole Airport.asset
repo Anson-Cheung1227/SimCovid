@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Jackson Hole Airport
   m_EditorClassIdentifier: 
   Airport:
-    <Name>k__BackingField: 
-    <IATACode>k__BackingField: 
-    <YearlyPassengers>k__BackingField: 0
-    <CityServed>k__BackingField: 
+    <Name>k__BackingField: Jackson Hole Airport
+    <IATACode>k__BackingField: JAC
+    <YearlyPassengers>k__BackingField: 381539
+    <CityServed>k__BackingField: Jackson

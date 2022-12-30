@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dallas Fort Worth International Airport
   m_EditorClassIdentifier: 
   Airport:
-    <Name>k__BackingField: 
-    <IATACode>k__BackingField: 
-    <YearlyPassengers>k__BackingField: 0
-    <CityServed>k__BackingField: 
+    <Name>k__BackingField: Dallas Fort Worth International Airport
+    <IATACode>k__BackingField: DFW
+    <YearlyPassengers>k__BackingField: 32821799
+    <CityServed>k__BackingField: Dallas

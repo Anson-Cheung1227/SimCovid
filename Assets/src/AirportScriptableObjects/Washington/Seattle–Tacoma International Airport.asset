@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "Seattle\u2013Tacoma International Airport"
   m_EditorClassIdentifier: 
   Airport:
-    <Name>k__BackingField: 
-    <IATACode>k__BackingField: 
-    <YearlyPassengers>k__BackingField: 0
-    <CityServed>k__BackingField: 
+    <Name>k__BackingField: "Seattle\u2013Tacoma International Airport"
+    <IATACode>k__BackingField: SEA
+    <YearlyPassengers>k__BackingField: 24024908
+    <CityServed>k__BackingField: Seattle

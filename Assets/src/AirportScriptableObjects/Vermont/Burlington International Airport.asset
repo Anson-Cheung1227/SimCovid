@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Burlington International Airport
   m_EditorClassIdentifier: 
   Airport:
-    <Name>k__BackingField: 
-    <IATACode>k__BackingField: 
-    <YearlyPassengers>k__BackingField: 0
-    <CityServed>k__BackingField: 
+    <Name>k__BackingField: Burlington International Airport
+    <IATACode>k__BackingField: BTV
+    <YearlyPassengers>k__BackingField: 658879
+    <CityServed>k__BackingField: Burlington
