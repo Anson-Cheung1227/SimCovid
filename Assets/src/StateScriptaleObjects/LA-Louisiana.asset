@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Louisiana
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
-  <Infections>k__BackingField: 0
+  <Infections>k__BackingField: []
   <InHospital>k__BackingField: 0
   <AirportList>k__BackingField:
   - {fileID: 11400000, guid: 4deed96247ffc384b8a07c678b6bf54a, type: 2}

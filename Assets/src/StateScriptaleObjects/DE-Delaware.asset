@@ -15,6 +15,6 @@ MonoBehaviour:
   <Name>k__BackingField: Delaware
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
-  <Infections>k__BackingField: 0
+  <Infections>k__BackingField: []
   <InHospital>k__BackingField: 0
   <AirportList>k__BackingField: []

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db84360f98b6ded448e8f73a09f7e634, type: 3}
   m_Name: MO-Missouri
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
+  <Name>k__BackingField: Missouri
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
-  <Infections>k__BackingField: 0
+  <Infections>k__BackingField: []
   <InHospital>k__BackingField: 0
-  <AirportList>k__BackingField: []
+  <AirportList>k__BackingField:
+  - {fileID: 11400000, guid: 4eda6da11ea0bc24a99888f7beff9598, type: 2}

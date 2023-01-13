@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: West Virginia
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
-  <Infections>k__BackingField: 0
+  <Infections>k__BackingField: []
   <InHospital>k__BackingField: 0
   <AirportList>k__BackingField:
   - {fileID: 11400000, guid: 585c7f505cc6ac14291ea9a0f73d3e3b, type: 2}

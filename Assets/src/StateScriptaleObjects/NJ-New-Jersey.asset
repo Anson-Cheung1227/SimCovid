@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: New Jersey
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
-  <Infections>k__BackingField: 0
+  <Infections>k__BackingField: []
   <InHospital>k__BackingField: 0
   <AirportList>k__BackingField:
   - {fileID: 11400000, guid: 21ccf605e598ca944a28f7f0c65f5c8b, type: 2}
