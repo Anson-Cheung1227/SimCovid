@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Temmessee
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
-  <Infections>k__BackingField: 0
-  <InHospital>k__BackingField: 0
+  <Infections>k__BackingField: []
+  <InHospital>k__BackingField: []
   <AirportList>k__BackingField:
   - {fileID: 11400000, guid: 9b5b1fab6114b7e478a66206be3f422c, type: 2}

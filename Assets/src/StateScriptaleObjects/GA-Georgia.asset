@@ -16,6 +16,6 @@ MonoBehaviour:
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []
-  <InHospital>k__BackingField: 0
+  <InHospital>k__BackingField: []
   <AirportList>k__BackingField:
   - {fileID: 11400000, guid: 691d02b1fa2cea04fa0c5c5bac09534f, type: 2}

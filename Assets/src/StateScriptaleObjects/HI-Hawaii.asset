@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Hawaii
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
-  <Infections>k__BackingField: 0
-  <InHospital>k__BackingField: 0
+  <Infections>k__BackingField: []
+  <InHospital>k__BackingField: []
   <AirportList>k__BackingField:
   - {fileID: 11400000, guid: 928f02d54f5a71047bd4472c7bed2ec7, type: 2}

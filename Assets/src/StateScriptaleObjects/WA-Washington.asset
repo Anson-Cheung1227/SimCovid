@@ -15,7 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: Washington
   <Population>k__BackingField: 0
   <DailyIncomingPeople>k__BackingField: 0
-  <Infections>k__BackingField: 0
-  <InHospital>k__BackingField: 0
+  <Infections>k__BackingField: []
+  <InHospital>k__BackingField: []
   <AirportList>k__BackingField:
   - {fileID: 11400000, guid: ee7bc7668589d31489e23f0f073ae65b, type: 2}
