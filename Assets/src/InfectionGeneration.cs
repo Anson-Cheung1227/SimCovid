@@ -53,7 +53,7 @@ public class InfectionGeneration : MonoBehaviour
         foreach (StateController stateController in _allState)
         {
             //If there is no active infections in the state, continue checks for the next state
-            if (stateController.State.Infections.Count - stateController.State.InHospital - stateController.State.Recovered == 0) continue;
+            if (stateController.State.Infections.Count - stateController.State.InHospital.Count - stateController.State.Recovered == 0) continue;
             //else, there will be a spread of infections, interstate
             List<State> newInfectState = new List<State>();
             //Determine the target state
@@ -61,7 +61,7 @@ public class InfectionGeneration : MonoBehaviour
             //Pass the origin state
             newInfectState.Add(stateController.State);
             //Add to infections queue
-            delayedInfection.Add(newInfectState, stateController.State.Infections.Count - stateController.State.InHospital - stateController.State.Recovered);
+            delayedInfection.Add(newInfectState, stateController.State.Infections.Count - stateController.State.InHospital.Count - stateController.State.Recovered);
         }
         //Loop through the delayedInfection Dictionary, and add infections
         foreach (KeyValuePair<List<State>, long> infection in delayedInfection)
@@ -113,7 +113,7 @@ public class InfectionGeneration : MonoBehaviour
         if (infectionType == InfectionType.Interstate)
         {
             for (int i = 0; i < infections; ++i)
-            {
+            { 
                 state.Infections.Add(new Infection{Date = _timeController.GameDate});
             }
             Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections from {originState.Name}");
@@ -122,7 +122,7 @@ public class InfectionGeneration : MonoBehaviour
         {
             for (int i = 0; i < infections; ++i)
             {
-                state.Infections.Add(new Infection());
+                state.Infections.Add(new Infection{Date = _timeController.GameDate});
             }
             Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections");
         }
