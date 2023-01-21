@@ -181,7 +181,7 @@ public class TimeModule
                 int multi = (int)Math.Truncate(resultDate.Month / 12);
                 resultDate.Month -= 12 * multi;
                 resultDate.Year += multi;
-                if (resultDate.Month == 0)
+                if (resultDate.Month <= 0)
                 {
                     resultDate.Month += 12; 
                     --resultDate.Year;
@@ -217,7 +217,7 @@ public class TimeModule
                 int multi = (int)Math.Truncate(resultDate.Month / 12);
                 resultDate.Month -= 12 * multi;
                 resultDate.Year += multi;
-                if (resultDate.Month == 0)
+                if (resultDate.Month <= 0)
                 {
                     resultDate.Month += 12; 
                     --resultDate.Year;
@@ -253,7 +253,7 @@ public class TimeModule
                 int multi = (int)Math.Truncate(resultDate.Month / 12);
                 resultDate.Month -= 12 * multi;
                 resultDate.Year += multi;
-                if (resultDate.Month == 0)
+                if (resultDate.Month <= 0)
                 {
                     resultDate.Month += 12; 
                     --resultDate.Year;
@@ -328,7 +328,7 @@ public class TimeModule
                 int multi = (int)Math.Truncate(resultDate.Month / 12);
                 resultDate.Month -= 12 * multi;
                 resultDate.Year += multi;
-                if (resultDate.Month == 0)
+                if (resultDate.Month <= 0)
                 {
                     resultDate.Month += 12; 
                     --resultDate.Year;
