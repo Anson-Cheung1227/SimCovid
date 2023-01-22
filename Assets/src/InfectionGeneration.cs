@@ -11,16 +11,18 @@ public class InfectionGeneration : MonoBehaviour
     [SerializeField] private List<StateController> _allState = new List<StateController>();
     //For Unity Editor use only
     [SerializeField] private List<State> _stateInfections = new List<State>();
+    [SerializeField] private long totalInfection = 0;
     //Reference to all Airports
     private List<Airport> _allStateAirports = new List<Airport>();
     private void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     private void Update()
     {
+        
         _stateInfections.Clear();
         foreach (StateController stateController in _allState)
         {
@@ -45,15 +47,24 @@ public class InfectionGeneration : MonoBehaviour
             We do not want new generated infections to pass on immediately, else we'll be in an infinite loop
             We will add all infections at once after the calculations
         */
+        #region Local Infections
+        foreach (StateController stateController in _allState)
+        {
+            if (stateController.State.ActiveInfections.Count == 0) continue;
+            AddInfection(stateController.State, InfectionType.Local, infections: (long)(stateController.State.ActiveInfections.Count * stateController.State.localSpreadRate));
+        }
+        #endregion Local Infections
+        #region Global Infections
         Dictionary<List<State>, long> delayedInfection = new Dictionary<List<State>, long>();
         //Adding one global infection
         AddInfection(DetermineStateInfectionGlobal(), InfectionType.Global);
+        #endregion Global Infections
         #region Interstate Infections
         //Adding Interstate infections
         foreach (StateController stateController in _allState)
         {
             //If there is no active infections in the state, continue checks for the next state
-            if (stateController.State.Infections.Count - stateController.State.InHospital.Count - stateController.State.Recovered == 0) continue;
+            if (stateController.State.ActiveInfections.Count == 0) continue;
             //else, there will be a spread of infections, interstate
             List<State> newInfectState = new List<State>();
             //Determine the target state
@@ -61,7 +72,7 @@ public class InfectionGeneration : MonoBehaviour
             //Pass the origin state
             newInfectState.Add(stateController.State);
             //Add to infections queue
-            delayedInfection.Add(newInfectState, stateController.State.Infections.Count - stateController.State.InHospital.Count - stateController.State.Recovered);
+            delayedInfection.Add(newInfectState, stateController.State.ActiveInfections.Count);
         }
         //Loop through the delayedInfection Dictionary, and add infections
         foreach (KeyValuePair<List<State>, long> infection in delayedInfection)
@@ -110,21 +121,36 @@ public class InfectionGeneration : MonoBehaviour
     }
     public void AddInfection(State state, InfectionType infectionType, State originState = null, long infections = 1)
     {
+        if (infectionType == InfectionType.Local)
+        {
+            for (int i = 0; i < infections; ++i)
+            {
+                Infection infection = new Infection{Date = _timeController.GameDate};
+                state.Infections.Add(infection);
+                state.ActiveInfections.Add(infection);
+            }
+            //Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infection");
+        }
         if (infectionType == InfectionType.Interstate)
         {
             for (int i = 0; i < infections; ++i)
             { 
-                state.Infections.Add(new Infection{Date = _timeController.GameDate});
+                Infection infection = new Infection{Date = _timeController.GameDate};
+                state.Infections.Add(infection);
+                state.ActiveInfections.Add(infection);
             }
-            Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections from {originState.Name}");
+            //Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections from {originState.Name}");
         }
         if (infectionType == InfectionType.Global)
         {
             for (int i = 0; i < infections; ++i)
             {
-                state.Infections.Add(new Infection{Date = _timeController.GameDate});
+                Infection infection = new Infection{Date = _timeController.GameDate};
+                state.Infections.Add(infection);
+                state.ActiveInfections.Add(infection);
             }
-            Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections");
+            //Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections");
         }
+        totalInfection += infections; 
     }
 }
