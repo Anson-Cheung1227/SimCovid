@@ -142,12 +142,13 @@ public class TimeModule
     /// <summary>
     /// Class that is for Year, Month, Day
     /// </summary>
+    [Serializable]
     public class Date
     {
         private static int[] _dayList = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-        public float Day { get; set; }
-        public float Month { get; set; }
-        public float Year { get; set; }
+        [field: SerializeField] public float Day { get; set; }
+        [field: SerializeField] public float Month { get; set; }
+        [field: SerializeField] public float Year { get; set; }
         public Date(float year, float month, float day)
         {
             Year = year;
