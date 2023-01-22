@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-
 public class InHospitalGeneration : MonoBehaviour 
 {
     [SerializeField] private TimeController _timeController; 
@@ -34,7 +33,8 @@ public class InHospitalGeneration : MonoBehaviour
                     //TODO:Move infection to InHospital
                     infection.InfectionStatus = InfectionStatus.InHospital;
                     stateController.State.InHospital.Add(infection);
-                    Debug.Log($"{stateController.State.Name}: Transferred 1 infection to InHospital");
+                    stateController.State.ActiveInfections.Remove(infection);
+                    //Debug.Log($"{stateController.State.Name}: Transferred 1 infection to InHospital");
                 }
             }
         }
