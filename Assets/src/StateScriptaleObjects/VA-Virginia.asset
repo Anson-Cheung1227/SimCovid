@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Virginia
   <Population>k__BackingField: 0
+  <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
-  <Infections>k__BackingField: 0
-  <InHospital>k__BackingField: 0
+  <Infections>k__BackingField: []
   <AirportList>k__BackingField:
   - {fileID: 11400000, guid: 585c7f505cc6ac14291ea9a0f73d3e3b, type: 2}
