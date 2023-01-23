@@ -14,7 +14,7 @@ public class TimeController : MonoBehaviour
     public TimeModule.Time GameTime { get; private set; } = new TimeModule.Time(0, 0, 0);
     private void Start()
     {
-
+       
     }
 
     private void Update()

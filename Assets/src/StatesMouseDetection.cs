@@ -8,6 +8,8 @@ public class StatesMouseDetection : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer; 
     [SerializeField] private Color _originalColor;
     [SerializeField] private Color _hoveringColor;  
+    [SerializeField] private DataManager _dataManager; 
+    [SerializeField] private StateController _stateController; 
     private void Start()
     {
         
@@ -25,5 +27,9 @@ public class StatesMouseDetection : MonoBehaviour
     private void OnMouseExit() 
     {
         _spriteRenderer.color = _originalColor;    
+    }
+    private void OnMouseDown() 
+    {
+        _dataManager.SelectedState = _stateController.State;
     }
 }
