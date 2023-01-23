@@ -345,5 +345,13 @@ public class TimeModule
                     origin.Month.ToString(CultureInfo.InvariantCulture) + "." +
                     origin.Day.ToString(CultureInfo.InvariantCulture));
         }
+        public static bool operator ==(Date a, Date b)
+        {
+            return (a.Day == b.Day && a.Month == b.Month && a.Year == b.Year);
+        }
+        public static bool operator !=(Date a, Date b)
+        {
+            return (a.Day == b.Day && a.Month == b.Month && a.Year == b.Year);
+        }
     }
 }
