@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using InfectionModule;
 
 [System.Serializable]
 public class State

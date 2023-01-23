@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using InfectionModule;
 
 [CreateAssetMenu(fileName = "New State", menuName = "Scriptable Objects/State")]
 public class StateSO : ScriptableObject 
