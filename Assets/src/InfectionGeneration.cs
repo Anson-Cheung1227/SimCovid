@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InfectionModule;
 
 public class InfectionGeneration : MonoBehaviour
 {
@@ -48,10 +49,16 @@ public class InfectionGeneration : MonoBehaviour
             We will add all infections at once after the calculations
         */
         #region Local Infections
+        long actualActiveInfections;
         foreach (StateController stateController in _allState)
         {
-            if (stateController.State.ActiveInfections.Count == 0) continue;
-            AddInfection(stateController.State, InfectionType.Local, infections: (long)(stateController.State.ActiveInfections.Count * stateController.State.localSpreadRate));
+            actualActiveInfections = 0;
+            foreach (Infection infection in stateController.State.ActiveInfections)
+            {
+                actualActiveInfections += infection.Amount;
+            }
+            if (actualActiveInfections == 0) continue;
+            AddInfection(stateController.State, InfectionType.Local, infections: (long)(actualActiveInfections * stateController.State.localSpreadRate));
         }
         #endregion Local Infections
         #region Global Infections
@@ -63,8 +70,13 @@ public class InfectionGeneration : MonoBehaviour
         //Adding Interstate infections
         foreach (StateController stateController in _allState)
         {
+            actualActiveInfections = 0;
+            foreach (Infection infection in stateController.State.ActiveInfections)
+            {
+                actualActiveInfections += infection.Amount;
+            }
             //If there is no active infections in the state, continue checks for the next state
-            if (stateController.State.ActiveInfections.Count == 0) continue;
+            if (actualActiveInfections == 0) continue;
             //else, there will be a spread of infections, interstate
             List<State> newInfectState = new List<State>();
             //Determine the target state
@@ -72,7 +84,7 @@ public class InfectionGeneration : MonoBehaviour
             //Pass the origin state
             newInfectState.Add(stateController.State);
             //Add to infections queue
-            delayedInfection.Add(newInfectState, stateController.State.ActiveInfections.Count);
+            delayedInfection.Add(newInfectState, actualActiveInfections);
         }
         //Loop through the delayedInfection Dictionary, and add infections
         foreach (KeyValuePair<List<State>, long> infection in delayedInfection)
@@ -123,34 +135,50 @@ public class InfectionGeneration : MonoBehaviour
     {
         if (infectionType == InfectionType.Local)
         {
-            for (int i = 0; i < infections; ++i)
+            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active);
+            if (infection == null)
             {
-                Infection infection = new Infection{Date = _timeController.GameDate};
+                infection = new Infection { Date = _timeController.GameDate, Amount = infections};
                 state.Infections.Add(infection);
                 state.ActiveInfections.Add(infection);
+            }
+            else
+            {
+                infection.Amount += infections;
             }
             //Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infection");
         }
         if (infectionType == InfectionType.Interstate)
         {
-            for (int i = 0; i < infections; ++i)
-            { 
-                Infection infection = new Infection{Date = _timeController.GameDate};
+            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active);
+            if (infection == null)
+            {
+                infection = new Infection { Date = _timeController.GameDate, Amount = infections};
                 state.Infections.Add(infection);
                 state.ActiveInfections.Add(infection);
+            }
+            else
+            {
+                infection.Amount += infections;
             }
             //Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections from {originState.Name}");
         }
         if (infectionType == InfectionType.Global)
         {
-            for (int i = 0; i < infections; ++i)
+            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active);
+            if (infection == null)
             {
-                Infection infection = new Infection{Date = _timeController.GameDate};
+                infection = new Infection { Date = _timeController.GameDate, Amount = infections};
                 state.Infections.Add(infection);
                 state.ActiveInfections.Add(infection);
+            }
+            else
+            {
+                infection.Amount += infections;
             }
             //Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections");
         }
         totalInfection += infections; 
     }
+    
 }
