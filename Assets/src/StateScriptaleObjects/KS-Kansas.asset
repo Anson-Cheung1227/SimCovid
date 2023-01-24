@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KS-Kansas
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Kansas
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 2937880
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

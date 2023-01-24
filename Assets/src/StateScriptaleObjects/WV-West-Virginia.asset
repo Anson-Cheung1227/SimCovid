@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WV-West-Virginia
   m_EditorClassIdentifier: 
   <Name>k__BackingField: West Virginia
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 1793716
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

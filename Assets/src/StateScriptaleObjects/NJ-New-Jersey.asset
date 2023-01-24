@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NJ-New-Jersey
   m_EditorClassIdentifier: 
   <Name>k__BackingField: New Jersey
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 9288994
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

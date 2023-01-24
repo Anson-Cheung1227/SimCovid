@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SC-South-Carolina
   m_EditorClassIdentifier: 
   <Name>k__BackingField: South Carolina
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 5118425
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

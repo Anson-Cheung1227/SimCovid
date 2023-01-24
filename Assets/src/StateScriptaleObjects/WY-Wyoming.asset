@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WY-Wyoming
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Wyoming
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 576851
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

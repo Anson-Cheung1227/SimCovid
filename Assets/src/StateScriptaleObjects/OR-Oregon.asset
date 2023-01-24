@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OR-Oregon
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Oregon
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 4237256
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

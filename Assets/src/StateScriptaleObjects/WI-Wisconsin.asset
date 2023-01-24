@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WI-Wisconsin
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Wisconsin
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 5893718
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GA-Georgia
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Georgia
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 10711908
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

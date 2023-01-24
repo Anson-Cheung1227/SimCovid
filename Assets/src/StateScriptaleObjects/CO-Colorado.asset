@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CO-Colorado
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Colorado
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 5773714
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AK-Alaska
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Alaska
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 733391
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField:
@@ -22,5 +22,6 @@ MonoBehaviour:
       <Month>k__BackingField: 12
       <Year>k__BackingField: 2019
     <InfectionStatus>k__BackingField: 0
+    <Amount>k__BackingField: 1
   <AirportList>k__BackingField:
   - {fileID: 11400000, guid: 6f562b95c39b5d14ba521e68cdaa0f57, type: 2}

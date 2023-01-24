@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LA-Louisiana
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Louisiana
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 4657757
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

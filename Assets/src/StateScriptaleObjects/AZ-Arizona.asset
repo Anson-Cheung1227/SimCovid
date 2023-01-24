@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AZ-Arizona
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Arizona
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 7151502
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

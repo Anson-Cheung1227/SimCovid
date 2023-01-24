@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RI-Rhode-Island
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Rhode Island
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 1097379
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OH-Ohio
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Ohio
-  <Population>k__BackingField: 0
+  <Population>k__BackingField: 11799448
   <localSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []
