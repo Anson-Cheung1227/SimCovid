@@ -10,6 +10,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TimeController _timeControllerRef; 
     [SerializeField] private TextMeshProUGUI _timeText;
     [SerializeField] private TextMeshProUGUI _dateText; 
+    [SerializeField] private DataManager _dataManager; 
+    [SerializeField] private TextMeshProUGUI _selectedStateName;
+    [SerializeField] private TextMeshProUGUI _selectedStatePopulation;
+    [SerializeField] private TextMeshProUGUI _selectedStateInfections;
+    [SerializeField] private TextMeshProUGUI _selectedStateInHospital;
+    [SerializeField] private TextMeshProUGUI _selectedStateRecovered;  
     private void Start()
     {
         
@@ -18,7 +24,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //Time UI:
+        #region TimeUI
         _timeTextContent = string.Empty;
         if (_timeControllerRef.GameTime.Hour < 10) //two digits
         {
@@ -40,5 +46,13 @@ public class UIManager : MonoBehaviour
         _timeText.text = _timeTextContent;
         //Date UI:
         _dateText.text = (string)_timeControllerRef.GameDate;
+        #endregion TimeUI
+        #region StateDetailsUI
+        _selectedStateName.text = _dataManager.SelectedState.Name;
+        _selectedStatePopulation.text = $"Population: {_dataManager.SelectedState.Population}";
+        _selectedStateInfections.text = $"Infections:{_dataManager.SelectedState.InfectionsLong}";
+        _selectedStateInHospital.text = $"In Hospital: {_dataManager.SelectedState.InHospitalLong}";
+        _selectedStateRecovered.text = $"Recovered: {_dataManager.SelectedState.RecoveredLong}";
+        #endregion StateDetailsUI
     }
 }
