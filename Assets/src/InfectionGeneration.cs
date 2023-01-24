@@ -178,6 +178,7 @@ public class InfectionGeneration : MonoBehaviour
             }
             //Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections");
         }
+        state.InfectionsLong += infections;
         totalInfection += infections; 
     }
     

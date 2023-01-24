@@ -45,6 +45,7 @@ public class InHospitalGeneration : MonoBehaviour
                 {
                     findResult.Amount += generateAmount;
                 }
+                stateController.State.InHospitalLong += generateAmount;
             }
         }
         s_GenerateInHospitalMarker.End();
