@@ -5,9 +5,10 @@ using InfectionModule;
 [System.Serializable]
 public class State
 {
+    #region Infections
     [field: SerializeField] public string Name {get;set;}
     [field: SerializeField] public long Population {get; set;}
-    [field: SerializeField] public float localSpreadRate {get; set;}
+    [field: SerializeField] public float LocalSpreadRate {get; set;}
     [field: SerializeField] public long DailyIncomingPeople {get; set;}
     [field: SerializeField] public List<Infection> Infections {get; set;} = new List<Infection>();
     [field: SerializeField] public List<Infection> ActiveInfections {get; set;} = new List<Infection>();
@@ -18,4 +19,10 @@ public class State
     [field: SerializeField] public long InHospitalLong {get; set;}
     [field: SerializeField] public long RecoveredLong {get; set;}
     [field: SerializeField] public List<Airport> AirportList {get; set;} = new List<Airport>();
+    #endregion Infection
+    #region Policies
+    [field: SerializeField] public bool LocalLockdown {get; set;}
+    [field: SerializeField] public bool InterstateLockdown {get; set;} 
+    [field: SerializeField] public bool GlobalLockdown {get; set;}
+    #endregion Policies
 }
