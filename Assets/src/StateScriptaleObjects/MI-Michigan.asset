@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Michigan
   <Population>k__BackingField: 10077331
-  <localSpreadRate>k__BackingField: 1
+  <LocalSpreadRate>k__BackingField: 1
   <DailyIncomingPeople>k__BackingField: 0
   <Infections>k__BackingField: []
   <AirportList>k__BackingField:
