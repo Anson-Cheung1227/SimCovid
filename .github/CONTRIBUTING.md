@@ -6,7 +6,7 @@ Thank you for being interested in this project! We love recieving contributions 
 
 ## Language
 
-To maintain the readability of the code for everyone around the world, we ask the developers to keep codebase, descriptions, issues, pull request in English only. Also, please keep your language in an appropriate manner. Thankyou for your understanding. 
+To maintain the readability of the code for everyone around the world, we ask the developers to keep the codebase, descriptions, issues, pull requests in English only. Also, please keep your language in an appropriate manner. Thankyou for your understanding. 
 
 ***
 
