@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using InfectionModule;
@@ -54,7 +53,11 @@ public class InfectionGeneration : MonoBehaviour
             actualActiveInfections = 0;
             foreach (Infection infection in stateController.State.ActiveInfections)
             {
-                actualActiveInfections += infection.Amount;
+                if (!infection.HasSpread)
+                {
+                    actualActiveInfections += infection.Amount;
+                    infection.HasSpread = true;
+                }
             }
             if (actualActiveInfections == 0) continue;
             AddInfection(stateController.State, InfectionType.Local, infections: (long)(actualActiveInfections * stateController.State.LocalSpreadRate));
@@ -101,7 +104,7 @@ public class InfectionGeneration : MonoBehaviour
         {
             if (!stateController.State.InterstateLockdown) eligibleInfectionState.Add(stateController.State);
         }
-        return eligibleInfectionState[Random.Range(0, eligibleInfectionState.Count - 1)];
+        return eligibleInfectionState[Random.Range(0, eligibleInfectionState.Count)];
     }
     public State DetermineStateInfectionGlobal()
     {
@@ -140,7 +143,7 @@ public class InfectionGeneration : MonoBehaviour
     {
         if (infectionType == InfectionType.Local)
         {
-            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active);
+            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active, false);
             if (infection == null)
             {
                 infection = new Infection { Date = _timeController.GameDate, Amount = infections};
@@ -155,7 +158,7 @@ public class InfectionGeneration : MonoBehaviour
         }
         if (infectionType == InfectionType.Interstate)
         {
-            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active);
+            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active, false);
             if (infection == null)
             {
                 infection = new Infection { Date = _timeController.GameDate, Amount = infections};
@@ -170,7 +173,7 @@ public class InfectionGeneration : MonoBehaviour
         }
         if (infectionType == InfectionType.Global)
         {
-            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active);
+            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active, false);
             if (infection == null)
             {
                 infection = new Infection { Date = _timeController.GameDate, Amount = infections};

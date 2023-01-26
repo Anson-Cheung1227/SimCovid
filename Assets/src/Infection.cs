@@ -9,14 +9,15 @@ namespace InfectionModule
         [field: SerializeField] public TimeModule.Date Date { get; set; }
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
-        public static Infection FindExistingInfection(State state, TimeModule.Date date, InfectionStatus infectionStatus)
+        [field: SerializeField] public bool HasSpread {get; set;}
+        public static Infection FindExistingInfection(State state, TimeModule.Date date, InfectionStatus infectionStatus, bool hasSpread)
         {
             Infection findResult = null;
             if (infectionStatus == InfectionStatus.Active)
             {
                 foreach (InfectionModule.Infection infection in state.ActiveInfections)
                 {
-                    if (date == infection.Date)
+                    if (date == infection.Date && hasSpread == infection.HasSpread)
                     {
                         findResult = infection;
                         break;
@@ -27,7 +28,7 @@ namespace InfectionModule
             {
                 foreach (Infection infection in state.InHospital)
                 {
-                    if (date == infection.Date)
+                    if (date == infection.Date && hasSpread == infection.HasSpread)
                     {
                         findResult = infection;
                         break;
@@ -38,7 +39,7 @@ namespace InfectionModule
             {
                 foreach (Infection infection in state.InHospital)
                 {
-                    if (date == infection.Date)
+                    if (date == infection.Date && hasSpread == infection.HasSpread)
                     {
                         findResult = infection;
                         break;
@@ -54,9 +55,16 @@ namespace InfectionModule
         [field: SerializeField] public TimeModule.Date Date { get; set; }
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
+        [field: SerializeField] public bool HasSpread {get; set;}
         public static explicit operator Infection(InfectionStruct infectionStruct)
         {
-            return new Infection { Date = infectionStruct.Date, InfectionStatus = infectionStruct.InfectionStatus, Amount = infectionStruct.Amount };
+            return new Infection
+            {
+                Date = infectionStruct.Date, 
+                InfectionStatus = infectionStruct.InfectionStatus, 
+                Amount = infectionStruct.Amount,
+                HasSpread = infectionStruct.HasSpread
+            };
         }
     }
     public enum InfectionType

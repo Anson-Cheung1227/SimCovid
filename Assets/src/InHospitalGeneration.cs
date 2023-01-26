@@ -34,7 +34,7 @@ public class InHospitalGeneration : MonoBehaviour
                 int chance = 100 - 100 / daysSinceInfection;
                 long generateAmount = (int)infection.Amount * chance/100;
                 if (generateAmount < 1) continue;
-                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, InfectionStatus.InHospital);
+                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, InfectionStatus.InHospital, infection.HasSpread);
                 if (findResult == null)
                 {
                     findResult = new Infection { Date = infection.Date, InfectionStatus = InfectionStatus.InHospital, Amount = generateAmount};
