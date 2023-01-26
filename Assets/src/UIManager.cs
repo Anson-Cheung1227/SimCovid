@@ -49,10 +49,10 @@ public class UIManager : MonoBehaviour
         #endregion TimeUI
         #region StateDetailsUI
         _selectedStateName.text = _dataManager.SelectedState.Name;
-        _selectedStatePopulation.text = $"Population: {_dataManager.SelectedState.Population}";
-        _selectedStateInfections.text = $"Infections:{_dataManager.SelectedState.InfectionsLong}";
-        _selectedStateInHospital.text = $"In Hospital: {_dataManager.SelectedState.InHospitalLong}";
-        _selectedStateRecovered.text = $"Recovered: {_dataManager.SelectedState.RecoveredLong}";
+        _selectedStatePopulation.text = _dataManager.SelectedState.Population.ToString();
+        _selectedStateInfections.text = _dataManager.SelectedState.InfectionsLong.ToString();
+        _selectedStateInHospital.text = _dataManager.SelectedState.InHospitalLong.ToString();
+        _selectedStateRecovered.text = _dataManager.SelectedState.RecoveredLong.ToString();
         #endregion StateDetailsUI
     }
 }
