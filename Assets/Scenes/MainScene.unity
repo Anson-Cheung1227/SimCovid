@@ -5834,6 +5834,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420031}
+  _uiLayerMask:
+    serializedVersion: 2
+    m_Bits: 32
 --- !u!4 &865658788
 Transform:
   m_ObjectHideFlags: 0
