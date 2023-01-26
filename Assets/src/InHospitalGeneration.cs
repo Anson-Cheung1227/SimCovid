@@ -30,7 +30,7 @@ public class InHospitalGeneration : MonoBehaviour
                 {
                     daysSinceInfection += _dayList[(int)infection.Date.Month - 1];
                 }
-                if (daysSinceInfection <= 4) continue;
+                if (daysSinceInfection <= 1) continue;
                 int chance = 100 - 100 / daysSinceInfection;
                 long generateAmount = (int)infection.Amount * chance/100;
                 if (generateAmount < 1) continue;
