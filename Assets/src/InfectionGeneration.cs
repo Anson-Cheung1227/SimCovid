@@ -23,7 +23,6 @@ public class InfectionGeneration : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
         _stateInfections.Clear();
         foreach (StateController stateController in _allState)
         {
@@ -58,7 +57,7 @@ public class InfectionGeneration : MonoBehaviour
                 actualActiveInfections += infection.Amount;
             }
             if (actualActiveInfections == 0) continue;
-            AddInfection(stateController.State, InfectionType.Local, infections: (long)(actualActiveInfections * stateController.State.localSpreadRate));
+            AddInfection(stateController.State, InfectionType.Local, infections: (long)(actualActiveInfections * stateController.State.LocalSpreadRate));
         }
         #endregion Local Infections
         #region Global Infections
@@ -70,6 +69,7 @@ public class InfectionGeneration : MonoBehaviour
         //Adding Interstate infections
         foreach (StateController stateController in _allState)
         {
+            if (stateController.State.LocalLockdown) continue;
             actualActiveInfections = 0;
             foreach (Infection infection in stateController.State.ActiveInfections)
             {
@@ -96,7 +96,12 @@ public class InfectionGeneration : MonoBehaviour
     public State DetermineStateInfectionInterstate()
     {
         //TODO: Take in how likely the people are gonna travel
-        return _allState[Random.Range(0, _allState.Count - 1)].State;
+        List<State> eligibleInfectionState = new List<State>(_allState.Count);
+        foreach (StateController stateController in _allState)
+        {
+            if (!stateController.State.InterstateLockdown) eligibleInfectionState.Add(stateController.State);
+        }
+        return eligibleInfectionState[Random.Range(0, eligibleInfectionState.Count - 1)];
     }
     public State DetermineStateInfectionGlobal()
     {
