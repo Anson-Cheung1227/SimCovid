@@ -42,11 +42,12 @@ public class InfectionGeneration : MonoBehaviour
     //UnityEvent for adding infections, called once per day
     public void GenerateInfection()
     {
-        /*
-            We do not want new generated infections to pass on immediately, else we'll be in an infinite loop
-            We will add all infections at once after the calculations
-        */
-        #region Local Infections
+        GenerateInfectionsLocal();
+        GenerateInfectionsInterstate();
+        GenerateInfectionsGlobal();
+    }
+    public void GenerateInfectionsLocal()
+    {
         long actualActiveInfections;
         foreach (StateController stateController in _allState)
         {
@@ -62,14 +63,15 @@ public class InfectionGeneration : MonoBehaviour
             if (actualActiveInfections == 0) continue;
             AddInfection(stateController.State, InfectionType.Local, infections: (long)(actualActiveInfections * stateController.State.LocalSpreadRate));
         }
-        #endregion Local Infections
-        #region Global Infections
+    }
+    public void GenerateInfectionsInterstate()
+    {
+        /*
+            We do not want new generated infections to pass on immediately, else we'll be in an infinite loop
+            We will add all infections at once after the calculations
+        */
+        long actualActiveInfections = 0;
         Dictionary<List<State>, long> delayedInfection = new Dictionary<List<State>, long>();
-        //Adding one global infection
-        AddInfection(DetermineStateInfectionGlobal(), InfectionType.Global);
-        #endregion Global Infections
-        #region Interstate Infections
-        //Adding Interstate infections
         foreach (StateController stateController in _allState)
         {
             if (stateController.State.LocalLockdown) continue;
@@ -94,7 +96,6 @@ public class InfectionGeneration : MonoBehaviour
         {
             AddInfection(infection.Key[0], InfectionType.Interstate, infection.Key[1], infection.Value);
         }
-        #endregion Interstate Infections
     }
     public State DetermineStateInfectionInterstate()
     {
@@ -105,6 +106,12 @@ public class InfectionGeneration : MonoBehaviour
             if (!stateController.State.InterstateLockdown) eligibleInfectionState.Add(stateController.State);
         }
         return eligibleInfectionState[Random.Range(0, eligibleInfectionState.Count)];
+    }
+    public void GenerateInfectionsGlobal()
+    {
+        Dictionary<List<State>, long> delayedInfection = new Dictionary<List<State>, long>();
+        //Adding one global infection
+        AddInfection(DetermineStateInfectionGlobal(), InfectionType.Global);
     }
     public State DetermineStateInfectionGlobal()
     {

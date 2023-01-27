@@ -10,14 +10,4 @@ public class UnityErrorAvoid : MonoBehaviour
     {
         DebugManager.instance.enableRuntimeUI = false;   
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

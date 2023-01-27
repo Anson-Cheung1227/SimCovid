@@ -4,17 +4,23 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    #region TimeUI
     private string _timeTextContent; 
     [SerializeField] private TimeController _timeControllerRef; 
     [SerializeField] private TextMeshProUGUI _timeText;
     [SerializeField] private TextMeshProUGUI _dateText; 
+    #endregion TimeUI
+    #region StateUI
     [SerializeField] private DataManager _dataManager; 
     [SerializeField] private TextMeshProUGUI _selectedStateName;
     [SerializeField] private TextMeshProUGUI _selectedStatePopulation;
     [SerializeField] private TextMeshProUGUI _selectedStateInfections;
     [SerializeField] private TextMeshProUGUI _selectedStateInHospital;
     [SerializeField] private TextMeshProUGUI _selectedStateRecovered;  
+    #endregion StateUI
+    #region LockdownUI
+    [SerializeField] private GameObject _lockdownPanel; 
+    #endregion LockdownUI
     private void Start()
     {
         
@@ -23,7 +29,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        #region TimeUI
+        UpdateTimeUI();
+        UpdateStateDetailUI();
+    }
+    private void UpdateTimeUI()
+    {
         _timeTextContent = string.Empty;
         if (_timeControllerRef.GameTime.Hour < 10) //two digits
         {
@@ -45,14 +55,18 @@ public class UIManager : MonoBehaviour
         _timeText.text = _timeTextContent;
         //Date UI:
         _dateText.text = (string)_timeControllerRef.GameDate;
-        #endregion TimeUI
-        #region StateDetailsUI
+    }
+    private void UpdateStateDetailUI()
+    {
         _selectedStateName.text = _dataManager.SelectedState.Name;
         _selectedStatePopulation.text = LongToString(_dataManager.SelectedState.Population);
         _selectedStateInfections.text = LongToString(_dataManager.SelectedState.InfectionsLong);
         _selectedStateInHospital.text = LongToString(_dataManager.SelectedState.InHospitalLong);
         _selectedStateRecovered.text = LongToString(_dataManager.SelectedState.RecoveredLong);
-        #endregion StateDetailsUI
+    }
+    public void OnLockdownButtonClick()
+    {
+
     }
     private string LongToString(long number)
     {
