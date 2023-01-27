@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,14 +13,19 @@ public class UIManager : MonoBehaviour
     #endregion TimeUI
     #region StateUI
     [SerializeField] private DataManager _dataManager; 
-    [SerializeField] private TextMeshProUGUI _selectedStateName;
-    [SerializeField] private TextMeshProUGUI _selectedStatePopulation;
-    [SerializeField] private TextMeshProUGUI _selectedStateInfections;
-    [SerializeField] private TextMeshProUGUI _selectedStateInHospital;
-    [SerializeField] private TextMeshProUGUI _selectedStateRecovered;  
+    [SerializeField] private TextMeshProUGUI _selectedStateNameText;
+    [SerializeField] private TextMeshProUGUI _selectedStatePopulationText;
+    [SerializeField] private TextMeshProUGUI _selectedStateInfectionsText;
+    [SerializeField] private TextMeshProUGUI _selectedStateInHospitalText;
+    [SerializeField] private TextMeshProUGUI _selectedStateRecoveredText;  
     #endregion StateUI
     #region LockdownUI
     [SerializeField] private GameObject _lockdownPanel; 
+    [SerializeField] private TextMeshProUGUI _localLockdownText;
+    [SerializeField] private TextMeshProUGUI _interstateLockdownText;
+    [SerializeField] private TextMeshProUGUI _globalLockdownText;
+    [SerializeField] private Color _activeColor;
+    [SerializeField] private Color _inactiveColor;
     #endregion LockdownUI
     private void Start()
     {
@@ -31,6 +37,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateTimeUI();
         UpdateStateDetailUI();
+        if (_lockdownPanel.activeInHierarchy) UpdateLockdownUI();
     }
     private void UpdateTimeUI()
     {
@@ -58,15 +65,34 @@ public class UIManager : MonoBehaviour
     }
     private void UpdateStateDetailUI()
     {
-        _selectedStateName.text = _dataManager.SelectedState.Name;
-        _selectedStatePopulation.text = LongToString(_dataManager.SelectedState.Population);
-        _selectedStateInfections.text = LongToString(_dataManager.SelectedState.InfectionsLong);
-        _selectedStateInHospital.text = LongToString(_dataManager.SelectedState.InHospitalLong);
-        _selectedStateRecovered.text = LongToString(_dataManager.SelectedState.RecoveredLong);
+        _selectedStateNameText.text = _dataManager.SelectedState.Name;
+        _selectedStatePopulationText.text = LongToString(_dataManager.SelectedState.Population);
+        _selectedStateInfectionsText.text = LongToString(_dataManager.SelectedState.InfectionsLong);
+        _selectedStateInHospitalText.text = LongToString(_dataManager.SelectedState.InHospitalLong);
+        _selectedStateRecoveredText.text = LongToString(_dataManager.SelectedState.RecoveredLong);
+    }
+    private void UpdateLockdownUI()
+    {
+        boolToActiveText(_localLockdownText, _dataManager.SelectedState.LocalLockdown);
+        boolToActiveText(_interstateLockdownText, _dataManager.SelectedState.InterstateLockdown);
+        boolToActiveText(_globalLockdownText, _dataManager.SelectedState.GlobalLockdown);
+    }
+    private void boolToActiveText(TextMeshProUGUI textMeshProUGUI, bool active)
+    {
+        if (active)
+        {
+            textMeshProUGUI.text = "Active";
+            textMeshProUGUI.color = _activeColor;
+        }
+        else
+        {
+            textMeshProUGUI.text = "Inactive";
+            textMeshProUGUI.color = _inactiveColor;
+        }
     }
     public void OnLockdownButtonClick()
     {
-
+        _lockdownPanel.SetActive(!_lockdownPanel.activeInHierarchy);
     }
     private string LongToString(long number)
     {
