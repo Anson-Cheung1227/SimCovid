@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -49,10 +48,24 @@ public class UIManager : MonoBehaviour
         #endregion TimeUI
         #region StateDetailsUI
         _selectedStateName.text = _dataManager.SelectedState.Name;
-        _selectedStatePopulation.text = _dataManager.SelectedState.Population.ToString();
-        _selectedStateInfections.text = _dataManager.SelectedState.InfectionsLong.ToString();
-        _selectedStateInHospital.text = _dataManager.SelectedState.InHospitalLong.ToString();
-        _selectedStateRecovered.text = _dataManager.SelectedState.RecoveredLong.ToString();
+        _selectedStatePopulation.text = LongToString(_dataManager.SelectedState.Population);
+        _selectedStateInfections.text = LongToString(_dataManager.SelectedState.InfectionsLong);
+        _selectedStateInHospital.text = LongToString(_dataManager.SelectedState.InHospitalLong);
+        _selectedStateRecovered.text = LongToString(_dataManager.SelectedState.RecoveredLong);
         #endregion StateDetailsUI
+    }
+    private string LongToString(long number)
+    {
+        /*
+            1,000,000,000,000 = 1 Trillion (T)
+            1,000,000,000 = 1 Billion (B)
+            1,000,000 = 1 Million (M)
+            1,000 = 1 thousand (K)
+        */
+        if (number >= 1000000000000 || number <= -100000000000) return $"{Math.Round((decimal)number/1000000000000, decimals: 3)}T";
+        else if (number >= 1000000000 || number <= -1000000000) return $"{Math.Round((decimal)number/1000000000, decimals: 3)}B";
+        else if (number >= 1000000 || number <= -100000) return $"{Math.Round((decimal)number/1000000, decimals: 3)}M";
+        else if (number >= 1000 || number <= -1000) return $"{Math.Round((decimal)number/1000, decimals: 3)}K";
+        else return $"{Math.Round(number, decimals: 3)}";
     }
 }
