@@ -1,7 +1,8 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Serialization;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -38,6 +39,13 @@ public class UIManager : MonoBehaviour
         UpdateTimeUI();
         UpdateStateDetailUI();
         if (_lockdownPanel.activeInHierarchy) UpdateLockdownUI();
+        if (Input.GetMouseButton(0))
+        {
+            if (IsPointerOverNothingWhenClick())
+            {
+                _dataManager.SelectedState = null;
+            }
+        }
     }
     private void UpdateTimeUI()
     {
@@ -65,11 +73,22 @@ public class UIManager : MonoBehaviour
     }
     private void UpdateStateDetailUI()
     {
-        _selectedStateNameText.text = _dataManager.SelectedState.Name;
-        _selectedStatePopulationText.text = LongToString(_dataManager.SelectedState.Population);
-        _selectedStateInfectionsText.text = LongToString(_dataManager.SelectedState.InfectionsLong);
-        _selectedStateInHospitalText.text = LongToString(_dataManager.SelectedState.InHospitalLong);
-        _selectedStateRecoveredText.text = LongToString(_dataManager.SelectedState.RecoveredLong);
+        if (_dataManager.SelectedState == null)
+        {
+            _selectedStateNameText.text = String.Empty;
+            _selectedStatePopulationText.text = String.Empty;
+            _selectedStateInfectionsText.text = String.Empty;
+            _selectedStateInHospitalText.text = String.Empty;
+            _selectedStateRecoveredText.text = String.Empty;
+        }
+        else
+        {
+            _selectedStateNameText.text = _dataManager.SelectedState.Name;
+            _selectedStatePopulationText.text = LongToString(_dataManager.SelectedState.Population);
+            _selectedStateInfectionsText.text = LongToString(_dataManager.SelectedState.InfectionsLong);
+            _selectedStateInHospitalText.text = LongToString(_dataManager.SelectedState.InHospitalLong);
+            _selectedStateRecoveredText.text = LongToString(_dataManager.SelectedState.RecoveredLong);
+        }
     }
     private void UpdateLockdownUI()
     {
@@ -77,6 +96,10 @@ public class UIManager : MonoBehaviour
         boolToActiveText(_interstateLockdownText, _dataManager.SelectedState.InterstateLockdown);
         boolToActiveText(_globalLockdownText, _dataManager.SelectedState.GlobalLockdown);
     }
+    /*  
+        This function takes a boolean, if it's true, set the text to active, and the corresponding color, 
+        if it's false, set the text to inactive
+    */
     private void boolToActiveText(TextMeshProUGUI textMeshProUGUI, bool active)
     {
         if (active)
@@ -92,7 +115,20 @@ public class UIManager : MonoBehaviour
     }
     public void OnLockdownButtonClick()
     {
+        //Hide the UI by setting it to inactive
         _lockdownPanel.SetActive(!_lockdownPanel.activeInHierarchy);
+    }
+    private bool IsPointerOverNothingWhenClick()
+    {
+        //Raycastall requires a pointerEventData, to record the pointer data
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        //Set the poimter positiom
+        pointerEventData.position = Input.mousePosition;
+        //Create a ;ist for results
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        //Perform the raycast, the result is returned to raycastResults
+        EventSystem.current.RaycastAll(pointerEventData, raycastResults);
+        return raycastResults.Count == 0;
     }
     private string LongToString(long number)
     {

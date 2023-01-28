@@ -12,6 +12,10 @@ public class LockdownManager : MonoBehaviour
     {
         if (button == _localLockdownButton) _dataManager.SelectedState.LocalLockdown = !_dataManager.SelectedState.LocalLockdown;
         if (button == _interstateLockdownButton) _dataManager.SelectedState.InterstateLockdown = !_dataManager.SelectedState.InterstateLockdown;
-        if (button == _globalLockdownButton) _dataManager.SelectedState.GlobalLockdown = !_dataManager.SelectedState.GlobalLockdown;
+        if (button == _globalLockdownButton) 
+        {
+            _dataManager.SelectedState.GlobalLockdown = !_dataManager.SelectedState.GlobalLockdown;
+            _dataManager.SelectedState.DailyIncomingPeople = 0;
+        }
     }
 }
