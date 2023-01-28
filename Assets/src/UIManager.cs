@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     #endregion TimeUI
     #region StateUI
     [SerializeField] private DataManager _dataManager; 
+    [SerializeField] private GameObject _stateDetailUIPanel;
     [SerializeField] private TextMeshProUGUI _selectedStateNameText;
     [SerializeField] private TextMeshProUGUI _selectedStatePopulationText;
     [SerializeField] private TextMeshProUGUI _selectedStateInfectionsText;
@@ -113,11 +114,6 @@ public class UIManager : MonoBehaviour
             textMeshProUGUI.color = _inactiveColor;
         }
     }
-    public void OnLockdownButtonClick()
-    {
-        //Hide the UI by setting it to inactive
-        _lockdownPanel.SetActive(!_lockdownPanel.activeInHierarchy);
-    }
     private bool IsPointerOverNothingWhenClick()
     {
         //Raycastall requires a pointerEventData, to record the pointer data
@@ -129,6 +125,15 @@ public class UIManager : MonoBehaviour
         //Perform the raycast, the result is returned to raycastResults
         EventSystem.current.RaycastAll(pointerEventData, raycastResults);
         return raycastResults.Count == 0;
+    }
+    public void OnLockdownButtonClick()
+    {
+        //Hide the UI by setting it to inactive
+        _lockdownPanel.SetActive(!_lockdownPanel.activeInHierarchy);
+    }
+    public void OnStateDetailExitClick()
+    {
+        _stateDetailUIPanel.SetActive(false);
     }
     private string LongToString(long number)
     {

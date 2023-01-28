@@ -285,6 +285,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 28561234}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 28561237}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &28561237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,6 +497,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 40562370}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 40562373}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &40562373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +668,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 43084973}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 43084976}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &43084976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,6 +787,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 56196218}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 56196227}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!60 &56196226
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1115,6 +1119,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 61898037}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 61898040}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &61898040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,6 +1286,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 104589841}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 104589844}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!60 &104589843
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1475,6 +1481,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 106624260}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 106624263}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!60 &106624262
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1679,6 +1686,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 115176029}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 115176032}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &115176032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,6 +1871,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 143515518}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 143515521}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &143515521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1950,7 +1959,7 @@ GameObject:
   - component: {fileID: 229142715}
   - component: {fileID: 229142717}
   m_Layer: 5
-  m_Name: StateDetail
+  m_Name: StateDetailPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2423,6 +2432,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 284993127}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 284993130}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &284993130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,6 +2612,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 300236513}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 300236516}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &300236516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3201,6 +3212,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 377486456}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 377486459}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &377486459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3373,6 +3385,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 421480644}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 421480647}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &421480647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3506,6 +3519,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 440040495}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 440040498}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!60 &440040497
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3780,6 +3794,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 475811161}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 475811164}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &475811164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3944,6 +3959,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 481936928}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 481936931}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &481936931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4481,6 +4497,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 548886980}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 548886983}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!60 &548886982
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4724,6 +4741,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 590137209}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 590137212}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &590137212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5147,6 +5165,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 657724717}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 657724720}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &657724720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5210,6 +5229,7 @@ MonoBehaviour:
   _timeText: {fileID: 889345425}
   _dateText: {fileID: 306106399}
   _dataManager: {fileID: 1105444543}
+  _stateDetailUIPanel: {fileID: 229142713}
   _selectedStateNameText: {fileID: 1401876176}
   _selectedStatePopulationText: {fileID: 605586412}
   _selectedStateInfectionsText: {fileID: 1702005297}
@@ -5494,6 +5514,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 702137947}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 702137950}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &702137950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5681,6 +5702,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 715033712}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 715033715}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &715033715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5846,6 +5868,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 765957093}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 765957096}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &765957096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5979,6 +6002,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 781570891}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 781570898}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!60 &781570897
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6191,6 +6215,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 789268837}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 789268840}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &789268840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6309,12 +6334,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865658786}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.840734, y: -3.3781154, z: -3.2327778}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.6597023, y: -0.48282433, z: -1506.4844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1633166230}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &865790397
@@ -6895,6 +6920,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 976656507}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 976656513}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!60 &976656512
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7243,6 +7269,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1015820012}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1015820015}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1015820015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7525,6 +7552,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1047963547}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1047963550}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1047963550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7719,6 +7747,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1077834743}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1077834746}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1077834746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7749,6 +7778,82 @@ MonoBehaviour:
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 9fcbdbbdf97caaa42a6da21b00edabc4, type: 2}
+--- !u!1 &1079631709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079631710}
+  - component: {fileID: 1079631712}
+  - component: {fileID: 1079631711}
+  m_Layer: 5
+  m_Name: CrossIconImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1079631710
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079631709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1599594711}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1079631711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079631709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6862c74efca4c08489eec8426f0e9325, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1079631712
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079631709}
+  m_CullTransparentMesh: 1
 --- !u!1 &1100452136
 GameObject:
   m_ObjectHideFlags: 0
@@ -8052,6 +8157,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1133022659}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1133022662}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1133022662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8226,6 +8332,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1136002608}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1136002611}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1136002611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8544,6 +8651,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1168963964}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1168963967}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1168963967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8711,6 +8819,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1203479652}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1203479655}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1203479655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8980,6 +9089,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1288773761}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1288773764}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1288773764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9160,6 +9270,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1293599948}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1293599951}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1293599951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9472,6 +9583,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1330219555}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1330219558}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1330219558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9637,6 +9749,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1338908327}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1338908330}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1338908330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9820,6 +9933,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1388076218}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1388076221}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1388076221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10021,6 +10135,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1401400338}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1401400341}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1401400341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10084,10 +10199,10 @@ RectTransform:
   m_Father: {fileID: 1414480682}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -44.845, y: 0}
+  m_SizeDelta: {x: 376.8, y: 40.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401876176
 MonoBehaviour:
@@ -10143,7 +10258,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -10336,6 +10451,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1407064767}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1407064770}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1407064770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10378,7 +10494,6 @@ GameObject:
   - component: {fileID: 1414480685}
   - component: {fileID: 1414480684}
   - component: {fileID: 1414480683}
-  - component: {fileID: 1414480686}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -10399,6 +10514,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1401876175}
+  - {fileID: 1599594711}
   m_Father: {fileID: 229142714}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10465,32 +10581,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414480681}
   m_CullTransparentMesh: 1
---- !u!114 &1414480686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414480681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1 &1415731498
 GameObject:
   m_ObjectHideFlags: 0
@@ -10739,6 +10829,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1416510360}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1416510363}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1416510363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11371,6 +11462,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1531288294}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1531288297}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1531288297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12135,6 +12227,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1576779665}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1576779668}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1576779668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12306,6 +12399,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1596692497}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1596692500}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1596692500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12336,6 +12430,140 @@ MonoBehaviour:
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 46015b28b7e22594785eeb803a48e462, type: 2}
+--- !u!1 &1599594710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599594711}
+  - component: {fileID: 1599594714}
+  - component: {fileID: 1599594713}
+  - component: {fileID: 1599594712}
+  m_Layer: 5
+  m_Name: CrossIconButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1599594711
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599594710}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1079631710}
+  m_Father: {fileID: 1414480682}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 421.8, y: -38.797813}
+  m_SizeDelta: {x: 90, y: 77.59563}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1599594712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599594710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1599594713}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 675114450}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnStateDetailExitClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1599594713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599594710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8627451, g: 0.8666667, b: 0.88235295, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1599594714
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599594710}
+  m_CullTransparentMesh: 1
 --- !u!1 &1600222308
 GameObject:
   m_ObjectHideFlags: 0
@@ -12642,6 +12870,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1632358238}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1632358241}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1632358241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12706,8 +12935,9 @@ Transform:
   - {fileID: 1105444542}
   - {fileID: 675114451}
   - {fileID: 844739858}
+  - {fileID: 865658788}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1651879346
 GameObject:
@@ -12885,6 +13115,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1651879348}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1651879351}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1651879351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13267,6 +13498,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1711540354}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1711540357}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1711540357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13796,6 +14028,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1864937350}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1864937353}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1864937353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13962,6 +14195,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1868534588}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1868534591}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1868534591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14271,6 +14505,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 1935662435}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 1935662438}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &1935662438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14534,6 +14769,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 2008096685}
   _dataManager: {fileID: 1105444543}
   _stateController: {fileID: 2008096688}
+  _stateDetailsUIPanel: {fileID: 229142713}
 --- !u!114 &2008096688
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class StatesMouseDetection : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer; 
     [SerializeField] private DataManager _dataManager; 
     [SerializeField] private StateController _stateController; 
+    [SerializeField] private GameObject _stateDetailsUIPanel;
     private bool isHovering; 
     private void Start()
     {
@@ -36,5 +37,6 @@ public class StatesMouseDetection : MonoBehaviour
     private void OnMouseDown() 
     {
         _dataManager.SelectedState = _stateController.State;
+        _stateDetailsUIPanel.SetActive(true);
     }
 }
