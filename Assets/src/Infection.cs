@@ -10,6 +10,11 @@ namespace InfectionModule
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
         [field: SerializeField] public bool HasSpread {get; set;}
+        /*
+            This function finds if there is an existing infection with the same parameters,
+            if there is, return the instance, 
+            else, return null
+        */
         public static Infection FindExistingInfection(State state, TimeModule.Date date, InfectionStatus infectionStatus, bool hasSpread)
         {
             Infection findResult = null;

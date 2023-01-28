@@ -196,5 +196,4 @@ public class InfectionGeneration : MonoBehaviour
         state.InfectionsLong += infections;
         totalInfection += infections; 
     }
-    
 }
