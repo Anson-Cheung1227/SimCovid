@@ -8,6 +8,7 @@ public class TimeController : MonoBehaviour
     [SerializeField] private float[] _changeMinutes = new float[5];
     [SerializeField] public UnityEvent _generateInfections; 
     [SerializeField] public UnityEvent _generateInHospital;
+    [SerializeField] public UnityEvent _generateRecovery;
     //public Property to control the speed of time;
     public int GameSpeed { get; private set; }
     public TimeModule.Date GameDate { get; private set; } = new TimeModule.Date(2019, 12, 1);
@@ -31,6 +32,7 @@ public class TimeController : MonoBehaviour
         {
             _generateInfections.Invoke();
             _generateInHospital.Invoke();
+            _generateRecovery.Invoke();
             //Generate Infections
             GameTime.Hour = 0;
             GameDate += new TimeModule.Date(0, 0, 1);
