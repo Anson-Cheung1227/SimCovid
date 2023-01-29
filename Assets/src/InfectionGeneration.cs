@@ -51,6 +51,7 @@ public class InfectionGeneration : MonoBehaviour
         long actualActiveInfections;
         foreach (StateController stateController in _allState)
         {
+            if (stateController.State.LocalLockdown) continue;
             actualActiveInfections = 0;
             foreach (Infection infection in stateController.State.ActiveInfections)
             {
@@ -194,6 +195,7 @@ public class InfectionGeneration : MonoBehaviour
             //Debug.Log($"{state.Name}: {infectionType.ToString()}: Generated {infections} infections");
         }
         state.InfectionsLong += infections;
+        state.ActiveInfectionsLong += infections;
         totalInfection += infections; 
     }
 }

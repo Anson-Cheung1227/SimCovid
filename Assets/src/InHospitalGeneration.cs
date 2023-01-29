@@ -5,7 +5,7 @@ using Unity.Profiling;
 public class InHospitalGeneration : MonoBehaviour 
 {
     [SerializeField] private TimeController _timeController; 
-    [SerializeField] private List<StateController> _allStates = new List<StateController>();
+    [SerializeField] private List<StateController> _allStates;
     private int[] _dayList = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     static readonly ProfilerMarker s_GenerateInHospitalMarker = new ProfilerMarker("GenerateInHospital");
     private void Start() 
@@ -39,12 +39,13 @@ public class InHospitalGeneration : MonoBehaviour
                 {
                     findResult = new Infection { Date = infection.Date, InfectionStatus = InfectionStatus.InHospital, Amount = generateAmount};
                     stateController.State.InHospital.Add(infection);
-                    infection.Amount -= generateAmount;
                 }
                 else
                 {
                     findResult.Amount += generateAmount;
                 }
+                infection.Amount -= generateAmount;
+                stateController.State.ActiveInfectionsLong -= generateAmount;
                 stateController.State.InHospitalLong += generateAmount;
             }
         }
