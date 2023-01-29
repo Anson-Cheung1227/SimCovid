@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateTimeUI();
         UpdateStateDetailUI();
-        if (_lockdownPanel.activeInHierarchy) UpdateLockdownUI();
+        if (_lockdownPanel.activeInHierarchy && _dataManager.SelectedState != null) UpdateLockdownUI();
         if (Input.GetMouseButton(0))
         {
             if (IsPointerOverNothingWhenClick())
