@@ -7,10 +7,9 @@ public class StatesMouseDetection : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private StateColorSO _stateColorSORef; 
     [SerializeField] private SpriteRenderer _spriteRenderer; 
-    [SerializeField] private DataManager _dataManager; 
     [SerializeField] private StateController _stateController; 
     [SerializeField] private GameObject _stateDetailsUIPanel;
-    private bool isHovering; 
+    [SerializeField] private CameraController _cameraController;
     private void Start()
     {
         
@@ -19,24 +18,26 @@ public class StatesMouseDetection : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (_dataManager.SelectedState == _stateController.State) _spriteRenderer.color = _stateColorSORef.SelectedColor;
+        if (DataManager.Instance.SelectedState == _stateController.State) _spriteRenderer.color = _stateColorSORef.SelectedColor;
         else
         {
-            if (isHovering) _spriteRenderer.color = _stateColorSORef.HoveringColor;
+            if (DataManager.Instance.HoveringState == _stateController.State) _spriteRenderer.color = _stateColorSORef.HoveringColor;
             else _spriteRenderer.color = _stateColorSORef.OriginalColor;
         }
     }
     private void OnMouseOver() 
     {
-        isHovering = true;
+        if (_cameraController.IsPointerOverUI()) return;
+        DataManager.Instance.HoveringState = _stateController.State;
     }
     private void OnMouseExit() 
     {
-        isHovering = false;   
+        DataManager.Instance.HoveringState = null;   
     }
     private void OnMouseDown() 
     {
-        _dataManager.SelectedState = _stateController.State;
-        _stateDetailsUIPanel.SetActive(true);
+        if (_cameraController.IsPointerOverUI()) return;
+        DataManager.Instance.SelectedState = _stateController.State;
+        DataManager.Instance.ActiveStateDetailsPanel = true;
     }
 }

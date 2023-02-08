@@ -20,7 +20,7 @@ namespace InfectionModule
             Infection findResult = null;
             if (infectionStatus == InfectionStatus.Active)
             {
-                foreach (InfectionModule.Infection infection in state.ActiveInfections)
+                foreach (Infection infection in state.ActiveInfections)
                 {
                     if (date == infection.Date && hasSpread == infection.HasSpread)
                     {
@@ -42,7 +42,7 @@ namespace InfectionModule
             }
             else if (infectionStatus == InfectionStatus.Recovered)
             {
-                foreach (Infection infection in state.InHospital)
+                foreach (Infection infection in state.Recovered)
                 {
                     if (date == infection.Date && hasSpread == infection.HasSpread)
                     {

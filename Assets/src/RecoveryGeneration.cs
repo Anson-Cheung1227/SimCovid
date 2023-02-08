@@ -7,8 +7,6 @@ public class RecoveryGeneration : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private List<StateController> _allStates;
-    [SerializeField] private DataManager _dataManager;
-    [SerializeField] private TimeController _timeController;
     void Start()
     {
         
@@ -26,11 +24,11 @@ public class RecoveryGeneration : MonoBehaviour
         {
             foreach (Infection infection in stateController.State.InHospital)
             {
-                int generatedAmount = (int)(infection.Amount * _dataManager.RecoveryRate);
-                findResult = Infection.FindExistingInfection(stateController.State, _timeController.GameDate, InfectionStatus.Recovered, infection.HasSpread);
+                int generatedAmount = (int)(infection.Amount * DataManager.Instance.RecoveryRate);
+                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, InfectionStatus.Recovered, infection.HasSpread);
                 if (findResult == null)
                 {
-                    findResult = new Infection{Date = _timeController.GameDate, InfectionStatus = InfectionStatus.Recovered, Amount = generatedAmount};
+                    findResult = new Infection{Date = infection.Date, InfectionStatus = InfectionStatus.Recovered, Amount = generatedAmount};
                     stateController.State.Recovered.Add(findResult);
                 }
                 else

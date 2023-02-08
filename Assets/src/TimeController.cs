@@ -11,8 +11,6 @@ public class TimeController : MonoBehaviour
     [SerializeField] public UnityEvent _generateRecovery;
     //public Property to control the speed of time;
     public int GameSpeed { get; private set; }
-    public TimeModule.Date GameDate { get; private set; } = new TimeModule.Date(2019, 12, 1);
-    public TimeModule.Time GameTime { get; private set; } = new TimeModule.Time(0, 0, 0);
     private void Start()
     {
        
@@ -27,15 +25,15 @@ public class TimeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) GameSpeed = 3; //1 second (in real life) = 4 hour (in game time)
         if (Input.GetKeyDown(KeyCode.Alpha4)) GameSpeed = 4; //1 second (in real life) = 8 hour (in game time)
         //Change the Game Speed;
-        GameTime += new TimeModule.Time(0, _changeMinutes[GameSpeed] * Time.deltaTime, 0);
-        if (GameTime.Hour >= 24)
+        DataManager.Instance.GameTime += new TimeModule.Time(0, _changeMinutes[GameSpeed] * Time.deltaTime, 0);
+        if (DataManager.Instance.GameTime.Hour >= 24)
         {
             _generateInfections.Invoke();
             _generateInHospital.Invoke();
             _generateRecovery.Invoke();
             //Generate Infections
-            GameTime.Hour = 0;
-            GameDate += new TimeModule.Date(0, 0, 1);
+            DataManager.Instance.GameTime.Hour = 0;
+            DataManager.Instance.GameDate += new TimeModule.Date(0, 0, 1);
         }
     }
 }

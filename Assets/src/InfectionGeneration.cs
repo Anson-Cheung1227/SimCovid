@@ -6,7 +6,6 @@ public class InfectionGeneration : MonoBehaviour
 {
     // Start is called before the first frame update
     //Reference to TimeController
-    [SerializeField] private TimeController _timeController; 
     //All References to StateControllers for State data
     [SerializeField] private List<StateController> _allState = new List<StateController>();
     //For Unity Editor use only
@@ -151,10 +150,10 @@ public class InfectionGeneration : MonoBehaviour
     {
         if (infectionType == InfectionType.Local)
         {
-            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active, false);
+            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, InfectionStatus.Active, false);
             if (infection == null)
             {
-                infection = new Infection { Date = _timeController.GameDate, Amount = infections};
+                infection = new Infection { Date = DataManager.Instance.GameDate, Amount = infections, InfectionStatus = InfectionStatus.Active};
                 state.Infections.Add(infection);
                 state.ActiveInfections.Add(infection);
             }
@@ -166,10 +165,10 @@ public class InfectionGeneration : MonoBehaviour
         }
         if (infectionType == InfectionType.Interstate)
         {
-            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active, false);
+            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, InfectionStatus.Active, false);
             if (infection == null)
             {
-                infection = new Infection { Date = _timeController.GameDate, Amount = infections};
+                infection = new Infection { Date = DataManager.Instance.GameDate, Amount = infections, InfectionStatus = InfectionStatus.Active};
                 state.Infections.Add(infection);
                 state.ActiveInfections.Add(infection);
             }
@@ -181,10 +180,10 @@ public class InfectionGeneration : MonoBehaviour
         }
         if (infectionType == InfectionType.Global)
         {
-            Infection infection = Infection.FindExistingInfection(state, _timeController.GameDate, InfectionStatus.Active, false);
+            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, InfectionStatus.Active, false);
             if (infection == null)
             {
-                infection = new Infection { Date = _timeController.GameDate, Amount = infections};
+                infection = new Infection { Date = DataManager.Instance.GameDate, Amount = infections, InfectionStatus = InfectionStatus.Active};
                 state.Infections.Add(infection);
                 state.ActiveInfections.Add(infection);
             }

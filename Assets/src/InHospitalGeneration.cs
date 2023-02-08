@@ -25,20 +25,22 @@ public class InHospitalGeneration : MonoBehaviour
             if (stateController.State.Infections.Count == 0) continue;
             foreach (Infection infection in stateController.State.ActiveInfections)
             {
-                int daysSinceInfection = (int)(_timeController.GameDate.Day - infection.Date.Day);
+                int daysSinceInfection = (int)(DataManager.Instance.GameDate.Day - infection.Date.Day);
                 if (daysSinceInfection < 0)
                 {
                     daysSinceInfection += _dayList[(int)infection.Date.Month - 1];
                 }
                 if (daysSinceInfection <= 1) continue;
                 int chance = 100 - 100 / daysSinceInfection;
-                long generateAmount = (int)infection.Amount * chance/100;
+                long generateAmount = (int)(infection.Amount * chance/100);
+                //Debug.Log($"{chance}: {generateAmount}");
                 if (generateAmount < 1) continue;
                 findResult = Infection.FindExistingInfection(stateController.State, infection.Date, InfectionStatus.InHospital, infection.HasSpread);
+                Debug.Log(findResult == null);
                 if (findResult == null)
                 {
                     findResult = new Infection { Date = infection.Date, InfectionStatus = InfectionStatus.InHospital, Amount = generateAmount};
-                    stateController.State.InHospital.Add(infection);
+                    stateController.State.InHospital.Add(findResult);
                 }
                 else
                 {

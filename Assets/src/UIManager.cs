@@ -8,12 +8,11 @@ public class UIManager : MonoBehaviour
 {
     #region TimeUI
     private string _timeTextContent; 
-    [SerializeField] private TimeController _timeControllerRef; 
     [SerializeField] private TextMeshProUGUI _timeText;
     [SerializeField] private TextMeshProUGUI _dateText; 
     #endregion TimeUI
     #region StateUI
-    [SerializeField] private DataManager _dataManager; 
+    //[SerializeField] private DataManager.Instance DataManager.Instance.Instance; 
     [SerializeField] private GameObject _stateDetailUIPanel;
     [SerializeField] private TextMeshProUGUI _selectedStateNameText;
     [SerializeField] private TextMeshProUGUI _selectedStatePopulationText;
@@ -23,6 +22,9 @@ public class UIManager : MonoBehaviour
     #endregion StateUI
     #region LockdownUI
     [SerializeField] private GameObject _lockdownPanel; 
+    [SerializeField] GameObject _localLockdownButton;
+    [SerializeField] GameObject _interstateLockdownButton;
+    [SerializeField] GameObject _globalLockdownButton;
     [SerializeField] private TextMeshProUGUI _localLockdownText;
     [SerializeField] private TextMeshProUGUI _interstateLockdownText;
     [SerializeField] private TextMeshProUGUI _globalLockdownText;
@@ -38,43 +40,51 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         UpdateTimeUI();
+        SetActiveStateDetailPanel(DataManager.Instance.ActiveStateDetailsPanel);
         UpdateStateDetailUI();
-        if (_lockdownPanel.activeInHierarchy && _dataManager.SelectedState != null) UpdateLockdownUI();
+        if (_lockdownPanel.activeInHierarchy && DataManager.Instance.SelectedState != null) UpdateLockdownUI();
         if (Input.GetMouseButton(0))
         {
             if (IsPointerOverNothingWhenClick())
             {
-                _dataManager.SelectedState = null;
+                DataManager.Instance.SelectedState = null;
             }
         }
     }
     private void UpdateTimeUI()
     {
         _timeTextContent = string.Empty;
-        if (_timeControllerRef.GameTime.Hour < 10) //two digits
+        if (DataManager.Instance.GameTime.Hour < 10) //two digits
         {
-            _timeTextContent += $"0{(int)_timeControllerRef.GameTime.Hour}";
+            _timeTextContent += $"0{(int)DataManager.Instance.GameTime.Hour}";
         }
         else
         {
-            _timeTextContent += (int)_timeControllerRef.GameTime.Hour; 
+            _timeTextContent += (int)DataManager.Instance.GameTime.Hour; 
         }
         _timeTextContent += ":";
-        if (_timeControllerRef.GameTime.Minute < 10)
+        if (DataManager.Instance.GameTime.Minute < 10)
         {
-            _timeTextContent += $"0{(int)_timeControllerRef.GameTime.Minute}";
+            _timeTextContent += $"0{(int)DataManager.Instance.GameTime.Minute}";
         }
         else
         {
-            _timeTextContent += (int)_timeControllerRef.GameTime.Minute; 
+            _timeTextContent += (int)DataManager.Instance.GameTime.Minute; 
         }
         _timeText.text = _timeTextContent;
         //Date UI:
-        _dateText.text = (string)_timeControllerRef.GameDate;
+        _dateText.text = (string)DataManager.Instance.GameDate;
+    }
+    private void SetActiveStateDetailPanel(bool active)
+    {
+        if (_stateDetailUIPanel.activeInHierarchy != active)
+        {
+            _stateDetailUIPanel.SetActive(active);
+        }
     }
     private void UpdateStateDetailUI()
     {
-        if (_dataManager.SelectedState == null)
+        if (DataManager.Instance.SelectedState == null)
         {
             _selectedStateNameText.text = String.Empty;
             _selectedStatePopulationText.text = String.Empty;
@@ -84,18 +94,18 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            _selectedStateNameText.text = _dataManager.SelectedState.Name;
-            _selectedStatePopulationText.text = LongToString(_dataManager.SelectedState.Population);
-            _selectedStateInfectionsText.text = LongToString(_dataManager.SelectedState.InfectionsLong);
-            _selectedStateInHospitalText.text = LongToString(_dataManager.SelectedState.InHospitalLong);
-            _selectedStateRecoveredText.text = LongToString(_dataManager.SelectedState.RecoveredLong);
+            _selectedStateNameText.text = DataManager.Instance.SelectedState.Name;
+            _selectedStatePopulationText.text = LongToString(DataManager.Instance.SelectedState.Population);
+            _selectedStateInfectionsText.text = LongToString(DataManager.Instance.SelectedState.InfectionsLong);
+            _selectedStateInHospitalText.text = LongToString(DataManager.Instance.SelectedState.InHospitalLong);
+            _selectedStateRecoveredText.text = LongToString(DataManager.Instance.SelectedState.RecoveredLong);
         }
     }
     private void UpdateLockdownUI()
     {
-        boolToActiveText(_localLockdownText, _dataManager.SelectedState.LocalLockdown);
-        boolToActiveText(_interstateLockdownText, _dataManager.SelectedState.InterstateLockdown);
-        boolToActiveText(_globalLockdownText, _dataManager.SelectedState.GlobalLockdown);
+        boolToActiveText(_localLockdownText, DataManager.Instance.SelectedState.LocalLockdown);
+        boolToActiveText(_interstateLockdownText, DataManager.Instance.SelectedState.InterstateLockdown);
+        boolToActiveText(_globalLockdownText, DataManager.Instance.SelectedState.GlobalLockdown);
     }
     /*  
         This function takes a boolean, if it's true, set the text to active, and the corresponding color, 
@@ -131,9 +141,19 @@ public class UIManager : MonoBehaviour
         //Hide the UI by setting it to inactive
         _lockdownPanel.SetActive(!_lockdownPanel.activeInHierarchy);
     }
+    public void OnLockdownUpdateButtonClick(GameObject button)
+    {
+        if (button == _localLockdownButton) DataManager.Instance.SelectedState.LocalLockdown = !DataManager.Instance.SelectedState.LocalLockdown;
+        if (button == _interstateLockdownButton) DataManager.Instance.SelectedState.InterstateLockdown = !DataManager.Instance.SelectedState.InterstateLockdown;
+        if (button == _globalLockdownButton) 
+        {
+            DataManager.Instance.SelectedState.GlobalLockdown = !DataManager.Instance.SelectedState.GlobalLockdown;
+            DataManager.Instance.SelectedState.DailyIncomingPeople = 0;
+        }
+    }
     public void OnStateDetailExitClick()
     {
-        _stateDetailUIPanel.SetActive(false);
+        DataManager.Instance.ActiveStateDetailsPanel = false;
     }
     private string LongToString(long number)
     {
