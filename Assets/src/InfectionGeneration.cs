@@ -60,8 +60,11 @@ public class InfectionGeneration : MonoBehaviour
                     infection.HasSpread = true;
                 }
             }
-            if (actualActiveInfections == 0) continue;
-            AddInfection(stateController.State, InfectionType.Local, infections: (long)(actualActiveInfections * stateController.State.LocalSpreadRate));
+            long generateAmount = (long)(actualActiveInfections * stateController.State.LocalSpreadRate);
+            if (generateAmount == 0 || stateController.State.InfectionsLong >= stateController.State.Population || stateController.State.InfectionsLong + generateAmount == stateController.State.Population) continue;
+            if (stateController.State.InfectionsLong + generateAmount > stateController.State.Population) 
+                generateAmount = stateController.State.Population - stateController.State.InfectionsLong;
+            AddInfection(stateController.State, InfectionType.Local, infections: generateAmount);
         }
     }
     public void GenerateInfectionsInterstate()
@@ -94,7 +97,12 @@ public class InfectionGeneration : MonoBehaviour
         //Loop through the delayedInfection Dictionary, and add infections
         foreach (KeyValuePair<List<State>, long> infection in delayedInfection)
         {
-            AddInfection(infection.Key[0], InfectionType.Interstate, infection.Key[1], infection.Value);
+            if (infection.Key[0].InfectionsLong >= infection.Key[0].Population || infection.Key[0].InfectionsLong + infection.Value == infection.Key[0].Population) continue;
+
+            if (infection.Key[0].InfectionsLong + infection.Value > infection.Key[0].Population)
+                AddInfection(infection.Key[0], InfectionType.Interstate, infection.Key[1], infection.Key[0].Population - infection.Key[0].InfectionsLong);
+            else 
+                AddInfection(infection.Key[0], InfectionType.Interstate, infection.Key[1], infection.Value);
         }
     }
     public State DetermineStateInfectionInterstate()
@@ -111,6 +119,8 @@ public class InfectionGeneration : MonoBehaviour
     {
         Dictionary<List<State>, long> delayedInfection = new Dictionary<List<State>, long>();
         //Adding one global infection
+        State determinedState = DetermineStateInfectionGlobal();
+        if (determinedState == null) return;
         AddInfection(DetermineStateInfectionGlobal(), InfectionType.Global);
     }
     public State DetermineStateInfectionGlobal()
@@ -128,7 +138,7 @@ public class InfectionGeneration : MonoBehaviour
         foreach (StateController stateController in _allState)
         {
             //If the dailyIncomingPeople is 0, we move on to the next state
-            if (stateController.State.DailyIncomingPeople == 0) continue;
+            if (stateController.State.DailyIncomingPeople == 0 || stateController.State.InfectionsLong >= stateController.State.Population || stateController.State.InfectionsLong + 1 == stateController.State.Population) continue;
             //else, we add the DailyIncomingPeople to the total DailyTransportedPeople
             DailyTransportedPeople += stateController.State.DailyIncomingPeople;
             transportedPassengers.Add(DailyTransportedPeople, stateController.State);
