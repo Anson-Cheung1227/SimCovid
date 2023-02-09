@@ -25,11 +25,13 @@ public class RecoveryGeneration : MonoBehaviour
             foreach (Infection infection in stateController.State.InHospital)
             {
                 int generatedAmount = (int)(infection.Amount * DataManager.Instance.RecoveryRate);
+                if (generatedAmount < 1) continue;
                 findResult = Infection.FindExistingInfection(stateController.State, infection.Date, InfectionStatus.Recovered, infection.HasSpread);
                 if (findResult == null)
                 {
-                    findResult = new Infection{Date = infection.Date, InfectionStatus = InfectionStatus.Recovered, Amount = generatedAmount};
+                    findResult = new Infection{Date = infection.Date, InfectionStatus = InfectionStatus.Recovered, Amount = generatedAmount, HasSpread = infection.HasSpread};
                     stateController.State.Recovered.Add(findResult);
+                    stateController.State.Infections.Add(findResult);
                 }
                 else
                 {
