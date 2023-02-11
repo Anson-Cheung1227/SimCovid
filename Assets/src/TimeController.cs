@@ -6,9 +6,10 @@ using UnityEngine.Events;
 public class TimeController : MonoBehaviour
 {
     [SerializeField] private float[] _changeMinutes = new float[5];
-    [SerializeField] public UnityEvent _generateInfections; 
-    [SerializeField] public UnityEvent _generateInHospital;
-    [SerializeField] public UnityEvent _generateRecovery;
+    [SerializeField] public UnityEvent GenerateInfections; 
+    [SerializeField] public UnityEvent GenerateInHospital;
+    [SerializeField] public UnityEvent GenerateRecovery;
+    [SerializeField] public UnityEvent UpdateMorale;
     //public Property to control the speed of time;
     public int GameSpeed { get; private set; }
     private void Start()
@@ -28,9 +29,10 @@ public class TimeController : MonoBehaviour
         DataManager.Instance.GameTime += new TimeModule.Time(0, _changeMinutes[GameSpeed] * Time.deltaTime, 0);
         if (DataManager.Instance.GameTime.Hour >= 24)
         {
-            _generateInfections.Invoke();
-            _generateInHospital.Invoke();
-            _generateRecovery.Invoke();
+            GenerateInfections.Invoke();
+            GenerateInHospital.Invoke();
+            GenerateRecovery.Invoke();
+            UpdateMorale.Invoke();
             //Generate Infections
             DataManager.Instance.GameTime.Hour = 0;
             DataManager.Instance.GameDate += new TimeModule.Date(0, 0, 1);

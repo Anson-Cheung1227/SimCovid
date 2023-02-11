@@ -20,6 +20,9 @@ public class State
     [field: SerializeField] public long RecoveredLong {get; set;}
     [field: SerializeField] public List<Airport> AirportList {get; set;} = new List<Airport>();
     #endregion Infection
+    #region Civilian
+    [field: SerializeField] public float Morale {get; set;}
+    #endregion Civilian
     #region Policies
     [field: SerializeField] public bool LocalLockdown {get; set;}
     [field: SerializeField] public bool InterstateLockdown {get; set;} 
