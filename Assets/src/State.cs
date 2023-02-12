@@ -14,10 +14,12 @@ public class State
     [field: SerializeField] public List<Infection> ActiveInfections {get; set;} = new List<Infection>();
     [field: SerializeField] public List<Infection> InHospital {get; set;} = new List<Infection>();
     [field: SerializeField] public List<Infection> Recovered {get; set;} = new List<Infection>();
+    [field: SerializeField] public List<Infection> Deceased {get; set;} = new List<Infection>();
     [field: SerializeField] public long InfectionsLong {get; set;}
     [field: SerializeField] public long ActiveInfectionsLong {get; set;}
     [field: SerializeField] public long InHospitalLong {get; set;}
     [field: SerializeField] public long RecoveredLong {get; set;}
+    [field: SerializeField] public long DeceasedLong{get; set;}
     [field: SerializeField] public List<Airport> AirportList {get; set;} = new List<Airport>();
     #endregion Infection
     #region Civilian

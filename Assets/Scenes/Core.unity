@@ -307,10 +307,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -520,10 +522,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -692,10 +696,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -928,10 +934,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -1145,10 +1153,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -1341,10 +1351,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -1507,10 +1519,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -1682,10 +1696,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -1868,10 +1884,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -2190,10 +2208,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -2371,10 +2391,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -2538,16 +2560,113 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 6507a5c0cf8e06e4fa77e4004786395a, type: 2}
+--- !u!1 &404477645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 404477646}
+  - component: {fileID: 404477647}
+  m_Layer: 0
+  m_Name: DeathGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &404477646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404477645}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1633166230}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &404477647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404477645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db58bbeb6b5f9544aab34afa353f5877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allStates:
+  - {fileID: 56196227}
+  - {fileID: 976656513}
+  - {fileID: 781570898}
+  - {fileID: 1015820015}
+  - {fileID: 440040498}
+  - {fileID: 1133022662}
+  - {fileID: 106624263}
+  - {fileID: 481936931}
+  - {fileID: 104589844}
+  - {fileID: 590137212}
+  - {fileID: 548886983}
+  - {fileID: 1203479655}
+  - {fileID: 1416510363}
+  - {fileID: 1330219558}
+  - {fileID: 702137950}
+  - {fileID: 1868534591}
+  - {fileID: 1293599951}
+  - {fileID: 143515521}
+  - {fileID: 1711540357}
+  - {fileID: 1168963967}
+  - {fileID: 1288773764}
+  - {fileID: 1401400341}
+  - {fileID: 1407064770}
+  - {fileID: 284993130}
+  - {fileID: 43084976}
+  - {fileID: 28561237}
+  - {fileID: 61898040}
+  - {fileID: 1596692500}
+  - {fileID: 421480647}
+  - {fileID: 1338908330}
+  - {fileID: 765957096}
+  - {fileID: 2008096688}
+  - {fileID: 1077834746}
+  - {fileID: 1047963550}
+  - {fileID: 115176032}
+  - {fileID: 1864937353}
+  - {fileID: 475811164}
+  - {fileID: 300236516}
+  - {fileID: 377486459}
+  - {fileID: 1136002611}
+  - {fileID: 1935662438}
+  - {fileID: 657724720}
+  - {fileID: 40562373}
+  - {fileID: 1388076221}
+  - {fileID: 715033715}
+  - {fileID: 1576779668}
+  - {fileID: 1651879351}
+  - {fileID: 789268840}
+  - {fileID: 1531288297}
+  - {fileID: 1632358241}
 --- !u!1 &421480642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,10 +2831,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -2928,10 +3049,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -3123,10 +3246,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -3289,10 +3414,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -3624,10 +3751,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -3804,10 +3933,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -4094,10 +4225,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -4384,10 +4517,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -4573,10 +4708,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -4740,10 +4877,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -4911,10 +5050,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -5089,10 +5230,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -5427,10 +5570,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -5612,10 +5757,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -5809,10 +5956,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -6005,10 +6154,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -6170,10 +6321,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -6188,10 +6341,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -6366,10 +6521,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -6542,10 +6699,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -6727,10 +6886,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -6896,10 +7057,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -7079,10 +7242,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -7261,10 +7426,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -7442,10 +7609,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -7609,10 +7778,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -7794,10 +7965,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -7997,10 +8170,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -8179,10 +8354,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -8260,6 +8437,21 @@ MonoBehaviour:
       - m_Target: {fileID: 1646990191}
         m_TargetAssemblyTypeName: RecoveryGeneration, Assembly-CSharp
         m_MethodName: GenerateRecovery
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GenerateDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 404477647}
+        m_TargetAssemblyTypeName: DeathGeneration, Assembly-CSharp
+        m_MethodName: GenerateDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8489,10 +8681,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -8673,10 +8867,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -8843,10 +9039,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -9016,10 +9214,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -9193,10 +9393,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -9239,6 +9441,7 @@ Transform:
   - {fileID: 865658788}
   - {fileID: 1646990190}
   - {fileID: 1808651303}
+  - {fileID: 404477646}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9535,10 +9738,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -9708,10 +9913,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -9978,10 +10185,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -10146,10 +10355,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -10322,10 +10533,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0
@@ -10500,10 +10713,12 @@ MonoBehaviour:
     <ActiveInfections>k__BackingField: []
     <InHospital>k__BackingField: []
     <Recovered>k__BackingField: []
+    <Deceased>k__BackingField: []
     <InfectionsLong>k__BackingField: 0
     <ActiveInfectionsLong>k__BackingField: 0
     <InHospitalLong>k__BackingField: 0
     <RecoveredLong>k__BackingField: 0
+    <DeceasedLong>k__BackingField: 0
     <AirportList>k__BackingField: []
     <Morale>k__BackingField: 0
     <LocalLockdown>k__BackingField: 0

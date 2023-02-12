@@ -16,11 +16,14 @@ public class StateSO : ScriptableObject
         List<Infection> infections = new List<Infection>();
         List<Infection> activeInfections = new List<Infection>();
         List<Infection> inHospital = new List<Infection>();
+        List<Infection> recovered = new List<Infection>();
+        List<Infection> deceased = new List<Infection>();
         List<Airport> airports = new List<Airport>();
         long infectionsLong = 0;
         long activeInfectionsLong = 0;
         long inHospitalLong = 0;
         long recoveredLong = 0;
+        long deceasedLong = 0;
         //Copy the ScriptableObject into a new List to avoid changing the lists in ScriptableObjects.
         foreach (InfectionStruct infection in stateSO.Infections)
         {
@@ -37,6 +40,14 @@ public class StateSO : ScriptableObject
                     inHospital.Add(refInfection);
                     inHospitalLong += infection.Amount;
                     break;
+                case InfectionStatus.Recovered:
+                    recovered.Add(refInfection);
+                    recoveredLong += infection.Amount;
+                    break;
+                case InfectionStatus.Deceased:
+                    deceased.Add(refInfection);
+                    deceasedLong += infection.Amount;
+                    break;
             }
         }
         foreach (AirportSO airportSO in stateSO.AirportList)
@@ -52,10 +63,14 @@ public class StateSO : ScriptableObject
             Infections = infections,
             ActiveInfections = activeInfections,
             InHospital = inHospital, 
+            Recovered = recovered,
+            Deceased = deceased,
             InfectionsLong = infectionsLong,
             ActiveInfectionsLong = activeInfectionsLong,
             InHospitalLong = inHospitalLong,
-            AirportList = airports
+            RecoveredLong = recoveredLong,
+            DeceasedLong = deceasedLong,
+            AirportList = airports,
         };
     }
 }

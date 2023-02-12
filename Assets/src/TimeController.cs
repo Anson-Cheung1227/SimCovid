@@ -9,6 +9,7 @@ public class TimeController : MonoBehaviour
     [SerializeField] public UnityEvent GenerateInfections; 
     [SerializeField] public UnityEvent GenerateInHospital;
     [SerializeField] public UnityEvent GenerateRecovery;
+    [SerializeField] public UnityEvent GenerateDeath;
     [SerializeField] public UnityEvent UpdateMorale;
     //public Property to control the speed of time;
     public int GameSpeed { get; private set; }
@@ -32,6 +33,7 @@ public class TimeController : MonoBehaviour
             GenerateInfections.Invoke();
             GenerateInHospital.Invoke();
             GenerateRecovery.Invoke();
+            GenerateDeath.Invoke();
             UpdateMorale.Invoke();
             //Generate Infections
             DataManager.Instance.GameTime.Hour = 0;

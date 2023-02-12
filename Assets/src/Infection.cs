@@ -84,5 +84,6 @@ namespace InfectionModule
         Active,
         InHospital,
         Recovered,
+        Deceased, 
     }
 }
