@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _selectedStateInfectionsText;
     [SerializeField] private TextMeshProUGUI _selectedStateInHospitalText;
     [SerializeField] private TextMeshProUGUI _selectedStateRecoveredText;  
+    [SerializeField] private TextMeshProUGUI _selectedStateDeceasedText;
     #endregion StateUI
     #region LockdownUI
     [SerializeField] private GameObject _lockdownPanel; 
@@ -91,6 +92,7 @@ public class UIManager : MonoBehaviour
             _selectedStateInfectionsText.text = String.Empty;
             _selectedStateInHospitalText.text = String.Empty;
             _selectedStateRecoveredText.text = String.Empty;
+            _selectedStateDeceasedText.text = String.Empty;
         }
         else
         {
@@ -99,6 +101,7 @@ public class UIManager : MonoBehaviour
             _selectedStateInfectionsText.text = LongToString(DataManager.Instance.SelectedState.InfectionsLong);
             _selectedStateInHospitalText.text = LongToString(DataManager.Instance.SelectedState.InHospitalLong);
             _selectedStateRecoveredText.text = LongToString(DataManager.Instance.SelectedState.RecoveredLong);
+            _selectedStateDeceasedText.text = LongToString(DataManager.Instance.SelectedState.DeceasedLong);
         }
     }
     private void UpdateLockdownUI()
