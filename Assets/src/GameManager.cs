@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private CoreGameSO _coreGame;
     public static GameManager Instance; 
     // Start is called before the first frame update
     private void Awake() 
@@ -13,13 +15,19 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        SceneManager.LoadSceneAsync("Core", LoadSceneMode.Additive);
-        SceneManager.LoadSceneAsync("UI", LoadSceneMode.Additive);
+        LoadLevel(_coreGame);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void LoadLevel(CoreGameSO coreGameSO)
+    {
+        foreach (SceneAsset sceneAsset in coreGameSO.SceneList)
+        {
+            SceneManager.LoadSceneAsync(sceneAsset.name, LoadSceneMode.Additive);
+        }
     }
 }
