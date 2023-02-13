@@ -8,7 +8,6 @@ public class StatesMouseDetection : MonoBehaviour
     [SerializeField] private StateColorSO _stateColorSORef; 
     [SerializeField] private SpriteRenderer _spriteRenderer; 
     [SerializeField] private StateController _stateController; 
-    [SerializeField] private GameObject _stateDetailsUIPanel;
     [SerializeField] private CameraController _cameraController;
     private void Start()
     {
@@ -29,10 +28,12 @@ public class StatesMouseDetection : MonoBehaviour
     {
         if (_cameraController.IsPointerOverUI()) return;
         DataManager.Instance.HoveringState = _stateController.State;
+        TooltipSystem.Show("", DataManager.Instance.HoveringState.Name);
     }
     private void OnMouseExit() 
     {
-        DataManager.Instance.HoveringState = null;   
+        DataManager.Instance.HoveringState = null;
+        TooltipSystem.Hide();
     }
     private void OnMouseDown() 
     {
