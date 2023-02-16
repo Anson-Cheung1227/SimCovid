@@ -347,11 +347,19 @@ public class TimeModule
         }
         public static bool operator ==(Date a, Date b)
         {
+            if (object.ReferenceEquals(a, null) || object.ReferenceEquals(b, null))
+            {
+                return object.ReferenceEquals(a,b);
+            }
             return (a.Day == b.Day && a.Month == b.Month && a.Year == b.Year);
         }
         public static bool operator !=(Date a, Date b)
         {
-            return (a.Day == b.Day && a.Month == b.Month && a.Year == b.Year);
+            if (object.ReferenceEquals(a, null) || object.ReferenceEquals(b, null))
+            {
+                return !object.ReferenceEquals(a,b);
+            }
+            return !(a.Day == b.Day && a.Month == b.Month && a.Year == b.Year);
         }
     }
 }
