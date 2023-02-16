@@ -26,10 +26,10 @@ public class DeathGeneration : MonoBehaviour
             {
                 int generatedAmount = (int)(infection.Amount * DataManager.Instance.DeathRate);
                 if (generatedAmount < 1) continue;
-                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, InfectionStatus.Deceased, infection.HasSpread);
+                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, infection.InHospitalDate, infection.RecoveryDate, DataManager.Instance.GameDate, InfectionStatus.Deceased, infection.HasSpread);
                 if (findResult == null)
                 {
-                    findResult = new Infection{Date = infection.Date, InfectionStatus = InfectionStatus.Deceased, Amount = generatedAmount, HasSpread = infection.HasSpread};
+                    findResult = new Infection{Date = infection.Date, InHospitalDate = infection.InHospitalDate, DeceasedDate = DataManager.Instance.GameDate ,InfectionStatus = InfectionStatus.Deceased, Amount = generatedAmount, HasSpread = infection.HasSpread};
                     stateController.State.Deceased.Add(findResult);
                     stateController.State.Infections.Add(findResult);
                 }

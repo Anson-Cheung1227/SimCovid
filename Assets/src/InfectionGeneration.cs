@@ -4,7 +4,7 @@ using InfectionModule;
 
 public class InfectionGeneration : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     //Reference to TimeController
     //All References to StateControllers for State data
     [SerializeField] private List<StateController> _allState = new List<StateController>();
@@ -92,13 +92,15 @@ public class InfectionGeneration : MonoBehaviour
             //Pass the origin state
             newInfectState.Add(stateController.State);
             //Add to infections queue
-            delayedInfection.Add(newInfectState, actualActiveInfections);
+            long generateAmount = (long)(actualActiveInfections * stateController.State.Morale/100);
+            if (generateAmount < 1) continue;
+            delayedInfection.Add(newInfectState, generateAmount);
         }
         //Loop through the delayedInfection Dictionary, and add infections
         foreach (KeyValuePair<List<State>, long> infection in delayedInfection)
         {
-            if (infection.Key[0].InfectionsLong >= infection.Key[0].Population || infection.Key[0].InfectionsLong + infection.Value == infection.Key[0].Population) continue;
-
+            if (infection.Key[0].InfectionsLong >= infection.Key[0].Population || infection.Key[0].InfectionsLong + infection.Value == infection.Key[0].Population) 
+                continue;
             if (infection.Key[0].InfectionsLong + infection.Value > infection.Key[0].Population)
                 AddInfection(infection.Key[0], InfectionType.Interstate, infection.Key[1], infection.Key[0].Population - infection.Key[0].InfectionsLong);
             else 
@@ -160,7 +162,7 @@ public class InfectionGeneration : MonoBehaviour
     {
         if (infectionType == InfectionType.Local)
         {
-            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, InfectionStatus.Active, false);
+            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, null, null, null, InfectionStatus.Active, false);
             if (infection == null)
             {
                 infection = new Infection { Date = DataManager.Instance.GameDate, Amount = infections, InfectionStatus = InfectionStatus.Active};
@@ -175,7 +177,7 @@ public class InfectionGeneration : MonoBehaviour
         }
         if (infectionType == InfectionType.Interstate)
         {
-            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, InfectionStatus.Active, false);
+            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, null, null, null, InfectionStatus.Active, false);
             if (infection == null)
             {
                 infection = new Infection { Date = DataManager.Instance.GameDate, Amount = infections, InfectionStatus = InfectionStatus.Active};
@@ -190,7 +192,7 @@ public class InfectionGeneration : MonoBehaviour
         }
         if (infectionType == InfectionType.Global)
         {
-            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, InfectionStatus.Active, false);
+            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, null, null, null, InfectionStatus.Active, false);
             if (infection == null)
             {
                 infection = new Infection { Date = DataManager.Instance.GameDate, Amount = infections, InfectionStatus = InfectionStatus.Active};

@@ -7,6 +7,9 @@ namespace InfectionModule
     public class Infection
     {
         [field: SerializeField] public TimeModule.Date Date { get; set; }
+        [field: SerializeField] public TimeModule.Date InHospitalDate {get; set;}
+        [field: SerializeField] public TimeModule.Date RecoveryDate {get; set;}
+        [field: SerializeField] public TimeModule.Date DeceasedDate {get; set;}
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
         [field: SerializeField] public bool HasSpread {get; set;}
@@ -15,14 +18,14 @@ namespace InfectionModule
             if there is, return the instance, 
             else, return null
         */
-        public static Infection FindExistingInfection(State state, TimeModule.Date date, InfectionStatus infectionStatus, bool hasSpread)
+        public static Infection FindExistingInfection(State state, TimeModule.Date date,TimeModule.Date inHospitalDate, TimeModule.Date recovredDate, TimeModule.Date deceasedDate, InfectionStatus infectionStatus, bool hasSpread)
         {
             Infection findResult = null;
             if (infectionStatus == InfectionStatus.Active)
             {
                 foreach (Infection infection in state.ActiveInfections)
                 {
-                    if (date == infection.Date && hasSpread == infection.HasSpread)
+                    if (date == infection.Date && inHospitalDate == infection.InHospitalDate && recovredDate == infection.RecoveryDate && deceasedDate == infection.DeceasedDate && hasSpread == infection.HasSpread)
                     {
                         findResult = infection;
                         break;
@@ -33,7 +36,7 @@ namespace InfectionModule
             {
                 foreach (Infection infection in state.InHospital)
                 {
-                    if (date == infection.Date && hasSpread == infection.HasSpread)
+                    if (date == infection.Date && inHospitalDate == infection.InHospitalDate && recovredDate == infection.RecoveryDate && deceasedDate == infection.DeceasedDate && hasSpread == infection.HasSpread)
                     {
                         findResult = infection;
                         break;
@@ -44,7 +47,7 @@ namespace InfectionModule
             {
                 foreach (Infection infection in state.Recovered)
                 {
-                    if (date == infection.Date && hasSpread == infection.HasSpread)
+                    if (date == infection.Date && inHospitalDate == infection.InHospitalDate && recovredDate == infection.RecoveryDate && deceasedDate == infection.DeceasedDate && hasSpread == infection.HasSpread)
                     {
                         findResult = infection;
                         break;
@@ -58,6 +61,9 @@ namespace InfectionModule
     public struct InfectionStruct
     {
         [field: SerializeField] public TimeModule.Date Date { get; set; }
+        [field: SerializeField] public TimeModule.Date InHospitalDate {get; set;}
+        [field: SerializeField] public TimeModule.Date RecoveryDate {get; set;}
+        [field: SerializeField] public TimeModule.Date DeceasedDate {get; set;}
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
         [field: SerializeField] public bool HasSpread {get; set;}
@@ -66,6 +72,9 @@ namespace InfectionModule
             return new Infection
             {
                 Date = infectionStruct.Date, 
+                InHospitalDate = infectionStruct.InHospitalDate,
+                RecoveryDate = infectionStruct.RecoveryDate,
+                DeceasedDate = infectionStruct.DeceasedDate,
                 InfectionStatus = infectionStruct.InfectionStatus, 
                 Amount = infectionStruct.Amount,
                 HasSpread = infectionStruct.HasSpread

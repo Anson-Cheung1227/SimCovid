@@ -26,10 +26,10 @@ public class RecoveryGeneration : MonoBehaviour
             {
                 int generatedAmount = (int)(infection.Amount * DataManager.Instance.RecoveryRate);
                 if (generatedAmount < 1) continue;
-                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, InfectionStatus.Recovered, infection.HasSpread);
+                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, infection.InHospitalDate, DataManager.Instance.GameDate, null,InfectionStatus.Recovered, infection.HasSpread);
                 if (findResult == null)
                 {
-                    findResult = new Infection{Date = infection.Date, InfectionStatus = InfectionStatus.Recovered, Amount = generatedAmount, HasSpread = infection.HasSpread};
+                    findResult = new Infection{Date = infection.Date, InHospitalDate = infection.InHospitalDate, RecoveryDate = DataManager.Instance.GameDate, InfectionStatus = InfectionStatus.Recovered, Amount = generatedAmount, HasSpread = infection.HasSpread};
                     stateController.State.Recovered.Add(findResult);
                     stateController.State.Infections.Add(findResult);
                 }
