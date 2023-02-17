@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class UIManager : MonoBehaviour
 {
     #region TimeUI
-    private string _timeTextContent; 
     [SerializeField] private TextMeshProUGUI _timeText;
     [SerializeField] private TextMeshProUGUI _dateText; 
     #endregion TimeUI
@@ -54,27 +53,8 @@ public class UIManager : MonoBehaviour
     }
     private void UpdateTimeUI()
     {
-        _timeTextContent = string.Empty;
-        if (DataManager.Instance.GameTime.Hour < 10) //two digits
-        {
-            _timeTextContent += $"0{(int)DataManager.Instance.GameTime.Hour}";
-        }
-        else
-        {
-            _timeTextContent += (int)DataManager.Instance.GameTime.Hour; 
-        }
-        _timeTextContent += ":";
-        if (DataManager.Instance.GameTime.Minute < 10)
-        {
-            _timeTextContent += $"0{(int)DataManager.Instance.GameTime.Minute}";
-        }
-        else
-        {
-            _timeTextContent += (int)DataManager.Instance.GameTime.Minute; 
-        }
-        _timeText.text = _timeTextContent;
-        //Date UI:
-        _dateText.text = (string)DataManager.Instance.GameDate;
+        _timeText.text = DataManager.Instance.GameDateTime.ToString("HH:mm");
+        _dateText.text = DataManager.Instance.GameDateTime.ToString("yyyy.MM.dd");
     }
     private void SetActiveStateDetailPanel(bool active)
     {
@@ -171,5 +151,9 @@ public class UIManager : MonoBehaviour
         else if (number >= 1000000 || number <= -100000) return $"{Math.Round((decimal)number/1000000, decimals: 3)}M";
         else if (number >= 1000 || number <= -1000) return $"{Math.Round((decimal)number/1000, decimals: 3)}K";
         else return $"{Math.Round(number, decimals: 3)}";
+    }
+    public void OnMandatoryMaskButtonClick()
+    {
+        DataManager.Instance.SelectedState.MandatoryMask = !DataManager.Instance.SelectedState.MandatoryMask;
     }
 }

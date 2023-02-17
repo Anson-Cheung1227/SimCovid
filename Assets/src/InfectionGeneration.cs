@@ -162,10 +162,10 @@ public class InfectionGeneration : MonoBehaviour
     {
         if (infectionType == InfectionType.Local)
         {
-            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, null, null, null, InfectionStatus.Active, false);
+            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDateTime, null, null, null, InfectionStatus.Active, false);
             if (infection == null)
             {
-                infection = new Infection { Date = DataManager.Instance.GameDate, Amount = infections, InfectionStatus = InfectionStatus.Active};
+                infection = new Infection { Date = DataManager.Instance.GameDateTime, Amount = infections, InfectionStatus = InfectionStatus.Active};
                 state.Infections.Add(infection);
                 state.ActiveInfections.Add(infection);
             }
@@ -177,10 +177,10 @@ public class InfectionGeneration : MonoBehaviour
         }
         if (infectionType == InfectionType.Interstate)
         {
-            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, null, null, null, InfectionStatus.Active, false);
+            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDateTime, null, null, null, InfectionStatus.Active, false);
             if (infection == null)
             {
-                infection = new Infection { Date = DataManager.Instance.GameDate, Amount = infections, InfectionStatus = InfectionStatus.Active};
+                infection = new Infection { Date = DataManager.Instance.GameDateTime, Amount = infections, InfectionStatus = InfectionStatus.Active};
                 state.Infections.Add(infection);
                 state.ActiveInfections.Add(infection);
             }
@@ -192,10 +192,10 @@ public class InfectionGeneration : MonoBehaviour
         }
         if (infectionType == InfectionType.Global)
         {
-            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDate, null, null, null, InfectionStatus.Active, false);
+            Infection infection = Infection.FindExistingInfection(state, DataManager.Instance.GameDateTime, null, null, null, InfectionStatus.Active, false);
             if (infection == null)
             {
-                infection = new Infection { Date = DataManager.Instance.GameDate, Amount = infections, InfectionStatus = InfectionStatus.Active};
+                infection = new Infection { Date = DataManager.Instance.GameDateTime, Amount = infections, InfectionStatus = InfectionStatus.Active};
                 state.Infections.Add(infection);
                 state.ActiveInfections.Add(infection);
             }

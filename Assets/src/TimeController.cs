@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,11 +10,12 @@ public class TimeController : MonoBehaviour
     [SerializeField] public UnityEvent GenerateRecovery;
     [SerializeField] public UnityEvent GenerateDeath;
     [SerializeField] public UnityEvent UpdateMorale;
+    private DateTime _lastUpdateDateTime;
     //public Property to control the speed of time;
     public int GameSpeed { get; private set; }
     private void Start()
     {
-       
+       _lastUpdateDateTime = DataManager.Instance.GameDateTime;
     }
 
     private void Update()
@@ -27,17 +27,15 @@ public class TimeController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) GameSpeed = 3; //1 second (in real life) = 4 hour (in game time)
         if (Input.GetKeyDown(KeyCode.Alpha4)) GameSpeed = 4; //1 second (in real life) = 8 hour (in game time)
         //Change the Game Speed;
-        DataManager.Instance.GameTime += new TimeModule.Time(0, _changeMinutes[GameSpeed] * Time.deltaTime, 0);
-        if (DataManager.Instance.GameTime.Hour >= 24)
+        DataManager.Instance.GameDateTime = DataManager.Instance.GameDateTime.AddMinutes(_changeMinutes[GameSpeed] * Time.deltaTime);
+        if (DataManager.Instance.GameDateTime.Date != _lastUpdateDateTime.Date)
         {
             GenerateInfections.Invoke();
             GenerateInHospital.Invoke();
             GenerateRecovery.Invoke();
             GenerateDeath.Invoke();
             UpdateMorale.Invoke();
-            //Generate Infections
-            DataManager.Instance.GameTime.Hour = 0;
-            DataManager.Instance.GameDate += new TimeModule.Date(0, 0, 1);
+            _lastUpdateDateTime = DataManager.Instance.GameDateTime;
         }
     }
 }

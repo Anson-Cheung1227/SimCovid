@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 namespace InfectionModule
 {
@@ -6,10 +7,10 @@ namespace InfectionModule
     [System.Serializable]
     public class Infection
     {
-        [field: SerializeField] public TimeModule.Date Date { get; set; }
-        [field: SerializeField] public TimeModule.Date InHospitalDate {get; set;}
-        [field: SerializeField] public TimeModule.Date RecoveryDate {get; set;}
-        [field: SerializeField] public TimeModule.Date DeceasedDate {get; set;}
+        [field: SerializeField] public DateTime Date { get; set; }
+        [field: SerializeField] public DateTime InHospitalDate {get; set;}
+        [field: SerializeField] public DateTime RecoveryDate {get; set;}
+        [field: SerializeField] public DateTime DeceasedDate {get; set;}
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
         [field: SerializeField] public bool HasSpread {get; set;}
@@ -18,7 +19,7 @@ namespace InfectionModule
             if there is, return the instance, 
             else, return null
         */
-        public static Infection FindExistingInfection(State state, TimeModule.Date date,TimeModule.Date inHospitalDate, TimeModule.Date recovredDate, TimeModule.Date deceasedDate, InfectionStatus infectionStatus, bool hasSpread)
+        public static Infection FindExistingInfection(State state, Nullable<DateTime> date,Nullable<DateTime> inHospitalDate, Nullable<DateTime> recovredDate, Nullable<DateTime> deceasedDate, InfectionStatus infectionStatus, bool hasSpread)
         {
             Infection findResult = null;
             if (infectionStatus == InfectionStatus.Active)
@@ -60,10 +61,10 @@ namespace InfectionModule
     [System.Serializable]
     public struct InfectionStruct
     {
-        [field: SerializeField] public TimeModule.Date Date { get; set; }
-        [field: SerializeField] public TimeModule.Date InHospitalDate {get; set;}
-        [field: SerializeField] public TimeModule.Date RecoveryDate {get; set;}
-        [field: SerializeField] public TimeModule.Date DeceasedDate {get; set;}
+        [field: SerializeField] public DateTime Date { get; set; }
+        [field: SerializeField] public DateTime InHospitalDate {get; set;}
+        [field: SerializeField] public DateTime RecoveryDate {get; set;}
+        [field: SerializeField] public DateTime DeceasedDate {get; set;}
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
         [field: SerializeField] public bool HasSpread {get; set;}

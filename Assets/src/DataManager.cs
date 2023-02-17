@@ -1,10 +1,10 @@
 using UnityEngine;
+using System;
 
 public class DataManager : MonoBehaviour 
 {
     public static DataManager Instance; 
-    public TimeModule.Time GameTime;
-    public TimeModule.Date GameDate;
+    public DateTime GameDateTime;
     public bool ActiveStateDetailsPanel;
     public State HoveringState;
     public State SelectedState;
@@ -17,8 +17,7 @@ public class DataManager : MonoBehaviour
     }
     void Start()
     {
-        GameTime = new TimeModule.Time(0,0,0);
-        GameDate = new TimeModule.Date(2019, 12, 1);
+        GameDateTime = new DateTime(2019,12,1,1,1,1);
         SelectedState = null;
         RecoveryRate = _globalStatsSO.RecoveryRate;
         DeathRate = _globalStatsSO.DeathRate;
