@@ -8,7 +8,7 @@ public class MoraleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameEventManager.Instance.OnUpdateMorale += UpdateMorale;
     }
 
     // Update is called once per frame

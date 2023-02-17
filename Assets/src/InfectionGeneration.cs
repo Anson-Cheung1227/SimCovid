@@ -15,7 +15,7 @@ public class InfectionGeneration : MonoBehaviour
     private List<Airport> _allStateAirports = new List<Airport>();
     private void Start()
     {
-       
+        GameEventManager.Instance.OnGenerateInfection += GenerateInfection;
     }
 
     // Update is called once per frame

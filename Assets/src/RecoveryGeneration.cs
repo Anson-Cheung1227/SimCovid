@@ -9,7 +9,7 @@ public class RecoveryGeneration : MonoBehaviour
     [SerializeField] private List<StateController> _allStates;
     void Start()
     {
-        
+        GameEventManager.Instance.OnGenerateRecovery += GenerateRecovery;
     }
 
     // Update is called once per frame

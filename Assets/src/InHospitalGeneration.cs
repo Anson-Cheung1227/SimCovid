@@ -11,7 +11,7 @@ public class InHospitalGeneration : MonoBehaviour
     static readonly ProfilerMarker s_GenerateInHospitalMarker = new ProfilerMarker("GenerateInHospital");
     private void Start() 
     {
-        
+        GameEventManager.Instance.OnGenerateInHospital += GenerateInHospital;
     }
     private void Update() 
     {

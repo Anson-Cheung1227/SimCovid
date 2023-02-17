@@ -9,7 +9,7 @@ public class DeathGeneration : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameEventManager.Instance.OnGenerateDeath += GenerateDeath;
     }
 
     // Update is called once per frame
