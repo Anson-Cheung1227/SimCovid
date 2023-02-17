@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
     }
     public void LoadLevel(CoreGameSO coreGameSO)
     {
-        foreach (SceneAsset sceneAsset in coreGameSO.SceneList)
+        foreach (SceneEnum sceneEnum in coreGameSO.SceneList)
         {
-            SceneManager.LoadSceneAsync(sceneAsset.name, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync((int)sceneEnum, LoadSceneMode.Additive);
         }
     }
 }
