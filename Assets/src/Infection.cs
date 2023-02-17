@@ -8,9 +8,9 @@ namespace InfectionModule
     public class Infection
     {
         [field: SerializeField] public DateTime Date { get; set; }
-        [field: SerializeField] public DateTime InHospitalDate {get; set;}
-        [field: SerializeField] public DateTime RecoveryDate {get; set;}
-        [field: SerializeField] public DateTime DeceasedDate {get; set;}
+        [field: SerializeField] public Nullable<DateTime> InHospitalDate {get; set;}
+        [field: SerializeField] public Nullable<DateTime> RecoveryDate {get; set;}
+        [field: SerializeField] public Nullable<DateTime> DeceasedDate {get; set;}
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
         [field: SerializeField] public bool HasSpread {get; set;}
