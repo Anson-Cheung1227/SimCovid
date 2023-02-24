@@ -5,6 +5,7 @@ using UnityEngine;
 public class StatesMouseDetection : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private DataManager _dataManager;
     [SerializeField] private StateColorSO _stateColorSORef; 
     [SerializeField] private SpriteRenderer _spriteRenderer; 
     [SerializeField] private StateController _stateController; 
@@ -17,28 +18,28 @@ public class StatesMouseDetection : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (DataManager.Instance.SelectedState == _stateController.State) _spriteRenderer.color = _stateColorSORef.SelectedColor;
+        if (_dataManager.SelectedState == _stateController.State) _spriteRenderer.color = _stateColorSORef.SelectedColor;
         else
         {
-            if (DataManager.Instance.HoveringState == _stateController.State) _spriteRenderer.color = _stateColorSORef.HoveringColor;
+            if (_dataManager.HoveringState == _stateController.State) _spriteRenderer.color = _stateColorSORef.HoveringColor;
             else _spriteRenderer.color = _stateColorSORef.OriginalColor;
         }
     }
     private void OnMouseOver() 
     {
         if (_cameraController.IsPointerOverUI()) return;
-        DataManager.Instance.HoveringState = _stateController.State;
-        TooltipSystem.Show("", DataManager.Instance.HoveringState.Name);
+        _dataManager.HoveringState = _stateController.State;
+        TooltipSystem.Show("", _dataManager.HoveringState.Name);
     }
     private void OnMouseExit() 
     {
-        DataManager.Instance.HoveringState = null;
+        _dataManager.HoveringState = null;
         TooltipSystem.Hide();
     }
     private void OnMouseDown() 
     {
         if (_cameraController.IsPointerOverUI()) return;
-        DataManager.Instance.SelectedState = _stateController.State;
-        DataManager.Instance.ActiveStateDetailsPanel = true;
+        _dataManager.SelectedState = _stateController.State;
+        _dataManager.ActiveStateDetailsPanel = true;
     }
 }

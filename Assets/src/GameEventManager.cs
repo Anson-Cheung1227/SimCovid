@@ -7,12 +7,12 @@ public class GameEventManager : MonoBehaviour
 {
     public static GameEventManager Instance;
     public event Action OnDateChange;
-    public event Action OnGenerateInfection; 
-    public event Action OnGenerateInHospital;
-    public event Action OnGenerateRecovery;
-    public event Action OnGenerateDeath;
+    public event Action<DataManager> OnGenerateInfection; 
+    public event Action<DataManager> OnGenerateInHospital;
+    public event Action<DataManager> OnGenerateRecovery;
+    public event Action<DataManager> OnGenerateDeath;
     public event Action OnUpdateMorale; 
-    public event Action OnUpdateUI;
+    public event Action<DataManager> OnUpdateUI;
     private void Awake() 
     {
         Instance = this;    
@@ -24,32 +24,32 @@ public class GameEventManager : MonoBehaviour
             OnDateChange();
         }
     }
-    public void InvokeOnGenerateInfection()
+    public void InvokeOnGenerateInfection(DataManager dataManager)
     {
         if (OnGenerateInfection != null)
         {
-            OnGenerateInfection();   
+            OnGenerateInfection(dataManager);   
         }
     }
-    public void InvokeOnGenerateInHospital()
+    public void InvokeOnGenerateInHospital(DataManager dataManager)
     {
         if (OnGenerateInHospital != null)
         {
-            OnGenerateInHospital();   
+            OnGenerateInHospital(dataManager);   
         }
     }
-    public void InvokeOnGenerateRecovery()
+    public void InvokeOnGenerateRecovery(DataManager dataManager)
     {
         if (OnGenerateRecovery != null)
         {
-            OnGenerateRecovery();   
+            OnGenerateRecovery(dataManager);   
         }
     }
-    public void InvokeOnGenerateDeath()
+    public void InvokeOnGenerateDeath(DataManager dataManager)
     {
         if (OnGenerateDeath != null)
         {
-            OnGenerateDeath();
+            OnGenerateDeath(dataManager);
         }
     }
     public void InvokeOnUpdateMorale()
@@ -59,11 +59,11 @@ public class GameEventManager : MonoBehaviour
             OnUpdateMorale();
         }
     }
-    public void InvokeOnUpdateUI()
+    public void InvokeOnUpdateUI(DataManager dataManager)
     {
         if (OnUpdateUI != null)
         {
-            OnUpdateUI();
+            OnUpdateUI(dataManager);
         }
     }
 }

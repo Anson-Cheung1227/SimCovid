@@ -17,21 +17,21 @@ public class RecoveryGeneration : MonoBehaviour
     {
         
     }
-    public void GenerateRecovery()
+    public void GenerateRecovery(DataManager dataManager)
     {
         Infection findResult;
         foreach (StateController stateController in _allStates)
         {
             foreach (Infection infection in stateController.State.InHospital)
             {
-                int daysSinceInHospital = (int)((DataManager.Instance.GameDateTime.Date - infection.Date.Date).TotalDays);
+                int daysSinceInHospital = (int)((dataManager.GameDateTime.Date - infection.Date.Date).TotalDays);
                 if (daysSinceInHospital < 14) continue;
-                int generatedAmount = (int)(infection.Amount * DataManager.Instance.RecoveryRate);
+                int generatedAmount = (int)(infection.Amount * dataManager.RecoveryRate);
                 if (generatedAmount < 1) continue;
-                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, infection.InHospitalDate, DataManager.Instance.GameDateTime, null,InfectionStatus.Recovered, infection.HasSpread);
+                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, infection.InHospitalDate, dataManager.GameDateTime, null,InfectionStatus.Recovered, infection.HasSpread);
                 if (findResult == null)
                 {
-                    findResult = new Infection{Date = infection.Date, InHospitalDate = infection.InHospitalDate, RecoveryDate = DataManager.Instance.GameDateTime, InfectionStatus = InfectionStatus.Recovered, Amount = generatedAmount, HasSpread = infection.HasSpread};
+                    findResult = new Infection{Date = infection.Date, InHospitalDate = infection.InHospitalDate, RecoveryDate = dataManager.GameDateTime, InfectionStatus = InfectionStatus.Recovered, Amount = generatedAmount, HasSpread = infection.HasSpread};
                     stateController.State.Recovered.Add(findResult);
                     stateController.State.Infections.Add(findResult);
                 }
