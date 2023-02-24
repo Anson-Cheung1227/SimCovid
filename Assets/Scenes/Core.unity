@@ -281,10 +281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 28561234}
   _stateController: {fileID: 28561237}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &28561237
 MonoBehaviour:
@@ -318,6 +318,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 7a2bb2b2cdd04b842a98e11570284659, type: 2}
 --- !u!1 &40562368
 GameObject:
@@ -496,10 +497,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 40562370}
   _stateController: {fileID: 40562373}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &40562373
 MonoBehaviour:
@@ -533,6 +534,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: fe57f28d4c9ad6f4a8b7b6cfdb1e71a2, type: 2}
 --- !u!1 &43084971
 GameObject:
@@ -670,10 +672,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 43084973}
   _stateController: {fileID: 43084976}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &43084976
 MonoBehaviour:
@@ -707,6 +709,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: eb4a233c0ef5b8f45b7bf468b9cfe339, type: 2}
 --- !u!1 &56196216
 GameObject:
@@ -792,10 +795,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 56196218}
   _stateController: {fileID: 56196227}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!60 &56196226
 PolygonCollider2D:
@@ -945,6 +948,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 055aeb28681c31a43afc89e05374efb3, type: 2}
 --- !u!224 &56196228
 RectTransform:
@@ -1127,10 +1131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 61898037}
   _stateController: {fileID: 61898040}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &61898040
 MonoBehaviour:
@@ -1164,6 +1168,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 1bdd8ad81193df54da9e16fb2380fe7e, type: 2}
 --- !u!1 &104589839
 GameObject:
@@ -1264,10 +1269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 104589841}
   _stateController: {fileID: 104589844}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!60 &104589843
 PolygonCollider2D:
@@ -1362,6 +1367,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 7e270dee4f292394a8ef87676cb19986, type: 2}
 --- !u!1 &106624258
 GameObject:
@@ -1462,10 +1468,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 106624260}
   _stateController: {fileID: 106624263}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!60 &106624262
 PolygonCollider2D:
@@ -1530,6 +1536,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 9f3227e3d9249d247b092321f60ce9a7, type: 2}
 --- !u!1 &115176027
 GameObject:
@@ -1670,10 +1677,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 115176029}
   _stateController: {fileID: 115176032}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &115176032
 MonoBehaviour:
@@ -1707,6 +1714,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 1220499c03fec2b41b50d77128881656, type: 2}
 --- !u!1 &143515516
 GameObject:
@@ -1858,10 +1866,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 143515518}
   _stateController: {fileID: 143515521}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &143515521
 MonoBehaviour:
@@ -1895,6 +1903,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 371cacfd3ccecd74d84e1952e478c3ed, type: 2}
 --- !u!1 &163029536
 GameObject:
@@ -2182,10 +2191,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 284993127}
   _stateController: {fileID: 284993130}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &284993130
 MonoBehaviour:
@@ -2219,6 +2228,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: e0e578ef53ff2234d9322df48ea4435e, type: 2}
 --- !u!1 &300236511
 GameObject:
@@ -2365,10 +2375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 300236513}
   _stateController: {fileID: 300236516}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &300236516
 MonoBehaviour:
@@ -2402,6 +2412,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 981688c57f498c94b92d8350611062e9, type: 2}
 --- !u!1 &377486454
 GameObject:
@@ -2534,10 +2545,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 377486456}
   _stateController: {fileID: 377486459}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &377486459
 MonoBehaviour:
@@ -2571,6 +2582,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 6507a5c0cf8e06e4fa77e4004786395a, type: 2}
 --- !u!1 &404477645
 GameObject:
@@ -2805,10 +2817,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 421480644}
   _stateController: {fileID: 421480647}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &421480647
 MonoBehaviour:
@@ -2842,6 +2854,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: aed94432a35239e4886051b6cbb751d8, type: 2}
 --- !u!1 &440040493
 GameObject:
@@ -2942,10 +2955,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 440040495}
   _stateController: {fileID: 440040498}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!60 &440040497
 PolygonCollider2D:
@@ -3060,6 +3073,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 4e85a16a49e13c54dba7d285a058c213, type: 2}
 --- !u!1 &475811159
 GameObject:
@@ -3220,10 +3234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 475811161}
   _stateController: {fileID: 475811164}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &475811164
 MonoBehaviour:
@@ -3257,6 +3271,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: b13728cc7e595ca4c85cb64280dab0b6, type: 2}
 --- !u!1 &481936926
 GameObject:
@@ -3388,10 +3403,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 481936928}
   _stateController: {fileID: 481936931}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &481936931
 MonoBehaviour:
@@ -3425,6 +3440,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 782197b6379f4454e901be4bcd608b18, type: 2}
 --- !u!1 &519420028
 GameObject:
@@ -3453,7 +3469,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3660,10 +3676,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 548886980}
   _stateController: {fileID: 548886983}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!60 &548886982
 PolygonCollider2D:
@@ -3762,6 +3778,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 7dbbe4a8711afe748aaa7e048f02d7c9, type: 2}
 --- !u!1 &590137207
 GameObject:
@@ -3907,10 +3924,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 590137209}
   _stateController: {fileID: 590137212}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &590137212
 MonoBehaviour:
@@ -3944,6 +3961,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 0a9661f19b3ec144cb6b130b628dc475, type: 2}
 --- !u!1 &619394800
 GameObject:
@@ -4199,10 +4217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 657724717}
   _stateController: {fileID: 657724720}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &657724720
 MonoBehaviour:
@@ -4236,6 +4254,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 1cbcbf984d7b29a4c8f8eec568485f99, type: 2}
 --- !u!1 &685905915
 GameObject:
@@ -4491,10 +4510,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 702137947}
   _stateController: {fileID: 702137950}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &702137950
 MonoBehaviour:
@@ -4528,6 +4547,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 28561dfa8ee4f184099527fe4772303b, type: 2}
 --- !u!1 &715033710
 GameObject:
@@ -4682,10 +4702,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 715033712}
   _stateController: {fileID: 715033715}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &715033715
 MonoBehaviour:
@@ -4719,6 +4739,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 3a3be105724747e4da3ad38415dce28e, type: 2}
 --- !u!1 &765957091
 GameObject:
@@ -4851,10 +4872,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 765957093}
   _stateController: {fileID: 765957096}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &765957096
 MonoBehaviour:
@@ -4888,6 +4909,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: c6663b12cde51ef4dbf9f7099469f6bd, type: 2}
 --- !u!1 &781570889
 GameObject:
@@ -4988,10 +5010,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 781570891}
   _stateController: {fileID: 781570898}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!60 &781570897
 PolygonCollider2D:
@@ -5061,6 +5083,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 9e416d2d2d844814e8e82c8c8a6636ea, type: 2}
 --- !u!1 &789268835
 GameObject:
@@ -5204,10 +5227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 789268837}
   _stateController: {fileID: 789268840}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &789268840
 MonoBehaviour:
@@ -5241,6 +5264,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: adc2a9ad53fe3214ba879ca59823b005, type: 2}
 --- !u!1 &844739857
 GameObject:
@@ -5505,10 +5529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 976656507}
   _stateController: {fileID: 976656513}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!60 &976656512
 PolygonCollider2D:
@@ -5581,6 +5605,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: c5cf6a370958c1b429ede0246dda6aa3, type: 2}
 --- !u!1 &1015820010
 GameObject:
@@ -5731,10 +5756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1015820012}
   _stateController: {fileID: 1015820015}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1015820015
 MonoBehaviour:
@@ -5768,6 +5793,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: b47bf2c8d24a0ee459a0a371efcb5e21, type: 2}
 --- !u!1 &1047963545
 GameObject:
@@ -5930,10 +5956,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1047963547}
   _stateController: {fileID: 1047963550}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1047963550
 MonoBehaviour:
@@ -5967,6 +5993,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 054be7843cb311140aa7ef303cc36f1d, type: 2}
 --- !u!1 &1077834741
 GameObject:
@@ -6128,10 +6155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1077834743}
   _stateController: {fileID: 1077834746}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1077834746
 MonoBehaviour:
@@ -6165,6 +6192,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 9fcbdbbdf97caaa42a6da21b00edabc4, type: 2}
 --- !u!1 &1100452136
 GameObject:
@@ -6307,10 +6335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c962851d7ecf1048a1e134248cb2751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameDate:
-    <Day>k__BackingField: 0
-    <Month>k__BackingField: 0
-    <Year>k__BackingField: 0
   ActiveStateDetailsPanel: 0
   HoveringState:
     <Name>k__BackingField: 
@@ -6332,6 +6356,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   SelectedState:
     <Name>k__BackingField: 
     <Population>k__BackingField: 0
@@ -6352,6 +6377,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   RecoveryRate: 0
   DeathRate: 0
   _globalStatsSO: {fileID: 11400000, guid: f331e0e275205fb428867313557bb607, type: 2}
@@ -6495,10 +6521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1133022659}
   _stateController: {fileID: 1133022662}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1133022662
 MonoBehaviour:
@@ -6532,6 +6558,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 4b1aa04f860def24e8445be4f074c19d, type: 2}
 --- !u!1 &1136002606
 GameObject:
@@ -6673,10 +6700,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1136002608}
   _stateController: {fileID: 1136002611}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1136002611
 MonoBehaviour:
@@ -6710,6 +6737,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 6ee31de59438a5f45a0d34cdb2f2bbd8, type: 2}
 --- !u!1 &1168963962
 GameObject:
@@ -6860,10 +6888,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1168963964}
   _stateController: {fileID: 1168963967}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1168963967
 MonoBehaviour:
@@ -6897,6 +6925,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: e60598ef5f17a4a448af1c0a7a135610, type: 2}
 --- !u!1 &1203479650
 GameObject:
@@ -7031,10 +7060,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1203479652}
   _stateController: {fileID: 1203479655}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1203479655
 MonoBehaviour:
@@ -7068,6 +7097,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 4d30b3d3df240c04d8e48284bd1ba855, type: 2}
 --- !u!1 &1288773759
 GameObject:
@@ -7216,10 +7246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1288773761}
   _stateController: {fileID: 1288773764}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1288773764
 MonoBehaviour:
@@ -7253,6 +7283,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: d130fdba35e8b774394eb4636f1892fc, type: 2}
 --- !u!1 &1293599946
 GameObject:
@@ -7400,10 +7431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1293599948}
   _stateController: {fileID: 1293599951}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1293599951
 MonoBehaviour:
@@ -7437,6 +7468,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: c43d9b4b29e0a5e4b8b255e039120ec2, type: 2}
 --- !u!1 &1330219553
 GameObject:
@@ -7583,10 +7615,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1330219555}
   _stateController: {fileID: 1330219558}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1330219558
 MonoBehaviour:
@@ -7620,6 +7652,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: b32283c16841b744abf46d719e5b031e, type: 2}
 --- !u!1 &1338908325
 GameObject:
@@ -7752,10 +7785,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1338908327}
   _stateController: {fileID: 1338908330}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1338908330
 MonoBehaviour:
@@ -7789,6 +7822,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 5d311b7bcbe8cbb4ea331d48d09c580a, type: 2}
 --- !u!1 &1388076216
 GameObject:
@@ -7939,10 +7973,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1388076218}
   _stateController: {fileID: 1388076221}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1388076221
 MonoBehaviour:
@@ -7976,6 +8010,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 7c8af6ae4b408664d89e799960de5199, type: 2}
 --- !u!1 &1401400336
 GameObject:
@@ -8144,10 +8179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1401400338}
   _stateController: {fileID: 1401400341}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1401400341
 MonoBehaviour:
@@ -8181,6 +8216,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 0b722a80e89a2224199df77f62be5e90, type: 2}
 --- !u!1 &1407064765
 GameObject:
@@ -8328,10 +8364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1407064767}
   _stateController: {fileID: 1407064770}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1407064770
 MonoBehaviour:
@@ -8365,6 +8401,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 2e8f577bfe3bf384692474c976fcfca6, type: 2}
 --- !u!1 &1415731498
 GameObject:
@@ -8395,87 +8432,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc37f347fda5da46a4851a8df9f6145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _changeMinutes:
   - 0
   - 60
   - 120
   - 240
   - 480
-  GenerateInfections:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1100452137}
-        m_TargetAssemblyTypeName: InfectionGeneration, Assembly-CSharp
-        m_MethodName: GenerateInfection
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  GenerateInHospital:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 274221012}
-        m_TargetAssemblyTypeName: InHospitalGeneration, Assembly-CSharp
-        m_MethodName: GenerateInHospital
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  GenerateRecovery:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1646990191}
-        m_TargetAssemblyTypeName: RecoveryGeneration, Assembly-CSharp
-        m_MethodName: GenerateRecovery
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  GenerateDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 404477647}
-        m_TargetAssemblyTypeName: DeathGeneration, Assembly-CSharp
-        m_MethodName: GenerateDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  UpdateMorale:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1808651304}
-        m_TargetAssemblyTypeName: MoraleManager, Assembly-CSharp
-        m_MethodName: UpdateMorale
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &1415731500
 Transform:
   m_ObjectHideFlags: 0
@@ -8655,10 +8618,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1416510360}
   _stateController: {fileID: 1416510363}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1416510363
 MonoBehaviour:
@@ -8692,6 +8655,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 99bbc1608ceeaa14980008948363d8fc, type: 2}
 --- !u!1 &1531288292
 GameObject:
@@ -8841,10 +8805,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1531288294}
   _stateController: {fileID: 1531288297}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1531288297
 MonoBehaviour:
@@ -8878,6 +8842,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: ebbea48af645b224ea5e76833ed2d49b, type: 2}
 --- !u!1 &1576779663
 GameObject:
@@ -9013,10 +8978,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1576779665}
   _stateController: {fileID: 1576779668}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1576779668
 MonoBehaviour:
@@ -9050,6 +9015,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: d19b129e161d842409f5f4c557506f6e, type: 2}
 --- !u!1 &1596692495
 GameObject:
@@ -9188,10 +9154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1596692497}
   _stateController: {fileID: 1596692500}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1596692500
 MonoBehaviour:
@@ -9225,6 +9191,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 46015b28b7e22594785eeb803a48e462, type: 2}
 --- !u!1 &1632358236
 GameObject:
@@ -9367,10 +9334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1632358238}
   _stateController: {fileID: 1632358241}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1632358241
 MonoBehaviour:
@@ -9404,6 +9371,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 427260cbf2334e344bce452d6de5ea79, type: 2}
 --- !u!1 &1633166229
 GameObject:
@@ -9712,10 +9680,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1651879348}
   _stateController: {fileID: 1651879351}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1651879351
 MonoBehaviour:
@@ -9749,6 +9717,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 4f74824714091234ea87de5cb1211151, type: 2}
 --- !u!1 &1711540352
 GameObject:
@@ -9887,10 +9856,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1711540354}
   _stateController: {fileID: 1711540357}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1711540357
 MonoBehaviour:
@@ -9924,6 +9893,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 5a69f9eb2f6f1e74a9683b2def1bd366, type: 2}
 --- !u!1 &1808651302
 GameObject:
@@ -10159,10 +10129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1864937350}
   _stateController: {fileID: 1864937353}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1864937353
 MonoBehaviour:
@@ -10196,6 +10166,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: c64ff4fb039bb1f498db59f6f17840e7, type: 2}
 --- !u!1 &1868534586
 GameObject:
@@ -10329,10 +10300,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1868534588}
   _stateController: {fileID: 1868534591}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1868534591
 MonoBehaviour:
@@ -10366,6 +10337,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 3e1cd51b9b2edf749b891b13f3dc89ce, type: 2}
 --- !u!1 &1935662433
 GameObject:
@@ -10507,10 +10479,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 1935662435}
   _stateController: {fileID: 1935662438}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &1935662438
 MonoBehaviour:
@@ -10544,6 +10516,7 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 6612fb006f5fcb14db50d4cd8ff70184, type: 2}
 --- !u!1 &2008096683
 GameObject:
@@ -10687,10 +10660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16faeb9af4134449bc92e8de73fe6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _stateColorSORef: {fileID: 11400000, guid: 4fb5b548d9d636d48a9d04db0293850c, type: 2}
   _spriteRenderer: {fileID: 2008096685}
   _stateController: {fileID: 2008096688}
-  _stateDetailsUIPanel: {fileID: 0}
   _cameraController: {fileID: 865658787}
 --- !u!114 &2008096688
 MonoBehaviour:
@@ -10724,4 +10697,5 @@ MonoBehaviour:
     <LocalLockdown>k__BackingField: 0
     <InterstateLockdown>k__BackingField: 0
     <GlobalLockdown>k__BackingField: 0
+    <MandatoryMask>k__BackingField: 0
   _stateTemplate: {fileID: 11400000, guid: 990257306f3f6034189d8660eff9fa4a, type: 2}

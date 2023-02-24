@@ -17,7 +17,7 @@ public class InHospitalGeneration : MonoBehaviour
     {
         
     }
-    public void GenerateInHospital()
+    public void GenerateInHospital(DataManager dataManager)
     {
         s_GenerateInHospitalMarker.Begin();
         foreach (StateController stateController in _allStates)
@@ -26,15 +26,15 @@ public class InHospitalGeneration : MonoBehaviour
             if (stateController.State.Infections.Count == 0) continue;
             foreach (Infection infection in stateController.State.ActiveInfections)
             {
-                int daysSinceInfection = (int)((DataManager.Instance.GameDateTime.Date - infection.Date.Date).TotalDays);
+                int daysSinceInfection = (int)((dataManager.GameDateTime.Date - infection.Date.Date).TotalDays);
                 if (daysSinceInfection <= 1) continue;
                 int chance = 100 - 100 / daysSinceInfection;
                 long generateAmount = (int)(infection.Amount * chance/100);
                 if (generateAmount < 1) continue;
-                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, DataManager.Instance.GameDateTime, null, null,InfectionStatus.InHospital, infection.HasSpread);
+                findResult = Infection.FindExistingInfection(stateController.State, infection.Date, dataManager.GameDateTime, null, null,InfectionStatus.InHospital, infection.HasSpread);
                 if (findResult == null)
                 {
-                    findResult = new Infection { Date = infection.Date, InHospitalDate = DataManager.Instance.GameDateTime, InfectionStatus = InfectionStatus.InHospital, Amount = generateAmount, HasSpread = infection.HasSpread};
+                    findResult = new Infection { Date = infection.Date, InHospitalDate = dataManager.GameDateTime, InfectionStatus = InfectionStatus.InHospital, Amount = generateAmount, HasSpread = infection.HasSpread};
                     stateController.State.InHospital.Add(findResult);
                     stateController.State.Infections.Add(findResult);
                 }

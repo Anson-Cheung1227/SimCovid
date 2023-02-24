@@ -3,7 +3,6 @@ using System;
 
 public class DataManager : MonoBehaviour 
 {
-    public static DataManager Instance; 
     public DateTime GameDateTime = new DateTime(2019, 12, 1, 0, 0, 0);
     public bool ActiveStateDetailsPanel;
     public State HoveringState;
@@ -13,7 +12,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] private GlobalStatsSO _globalStatsSO;  
     private void Awake() 
     {
-        Instance = this;     
+        
     }
     void Start()
     {
