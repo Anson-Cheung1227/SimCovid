@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] SceneIdHolder _sceneIdHolder;
     #region TimeUI
     [SerializeField] private TextMeshProUGUI _timeText;
     [SerializeField] private TextMeshProUGUI _dateText; 
@@ -31,9 +32,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Color _activeColor;
     [SerializeField] private Color _inactiveColor;
     #endregion LockdownUI
+    [SerializeField] private ObjectPooler _pooler;
     private void Start()
     {
         GameEventManager.Instance.OnUpdateUI += UpdateUI;
+        GameEventManager.Instance.OnActiveModalWindow += OnActiveModalWindow;
     }
 
     // Update is called once per frame
@@ -54,6 +57,12 @@ public class UIManager : MonoBehaviour
                 dataManager.SelectedState = null;
             }
         }
+    }
+    private void OnActiveModalWindow(string header, Sprite image, string contentText, string buttonText)
+    {
+        GameObject modalWindow = _pooler.Pools[0].GetPooledObject();
+        modalWindow.GetComponent<ModalWindowController>().SetContent(header, image, contentText, buttonText);
+        modalWindow.SetActive(true);
     }
     private void UpdateTimeUI(DataManager dataManager)
     {
@@ -128,6 +137,10 @@ public class UIManager : MonoBehaviour
         //Hide the UI by setting it to inactive
         _lockdownPanel.SetActive(!_lockdownPanel.activeInHierarchy);
     }
+    public void OnLockdownUpdateButtonClickUnityEvent(GameObject button)
+    {
+        OnLockdownUpdateButtonClick(GameManager.Instance.DataManagerList[_sceneIdHolder.Id], button);
+    }
     public void OnLockdownUpdateButtonClick(DataManager dataManager, GameObject button)
     {
         if (button == _localLockdownButton) dataManager.SelectedState.LocalLockdown = !dataManager.SelectedState.LocalLockdown;
@@ -159,5 +172,9 @@ public class UIManager : MonoBehaviour
     public void OnMandatoryMaskButtonClick(DataManager dataManager)
     {
         dataManager.SelectedState.MandatoryMask = !dataManager.SelectedState.MandatoryMask;
+    }
+    public void OnModalWindowButtonClick(GameObject modalWindow)
+    {
+        modalWindow.SetActive(false);
     }
 }

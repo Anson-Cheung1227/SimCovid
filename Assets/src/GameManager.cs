@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image _progressBar;
     private List<AsyncOperation> _scenesLoading = new List<AsyncOperation>();
     private float totalProgress = 0;
+    private int currentSceneId = 0;
     public static GameManager Instance; 
+    public List<DataManager> DataManagerList;
     // Start is called before the first frame update
     private void Awake() 
     {
@@ -45,7 +47,6 @@ public class GameManager : MonoBehaviour
             foreach (AsyncOperation asyncOperation in _scenesLoading)
             {
                 totalProgress += asyncOperation.progress;
-                Debug.Log(asyncOperation.progress);
             }
             totalProgress = (totalProgress / _scenesLoading.Count);
             _progressBar.fillAmount = totalProgress;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
         }
+        GameEventManager.Instance.InvokeOnSetSceneId(currentSceneId);
         totalProgress = 1;
         _progressBar.fillAmount = totalProgress;
         _loadingScreen.SetActive(false);

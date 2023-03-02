@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameEventManager : MonoBehaviour
 {
     public static GameEventManager Instance;
+    public event Action<int> OnSetSceneId;
     public event Action OnDateChange;
     public event Action<DataManager> OnGenerateInfection; 
     public event Action<DataManager> OnGenerateInHospital;
@@ -13,9 +14,17 @@ public class GameEventManager : MonoBehaviour
     public event Action<DataManager> OnGenerateDeath;
     public event Action OnUpdateMorale; 
     public event Action<DataManager> OnUpdateUI;
+    public event Action<string, Sprite, string, string> OnActiveModalWindow;
     private void Awake() 
     {
         Instance = this;    
+    }
+    public void InvokeOnSetSceneId(int id)
+    {
+        if (OnSetSceneId != null) 
+        {
+            OnSetSceneId(id);
+        }
     }
     public void InvokeOnDateChange()
     {
@@ -64,6 +73,13 @@ public class GameEventManager : MonoBehaviour
         if (OnUpdateUI != null)
         {
             OnUpdateUI(dataManager);
+        }
+    }
+    public void InvokeOnActiveModalWindow(string header, Sprite image, string contentString, string buttonText)
+    {
+        if (OnActiveModalWindow != null)
+        {
+            OnActiveModalWindow(header, image, contentString, buttonText);
         }
     }
 }
