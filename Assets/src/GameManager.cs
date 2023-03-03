@@ -59,5 +59,6 @@ public class GameManager : MonoBehaviour
         totalProgress = 1;
         _progressBar.fillAmount = totalProgress;
         _loadingScreen.SetActive(false);
+        ++currentSceneId;
     }
 }

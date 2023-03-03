@@ -12,10 +12,11 @@ public class DataManager : MonoBehaviour
     [SerializeField] private GlobalStatsSO _globalStatsSO;  
     private void Awake() 
     {
-        GameManager.Instance.DataManagerList.Add(this);
+        
     }
     void Start()
     {
+        GameManager.Instance.DataManagerList.Add(this);
         RecoveryRate = _globalStatsSO.RecoveryRate;
         DeathRate = _globalStatsSO.DeathRate;
     }  

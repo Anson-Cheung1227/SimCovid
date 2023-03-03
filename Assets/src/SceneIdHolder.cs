@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SceneIdHolder : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int Id;
+    // Start is called before the first frame update
     void Start()
     {
         GameEventManager.Instance.OnSetSceneId += SetSceneId;
@@ -18,6 +18,7 @@ public class SceneIdHolder : MonoBehaviour
     }
     private void SetSceneId(int id)
     {
+        GameEventManager.Instance.OnSetSceneId -= SetSceneId;
         Id = id;
     }
 }
