@@ -33,6 +33,7 @@ public class TimeController : MonoBehaviour
             GameEventManager.Instance.InvokeOnGenerateDeath(_dataManager);
             GameEventManager.Instance.InvokeOnUpdateMorale();
             _lastUpdateDateTime = _dataManager.GameDateTime;
+            GameEventManager.Instance.InvokeOnActiveModalWindow("Day has changed!", null, null, "Cool!");
         }
         GameEventManager.Instance.InvokeOnUpdateUI(_dataManager);
     }
