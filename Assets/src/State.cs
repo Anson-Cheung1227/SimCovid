@@ -29,5 +29,6 @@ public class State
     [field: SerializeField] public bool LocalLockdown {get; set;}
     [field: SerializeField] public bool InterstateLockdown {get; set;} 
     [field: SerializeField] public bool GlobalLockdown {get; set;}
+    [field: SerializeField] public bool MandatoryMask {get; set;}
     #endregion Policies
 }
