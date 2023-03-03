@@ -38,6 +38,7 @@ public class Tooltip : MonoBehaviour
             else _tooltipLayout.enabled = false;
         }
         Vector2 position = Input.mousePosition;
+        GetComponent<RectTransform>().pivot = new Vector2(position.x/Screen.width, position.y/Screen.height);
         GetComponent<RectTransform>().anchoredPosition = position;
     }
 }
