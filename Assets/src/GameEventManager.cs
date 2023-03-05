@@ -15,6 +15,7 @@ public class GameEventManager : MonoBehaviour
     public event Action OnUpdateMorale; 
     public event Action<DataManager> OnUpdateUI;
     public event Action<string, Sprite, string, string> OnActiveModalWindow;
+    public event Action<List<State>> OnUpdateAllStateDetailsTable;
     private void Awake() 
     {
         Instance = this;    
@@ -80,6 +81,13 @@ public class GameEventManager : MonoBehaviour
         if (OnActiveModalWindow != null)
         {
             OnActiveModalWindow(header, image, contentString, buttonText);
+        }
+    }
+    public void InvokeOnUpdateAllStateDetailsTable(List<State> stateList)
+    {
+        if (OnUpdateAllStateDetailsTable != null)
+        {
+            OnUpdateAllStateDetailsTable(stateList);
         }
     }
 }

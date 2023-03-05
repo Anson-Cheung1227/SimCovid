@@ -190,7 +190,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -598,6 +598,7 @@ GameObject:
   - component: {fileID: 6547639890908824262}
   - component: {fileID: 6547639890908824257}
   - component: {fileID: 4553617754870503292}
+  - component: {fileID: 920478684572876751}
   m_Layer: 5
   m_Name: StateColumn
   m_TagString: Untagged
@@ -691,6 +692,24 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &920478684572876751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547639890908824259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f70bf108d74f34ab1fd6aa4d5ffa09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 0
+  _stateNameText: {fileID: 1423341780355895382}
+  _stateInfectionsText: {fileID: 3808763273503019961}
+  _stateInHospitalText: {fileID: 6641818585089865494}
+  _stateRecoveredText: {fileID: 1578736064093851780}
+  _stateDeceasedText: {fileID: 7990006069355603842}
 --- !u!1 &7425660011862486302
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +812,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -964,7 +983,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

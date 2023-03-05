@@ -34,13 +34,14 @@ public class UIManager : MonoBehaviour
     #endregion LockdownUI
     [SerializeField] private ObjectPooler _pooler;
     #region AllStatesDetailsUI
-    [SerializeField] private List<TextMeshProUGUI> _allStateDetailsStateTextList;
-    [SerializeField] private List<TextMeshProUGUI> _allStateDetailsInfectionsTextList;
+    [SerializeField] private GameObject _stateColumn;
+    [SerializeField] private GameObject _stateColumnParent;
     #endregion
     private void Start()
     {
         GameEventManager.Instance.OnUpdateUI += UpdateUI;
         GameEventManager.Instance.OnActiveModalWindow += OnActiveModalWindow;
+        InstantiateStateColumn(_stateColumn, _stateColumnParent, 50);
     }
 
     // Update is called once per frame
@@ -61,7 +62,7 @@ public class UIManager : MonoBehaviour
                 dataManager.SelectedState = null;
             }
         }
-        UpdateAllStatesDetailsPanel(GameManager.Instance.DataManagerList[_sceneIdHolder.Id].StateInfectionsTable, _allStateDetailsStateTextList, _allStateDetailsInfectionsTextList);
+        GameEventManager.Instance.InvokeOnUpdateAllStateDetailsTable(dataManager.StateInfectionsTable);
     }
     private void OnActiveModalWindow(string header, Sprite image, string contentText, string buttonText)
     {
@@ -160,7 +161,7 @@ public class UIManager : MonoBehaviour
     {
         dataManager.ActiveStateDetailsPanel = false;
     }
-    private string LongToString(long number)
+    public static string LongToString(long number)
     {
         /*
             1,000,000,000,000 = 1 Trillion (T)
@@ -182,14 +183,14 @@ public class UIManager : MonoBehaviour
     {
         modalWindow.SetActive(false);
     }
-    private void UpdateAllStatesDetailsPanel(List<State> stateTable, List<TextMeshProUGUI> stateTextList, List<TextMeshProUGUI> valueTextList)
+    private void InstantiateStateColumn(GameObject column,GameObject parent, int amount)
     {
-        int element = 0;
-        foreach (State state in stateTable)
+        GameObject target;
+        for (int i = 0; i < amount; ++i)
         {
-            stateTextList[element].text = state.Name;
-            valueTextList[element].text = LongToString(state.InfectionsLong);
-            ++element;
+            target = Instantiate(column);
+            target.transform.SetParent(parent.transform, false);
+            target.GetComponent<AllStateDetailsTableTextController>().Id = i;
         }
     }
 }
