@@ -33,6 +33,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Color _inactiveColor;
     #endregion LockdownUI
     [SerializeField] private ObjectPooler _pooler;
+    #region AllStatesDetailsUI
+    [SerializeField] private List<TextMeshProUGUI> _allStateDetailsStateTextList;
+    [SerializeField] private List<TextMeshProUGUI> _allStateDetailsInfectionsTextList;
+    #endregion
     private void Start()
     {
         GameEventManager.Instance.OnUpdateUI += UpdateUI;
@@ -57,6 +61,7 @@ public class UIManager : MonoBehaviour
                 dataManager.SelectedState = null;
             }
         }
+        UpdateAllStatesDetailsPanel(GameManager.Instance.DataManagerList[_sceneIdHolder.Id].StateInfectionsTable, _allStateDetailsStateTextList, _allStateDetailsInfectionsTextList); ;
     }
     private void OnActiveModalWindow(string header, Sprite image, string contentText, string buttonText)
     {
@@ -176,5 +181,15 @@ public class UIManager : MonoBehaviour
     public void OnModalWindowButtonClick(GameObject modalWindow)
     {
         modalWindow.SetActive(false);
+    }
+    private void UpdateAllStatesDetailsPanel(List<State> stateTable, List<TextMeshProUGUI> stateTextList, List<TextMeshProUGUI> valueTextList)
+    {
+        int element = 0;
+        foreach (State state in stateTable)
+        {
+            stateTextList[element].text = state.Name;
+            valueTextList[element].text = LongToString(state.InfectionsLong);
+            ++element;
+        }
     }
 }

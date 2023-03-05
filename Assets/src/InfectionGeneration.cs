@@ -9,7 +9,6 @@ public class InfectionGeneration : MonoBehaviour
     //All References to StateControllers for State data
     [SerializeField] private List<StateController> _allState = new List<StateController>();
     //For Unity Editor use only
-    [SerializeField] private List<State> _stateInfections = new List<State>();
     [SerializeField] private long totalInfection = 0;
     //Reference to all Airports
     private List<Airport> _allStateAirports = new List<Airport>();
@@ -21,22 +20,7 @@ public class InfectionGeneration : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        _stateInfections.Clear();
-        foreach (StateController stateController in _allState)
-        {
-            if (_stateInfections.Count == 0) 
-            {
-                _stateInfections.Add(stateController.State);
-                continue;
-            }
-            int iter = _stateInfections.Count;
-            while (stateController.State.Infections.Count > _stateInfections[iter - 1].Infections.Count)
-            {
-                iter--;
-                if (iter == 0) break;
-            }
-            _stateInfections.Insert(iter, stateController.State);
-        }
+        
     }
     //UnityEvent for adding infections, called once per day
     public void GenerateInfection(DataManager dataManager)
@@ -44,6 +28,7 @@ public class InfectionGeneration : MonoBehaviour
         GenerateInfectionsLocal(dataManager);
         GenerateInfectionsInterstate(dataManager);
         GenerateInfectionsGlobal(dataManager);
+        UpdateInfectionList(dataManager.StateInfectionsTable);
     }
     public void GenerateInfectionsLocal(DataManager dataManager)
     {
@@ -208,5 +193,24 @@ public class InfectionGeneration : MonoBehaviour
         state.InfectionsLong += infections;
         state.ActiveInfectionsLong += infections;
         totalInfection += infections; 
+    }
+    private void UpdateInfectionList(List<State> list)
+    {
+        list.Clear();
+        foreach (StateController stateController in _allState)
+        {
+            if (list.Count == 0)
+            {
+                list.Add(stateController.State);
+                continue;
+            }
+            int iter = list.Count;
+            while (stateController.State.InfectionsLong > list[iter - 1].InfectionsLong)
+            {
+                iter--;
+                if (iter == 0) break;
+            }
+            list.Insert(iter, stateController.State);
+        }
     }
 }

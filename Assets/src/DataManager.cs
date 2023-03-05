@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class DataManager : MonoBehaviour 
 {
@@ -9,14 +10,14 @@ public class DataManager : MonoBehaviour
     public State SelectedState = null;
     public float RecoveryRate;
     public float DeathRate;
-    [SerializeField] private GlobalStatsSO _globalStatsSO;  
+    [SerializeField] private GlobalStatsSO _globalStatsSO;
+    public List<State> StateInfectionsTable = new List<State>();
     private void Awake() 
     {
-        
+        GameManager.Instance.DataManagerList.Add(this);
     }
     void Start()
     {
-        GameManager.Instance.DataManagerList.Add(this);
         RecoveryRate = _globalStatsSO.RecoveryRate;
         DeathRate = _globalStatsSO.DeathRate;
     }  
