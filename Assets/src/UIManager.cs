@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
                 dataManager.SelectedState = null;
             }
         }
-        UpdateAllStatesDetailsPanel(GameManager.Instance.DataManagerList[_sceneIdHolder.Id].StateInfectionsTable, _allStateDetailsStateTextList, _allStateDetailsInfectionsTextList); ;
+        UpdateAllStatesDetailsPanel(GameManager.Instance.DataManagerList[_sceneIdHolder.Id].StateInfectionsTable, _allStateDetailsStateTextList, _allStateDetailsInfectionsTextList);
     }
     private void OnActiveModalWindow(string header, Sprite image, string contentText, string buttonText)
     {

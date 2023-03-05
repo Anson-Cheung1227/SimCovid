@@ -6223,6 +6223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4555a2aa50aea0a499a582793ca3d1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataManager: {fileID: 1105444543}
   _allState:
   - {fileID: 56196227}
   - {fileID: 976656513}
@@ -6274,7 +6275,6 @@ MonoBehaviour:
   - {fileID: 789268840}
   - {fileID: 1531288297}
   - {fileID: 1632358241}
-  _stateInfections: []
   totalInfection: 0
 --- !u!4 &1100452138
 Transform:
@@ -6381,6 +6381,7 @@ MonoBehaviour:
   RecoveryRate: 0
   DeathRate: 0
   _globalStatsSO: {fileID: 11400000, guid: f331e0e275205fb428867313557bb607, type: 2}
+  StateInfectionsTable: []
 --- !u!1 &1133022657
 GameObject:
   m_ObjectHideFlags: 0

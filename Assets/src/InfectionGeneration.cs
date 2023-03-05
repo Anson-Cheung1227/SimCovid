@@ -5,7 +5,7 @@ using InfectionModule;
 public class InfectionGeneration : MonoBehaviour
 {
     //Start is called before the first frame update
-    //Reference to TimeController
+    [SerializeField] private DataManager _dataManager;
     //All References to StateControllers for State data
     [SerializeField] private List<StateController> _allState = new List<StateController>();
     //For Unity Editor use only
@@ -15,6 +15,7 @@ public class InfectionGeneration : MonoBehaviour
     private void Start()
     {
         GameEventManager.Instance.OnGenerateInfection += GenerateInfection;
+        UpdateInfectionList(_dataManager.StateInfectionsTable);
     }
 
     // Update is called once per frame

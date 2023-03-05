@@ -4,7 +4,7 @@ public class StateController : MonoBehaviour
 {
     [field: SerializeField] public State State {get; private set;}
     [SerializeField] private StateSO _stateTemplate; 
-    void Start()
+    void Awake()
     {
         State = (State)_stateTemplate;
         foreach (Airport airport in State.AirportList)
