@@ -6,7 +6,7 @@ public class SceneIdHolder : MonoBehaviour
 {
     public int Id;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GameEventManager.Instance.OnSetSceneId += SetSceneId;
     }
