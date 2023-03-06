@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
     #endregion LockdownUI
     [SerializeField] private ObjectPooler _pooler;
     #region AllStatesDetailsUI
+    [SerializeField] private GameObject _allStatesDetailsUIPanel;
     [SerializeField] private GameObject _stateColumn;
     [SerializeField] private GameObject _stateColumnParent;
     #endregion
@@ -62,7 +63,7 @@ public class UIManager : MonoBehaviour
                 dataManager.SelectedState = null;
             }
         }
-        GameEventManager.Instance.InvokeOnUpdateAllStateDetailsTable(dataManager.StateInfectionsTable);
+        if (_allStatesDetailsUIPanel.activeInHierarchy) GameEventManager.Instance.InvokeOnUpdateAllStateDetailsTable(dataManager.StateInfectionsTable);
     }
     private void OnActiveModalWindow(string header, Sprite image, string contentText, string buttonText)
     {
@@ -182,6 +183,10 @@ public class UIManager : MonoBehaviour
     public void OnModalWindowButtonClick(GameObject modalWindow)
     {
         modalWindow.SetActive(false);
+    }
+    public void OnAllStatesDetailsPanelButtonClick()
+    {
+        _allStatesDetailsUIPanel.SetActive(!_allStatesDetailsUIPanel.activeInHierarchy);
     }
     private void InstantiateStateColumn(GameObject column,GameObject parent, int amount)
     {
