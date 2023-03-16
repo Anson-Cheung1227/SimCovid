@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+/// <summary>
+/// Avoid build errors
+/// </summary>
 public class UnityErrorAvoid : MonoBehaviour
 {
-    // Start is called before the first frame update
     private void Awake() 
     {
         DebugManager.instance.enableRuntimeUI = false;   

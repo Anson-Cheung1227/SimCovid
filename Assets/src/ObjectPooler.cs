@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Pool class for handling Pools
+/// </summary>
 [System.Serializable]
 public class Pool
 {
@@ -23,6 +24,9 @@ public class Pool
         return null;
     }
 }
+/// <summary>
+/// Object Pooler to handle initialization of Pools
+/// </summary>
 public class ObjectPooler : MonoBehaviour
 {
     public List<Pool> Pools;
@@ -62,16 +66,5 @@ public class ObjectPooler : MonoBehaviour
         };
         GameManager.Instance.LoadOperations.Add(initialization);
         initialization.Load();
-    }
-    // Use this for initialization
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

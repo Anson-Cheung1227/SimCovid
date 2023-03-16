@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles all tooltips
+/// </summary>
 public class TooltipSystem : MonoBehaviour
 {
     public static TooltipSystem Instance;

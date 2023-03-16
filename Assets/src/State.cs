@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections.Generic;
 using InfectionModule;
 
+/// <summary>
+/// Represents a state
+/// </summary>
 [System.Serializable]
 public class State
 {

@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using InfectionModule;
 
+/// <summary>
+/// Scriptable Object for State (Template)
+/// This file is read-only and should be loaded on Start
+/// </summary>
 [CreateAssetMenu(fileName = "New State", menuName = "Scriptable Objects/State")]
 public class StateSO : ScriptableObject 
 {

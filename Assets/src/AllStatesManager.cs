@@ -1,8 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
+/// <summary>
+/// Handles all states 
+/// </summary>
 public class AllStatesManager : MonoBehaviour
 {
     private class Initialization : ILoadOperation
@@ -45,11 +47,5 @@ public class AllStatesManager : MonoBehaviour
         };
         GameManager.Instance.LoadOperations.Add(initialization);
         initialization.Load();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

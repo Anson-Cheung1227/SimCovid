@@ -2,6 +2,9 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Handles all Data in the game
+/// </summary>
 public class DataManager : MonoBehaviour 
 {
     public DateTime GameDateTime = new DateTime(2019, 12, 1, 0, 0, 0);

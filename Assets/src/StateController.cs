@@ -1,9 +1,14 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
+/// <summary>
+/// StateContoller for every State
+/// </summary>
 public class StateController : MonoBehaviour 
 {
+    /// <summary>
+    /// For Initialization use, implements ILoadOperation, call Load() to start loading
+    /// </summary>
     private class Initialization : ILoadOperation
     {
         public string Name { get; set; }
@@ -34,6 +39,10 @@ public class StateController : MonoBehaviour
         _initialization.StateTemplate = _stateTemplate;
         _initialization.Load();
     }
+    /// <summary>
+    /// Every Frame this will check if AllStatesManager is null (not initailized), if it's initialized, add Initialization class to AllStatesManager
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator AddToAllStatesManager()
     {
         while (_allStatesManager == null) yield return null;

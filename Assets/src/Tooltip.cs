@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-//[ExecuteInEditMode()]
+/// <summary>
+/// Represents a tooltip
+/// </summary>
 public class Tooltip : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _tooltipHeader;

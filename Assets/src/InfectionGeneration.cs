@@ -2,26 +2,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using InfectionModule;
 
+/// <summary>
+/// Generates Infections
+/// </summary>
 public class InfectionGeneration : MonoBehaviour
 {
-    //Start is called before the first frame update
+    //References
     [SerializeField] private DataManager _dataManager;
-    //All References to StateControllers for State data
     [SerializeField] private List<StateController> _allState = new List<StateController>();
+    private List<Airport> _allStateAirports = new List<Airport>();
     //For Unity Editor use only
     [SerializeField] private long totalInfection = 0;
-    //Reference to all Airports
-    private List<Airport> _allStateAirports = new List<Airport>();
     private void Start()
     {
         GameEventManager.Instance.OnGenerateInfection += GenerateInfection;
         UpdateInfectionList(_dataManager.StateInfectionsTable);
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
     }
     //UnityEvent for adding infections, called once per day
     public void GenerateInfection(DataManager dataManager)

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,48 +17,16 @@ public class GameManager : MonoBehaviour
     private float _sceneProgress = 0;
     private int currentSceneId = 0;
     public static GameManager Instance;
-    public List<ILoadOperation> LoadOperations;
+    public List<ILoadOperation> LoadOperations = new List<ILoadOperation>();
     public List<DataManager> DataManagerList;
-    private class Initialization : ILoadOperation
-    {
-        public string Name { get; set; }
-        public float Operations { get; set; }
-        public float DoneOperations { get; set; }
-        public MonoBehaviour Operator { get; set; }
-
-        public async void Load()
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                await Task.Delay(1000);
-                DoneOperations++;
-            }
-        }
-    }
     // Start is called before the first frame update
     private void Awake() 
     {
         Instance = this;
-        LoadOperations = new List<ILoadOperation>();
-        Initialization a = new Initialization
-        {
-            Name = "Awaiting Multiplayer Server",
-            Operations = 5,
-            DoneOperations = 0,
-            Operator = this,
-        };
-        LoadOperations.Add(a);
-        a.Load();
     }
     void Start()
     {
         LoadLevel(_coreGame);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void LoadLevel(CoreGameSO coreGameSO)
     {

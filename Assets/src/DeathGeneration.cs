@@ -1,8 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using InfectionModule;
 
+/// <summary>
+/// Handles Death Generation
+/// </summary>
 public class DeathGeneration : MonoBehaviour
 {
     [SerializeField] private List<StateController> _allStates;
@@ -10,12 +12,6 @@ public class DeathGeneration : MonoBehaviour
     void Start()
     {
         GameEventManager.Instance.OnGenerateDeath += GenerateDeath;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void GenerateDeath(DataManager dataManager)
     {

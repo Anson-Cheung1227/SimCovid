@@ -3,7 +3,9 @@ using System;
 
 namespace InfectionModule
 {
-
+    /// <summary>
+    /// Represents an Infection with amount
+    /// </summary>
     [System.Serializable]
     public class Infection
     {
@@ -13,12 +15,20 @@ namespace InfectionModule
         [field: SerializeField] public Nullable<DateTime> DeceasedDate {get; set;}
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
-        [field: SerializeField] public bool HasSpread {get; set;}
-        /*
-            This function finds if there is an existing infection with the same parameters,
-            if there is, return the instance, 
-            else, return null
-        */
+        [field: SerializeField] public bool HasSpread {get; set; }
+        /// <summary>
+        /// This function finds if there is an existing infection with the same parameters,
+        /// if there is, return the instance,
+        /// else, return null
+        /// </summary>
+        /// <param name="state">target state</param>
+        /// <param name="date">target date</param>
+        /// <param name="inHospitalDate">target inHospitalDate</param>
+        /// <param name="recovredDate">target recoveredDate</param>
+        /// <param name="deceasedDate">target deceased date</param>
+        /// <param name="infectionStatus">target infection status</param>
+        /// <param name="hasSpread">target hasSpread</param>
+        /// <returns>returns null if no copy is found, returns the Infection class if one is found</returns>
         public static Infection FindExistingInfection(State state, Nullable<DateTime> date,Nullable<DateTime> inHospitalDate, Nullable<DateTime> recovredDate, Nullable<DateTime> deceasedDate, InfectionStatus infectionStatus, bool hasSpread)
         {
             Infection findResult = null;
@@ -58,6 +68,9 @@ namespace InfectionModule
             return findResult;
         }
     }
+    /// <summary>
+    /// Infection struct
+    /// </summary>
     [System.Serializable]
     public struct InfectionStruct
     {
@@ -82,12 +95,18 @@ namespace InfectionModule
             };
         }
     }
+    /// <summary>
+    /// Represents Infection type
+    /// </summary>
     public enum InfectionType
     {
         Local,
         Interstate,
         Global,
     }
+    /// <summary>
+    /// Represents Infection Status
+    /// </summary>
     [System.Serializable]
     public enum InfectionStatus
     {

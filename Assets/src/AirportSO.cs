@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Template for Airport class, should be read-only and should be loaded on Start
+/// </summary>
 [CreateAssetMenu(fileName = "New Airport", menuName = "Scriptable Objects/Airport")]
 public class AirportSO : ScriptableObject
 {
@@ -9,6 +10,12 @@ public class AirportSO : ScriptableObject
     //Conversion
     public static explicit operator Airport(AirportSO airportSO)
     {
-        return new Airport{Name = airportSO.Airport.Name, IATACode = airportSO.Airport.IATACode, YearlyPassengers = airportSO.Airport.YearlyPassengers, CityServed = airportSO.Airport.CityServed};
+        return new Airport
+        {
+            Name = airportSO.Airport.Name, 
+            IATACode = airportSO.Airport.IATACode, 
+            YearlyPassengers = airportSO.Airport.YearlyPassengers, 
+            CityServed = airportSO.Airport.CityServed
+        };
     }
 }

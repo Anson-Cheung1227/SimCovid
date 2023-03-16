@@ -1,7 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages the morale of states
+/// </summary>
 public class MoraleManager : MonoBehaviour
 {
     [SerializeField] private List<StateController> _allStates; 
@@ -9,12 +11,6 @@ public class MoraleManager : MonoBehaviour
     void Start()
     {
         GameEventManager.Instance.OnUpdateMorale += UpdateMorale;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void UpdateMorale()
     {

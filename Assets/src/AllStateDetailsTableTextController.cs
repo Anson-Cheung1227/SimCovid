@@ -1,11 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Controller for AllStateDetailsPanel
+/// </summary>
 public class AllStateDetailsTableTextController : MonoBehaviour
 {
     public int Id;
+    // References to Panel objects
     [SerializeField] private TextMeshProUGUI _stateNameText;
     [SerializeField] private TextMeshProUGUI _stateInfectionsText;
     [SerializeField] private TextMeshProUGUI _stateInHospitalText;
@@ -14,8 +17,10 @@ public class AllStateDetailsTableTextController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameEventManager.Instance.OnUpdateAllStateDetailsTable += OnUpdateStateDetailsTable;
+        //Subscribing Handler to Event
+        GameEventManager.Instance.OnUpdateAllStatesDetailsTable += OnUpdateStateDetailsTable;
     }
+    //Handler for OnUpdateAllStatesDetailsTable
     private void OnUpdateStateDetailsTable(List<State> stateList)
     {
         _stateNameText.text = stateList[Id].Name;

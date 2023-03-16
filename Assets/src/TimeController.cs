@@ -1,7 +1,9 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
+/// <summary>
+/// Controls the time of the Game
+/// </summary>
 public class TimeController : MonoBehaviour
 {
     [SerializeField] private DataManager _dataManager;

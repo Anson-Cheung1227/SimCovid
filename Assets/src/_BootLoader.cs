@@ -10,10 +10,4 @@ public class _BootLoader : MonoBehaviour
     {
         SceneManager.LoadSceneAsync((int)SceneEnum.GlobalScene, LoadSceneMode.Additive);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

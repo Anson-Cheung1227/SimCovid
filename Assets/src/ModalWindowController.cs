@@ -4,6 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handler for ModalWindow
+/// </summary>
 public class ModalWindowController : MonoBehaviour
 {
     [SerializeField] private GameObject _modalWindow;
@@ -11,17 +14,6 @@ public class ModalWindowController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _contentText;
     [SerializeField] private TextMeshProUGUI _buttonText;
     [SerializeField] private Image _image;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void Hide()
     {
         _modalWindow.SetActive(false);
