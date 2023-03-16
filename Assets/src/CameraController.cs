@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
+/// <summary>
+/// Controls the Camera Movement
+/// </summary>
 public class CameraController : MonoBehaviour 
 {
     [SerializeField] private Camera _mainCamera;

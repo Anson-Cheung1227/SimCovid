@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Handles all UI elements
+/// </summary>
 public class UIManager : MonoBehaviour
 {
     [SerializeField] SceneIdHolder _sceneIdHolder;
@@ -43,12 +46,6 @@ public class UIManager : MonoBehaviour
         GameEventManager.Instance.OnUpdateUI += UpdateUI;
         GameEventManager.Instance.OnActiveModalWindow += OnActiveModalWindow;
         InstantiateStateColumn(_stateColumn, _stateColumnParent, 50);
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
     }
     private void UpdateUI(DataManager dataManager)
     {

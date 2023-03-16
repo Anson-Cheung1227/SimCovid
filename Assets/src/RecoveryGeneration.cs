@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using InfectionModule;
 
+/// <summary>
+/// Handles the recovery of patients
+/// </summary>
 public class RecoveryGeneration : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -10,12 +13,6 @@ public class RecoveryGeneration : MonoBehaviour
     void Start()
     {
         GameEventManager.Instance.OnGenerateRecovery += GenerateRecovery;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void GenerateRecovery(DataManager dataManager)
     {

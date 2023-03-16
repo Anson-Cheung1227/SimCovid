@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles events related to mouse on state sprite
+/// </summary>
 public class StatesMouseDetection : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -10,10 +13,6 @@ public class StatesMouseDetection : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer; 
     [SerializeField] private StateController _stateController; 
     [SerializeField] private CameraController _cameraController;
-    private void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     private void Update()

@@ -1,8 +1,11 @@
 using UnityEngine;
-using System;
 using System.Collections.Generic;
 using InfectionModule;
 using Unity.Profiling;
+
+/// <summary>
+/// Handle the transfer of patients to hospital
+/// </summary>
 public class InHospitalGeneration : MonoBehaviour 
 {
     [SerializeField] private TimeController _timeController; 
@@ -12,10 +15,6 @@ public class InHospitalGeneration : MonoBehaviour
     private void Start() 
     {
         GameEventManager.Instance.OnGenerateInHospital += GenerateInHospital;
-    }
-    private void Update() 
-    {
-        
     }
     public void GenerateInHospital(DataManager dataManager)
     {

@@ -1,7 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Pool class for handling Pools
+/// </summary>
 [System.Serializable]
 public class Pool
 {
@@ -22,29 +24,47 @@ public class Pool
         return null;
     }
 }
+/// <summary>
+/// Object Pooler to handle initialization of Pools
+/// </summary>
 public class ObjectPooler : MonoBehaviour
 {
     public List<Pool> Pools;
-    // Use this for initialization
-    void Start()
+    private class Initialization : ILoadOperation
     {
-        foreach (Pool pool in Pools)
+        public string Name { get; set; }
+        public float Operations { get; set; }
+        public float DoneOperations { get; set; }
+        public MonoBehaviour Operator { get; set ; }
+        public List<Pool> Pools; 
+        public void Load()
         {
-            for (int i = 0; i < pool.Size; i++)
+            foreach (Pool pool in Pools)
             {
-                GameObject poolObject = Instantiate(pool.Prefab);
-                poolObject.transform.SetParent(pool.Location.transform, false);
-                Vector3 position = new Vector3(0, 0, 0);
-                poolObject.GetComponent<RectTransform>().anchoredPosition = position;
-                poolObject.SetActive(false);
-                pool.PoolObjects.Add(poolObject);
+                for (int i = 0; i < pool.Size; i++)
+                {
+                    GameObject poolObject = Instantiate(pool.Prefab);
+                    poolObject.transform.SetParent(pool.Location.transform, false);
+                    Vector3 position = new Vector3(0, 0, 0);
+                    poolObject.GetComponent<RectTransform>().anchoredPosition = position;
+                    poolObject.SetActive(false);
+                    pool.PoolObjects.Add(poolObject);
+                }
+                DoneOperations++;
             }
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-
+        Initialization initialization = new Initialization
+        {
+            Name = "Generating Objects",
+            Operations = Pools.Count,
+            DoneOperations = 0,
+            Operator = this,
+            Pools = this.Pools
+        };
+        GameManager.Instance.LoadOperations.Add(initialization);
+        initialization.Load();
     }
 }

@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Represents an Airport
+/// </summary>
 [System.Serializable]
 public class Airport
 {
