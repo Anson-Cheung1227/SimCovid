@@ -43,7 +43,11 @@ Open Unity Hub, navigate to  **Open->Add Project from disk**, select the directo
 
 Wait until Unity opens the Project.
 
-A prompt should pop up asking whether you'd like to install TextMeshPro, Click **Install TMP Essentials**.
+Go to **Window->TextMeshPro->Import TMP Essentials Resources**
+
+A prompt should pop up asking which resources you'd like to import, click **All**, and **Import**
+
+Load **_boot** scene under **Assets/Scenes**.
 
 Run the Project!
 
