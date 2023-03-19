@@ -67,9 +67,9 @@ SimCovid/crashlytics-build.properties
 # Visual studio files
 *.vsconfig
 
-# Build Dll files
-/SimCovid/[Aa]ssets/[Mm]anaged
+# .user files
+/SimCovidCoreMod/**/*.user
 
 # Build Files
-/SimCovidCore/[Bb]in/
-/SimCovidCore/[Oo]bj/
+/SimCovidCoreMod/[Bb]in/
+/SimCovidCoreMod/[Oo]bj/
