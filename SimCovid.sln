@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "SimCovid\Assembly-CSharp.csproj", "{0662D2EE-CBE6-BC5F-2804-ADD49B406468}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimCovidCore", "SimCovidCore\SimCovidCore.csproj", "{9017D69C-7165-49B1-8A21-0D898030CD75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimCovidCoreMod", "SimCovidCore\SimCovidCoreMod.csproj", "{9017D69C-7165-49B1-8A21-0D898030CD75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISimCovid", "SimCovid\ISimCovid.csproj", "{E120DEB9-14DA-788F-18F1-A6D57A871447}"
 EndProject
