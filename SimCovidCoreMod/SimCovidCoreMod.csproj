@@ -34,8 +34,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ISimCovid, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ISimCovid">
       <HintPath>..\SimCovid\build\SimCovid_Data\Managed\ISimCovid.dll</HintPath>
     </Reference>
     <Reference Include="netstandard" />
