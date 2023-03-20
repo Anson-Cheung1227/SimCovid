@@ -34,6 +34,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ISimCovid, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SimCovid\build\SimCovid_Data\Managed\ISimCovid.dll</HintPath>
+    </Reference>
     <Reference Include="netstandard" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,16 +55,10 @@
     <Compile Include="CoreMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SimCovid\ISimCovid.csproj">
-      <Project>{e120deb9-14da-788f-18f1-a6d57a871447}</Project>
-      <Name>ISimCovid</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir $(SolutionDir)SimCovid\Assets\Managed\
-del $(SolutionDir)SimCovid\Assets\Managed\$(TargetFileName)
-xcopy /y "$(TargetPath)" "$(SolutionDir)SimCovid\Assets\Managed\"</PostBuildEvent>
+    <PostBuildEvent>mkdir $(SolutionDir)SimCovid\build\SimCovid_Data\Mods\$(TargetName)\
+del $(SolutionDir)SimCovid\build\SimCovid_Data\Mods\$(TargetName)\$(TargetFileName)
+xcopy /y "$(TargetPath)" "$(SolutionDir)SimCovid\build\SimCovid_Data\Mods\$(TargetName)\"</PostBuildEvent>
   </PropertyGroup>
 </Project>

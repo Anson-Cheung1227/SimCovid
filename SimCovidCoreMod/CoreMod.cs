@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ISimCovid;
+using UnityEngine;
 
-namespace SimCovidCore
+public class CoreMod : IMod
 {
-    public class CoreMod : IMod, ISpreadable
+    public string Name { get { return "SimCovid Core Mod"; } }
+    public string Description { get { return "Test Mod"; } }
+    public CoreMod()
+    { }
+    public void OnLoadMod()
     {
-        public string Name { get { return "Name"; } }
-        public string Description { get { return "Description"; } }
+        Debug.Log("Hello from " + Name);
     }
 }
