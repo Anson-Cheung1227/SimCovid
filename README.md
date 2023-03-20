@@ -27,17 +27,7 @@ The following tools are recommended, SimCovid is currently untested in any other
 
 Start by cloning the repository with `git clone https://github.com/Anson-Cheung1227/SimCovid`.
 
-<ins>2: Building the Project with Visual studio 2022</ins>
-
-Go to the root directory of this project (where you cloned this project to), open SimCovid.sln.
-
-Navigate to **Solution Explorer**.
-
-Click on **SimCovidCore** and hit **build**.
-
-**SimCovidCore.dll** should automatically be built under **SimCovid/Assets/Managed/**.
-
-<ins>3: Opening the Project with Unity</ins>
+<ins>2: Opening the Project with Unity</ins>
 
 Open Unity Hub, navigate to  **Open->Add Project from disk**, select the directory that you've cloned this project to. 
 
@@ -50,6 +40,11 @@ A prompt should pop up asking which resources you'd like to import, click **All*
 Load **_boot** scene under **Assets/Scenes**.
 
 Run the Project!
+***
+## Modding
+
+Currently, SimCovid Modding API is not fully developed yet. Once released, we'll update this so stay tuned!
+SimCovidCoreMod is just a prototype and should **NOT** be compiled.
 
 ***
 ## Contributing
