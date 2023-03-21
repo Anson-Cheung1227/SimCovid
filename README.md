@@ -6,7 +6,7 @@ SimCovid is a game that's in its early-stage of development that simulates the s
 
 ## Storyline
 
-SimeCovid is a game that sets scene in the United States of America(USA), where you are the president of USA, and you must defend your citizens from the worst crisis in mankind - Covid. 
+SimCovid is a game that sets scene in the United States of America(USA), where you are the president of USA, and you must defend your citizens from the worst crisis in mankind - Covid. 
 
 As president, you'll need to balance different aspects in the society, for example, economic and social. All actions you do, will have a cost.
 
@@ -43,7 +43,7 @@ Run the Project!
 ***
 ## Modding
 
-Currently, SimCovid Modding API is not fully developed yet. Once released, we'll update this so stay tuned!
+Currently, SimCovid Modding API is a work-in-progress and has not been fully developed yet. Once released, we'll update this so stay tuned!
 SimCovidCoreMod is just a prototype and should **NOT** be compiled.
 
 ***
