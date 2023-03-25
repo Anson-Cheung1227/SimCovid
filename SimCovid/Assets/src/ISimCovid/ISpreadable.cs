@@ -12,12 +12,13 @@ namespace ISimCovid
         public Nullable<DateTime> InHospitalDate { get; }
         public Nullable<DateTime> RecoveryDate { get; }
         public Nullable<DateTime> DeceasedDate { get; }
-        public long Amount{ get; }
+        public long Amount { get; }
         public bool HasSpread { get; }
         public void AddToInfection(long amount);
+        public void SetSpreadDate(DateTime date);
         public void SetInHospitalDate(DateTime date);
         public void SetRecoveryDate(DateTime date);
         public void SetDeceasedDate(DateTime date);
-        public ISpreadable FindExistingInfection(object list, object spreadableClass);
+        public void SetHasSpread(bool spread);
     }
 }
