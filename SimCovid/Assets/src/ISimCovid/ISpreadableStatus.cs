@@ -14,10 +14,10 @@ namespace ISimCovid
     }
     public class InfectionStatus
     {
-        public static readonly ActiveInfection ActiveInfectionStatus = new ActiveInfection();
-        public static readonly InHospitalInfection InHospitalInfectionStatus = new InHospitalInfection();
-        public static readonly RecoveredInfection RecoveredInfectionStatus = new RecoveredInfection();
-        public static readonly DeceasedInfection DeceasedInfectionStatus = new DeceasedInfection();
+        public static readonly ActiveInfection Active = new ActiveInfection();
+        public static readonly InHospitalInfection InHospital = new InHospitalInfection();
+        public static readonly RecoveredInfection Recovered = new RecoveredInfection();
+        public static readonly DeceasedInfection Deceased = new DeceasedInfection();
         public class ActiveInfection : ISpreadableStatus
         {
             public string StatusName { get { return "Active"; } }

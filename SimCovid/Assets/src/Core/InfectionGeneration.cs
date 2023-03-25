@@ -1,12 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using InfectionModule;
+using ISimCovid;
+using InfectionStatus = ISimCovid.InfectionStatus;
+using Core;
 
 /// <summary>
 /// Generates Infections
 /// </summary>
 public class InfectionGeneration : MonoBehaviour
 {
+    ActiveInfectionDataHandler activeInfectionDataHandler = new ActiveInfectionDataHandler();
     //References
     [SerializeField] private DataManager _dataManager;
     [SerializeField] private List<StateController> _allState = new List<StateController>();
