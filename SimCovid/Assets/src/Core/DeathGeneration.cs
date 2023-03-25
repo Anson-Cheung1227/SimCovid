@@ -1,3 +1,4 @@
+#if false
 using System.Collections.Generic;
 using UnityEngine;
 using InfectionModule;
@@ -42,3 +43,4 @@ public class DeathGeneration : MonoBehaviour
         }
     }
 }
+#endif

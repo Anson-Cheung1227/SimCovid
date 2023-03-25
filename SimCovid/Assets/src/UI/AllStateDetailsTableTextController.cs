@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using ISimCovid;
 
 /// <summary>
 /// Controller for AllStateDetailsPanel
@@ -24,7 +25,7 @@ public class AllStateDetailsTableTextController : MonoBehaviour
     private void OnUpdateStateDetailsTable(List<State> stateList)
     {
         _stateNameText.text = stateList[Id].Name;
-        _stateInfectionsText.text = UIManager.LongToString(stateList[Id].InfectionsLong);
+        _stateInfectionsText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetActive().GetActualInfectionsCount());
         _stateInHospitalText.text = UIManager.LongToString(stateList[Id].InHospitalLong);
         _stateRecoveredText.text = UIManager.LongToString(stateList[Id].RecoveredLong);
         _stateDeceasedText.text = UIManager.LongToString(stateList[Id].DeceasedLong);

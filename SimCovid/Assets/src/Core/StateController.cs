@@ -23,6 +23,7 @@ public class StateController : MonoBehaviour
             {
                 ((StateController)Operator).State.DailyIncomingPeople += airport.YearlyPassengers / 365;
             }
+            ((StateController)Operator).State.InfectionManager = new Core.InfectionManager();
             DoneOperations = Operations;
         }
     }

@@ -20,5 +20,9 @@ namespace ISimCovid
         public void SetRecoveryDate(DateTime date);
         public void SetDeceasedDate(DateTime date);
         public void SetHasSpread(bool spread);
+        public bool IsSameValue(ISpreadable a)
+        {
+            return Date == a.Date && InHospitalDate == a.InHospitalDate && RecoveryDate == a.RecoveryDate && DeceasedDate == a.DeceasedDate && HasSpread == a.HasSpread;
+        }
     }
 }

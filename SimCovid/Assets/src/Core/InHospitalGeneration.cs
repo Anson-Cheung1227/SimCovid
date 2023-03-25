@@ -1,3 +1,4 @@
+#if false
 using UnityEngine;
 using System.Collections.Generic;
 using InfectionModule;
@@ -49,3 +50,4 @@ public class InHospitalGeneration : MonoBehaviour
         s_GenerateInHospitalMarker.End();
     }
 }
+#endif

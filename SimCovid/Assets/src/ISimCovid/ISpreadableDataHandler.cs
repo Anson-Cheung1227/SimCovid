@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace ISimCovid
 {
-    public interface ISpreadableDataHandler
+    public interface ISpreadableDataHandler<ISpreadableTarget> where ISpreadableTarget : class , ISpreadable, new()
     {
         public long Count { get; }
-        public IEnumerable<ISpreadable> GetAll();
-        public void AddISpreadable(ISpreadable spreadable);
-        public void RemoveISpreadable(ISpreadable spreadable);
+        public IEnumerable<ISpreadableTarget> GetAll();
+        public ISpreadableTarget FindExistingInstance(ISpreadableTarget instance);
+        public void AddISpreadable(ISpreadableTarget spreadable);
+        public void RemoveISpreadable(ISpreadableTarget spreadable);
+        public long GetActualInfectionsCount();
     }
 }
