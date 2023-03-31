@@ -22,6 +22,11 @@ namespace Core
             _spreadables.Remove(spreadable);
         }
 
+        public ISpreadableTarget CreateISpreadable()
+        {
+            return new ISpreadableTarget();
+        }
+
         public IEnumerable<ISpreadableTarget> GetAll()
         {
             return _spreadables;

@@ -13,6 +13,8 @@ namespace ISimCovid
         public ISpreadableTarget FindExistingInstance(ISpreadableTarget instance);
         public void AddISpreadable(ISpreadableTarget spreadable);
         public void RemoveISpreadable(ISpreadableTarget spreadable);
+
+        public ISpreadableTarget CreateISpreadable();
         public long GetActualInfectionsCount();
     }
 }

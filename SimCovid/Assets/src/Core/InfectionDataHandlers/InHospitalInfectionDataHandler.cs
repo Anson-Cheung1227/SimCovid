@@ -26,6 +26,12 @@ namespace Core
         {
             return _spreadables;
         }
+
+        public ISpreadableTarget CreateISpreadable()
+        {
+            throw new NotImplementedException();
+        }
+
         public long GetActualInfectionsCount()
         {
             long count = 0;
