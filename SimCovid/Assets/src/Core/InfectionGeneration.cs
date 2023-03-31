@@ -13,7 +13,6 @@ public class InfectionGeneration : MonoBehaviour
     [SerializeField] private DataManager _dataManager;
     [SerializeField] private List<StateController> _allState = new List<StateController>();
     private List<State> _allStates = new List<State>();
-    private List<Airport> _allStateAirports = new List<Airport>();
     //For Unity Editor use only
     [SerializeField] private long totalInfection = 0;
     private void Start()
@@ -23,7 +22,7 @@ public class InfectionGeneration : MonoBehaviour
         {
             _allStates.Add(stateController.State);
         }
-        UpdateInfectionList(_dataManager.StateInfectionsTable);
+        UpdateInfectionList(_dataManager.StateInfectionsTable, _allStates);
     }
     //UnityEvent for adding infections, called once per day
     public void GenerateInfection(DataManager dataManager)
@@ -31,7 +30,7 @@ public class InfectionGeneration : MonoBehaviour
         GenerateAllInfectionsLocal(_allStates);
         GenerateAllInfectionsInterstate(_allStates);
         GenerateInfectionsGlobal(_allStates);
-        UpdateInfectionList(dataManager.StateInfectionsTable);
+        UpdateInfectionList(dataManager.StateInfectionsTable, _allStates);
     }
     public void GenerateAllInfectionsLocal(List<State> states)
     {
@@ -104,7 +103,6 @@ public class InfectionGeneration : MonoBehaviour
     }
     public ISpreadableDataHandler<ISpreadableTarget> DetermineStateInfectionGlobal<ISpreadableTarget>(List<ISpreadableDataHandler<ISpreadableTarget>> list) where ISpreadableTarget : class, ISpreadable, new()
     {
-        Debug.Log(list.Count);
         return list[Random.Range(0, list.Count)];
     }
     public void AddInfection<ISpreadableTarget>(ISpreadableDataHandler<ISpreadableTarget> spreadableDataHandler, ISpreadableTarget param ,long infections = 1) where ISpreadableTarget : class ,ISpreadable, new()
@@ -119,23 +117,24 @@ public class InfectionGeneration : MonoBehaviour
             foundResult.AddToInfection(infections);
         }
     }
-    private void UpdateInfectionList(List<State> list)
+    private void UpdateInfectionList(List<State> list, List<State> refState)
     {
         list.Clear();
-        foreach (StateController stateController in _allState)
+        foreach (State state in refState)
         {
             if (list.Count == 0)
             {
-                list.Add(stateController.State);
+                list.Add(state);
                 continue;
             }
+
             int iter = list.Count;
-            while (stateController.State.InfectionsLong > list[iter - 1].InfectionsLong)
+            while (state.InfectionManager.GetTotalInfections() > list[iter - 1].InfectionManager.GetTotalInfections())
             {
                 iter--;
                 if (iter == 0) break;
             }
-            list.Insert(iter, stateController.State);
+            list.Insert(iter, state);
         }
     }
 }
