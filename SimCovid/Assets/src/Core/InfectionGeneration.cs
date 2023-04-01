@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Core;
 using UnityEngine;
 using InfectionModule;
-using ISimCovid;
+using SimCovidAPI;
 using Random = UnityEngine.Random;
 
 /// <summary>
@@ -12,9 +13,12 @@ public class InfectionGeneration : MonoBehaviour
     //References
     [SerializeField] private DataManager _dataManager;
     [SerializeField] private List<StateController> _allState = new List<StateController>();
+
     private List<State> _allStates = new List<State>();
+
     //For Unity Editor use only
     [SerializeField] private long totalInfection = 0;
+
     private void Start()
     {
         GameEventManager.Instance.OnGenerateInfection += GenerateInfection;
@@ -22,17 +26,21 @@ public class InfectionGeneration : MonoBehaviour
         {
             _allStates.Add(stateController.State);
         }
+
         UpdateInfectionList(_dataManager.StateInfectionsTable, _allStates);
     }
+
     //UnityEvent for adding infections, called once per day
     public void GenerateInfection(DataManager dataManager)
     {
-        GenerateAllInfectionsLocal(_allStates);
-        GenerateAllInfectionsInterstate(_allStates);
-        GenerateInfectionsGlobal(_allStates);
+        GenerateAllInfectionsLocal<Infection>(_allStates);
+        GenerateAllInfectionsInterstate<Infection>(_allStates);
+        GenerateAllInfectionsGlobal<Infection>(_allStates);
         UpdateInfectionList(dataManager.StateInfectionsTable, _allStates);
     }
-    public void GenerateAllInfectionsLocal(List<State> states)
+
+    private void GenerateAllInfectionsLocal<TISpreadableTarget>(List<State> states)
+        where TISpreadableTarget : class, ISpreadable, new()
     {
         foreach (State state in states)
         {
@@ -42,81 +50,117 @@ public class InfectionGeneration : MonoBehaviour
             }
         }
     }
-    public void GenerateAllInfectionsInterstate(List<State> states)
+
+    private void GenerateAllInfectionsInterstate<TISpreadabeTarget>(List<State> states)
+        where TISpreadabeTarget : class, ISpreadable, new()
     {
-        List<ISpreadableDataHandler<Infection>> eligibleStates = new List<ISpreadableDataHandler<Infection>>();
+        List<ISpreadableDataHandler<TISpreadabeTarget>> eligibleStates =
+            new List<ISpreadableDataHandler<TISpreadabeTarget>>();
         foreach (State state in states)
         {
             if (!state.InterstateLockdown)
             {
-                eligibleStates.Add(state.InfectionManager.GetActive());
+                eligibleStates.Add((ISpreadableDataHandler<TISpreadabeTarget>)state.InfectionManager.GetActive());
             }
         }
+
         GenerateInfectionsInterstate(eligibleStates);
     }
-    public void GenerateInfectionsLocal<ISpreadableTarget>(ISpreadableDataHandler<ISpreadableTarget> activeSpreadableDataHandler) where ISpreadableTarget: class, ISpreadable, new()
+
+    public void GenerateInfectionsLocal<TISpreadableTarget>(
+        ISpreadableDataHandler<TISpreadableTarget> activeSpreadableDataHandler)
+        where TISpreadableTarget : class, ISpreadable, new()
     {
-        long generateAmount = activeSpreadableDataHandler.GetActualInfectionsCount();
-        ISpreadableTarget spreadableTarget = new ISpreadableTarget();
-        AddInfection(activeSpreadableDataHandler, spreadableTarget);
+        var newInfection = activeSpreadableDataHandler.CreateISpreadable();
+        newInfection.AddToInfection(activeSpreadableDataHandler.GetActualInfectionsCount());
+        AddInfection(activeSpreadableDataHandler, newInfection);
     }
-    public void GenerateInfectionsInterstate<ISpreadableTarget>(List<ISpreadableDataHandler<ISpreadableTarget>> activeSpreadableDataHandler) where ISpreadableTarget : class, ISpreadable, new()
+
+    public void GenerateInfectionsInterstate<TISpreadableTarget>(
+        List<ISpreadableDataHandler<TISpreadableTarget>> activeSpreadableDataHandler)
+        where TISpreadableTarget : class, ISpreadable, new()
     {
         /*
             We do not want new generated infections to pass on immediately, else we'll be in an infinite loop
             We will add all infections at once after the calculations
         */
-        ISpreadableDataHandler<ISpreadableTarget> target;
-        Dictionary<ISpreadableDataHandler<ISpreadableTarget>, long> delayedInfection = new Dictionary<ISpreadableDataHandler<ISpreadableTarget>, long>();
-        foreach (ISpreadableDataHandler<ISpreadableTarget> spreadableDataHandler in activeSpreadableDataHandler)
+        ISpreadableDataHandler<TISpreadableTarget> target;
+        Dictionary<ISpreadableDataHandler<TISpreadableTarget>, long> delayedInfection =
+            new Dictionary<ISpreadableDataHandler<TISpreadableTarget>, long>();
+        foreach (ISpreadableDataHandler<TISpreadableTarget> spreadableDataHandler in activeSpreadableDataHandler)
         {
             target = DetermineTargetInfectionInterstate(activeSpreadableDataHandler);
             if (delayedInfection.ContainsKey(target))
-            {
-                delayedInfection[target] += target.GetActualInfectionsCount();
-            }
+                delayedInfection[target] += spreadableDataHandler.GetActualInfectionsCount();
             else
-                delayedInfection.Add(target, target.GetActualInfectionsCount());
+                delayedInfection.Add(target, spreadableDataHandler.GetActualInfectionsCount());
         }
+
         //Loop through the delayedInfection Dictionary, and add infections
-        foreach (KeyValuePair<ISpreadableDataHandler<ISpreadableTarget>, long> infection in delayedInfection)
+        foreach (KeyValuePair<ISpreadableDataHandler<TISpreadableTarget>, long> infection in delayedInfection)
         {
-            ISpreadableTarget newInfection = new ISpreadableTarget();
+            var newInfection = infection.Key.CreateISpreadable();
+            newInfection.AddToInfection(infection.Value);
             AddInfection(infection.Key, newInfection);
         }
     }
-    public ISpreadableDataHandler<ISpreadableTarget> DetermineTargetInfectionInterstate<ISpreadableTarget>(List<ISpreadableDataHandler<ISpreadableTarget>> list) where ISpreadableTarget : class, ISpreadable, new()
+
+    public ISpreadableDataHandler<ISpreadableTarget> DetermineTargetInfectionInterstate<ISpreadableTarget>(
+        List<ISpreadableDataHandler<ISpreadableTarget>> list) where ISpreadableTarget : class, ISpreadable, new()
     {
         //TODO: Take in how likely the people are gonna travel
         return list[Random.Range(0, list.Count)];
     }
-    public void GenerateInfectionsGlobal(List<State> states)
+
+    private void GenerateAllInfectionsGlobal<TISpreadableTarget>(List<State> stateList)
+        where TISpreadableTarget : class, ISpreadable, new()
     {
-        List<ISpreadableDataHandler<Infection>> list = new List<ISpreadableDataHandler<Infection>>();
-        foreach (State state in states)
+        List<ISpreadableDataHandler<TISpreadableTarget>> spreadableDataHandlers =
+            new List<ISpreadableDataHandler<TISpreadableTarget>>();
+        foreach (State state in stateList)
         {
-            list.Add(state.InfectionManager.GetActive());
+            spreadableDataHandlers.Add((ISpreadableDataHandler<TISpreadableTarget>)state.InfectionManager.GetActive());
         }
-        ISpreadableDataHandler<Infection> target = DetermineStateInfectionGlobal(list);
-        Infection infection = new Infection();
+
+        GenerateInfectionsGlobal(spreadableDataHandlers);
+    }
+
+    public void GenerateInfectionsGlobal<TISpreadableTarget>(List<ISpreadableDataHandler<TISpreadableTarget>> list)
+        where TISpreadableTarget : class, ISpreadable, new()
+    {
+        ISpreadableDataHandler<TISpreadableTarget> target = DetermineStateInfectionGlobal(list);
+        TISpreadableTarget infection = new TISpreadableTarget();
+        infection.AddToInfection(1);
         AddInfection(target, infection);
     }
-    public ISpreadableDataHandler<ISpreadableTarget> DetermineStateInfectionGlobal<ISpreadableTarget>(List<ISpreadableDataHandler<ISpreadableTarget>> list) where ISpreadableTarget : class, ISpreadable, new()
+
+    public ISpreadableDataHandler<ISpreadableTarget> DetermineStateInfectionGlobal<ISpreadableTarget>(
+        List<ISpreadableDataHandler<ISpreadableTarget>> list) where ISpreadableTarget : class, ISpreadable, new()
     {
         return list[Random.Range(0, list.Count)];
     }
-    public void AddInfection<ISpreadableTarget>(ISpreadableDataHandler<ISpreadableTarget> spreadableDataHandler, ISpreadableTarget param ,long infections = 1) where ISpreadableTarget : class ,ISpreadable, new()
+
+    public void AddInfection<ISpreadableTarget>(ISpreadableDataHandler<ISpreadableTarget> spreadableDataHandler,
+        ISpreadableTarget param) where ISpreadableTarget : class, ISpreadable, new()
     {
-        ISpreadable foundResult = spreadableDataHandler.FindExistingInstance(param);
+        if (param.Amount < 1) return;
+        ISpreadableTarget foundResult = spreadableDataHandler.FindExistingInstance(param);
         if (foundResult == null)
         {
-            spreadableDataHandler.AddISpreadable(param);
+            bool success = spreadableDataHandler.AddISpreadable(param);
+            if (!success)
+            {
+                param.AddToInfection(param.Amount * -1); //Reset
+                //TODO: Reset
+                spreadableDataHandler.AddISpreadable(param);
+            }
         }
         else
         {
-            foundResult.AddToInfection(infections);
+            foundResult.AddToInfection(param.Amount);
         }
     }
+
     private void UpdateInfectionList(List<State> list, List<State> refState)
     {
         list.Clear();
@@ -134,6 +178,7 @@ public class InfectionGeneration : MonoBehaviour
                 iter--;
                 if (iter == 0) break;
             }
+
             list.Insert(iter, state);
         }
     }

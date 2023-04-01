@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using ISimCovid;
+using SimCovidAPI;
 
 namespace InfectionModule
 {
