@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using InfectionModule;
-using ISimCovid;
+using SimCovidAPI;
 
 namespace Core
 {
@@ -11,6 +11,15 @@ namespace Core
         private DeceasedInfectionDataHandler<Infection> _deceased;
         private InHospitalInfectionDataHandler<Infection> _inHospital;
         private RecoveredInfectionDataHandler<Infection> _recovered;
+        public long Limit { get; private set; }
+        public InfectionManager(long limit)
+        {
+            Limit = limit;
+            _active = new ActiveInfectionDataHandler<Infection>(limit);
+            _deceased = new DeceasedInfectionDataHandler<Infection>(limit);
+            _inHospital = new InHospitalInfectionDataHandler<Infection>(limit);
+            _recovered = new RecoveredInfectionDataHandler<Infection>(limit);
+        }
 
         public IEnumerable<ISpreadableDataHandler<Infection>> GetAll()
         {
@@ -34,13 +43,6 @@ namespace Core
             long total = _active.GetActualInfectionsCount() + _deceased.GetActualInfectionsCount() +
                          _inHospital.GetActualInfectionsCount() + _recovered.GetActualInfectionsCount();
             return total;
-        }
-        public InfectionManager()
-        {
-            _active = new ActiveInfectionDataHandler<Infection>();
-            _deceased = new DeceasedInfectionDataHandler<Infection>();
-            _inHospital = new InHospitalInfectionDataHandler<Infection>();
-            _recovered = new RecoveredInfectionDataHandler<Infection>();
         }
     }
 }

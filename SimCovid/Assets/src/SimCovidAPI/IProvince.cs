@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.src.ISimCovid
+namespace SimCovidAPI
 {
-    internal interface ILocation
+    public interface IProvince
     {
+
     }
 }

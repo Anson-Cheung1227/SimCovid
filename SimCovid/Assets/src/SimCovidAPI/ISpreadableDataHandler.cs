@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ISimCovid
+namespace SimCovidAPI
 {
     public interface ISpreadableDataHandler<ISpreadableTarget> where ISpreadableTarget : class , ISpreadable, new()
     {
         public long Count { get; }
+        public long Limit { get; }
         public IEnumerable<ISpreadableTarget> GetAll();
         public ISpreadableTarget FindExistingInstance(ISpreadableTarget instance);
-        public void AddISpreadable(ISpreadableTarget spreadable);
+        public bool AddISpreadable(ISpreadableTarget spreadable);
         public void RemoveISpreadable(ISpreadableTarget spreadable);
 
         public ISpreadableTarget CreateISpreadable();
