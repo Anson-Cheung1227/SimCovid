@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using ISimCovid;
 
 /// <summary>
 /// Controller for AllStateDetailsPanel

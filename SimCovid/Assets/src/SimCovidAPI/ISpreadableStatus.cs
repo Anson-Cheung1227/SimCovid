@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ISimCovid
+namespace SimCovidAPI
 {
     public interface ISpreadableStatus
     {

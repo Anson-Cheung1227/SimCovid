@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SimCovidCoreMod</RootNamespace>
     <AssemblyName>SimCovidCoreMod</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <LangVersion>9</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,10 +35,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ISimCovid">
-      <HintPath>..\SimCovid\build\SimCovid_Data\Managed\ISimCovid.dll</HintPath>
-    </Reference>
     <Reference Include="netstandard" />
+    <Reference Include="SimCovidAPI">
+      <HintPath>..\SimCovid\build\SimCovid_Data\Managed\SimCovidAPI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
