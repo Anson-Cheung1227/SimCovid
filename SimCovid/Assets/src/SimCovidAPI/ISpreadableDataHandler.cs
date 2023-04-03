@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace SimCovidAPI
 {
-    public interface ISpreadableDataHandler<TISpreadableTarget> where TISpreadableTarget : class , ISpreadable
+    public interface ISpreadableDataHandler
     {
         public long Count { get; }
         public long Limit { get; }
         public bool SetLimit(long limit);
-        public IEnumerable<TISpreadableTarget> GetAll();
-        public TISpreadableTarget FindExistingInstance(TISpreadableTarget instance);
-        public bool AddISpreadable(TISpreadableTarget spreadable);
-        public void RemoveISpreadable(TISpreadableTarget spreadable);
-        public bool AddAmountToISpreadable(TISpreadableTarget spreadableTarget, long amount);
+        public IEnumerable<ISpreadable> GetAll();
+        public ISpreadable FindExistingInstance(ISpreadable instance);
+        public bool AddISpreadable(ISpreadable spreadable);
+        public bool RemoveISpreadable(ISpreadable spreadable);
+        public bool AddAmountToISpreadable(ISpreadable spreadableTarget, long amount);
         public long GetActualInfectionsCount();
+        public ISpreadable CreateISpreadable();
     }
 }

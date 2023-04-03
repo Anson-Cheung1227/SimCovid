@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public class DeceasedSpreadableDataHandler<TISpreadableTarget> : ISpreadableDataHandlerBase<TISpreadableTarget>
+    public class DeceasedSpreadableDataHandler<TISpreadableTarget> : SpreadableDataHandlerBase<TISpreadableTarget>
         where TISpreadableTarget : class, ISpreadable, new()
     {
         public DeceasedSpreadableDataHandler(long limit) : base(limit)
