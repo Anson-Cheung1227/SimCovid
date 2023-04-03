@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Core;
 using UnityEngine;
 using InfectionModule;
 using SimCovidAPI;
@@ -71,7 +70,7 @@ public class InfectionGeneration : MonoBehaviour
         ISpreadableDataHandler<TISpreadableTarget> activeSpreadableDataHandler)
         where TISpreadableTarget : class, ISpreadable, new()
     {
-        var newInfection = activeSpreadableDataHandler.CreateISpreadable();
+        TISpreadableTarget newInfection = new TISpreadableTarget();
         newInfection.AddToInfection(activeSpreadableDataHandler.GetActualInfectionsCount());
         AddInfection(activeSpreadableDataHandler, newInfection);
     }
@@ -99,7 +98,7 @@ public class InfectionGeneration : MonoBehaviour
         //Loop through the delayedInfection Dictionary, and add infections
         foreach (KeyValuePair<ISpreadableDataHandler<TISpreadableTarget>, long> infection in delayedInfection)
         {
-            var newInfection = infection.Key.CreateISpreadable();
+            TISpreadableTarget newInfection = new TISpreadableTarget();
             newInfection.AddToInfection(infection.Value);
             AddInfection(infection.Key, newInfection);
         }
@@ -157,7 +156,12 @@ public class InfectionGeneration : MonoBehaviour
         }
         else
         {
-            foundResult.AddToInfection(param.Amount);
+            bool successs = spreadableDataHandler.AddAmountToISpreadable(foundResult, param.Amount);
+            if (!successs)
+            {
+                long allowedAmount = spreadableDataHandler.Limit - spreadableDataHandler.GetActualInfectionsCount();
+                spreadableDataHandler.AddAmountToISpreadable(foundResult, allowedAmount);
+            }
         }
     }
 

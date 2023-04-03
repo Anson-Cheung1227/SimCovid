@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using InfectionModule;
 using SimCovidAPI;
 
 namespace Core
@@ -13,7 +12,9 @@ namespace Core
         protected virtual ISpreadableDataHandler<TISpreadableTarget> _inHospital { get; set; }
         protected virtual ISpreadableDataHandler<TISpreadableTarget> _recovered { get; set; }
 
-        protected InfectionManagerBase(long limit, ISpreadableDataHandler<TISpreadableTarget>active, DeceasedSpreadableDataHandler<TISpreadableTarget> deceased, InHospitalSpreadableDataHandler<TISpreadableTarget> inHospital, RecoveredSpreadableDataHandler<TISpreadableTarget> recovered)
+        protected InfectionManagerBase(long limit, ISpreadableDataHandler<TISpreadableTarget> active,
+            ISpreadableDataHandler<TISpreadableTarget> deceased, ISpreadableDataHandler<TISpreadableTarget> inHospital,
+            ISpreadableDataHandler<TISpreadableTarget> recovered)
         {
             Limit = limit;
             _active = active;
