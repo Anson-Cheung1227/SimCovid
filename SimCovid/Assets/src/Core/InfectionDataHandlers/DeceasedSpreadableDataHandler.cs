@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public class DeceasedInfectionDataHandler<TISpreadableTarget> : ActiveInfectionDataHandler<TISpreadableTarget>
+    public class DeceasedSpreadableDataHandler<TISpreadableTarget> : ISpreadableDataHandlerBase<TISpreadableTarget>
         where TISpreadableTarget : class, ISpreadable, new()
     {
-        public DeceasedInfectionDataHandler(long limit) : base(limit)
+        public DeceasedSpreadableDataHandler(long limit) : base(limit)
         {
         }
     }
