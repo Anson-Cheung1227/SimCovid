@@ -9,6 +9,7 @@ using UnityEngine.UI;
 /// </summary>
 public class ModalWindowController : MonoBehaviour
 {
+
     [SerializeField] private GameObject _modalWindow;
     [SerializeField] private TextMeshProUGUI _headerText;
     [SerializeField] private TextMeshProUGUI _contentText;
