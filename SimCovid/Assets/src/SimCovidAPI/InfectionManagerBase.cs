@@ -1,20 +1,18 @@
 ﻿using System.Collections.Generic;
-using SimCovidAPI;
 
-namespace Core
+namespace SimCovidAPI
 {
-    public abstract class InfectionManagerBase<TISpreadableTarget> : ISpreadableManager<TISpreadableTarget>
-        where TISpreadableTarget : class, ISpreadable, new()
+    public abstract class InfectionManagerBase<TISpreadableTarget> : ISpreadableManager where TISpreadableTarget : class, ISpreadable, new()
     {
-        protected virtual ISpreadableDataHandler<TISpreadableTarget> _all { get; set; }
-        protected virtual ISpreadableDataHandler<TISpreadableTarget> _active { get; set; }
-        protected virtual ISpreadableDataHandler<TISpreadableTarget> _deceased { get; set; }
-        protected virtual ISpreadableDataHandler<TISpreadableTarget> _inHospital { get; set; }
-        protected virtual ISpreadableDataHandler<TISpreadableTarget> _recovered { get; set; }
+        protected virtual ISpreadableDataHandler _all { get; set; }
+        protected virtual ISpreadableDataHandler _active { get; set; }
+        protected virtual ISpreadableDataHandler _deceased { get; set; }
+        protected virtual ISpreadableDataHandler _inHospital { get; set; }
+        protected virtual ISpreadableDataHandler _recovered { get; set; }
 
-        protected InfectionManagerBase(long limit, ISpreadableDataHandler<TISpreadableTarget> active,
-            ISpreadableDataHandler<TISpreadableTarget> deceased, ISpreadableDataHandler<TISpreadableTarget> inHospital,
-            ISpreadableDataHandler<TISpreadableTarget> recovered)
+        protected InfectionManagerBase(long limit, ISpreadableDataHandler active,
+            ISpreadableDataHandler deceased, ISpreadableDataHandler inHospital,
+            ISpreadableDataHandler recovered)
         {
             Limit = limit;
             _active = active;
@@ -25,9 +23,9 @@ namespace Core
 
         public long Limit { get; set; }
 
-        public virtual IEnumerable<ISpreadableDataHandler<TISpreadableTarget>> GetAll()
+        public virtual IEnumerable<ISpreadableDataHandler> GetAll()
         {
-            List<ISpreadableDataHandler<TISpreadableTarget>> returnList = new List<ISpreadableDataHandler<TISpreadableTarget>>();
+            List<ISpreadableDataHandler> returnList = new List<ISpreadableDataHandler>();
             returnList.Add(_active);
             returnList.Add(_deceased);
             returnList.Add(_inHospital);
@@ -35,10 +33,10 @@ namespace Core
             return returnList;
         }
 
-        public virtual ISpreadableDataHandler<TISpreadableTarget> GetActive() => _active;
-        public virtual ISpreadableDataHandler<TISpreadableTarget> GetDeceased() => _deceased;
-        public virtual ISpreadableDataHandler<TISpreadableTarget> GetInHospital() => _inHospital;
-        public virtual ISpreadableDataHandler<TISpreadableTarget> GetRecovered() => _recovered;
+        public virtual ISpreadableDataHandler GetActive() => _active;
+        public virtual ISpreadableDataHandler GetDeceased() => _deceased;
+        public virtual ISpreadableDataHandler GetInHospital() => _inHospital;
+        public virtual ISpreadableDataHandler GetRecovered() => _recovered;
 
         public virtual long GetTotalInfections()
         {

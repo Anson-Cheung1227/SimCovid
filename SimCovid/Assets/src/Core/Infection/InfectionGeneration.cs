@@ -32,14 +32,13 @@ public class InfectionGeneration : MonoBehaviour
     //UnityEvent for adding infections, called once per day
     public void GenerateInfection(DataManager dataManager)
     {
-        GenerateAllInfectionsLocal<Infection>(_allStates);
-        GenerateAllInfectionsInterstate<Infection>(_allStates);
-        GenerateAllInfectionsGlobal<Infection>(_allStates);
+        GenerateAllInfectionsLocal(_allStates);
+        GenerateAllInfectionsInterstate(_allStates);
+        GenerateAllInfectionsGlobal(_allStates);
         UpdateInfectionList(dataManager.StateInfectionsTable, _allStates);
     }
 
-    private void GenerateAllInfectionsLocal<TISpreadableTarget>(List<State> states)
-        where TISpreadableTarget : class, ISpreadable, new()
+    private void GenerateAllInfectionsLocal(List<State> states)
     {
         foreach (State state in states)
         {
@@ -50,44 +49,38 @@ public class InfectionGeneration : MonoBehaviour
         }
     }
 
-    private void GenerateAllInfectionsInterstate<TISpreadabeTarget>(List<State> states)
-        where TISpreadabeTarget : class, ISpreadable, new()
+    private void GenerateAllInfectionsInterstate(List<State> states)
     {
-        List<ISpreadableDataHandler<TISpreadabeTarget>> eligibleStates =
-            new List<ISpreadableDataHandler<TISpreadabeTarget>>();
+        List<ISpreadableDataHandler> eligibleStates =
+            new List<ISpreadableDataHandler>();
         foreach (State state in states)
         {
             if (!state.InterstateLockdown)
             {
-                eligibleStates.Add((ISpreadableDataHandler<TISpreadabeTarget>)state.InfectionManager.GetActive());
+                eligibleStates.Add((ISpreadableDataHandler)state.InfectionManager.GetActive());
             }
         }
-
         GenerateInfectionsInterstate(eligibleStates);
     }
 
-    public void GenerateInfectionsLocal<TISpreadableTarget>(
-        ISpreadableDataHandler<TISpreadableTarget> activeSpreadableDataHandler)
-        where TISpreadableTarget : class, ISpreadable, new()
+    public void GenerateInfectionsLocal(ISpreadableDataHandler activeSpreadableDataHandler)
     {
-        TISpreadableTarget newInfection = new TISpreadableTarget();
+        ISpreadable newInfection = activeSpreadableDataHandler.CreateISpreadable();
         newInfection.AddToInfection(activeSpreadableDataHandler.GetActualInfectionsCount());
         AddInfection(activeSpreadableDataHandler, newInfection);
     }
 
-    public void GenerateInfectionsInterstate<TISpreadableTarget>(
-        List<ISpreadableDataHandler<TISpreadableTarget>> activeSpreadableDataHandler)
-        where TISpreadableTarget : class, ISpreadable, new()
+    public void GenerateInfectionsInterstate(List<ISpreadableDataHandler> activeSpreadableDataHandler)
     {
         /*
             We do not want new generated infections to pass on immediately, else we'll be in an infinite loop
             We will add all infections at once after the calculations
         */
-        ISpreadableDataHandler<TISpreadableTarget> target;
-        Dictionary<ISpreadableDataHandler<TISpreadableTarget>, long> delayedInfection =
-            new Dictionary<ISpreadableDataHandler<TISpreadableTarget>, long>();
-        foreach (ISpreadableDataHandler<TISpreadableTarget> spreadableDataHandler in activeSpreadableDataHandler)
+        ISpreadableDataHandler target;
+        Dictionary<ISpreadableDataHandler, long> delayedInfection = new Dictionary<ISpreadableDataHandler, long>();
+        foreach (ISpreadableDataHandler spreadableDataHandler in activeSpreadableDataHandler)
         {
+            if (spreadableDataHandler.GetActualInfectionsCount() == 0) continue;
             target = DetermineTargetInfectionInterstate(activeSpreadableDataHandler);
             if (delayedInfection.ContainsKey(target))
                 delayedInfection[target] += spreadableDataHandler.GetActualInfectionsCount();
@@ -96,62 +89,54 @@ public class InfectionGeneration : MonoBehaviour
         }
 
         //Loop through the delayedInfection Dictionary, and add infections
-        foreach (KeyValuePair<ISpreadableDataHandler<TISpreadableTarget>, long> infection in delayedInfection)
+        foreach (KeyValuePair<ISpreadableDataHandler, long> infection in delayedInfection)
         {
-            TISpreadableTarget newInfection = new TISpreadableTarget();
+            ISpreadable newInfection = infection.Key.CreateISpreadable();
             newInfection.AddToInfection(infection.Value);
             AddInfection(infection.Key, newInfection);
         }
     }
 
-    public ISpreadableDataHandler<ISpreadableTarget> DetermineTargetInfectionInterstate<ISpreadableTarget>(
-        List<ISpreadableDataHandler<ISpreadableTarget>> list) where ISpreadableTarget : class, ISpreadable, new()
+    public ISpreadableDataHandler DetermineTargetInfectionInterstate(List<ISpreadableDataHandler> list) 
     {
         //TODO: Take in how likely the people are gonna travel
         return list[Random.Range(0, list.Count)];
     }
 
-    private void GenerateAllInfectionsGlobal<TISpreadableTarget>(List<State> stateList)
-        where TISpreadableTarget : class, ISpreadable, new()
+    private void GenerateAllInfectionsGlobal(List<State> stateList)
     {
-        List<ISpreadableDataHandler<TISpreadableTarget>> spreadableDataHandlers =
-            new List<ISpreadableDataHandler<TISpreadableTarget>>();
+        List<ISpreadableDataHandler> spreadableDataHandlers = new List<ISpreadableDataHandler>();
         foreach (State state in stateList)
         {
-            spreadableDataHandlers.Add((ISpreadableDataHandler<TISpreadableTarget>)state.InfectionManager.GetActive());
+            spreadableDataHandlers.Add(state.InfectionManager.GetActive());
         }
 
         GenerateInfectionsGlobal(spreadableDataHandlers);
     }
 
-    public void GenerateInfectionsGlobal<TISpreadableTarget>(List<ISpreadableDataHandler<TISpreadableTarget>> list)
-        where TISpreadableTarget : class, ISpreadable, new()
+    public void GenerateInfectionsGlobal(List<ISpreadableDataHandler> list)
     {
-        ISpreadableDataHandler<TISpreadableTarget> target = DetermineStateInfectionGlobal(list);
-        TISpreadableTarget infection = new TISpreadableTarget();
+        ISpreadableDataHandler target = DetermineStateInfectionGlobal(list);
+        ISpreadable infection = target.CreateISpreadable();
         infection.AddToInfection(1);
         AddInfection(target, infection);
     }
 
-    public ISpreadableDataHandler<ISpreadableTarget> DetermineStateInfectionGlobal<ISpreadableTarget>(
-        List<ISpreadableDataHandler<ISpreadableTarget>> list) where ISpreadableTarget : class, ISpreadable, new()
+    public ISpreadableDataHandler DetermineStateInfectionGlobal(List<ISpreadableDataHandler> list)
     {
         return list[Random.Range(0, list.Count)];
     }
 
-    public void AddInfection<ISpreadableTarget>(ISpreadableDataHandler<ISpreadableTarget> spreadableDataHandler,
-        ISpreadableTarget param) where ISpreadableTarget : class, ISpreadable, new()
+    public void AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
     {
         if (param.Amount < 1) return;
-        ISpreadableTarget foundResult = spreadableDataHandler.FindExistingInstance(param);
+        ISpreadable foundResult = spreadableDataHandler.FindExistingInstance(param);
         if (foundResult == null)
         {
             bool success = spreadableDataHandler.AddISpreadable(param);
             if (!success)
             {
-                param.AddToInfection(param.Amount * -1); //Reset
-                //TODO: Reset
-                spreadableDataHandler.AddISpreadable(param);
+                
             }
         }
         else
@@ -159,6 +144,7 @@ public class InfectionGeneration : MonoBehaviour
             bool successs = spreadableDataHandler.AddAmountToISpreadable(foundResult, param.Amount);
             if (!successs)
             {
+                
                 long allowedAmount = spreadableDataHandler.Limit - spreadableDataHandler.GetActualInfectionsCount();
                 spreadableDataHandler.AddAmountToISpreadable(foundResult, allowedAmount);
             }
