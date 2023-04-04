@@ -75,5 +75,4 @@ SimCovid/crashlytics-build.properties
 /SimCovidCoreMod/[Oo]bj/
 
 #Jetbrain files
-/.idea
-SimCovid/.idea/
+/**/.idea
