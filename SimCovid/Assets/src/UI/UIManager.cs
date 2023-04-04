@@ -9,7 +9,6 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] SceneIdHolder _sceneIdHolder;
     #region TimeUI
     [SerializeField] private TextMeshProUGUI _timeText;
     [SerializeField] private TextMeshProUGUI _dateText; 
@@ -143,7 +142,7 @@ public class UIManager : MonoBehaviour
     }
     public void OnLockdownUpdateButtonClickUnityEvent(GameObject button)
     {
-        OnLockdownUpdateButtonClick(GameManager.Instance.DataManagerList[_sceneIdHolder.Id], button);
+        OnLockdownUpdateButtonClick(GameManager.Instance.DataManagerList[0], button);
     }
     public void OnLockdownUpdateButtonClick(DataManager dataManager, GameObject button)
     {

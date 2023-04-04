@@ -2,19 +2,20 @@ using UnityEngine;
 using System.Collections.Generic;
 using InfectionModule;
 using Core;
+using SimCovidAPI;
 
 /// <summary>
 /// Represents a state
 /// </summary>
 [System.Serializable]
-public class State
+public class State : ILocation
 {
     #region Infections
     [field: SerializeField] public string Name {get;set;}
     [field: SerializeField] public long Population {get; set;}
     [field: SerializeField] public float LocalSpreadRate {get; set;}
     [field: SerializeField] public long DailyIncomingPeople {get; set;}
-    [field: SerializeField] public InfectionManager InfectionManager { get; set;}
+    [field: SerializeField] public ISpreadableManager InfectionManager { get; set;}
     [field: SerializeField] public long InfectionsLong {get; set;}
     [field: SerializeField] public long ActiveInfectionsLong {get; set;}
     [field: SerializeField] public long InHospitalLong {get; set;}

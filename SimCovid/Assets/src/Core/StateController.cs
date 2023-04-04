@@ -1,4 +1,5 @@
 using System.Collections;
+using Core;
 using UnityEngine;
 
 /// <summary>
@@ -23,7 +24,9 @@ public class StateController : MonoBehaviour
             {
                 ((StateController)Operator).State.DailyIncomingPeople += airport.YearlyPassengers / 365;
             }
-            ((StateController)Operator).State.InfectionManager = new Core.InfectionManager(((StateController)Operator).State.Population);
+
+            long population = ((StateController)Operator).State.Population;
+            ((StateController)Operator).State.InfectionManager = new InfectionManager(population);
             DoneOperations = Operations;
         }
     }

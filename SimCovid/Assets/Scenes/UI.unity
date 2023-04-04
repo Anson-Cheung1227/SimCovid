@@ -2896,7 +2896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ec53971305d1b4e99decf3d4e89017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneIdHolder: {fileID: 1067014353}
   _timeText: {fileID: 889345425}
   _dateText: {fileID: 306106399}
   _stateDetailUIPanel: {fileID: 229142713}
@@ -9622,7 +9621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -757.44, y: -490.00006}
+  m_AnchoredPosition: {x: -757.44, y: -490}
   m_SizeDelta: {x: -1514.87, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4830384786031790504
@@ -9763,11 +9762,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4961323908373457050}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc1901b4d4459ae4881889c93e01ba6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
+  map: {fileID: 0}
+  multiplier: 0
 --- !u!224 &6016747291375804064
 RectTransform:
   m_ObjectHideFlags: 0
