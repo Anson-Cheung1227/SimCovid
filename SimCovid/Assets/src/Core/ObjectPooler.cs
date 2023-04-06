@@ -64,7 +64,7 @@ public class ObjectPooler : MonoBehaviour
             Operator = this,
             Pools = this.Pools
         };
-        GameManager.Instance.LoadOperations.Add(initialization);
+        if (GameManager.Instance != null) GameManager.Instance.LoadOperations.Add(initialization);
         initialization.Load();
     }
 }

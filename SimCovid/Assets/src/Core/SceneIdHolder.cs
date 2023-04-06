@@ -8,7 +8,7 @@ public class SceneIdHolder : MonoBehaviour
     public int Id;
     void Awake()
     {
-        GameEventManager.Instance.OnSetSceneId += SetSceneId;
+        if (GameEventManager.Instance != null) GameEventManager.Instance.OnSetSceneId += SetSceneId;
     }
     private void SetSceneId(int id)
     {
