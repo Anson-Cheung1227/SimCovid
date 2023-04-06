@@ -1,26 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using SimCovidAPI;
 using Random = UnityEngine.Random;
 
 namespace SimCovidAPI
 {
-    public abstract class InfectionGenerationBase: IManager
+    public abstract class InfectionGenerationBase: ISpreadableGenerationManager
     {
         protected List<ILocation> _locations;
         public InfectionGenerationBase(List<ILocation> locationList)
         {
             _locations = locationList;
-        }
-        public virtual void Initialization()
-        {
-            
-        }
-
-        public virtual void Execute()
-        {
-            GenerateLocal(_locations);
-            GenerateInterstate(_locations);
-            GenerateGlobal(_locations);
         }
 
         public virtual void GenerateLocal(List<ILocation> locationList)
@@ -95,6 +85,13 @@ namespace SimCovidAPI
             }
 
             return true;
+        }
+
+        public virtual void OnGenerate()
+        {
+            GenerateLocal(_locations);
+            GenerateInterstate(_locations);
+            GenerateGlobal(_locations);
         }
     }
 }

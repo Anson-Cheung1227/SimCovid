@@ -7,32 +7,38 @@ namespace Core
 {
     public class ManagerController : MonoBehaviour
     {
+        public static ManagerController Instance;
         [SerializeField] private DataManager _dataManager;
-        private List<IManager> _allManagers = new List<IManager>();
         [SerializeField] private List<StateController> _allStateControllers;
         private List<ILocation> _states = new List<ILocation>();
 
+        private List<ISpreadableGenerationManager> _spreadableGenerationManagers =
+            new List<ISpreadableGenerationManager>();
+
+        private void Awake()
+        {
+            Instance = this;
+            GameEventManager.Instance.OnGenerateInfection += delegate(DataManager dataManager)
+            {
+                foreach (ISpreadableGenerationManager spreadableGenerationManager in _spreadableGenerationManagers)
+                {
+                    spreadableGenerationManager.OnGenerate();
+                }
+            };
+        }
+
         private void Start()
         {
-            GameEventManager.Instance.OnGenerateInfection += OnGenerateInfection;
             foreach (StateController stateController in _allStateControllers)
             {
                 _states.Add(stateController.State);
             }
-            AddIManager(new InfectionGeneration(_states, _dataManager));
+            AddManager(new InfectionGeneration(_states, _dataManager));
         }
 
-        private void OnGenerateInfection(DataManager dataManager)
+        public void AddManager(ISpreadableGenerationManager manager)
         {
-            foreach (IManager manager in _allManagers)
-            {
-                manager.Execute();
-            }
-        }
-
-        public void AddIManager(IManager manager)
-        {
-            _allManagers.Add(manager);
+            _spreadableGenerationManagers.Add(manager);
         }
     }
 }

@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870e2ed1731dad94a8b3ced43f408011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _modDllPath: D:\dev\Projects\SimCovid\SimCovid\build\
 --- !u!4 &48388573
 Transform:
   m_ObjectHideFlags: 0

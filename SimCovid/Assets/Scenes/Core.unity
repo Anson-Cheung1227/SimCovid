@@ -1942,58 +1942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2113ef33c8a15234ea41127584298b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeController: {fileID: 1415731499}
-  _allStates:
-  - {fileID: 56196227}
-  - {fileID: 976656513}
-  - {fileID: 781570898}
-  - {fileID: 1015820015}
-  - {fileID: 440040498}
-  - {fileID: 1133022662}
-  - {fileID: 106624263}
-  - {fileID: 481936931}
-  - {fileID: 104589844}
-  - {fileID: 590137212}
-  - {fileID: 548886983}
-  - {fileID: 1203479655}
-  - {fileID: 1416510363}
-  - {fileID: 1330219558}
-  - {fileID: 702137950}
-  - {fileID: 1868534591}
-  - {fileID: 1293599951}
-  - {fileID: 143515521}
-  - {fileID: 1711540357}
-  - {fileID: 1168963967}
-  - {fileID: 1288773764}
-  - {fileID: 1401400341}
-  - {fileID: 1407064770}
-  - {fileID: 284993130}
-  - {fileID: 43084976}
-  - {fileID: 28561237}
-  - {fileID: 61898040}
-  - {fileID: 1596692500}
-  - {fileID: 421480647}
-  - {fileID: 1338908330}
-  - {fileID: 765957096}
-  - {fileID: 2008096688}
-  - {fileID: 1077834746}
-  - {fileID: 1047963550}
-  - {fileID: 115176032}
-  - {fileID: 1864937353}
-  - {fileID: 475811164}
-  - {fileID: 300236516}
-  - {fileID: 377486459}
-  - {fileID: 1136002611}
-  - {fileID: 1935662438}
-  - {fileID: 657724720}
-  - {fileID: 40562373}
-  - {fileID: 1388076221}
-  - {fileID: 715033715}
-  - {fileID: 1576779668}
-  - {fileID: 1651879351}
-  - {fileID: 789268840}
-  - {fileID: 1531288297}
-  - {fileID: 1632358241}
 --- !u!4 &274221013
 Transform:
   m_ObjectHideFlags: 0
@@ -2580,57 +2528,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db58bbeb6b5f9544aab34afa353f5877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _allStates:
-  - {fileID: 56196227}
-  - {fileID: 976656513}
-  - {fileID: 781570898}
-  - {fileID: 1015820015}
-  - {fileID: 440040498}
-  - {fileID: 1133022662}
-  - {fileID: 106624263}
-  - {fileID: 481936931}
-  - {fileID: 104589844}
-  - {fileID: 590137212}
-  - {fileID: 548886983}
-  - {fileID: 1203479655}
-  - {fileID: 1416510363}
-  - {fileID: 1330219558}
-  - {fileID: 702137950}
-  - {fileID: 1868534591}
-  - {fileID: 1293599951}
-  - {fileID: 143515521}
-  - {fileID: 1711540357}
-  - {fileID: 1168963967}
-  - {fileID: 1288773764}
-  - {fileID: 1401400341}
-  - {fileID: 1407064770}
-  - {fileID: 284993130}
-  - {fileID: 43084976}
-  - {fileID: 28561237}
-  - {fileID: 61898040}
-  - {fileID: 1596692500}
-  - {fileID: 421480647}
-  - {fileID: 1338908330}
-  - {fileID: 765957096}
-  - {fileID: 2008096688}
-  - {fileID: 1077834746}
-  - {fileID: 1047963550}
-  - {fileID: 115176032}
-  - {fileID: 1864937353}
-  - {fileID: 475811164}
-  - {fileID: 300236516}
-  - {fileID: 377486459}
-  - {fileID: 1136002611}
-  - {fileID: 1935662438}
-  - {fileID: 657724720}
-  - {fileID: 40562373}
-  - {fileID: 1388076221}
-  - {fileID: 715033715}
-  - {fileID: 1576779668}
-  - {fileID: 1651879351}
-  - {fileID: 789268840}
-  - {fileID: 1531288297}
-  - {fileID: 1632358241}
 --- !u!1 &421480642
 GameObject:
   m_ObjectHideFlags: 0
@@ -9344,57 +9241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6453ebecf23cbc42a88a93c6fe3e243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _allStates:
-  - {fileID: 56196227}
-  - {fileID: 976656513}
-  - {fileID: 781570898}
-  - {fileID: 1015820015}
-  - {fileID: 440040498}
-  - {fileID: 1133022662}
-  - {fileID: 106624263}
-  - {fileID: 481936931}
-  - {fileID: 104589844}
-  - {fileID: 590137212}
-  - {fileID: 548886983}
-  - {fileID: 1203479655}
-  - {fileID: 1416510363}
-  - {fileID: 1330219558}
-  - {fileID: 702137950}
-  - {fileID: 1868534591}
-  - {fileID: 1293599951}
-  - {fileID: 143515521}
-  - {fileID: 1711540357}
-  - {fileID: 1168963967}
-  - {fileID: 1288773764}
-  - {fileID: 1401400341}
-  - {fileID: 1407064770}
-  - {fileID: 284993130}
-  - {fileID: 43084976}
-  - {fileID: 28561237}
-  - {fileID: 61898040}
-  - {fileID: 1596692500}
-  - {fileID: 421480647}
-  - {fileID: 1338908330}
-  - {fileID: 765957096}
-  - {fileID: 2008096688}
-  - {fileID: 1077834746}
-  - {fileID: 1047963550}
-  - {fileID: 115176032}
-  - {fileID: 1864937353}
-  - {fileID: 475811164}
-  - {fileID: 300236516}
-  - {fileID: 377486459}
-  - {fileID: 1136002611}
-  - {fileID: 1935662438}
-  - {fileID: 657724720}
-  - {fileID: 40562373}
-  - {fileID: 1388076221}
-  - {fileID: 715033715}
-  - {fileID: 1576779668}
-  - {fileID: 1651879351}
-  - {fileID: 789268840}
-  - {fileID: 1531288297}
-  - {fileID: 1632358241}
 --- !u!1 &1651879346
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,12 +15,6 @@ public class InfectionGeneration : InfectionGenerationBase
         _dataManager = dataManager;
     }
 
-    public override void Execute()
-    {
-        base.Execute();
-        UpdateInfectionList(_dataManager.StateInfectionsTable, _locations);
-    }
-
     private void UpdateInfectionList(List<State> list, List<ILocation> refState)
     {
         list.Clear();
@@ -41,5 +35,11 @@ public class InfectionGeneration : InfectionGenerationBase
 
             list.Insert(iter, state);
         }
+    }
+
+    public override void OnGenerate()
+    {
+        base.OnGenerate();
+        UpdateInfectionList(_dataManager.StateInfectionsTable, _locations);
     }
 }
