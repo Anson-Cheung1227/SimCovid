@@ -2,7 +2,7 @@
 
 namespace SimCovidAPI
 {
-    public abstract class InfectionManagerBase<TISpreadableTarget> : ISpreadableManager where TISpreadableTarget : class, ISpreadable, new()
+    public abstract class InfectionManagerBase : ISpreadableManager
     {
         protected virtual ISpreadableDataHandler _all { get; set; }
         protected virtual ISpreadableDataHandler _active { get; set; }

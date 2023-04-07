@@ -4,7 +4,7 @@ using SimCovidAPI;
 
 namespace Core
 {
-    public class InfectionManager : InfectionManagerBase<Infection>
+    public class InfectionManager : InfectionManagerBase
     {
         public InfectionManager(long limit) : base(limit, new ActiveSpreadableDataHandler<Infection>(limit),
             new DeceasedSpreadableDataHandler<Infection>(limit), new InHospitalSpreadableDataHandler<Infection>(limit),

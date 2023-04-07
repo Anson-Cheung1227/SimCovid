@@ -13,6 +13,7 @@ public class InfectionGeneration : InfectionGenerationBase
     public InfectionGeneration(List<ILocation> locationList, DataManager dataManager) : base(locationList)
     {
         _dataManager = dataManager;
+        UpdateInfectionList(_dataManager.StateInfectionsTable, _locations);
     }
 
     private void UpdateInfectionList(List<State> list, List<ILocation> refState)

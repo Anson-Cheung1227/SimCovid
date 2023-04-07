@@ -74,7 +74,7 @@ namespace SimCovidAPI
         public virtual bool AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
         {
             if (spreadableDataHandler.GetActualInfectionsCount() >= spreadableDataHandler.Limit) return false;
-                ISpreadable findResult = spreadableDataHandler.FindExistingInstance(param);
+            ISpreadable findResult = spreadableDataHandler.FindExistingInstance(param);
             if (findResult == null)
             {
                 spreadableDataHandler.AddISpreadable(param);

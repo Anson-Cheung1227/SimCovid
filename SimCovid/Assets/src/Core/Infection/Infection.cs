@@ -15,7 +15,7 @@ namespace InfectionModule
         [field: SerializeField] public Nullable<DateTime> InHospitalDate {get; private set;}
         [field: SerializeField] public Nullable<DateTime> RecoveryDate {get; private set;}
         [field: SerializeField] public Nullable<DateTime> DeceasedDate {get; private set;}
-        [field: SerializeField] public InfectionStatus InfectionStatus { get; private set; }
+        [field: SerializeField] public ISpreadableStatus Status { get; private set; }
         [field: SerializeField] public long Amount { get; private set; }
         [field: SerializeField] public bool HasSpread {get; private set; }
 
@@ -24,8 +24,9 @@ namespace InfectionModule
             Amount += amount;
         }
 
-        public void SetDeceasedDate(DateTime date)
+        public void SetDeceased(DateTime date)
         {
+            Status = InfectionStatus.Deceased;
             DeceasedDate = date;
         }
 
@@ -34,19 +35,28 @@ namespace InfectionModule
             HasSpread = spread;
         }
 
-        public void SetInHospitalDate(DateTime date)
+        public void SetInHospital(DateTime date)
         {
+            Status = InfectionStatus.InHospital;
             InHospitalDate = date;
         }
 
-        public void SetRecoveryDate(DateTime date)
+        public void SetRecovery(DateTime date)
         {
+            Status = InfectionStatus.Recovered;
             RecoveryDate = date;
         }
 
-        public void SetSpreadDate(DateTime date)
+        public void SetActive(DateTime date)
         {
+            Status = InfectionStatus.Active;
             Date = date;
+        }
+
+        public bool ValidateISpreadable()
+        {
+            bool validISpreadable = Amount > 0 && Status != null;
+            return validISpreadable;
         }
     }
     /// <summary>
@@ -69,25 +79,5 @@ namespace InfectionModule
                 
             };
         }
-    }
-    /// <summary>
-    /// Represents Infection type
-    /// </summary>
-    public enum InfectionType
-    {
-        Local,
-        Interstate,
-        Global,
-    }
-    /// <summary>
-    /// Represents Infection Status
-    /// </summary>
-    [System.Serializable]
-    public enum InfectionStatus
-    {
-        Active,
-        InHospital,
-        Recovered,
-        Deceased, 
     }
 }
