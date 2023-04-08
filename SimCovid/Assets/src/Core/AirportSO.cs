@@ -1,21 +1,24 @@
 using UnityEngine;
 
-/// <summary>
-/// Template for Airport class, should be read-only and should be loaded on Start
-/// </summary>
-[CreateAssetMenu(fileName = "New Airport", menuName = "Scriptable Objects/Airport")]
-public class AirportSO : ScriptableObject
+namespace SimCovid.Core
 {
-    [SerializeField] public Airport Airport;    
-    //Conversion
-    public static explicit operator Airport(AirportSO airportSO)
+    /// <summary>
+    /// Template for Airport class, should be read-only and should be loaded on Start
+    /// </summary>
+    [CreateAssetMenu(fileName = "New Airport", menuName = "Scriptable Objects/Airport")]
+    public class AirportSO : ScriptableObject
     {
-        return new Airport
+        [SerializeField] public Airport Airport;    
+        //Conversion
+        public static explicit operator Airport(AirportSO airportSO)
         {
-            Name = airportSO.Airport.Name, 
-            IATACode = airportSO.Airport.IATACode, 
-            YearlyPassengers = airportSO.Airport.YearlyPassengers, 
-            CityServed = airportSO.Airport.CityServed
-        };
+            return new Airport
+            {
+                Name = airportSO.Airport.Name, 
+                IATACode = airportSO.Airport.IATACode, 
+                YearlyPassengers = airportSO.Airport.YearlyPassengers, 
+                CityServed = airportSO.Airport.CityServed
+            };
+        }
     }
 }

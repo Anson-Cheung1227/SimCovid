@@ -1,12 +1,6 @@
-﻿using InfectionModule;
-using SimCovidAPI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SimCovidAPI;
 
-namespace Core
+namespace SimCovid.Core.Infection.InfectionDataHandlers
 {
     public class ActiveSpreadableDataHandler<TISpreadableTarget> : SpreadableDataHandlerBase<TISpreadableTarget>
         where TISpreadableTarget : class, ISpreadable, new()

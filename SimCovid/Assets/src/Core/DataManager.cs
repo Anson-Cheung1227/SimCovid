@@ -1,27 +1,30 @@
-using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-/// <summary>
-/// Handles all Data in the game
-/// </summary>
-public class DataManager : MonoBehaviour 
+namespace SimCovid.Core
 {
-    public DateTime GameDateTime = new DateTime(2019, 12, 1, 0, 0, 0);
-    public bool ActiveStateDetailsPanel;
-    public State HoveringState;
-    public State SelectedState = null;
-    public float RecoveryRate;
-    public float DeathRate;
-    [SerializeField] private GlobalStatsSO _globalStatsSO;
-    public List<State> StateInfectionsTable = new List<State>();
-    private void Awake() 
+    /// <summary>
+    /// Handles all Data in the game
+    /// </summary>
+    public class DataManager : MonoBehaviour 
     {
-        GameManager.Instance.DataManagerList.Add(this);
+        public DateTime GameDateTime = new DateTime(2019, 12, 1, 0, 0, 0);
+        public bool ActiveStateDetailsPanel;
+        public State HoveringState;
+        public State SelectedState = null;
+        public float RecoveryRate;
+        public float DeathRate;
+        [SerializeField] private GlobalStatsSO _globalStatsSO;
+        public List<State> StateInfectionsTable = new List<State>();
+        private void Awake() 
+        {
+            GameManager.Instance.DataManagerList.Add(this);
+        }
+        void Start()
+        {
+            RecoveryRate = _globalStatsSO.RecoveryRate;
+            DeathRate = _globalStatsSO.DeathRate;
+        }  
     }
-    void Start()
-    {
-        RecoveryRate = _globalStatsSO.RecoveryRate;
-        DeathRate = _globalStatsSO.DeathRate;
-    }  
 }

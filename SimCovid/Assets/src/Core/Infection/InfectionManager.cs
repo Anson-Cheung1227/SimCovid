@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using InfectionModule;
+﻿using SimCovid.Core.Infection.InfectionDataHandlers;
 using SimCovidAPI;
 
-namespace Core
+namespace SimCovid.Core.Infection
 {
     public class InfectionManager : InfectionManagerBase
     {

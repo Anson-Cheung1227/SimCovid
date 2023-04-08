@@ -1,11 +1,14 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-/// <summary>
-/// Represents a Scenario, and all resources to load
-/// </summary>
-[CreateAssetMenu(fileName = "New Core Game", menuName = "Scriptable Objects/CoreGameSO")]
-public class CoreGameSO : ScriptableObject 
+namespace SimCovid.Core
 {
-    [SerializeField] public List<SceneEnum> SceneList;
+    /// <summary>
+    /// Represents a Scenario, and all resources to load
+    /// </summary>
+    [CreateAssetMenu(fileName = "New Core Game", menuName = "Scriptable Objects/CoreGameSO")]
+    public class CoreGameSO : ScriptableObject 
+    {
+        [SerializeField] public List<SceneEnum> SceneList;
+    }
 }

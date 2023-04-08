@@ -1,44 +1,47 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
-/// <summary>
-/// Represents a tooltip
-/// </summary>
-public class Tooltip : MonoBehaviour
+namespace SimCovid.UI
 {
-    [SerializeField] TextMeshProUGUI _tooltipHeader;
-    [SerializeField] TextMeshProUGUI _tooltipContent;
-    [SerializeField] LayoutElement _tooltipLayout;
-    [SerializeField] private int _characterWrapLimit;
-    public void SetText(string content, string header = "")
+    /// <summary>
+    /// Represents a tooltip
+    /// </summary>
+    public class Tooltip : MonoBehaviour
     {
-        if (string.IsNullOrEmpty(header))
+        [SerializeField] TextMeshProUGUI _tooltipHeader;
+        [SerializeField] TextMeshProUGUI _tooltipContent;
+        [SerializeField] LayoutElement _tooltipLayout;
+        [SerializeField] private int _characterWrapLimit;
+        public void SetText(string content, string header = "")
         {
-            _tooltipHeader.gameObject.SetActive(false);
-        }
-        else
-        {
-            _tooltipHeader.text = header;
-            _tooltipHeader.gameObject.SetActive(true);
-        }
-        _tooltipContent.text = content;
-        int headerLength = _tooltipHeader.text.Length;
-        int contentLength = _tooltipContent.text.Length;
-        if (headerLength > _characterWrapLimit || contentLength > _characterWrapLimit) _tooltipLayout.enabled = true;
-        else _tooltipLayout.enabled = false;
-    }
-    private void Update() 
-    {
-        if (Application.isEditor)
-        {
+            if (string.IsNullOrEmpty(header))
+            {
+                _tooltipHeader.gameObject.SetActive(false);
+            }
+            else
+            {
+                _tooltipHeader.text = header;
+                _tooltipHeader.gameObject.SetActive(true);
+            }
+            _tooltipContent.text = content;
             int headerLength = _tooltipHeader.text.Length;
             int contentLength = _tooltipContent.text.Length;
             if (headerLength > _characterWrapLimit || contentLength > _characterWrapLimit) _tooltipLayout.enabled = true;
             else _tooltipLayout.enabled = false;
         }
-        Vector2 position = Input.mousePosition;
-        GetComponent<RectTransform>().pivot = new Vector2(position.x/Screen.width, position.y/Screen.height);
-        GetComponent<RectTransform>().anchoredPosition = position;
+        private void Update() 
+        {
+            if (Application.isEditor)
+            {
+                int headerLength = _tooltipHeader.text.Length;
+                int contentLength = _tooltipContent.text.Length;
+                if (headerLength > _characterWrapLimit || contentLength > _characterWrapLimit) _tooltipLayout.enabled = true;
+                else _tooltipLayout.enabled = false;
+            }
+            Vector2 position = Input.mousePosition;
+            GetComponent<RectTransform>().pivot = new Vector2(position.x/Screen.width, position.y/Screen.height);
+            GetComponent<RectTransform>().anchoredPosition = position;
+        }
     }
 }

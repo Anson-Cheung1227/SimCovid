@@ -1,9 +1,9 @@
-﻿using System;
-using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using SimCovid.Core.Infection;
 using SimCovidAPI;
+using UnityEngine;
 
-namespace Core
+namespace SimCovid.Core
 {
     public class ManagerController : MonoBehaviour
     {

@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class _BootLoader : MonoBehaviour
+namespace SimCovid.Core
 {
-    // Start is called before the first frame update
-    void Start()
+    public class _BootLoader : MonoBehaviour
     {
-        SceneManager.LoadSceneAsync((int)SceneEnum.GlobalScene, LoadSceneMode.Additive);
+        // Start is called before the first frame update
+        void Start()
+        {
+            SceneManager.LoadSceneAsync((int)SceneEnum.GlobalScene, LoadSceneMode.Additive);
+        }
     }
 }

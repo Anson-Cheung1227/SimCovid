@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Core;
-using InfectionModule;
 using NUnit.Framework;
+using SimCovid.Core.Infection;
 using SimCovidAPI;
 using UnityEngine;
 using UnityEngine.TestTools;

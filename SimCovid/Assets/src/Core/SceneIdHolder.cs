@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //Class for holding a scene Id, should only be one instance per scene
-public class SceneIdHolder : MonoBehaviour
+namespace SimCovid.Core
 {
-    public int Id;
-    void Awake()
+    public class SceneIdHolder : MonoBehaviour
     {
-        if (GameEventManager.Instance != null) GameEventManager.Instance.OnSetSceneId += SetSceneId;
-    }
-    private void SetSceneId(int id)
-    {
-        GameEventManager.Instance.OnSetSceneId -= SetSceneId;
-        Id = id;
+        public int Id;
+        void Awake()
+        {
+            if (GameEventManager.Instance != null) GameEventManager.Instance.OnSetSceneId += SetSceneId;
+        }
+        private void SetSceneId(int id)
+        {
+            GameEventManager.Instance.OnSetSceneId -= SetSceneId;
+            Id = id;
+        }
     }
 }

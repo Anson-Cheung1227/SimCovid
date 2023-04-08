@@ -1,93 +1,95 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameEventManager : MonoBehaviour
+namespace SimCovid.Core
 {
-    public static GameEventManager Instance;
-    public event Action<int> OnSetSceneId;
-    public event Action OnDateChange;
-    public event Action<DataManager> OnGenerateInfection; 
-    public event Action<DataManager> OnGenerateInHospital;
-    public event Action<DataManager> OnGenerateRecovery;
-    public event Action<DataManager> OnGenerateDeath;
-    public event Action OnUpdateMorale; 
-    public event Action<DataManager> OnUpdateUI;
-    public event Action<string, Sprite, string, string> OnActiveModalWindow;
-    public event Action<List<State>> OnUpdateAllStatesDetailsTable;
-    private void Awake() 
+    public class GameEventManager : MonoBehaviour
     {
-        Instance = this;    
-    }
-    public void InvokeOnSetSceneId(int id)
-    {
-        if (OnSetSceneId != null) 
+        public static GameEventManager Instance;
+        public event Action<int> OnSetSceneId;
+        public event Action OnDateChange;
+        public event Action<DataManager> OnGenerateInfection; 
+        public event Action<DataManager> OnGenerateInHospital;
+        public event Action<DataManager> OnGenerateRecovery;
+        public event Action<DataManager> OnGenerateDeath;
+        public event Action OnUpdateMorale; 
+        public event Action<DataManager> OnUpdateUI;
+        public event Action<string, Sprite, string, string> OnActiveModalWindow;
+        public event Action<List<State>> OnUpdateAllStatesDetailsTable;
+        private void Awake() 
         {
-            OnSetSceneId(id);
+            Instance = this;    
         }
-    }
-    public void InvokeOnDateChange()
-    {
-        if (OnDateChange != null)
+        public void InvokeOnSetSceneId(int id)
         {
-            OnDateChange();
+            if (OnSetSceneId != null) 
+            {
+                OnSetSceneId(id);
+            }
         }
-    }
-    public void InvokeOnGenerateInfection(DataManager dataManager)
-    {
-        if (OnGenerateInfection != null)
+        public void InvokeOnDateChange()
         {
-            OnGenerateInfection(dataManager);   
+            if (OnDateChange != null)
+            {
+                OnDateChange();
+            }
         }
-    }
-    public void InvokeOnGenerateInHospital(DataManager dataManager)
-    {
-        if (OnGenerateInHospital != null)
+        public void InvokeOnGenerateInfection(DataManager dataManager)
         {
-            OnGenerateInHospital(dataManager);   
+            if (OnGenerateInfection != null)
+            {
+                OnGenerateInfection(dataManager);   
+            }
         }
-    }
-    public void InvokeOnGenerateRecovery(DataManager dataManager)
-    {
-        if (OnGenerateRecovery != null)
+        public void InvokeOnGenerateInHospital(DataManager dataManager)
         {
-            OnGenerateRecovery(dataManager);   
+            if (OnGenerateInHospital != null)
+            {
+                OnGenerateInHospital(dataManager);   
+            }
         }
-    }
-    public void InvokeOnGenerateDeath(DataManager dataManager)
-    {
-        if (OnGenerateDeath != null)
+        public void InvokeOnGenerateRecovery(DataManager dataManager)
         {
-            OnGenerateDeath(dataManager);
+            if (OnGenerateRecovery != null)
+            {
+                OnGenerateRecovery(dataManager);   
+            }
         }
-    }
-    public void InvokeOnUpdateMorale()
-    {
-        if (OnUpdateMorale != null)
+        public void InvokeOnGenerateDeath(DataManager dataManager)
         {
-            OnUpdateMorale();
+            if (OnGenerateDeath != null)
+            {
+                OnGenerateDeath(dataManager);
+            }
         }
-    }
-    public void InvokeOnUpdateUI(DataManager dataManager)
-    {
-        if (OnUpdateUI != null)
+        public void InvokeOnUpdateMorale()
         {
-            OnUpdateUI(dataManager);
+            if (OnUpdateMorale != null)
+            {
+                OnUpdateMorale();
+            }
         }
-    }
-    public void InvokeOnActiveModalWindow(string header, Sprite image, string contentString, string buttonText)
-    {
-        if (OnActiveModalWindow != null)
+        public void InvokeOnUpdateUI(DataManager dataManager)
         {
-            OnActiveModalWindow(header, image, contentString, buttonText);
+            if (OnUpdateUI != null)
+            {
+                OnUpdateUI(dataManager);
+            }
         }
-    }
-    public void InvokeOnUpdateAllStateDetailsTable(List<State> stateList)
-    {
-        if (OnUpdateAllStatesDetailsTable != null)
+        public void InvokeOnActiveModalWindow(string header, Sprite image, string contentString, string buttonText)
         {
-            OnUpdateAllStatesDetailsTable(stateList);
+            if (OnActiveModalWindow != null)
+            {
+                OnActiveModalWindow(header, image, contentString, buttonText);
+            }
+        }
+        public void InvokeOnUpdateAllStateDetailsTable(List<State> stateList)
+        {
+            if (OnUpdateAllStatesDetailsTable != null)
+            {
+                OnUpdateAllStatesDetailsTable(stateList);
+            }
         }
     }
 }

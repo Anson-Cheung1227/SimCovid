@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using SimCovidAPI;
-using UnityEngine;
 
-namespace Core
+namespace SimCovidAPI
 {
     public abstract class SpreadableDataHandlerBase<TISpreadableTarget> : ISpreadableDataHandler
         where TISpreadableTarget : class, ISpreadable, new()

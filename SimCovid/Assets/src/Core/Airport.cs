@@ -1,13 +1,16 @@
 using UnityEngine;
 
-/// <summary>
-/// Represents an Airport
-/// </summary>
-[System.Serializable]
-public class Airport
+namespace SimCovid.Core
 {
-    [field: SerializeField] public string Name {get; set;}
-    [field: SerializeField] public string IATACode {get; set; }  
-    [field: SerializeField] public long YearlyPassengers {get; set;}
-    [field: SerializeField] public string CityServed {get; set; }      
+    /// <summary>
+    /// Represents an Airport
+    /// </summary>
+    [System.Serializable]
+    public class Airport
+    {
+        [field: SerializeField] public string Name {get; set;}
+        [field: SerializeField] public string IATACode {get; set; }  
+        [field: SerializeField] public long YearlyPassengers {get; set;}
+        [field: SerializeField] public string CityServed {get; set; }      
+    }
 }

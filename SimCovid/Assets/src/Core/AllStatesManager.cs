@@ -1,51 +1,55 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SimCovidAPI;
 using UnityEngine;
 
-/// <summary>
-/// Handles all states 
-/// </summary>
-public class AllStatesManager : MonoBehaviour
+namespace SimCovid.Core
 {
-    private class Initialization : ILoadOperation
+    /// <summary>
+    /// Handles all states 
+    /// </summary>
+    public class AllStatesManager : MonoBehaviour
     {
-        public string Name { get; set; }
-        public float Operations { get; set; }
-        public float DoneOperations { get; set; }
-        public MonoBehaviour Operator { get; set; }
-        public List<ILoadOperation> AllStatesOperationList { get; set; }
-        public void Load()
+        private class Initialization : ILoadOperation
         {
-            GetStateLoadProgress();
-        }
-        private async Task GetStateLoadProgress()
-        {
-            await Task.Run(() =>
+            public string Name { get; set; }
+            public float Operations { get; set; }
+            public float DoneOperations { get; set; }
+            public MonoBehaviour Operator { get; set; }
+            public List<ILoadOperation> AllStatesOperationList { get; set; }
+            public void Load()
             {
-                for (int i = 0; i < AllStatesOperationList.Count; i++)
+                GetStateLoadProgress();
+            }
+            private async Task GetStateLoadProgress()
+            {
+                await Task.Run(() =>
                 {
-                    while (AllStatesOperationList[i].DoneOperations != AllStatesOperationList[i].Operations)
+                    for (int i = 0; i < AllStatesOperationList.Count; i++)
                     {
+                        while (AllStatesOperationList[i].DoneOperations != AllStatesOperationList[i].Operations)
+                        {
 
+                        }
+                        DoneOperations++;
                     }
-                    DoneOperations++;
-                }
-            });
+                });
+            }
         }
-    }
-    public List<ILoadOperation> AllstateLoadOperations = new List<ILoadOperation>();
-    // Start is called before the first frame update
-    void Start()
-    {
-        Initialization initialization = new Initialization
+        public List<ILoadOperation> AllstateLoadOperations = new List<ILoadOperation>();
+        // Start is called before the first frame update
+        void Start()
         {
-            Name = "Loading States Data",
-            Operations = AllstateLoadOperations.Count,
-            DoneOperations = 0,
-            Operator = this,
-            AllStatesOperationList = AllstateLoadOperations,
-        };
-        GameManager.Instance.LoadOperations.Add(initialization);
-        initialization.Load();
+            Initialization initialization = new Initialization
+            {
+                Name = "Loading States Data",
+                Operations = AllstateLoadOperations.Count,
+                DoneOperations = 0,
+                Operator = this,
+                AllStatesOperationList = AllstateLoadOperations,
+            };
+            GameManager.Instance.LoadOperations.Add(initialization);
+            initialization.Load();
+        }
     }
 }

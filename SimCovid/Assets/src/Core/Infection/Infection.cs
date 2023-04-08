@@ -1,9 +1,8 @@
-using UnityEngine;
 using System;
 using SimCovidAPI;
-using SimCovidAPI.Exceptions;
+using UnityEngine;
 
-namespace InfectionModule
+namespace SimCovid.Core.Infection
 {
     /// <summary>
     /// Represents an Infection with amount
