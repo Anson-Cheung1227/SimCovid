@@ -1,6 +1,6 @@
 {
     "name": "SimCovidAPI",
-    "rootNamespace": "",
+    "rootNamespace": "SimCovidAPI",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

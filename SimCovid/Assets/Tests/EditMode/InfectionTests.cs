@@ -1,13 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using SimCovid.Core.Infection;
 using SimCovidAPI;
-using UnityEngine;
-using UnityEngine.TestTools;
 
-namespace Tests.EditMode
+namespace SimCovid.Tests.EditMode
 {
     public class InfectionTests
     {

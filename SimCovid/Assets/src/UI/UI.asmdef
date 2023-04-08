@@ -1,6 +1,6 @@
 {
     "name": "UI",
-    "rootNamespace": "",
+    "rootNamespace": "SimCovid",
     "references": [
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
         "GUID:7f381eaa641df2d47b9c61444ea2a16e",

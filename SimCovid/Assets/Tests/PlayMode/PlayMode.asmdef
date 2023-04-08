@@ -1,6 +1,6 @@
 {
     "name": "PlayMode",
-    "rootNamespace": "",
+    "rootNamespace": "SimCovid",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
