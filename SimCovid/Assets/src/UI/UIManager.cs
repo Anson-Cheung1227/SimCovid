@@ -14,7 +14,7 @@ namespace SimCovid.UI
     {
         #region TimeUI
         [SerializeField] private TextMeshProUGUI _timeText;
-        [SerializeField] private TextMeshProUGUI _dateText; 
+        [SerializeField] private TextMeshProUGUI _dateText;
         #endregion TimeUI
         #region StateUI
         //[SerializeField] private DataManager.Instance DataManager.Instance.Instance; 
@@ -23,11 +23,11 @@ namespace SimCovid.UI
         [SerializeField] private TextMeshProUGUI _selectedStatePopulationText;
         [SerializeField] private TextMeshProUGUI _selectedStateInfectionsText;
         [SerializeField] private TextMeshProUGUI _selectedStateInHospitalText;
-        [SerializeField] private TextMeshProUGUI _selectedStateRecoveredText;  
+        [SerializeField] private TextMeshProUGUI _selectedStateRecoveredText;
         [SerializeField] private TextMeshProUGUI _selectedStateDeceasedText;
         #endregion StateUI
         #region LockdownUI
-        [SerializeField] private GameObject _lockdownPanel; 
+        [SerializeField] private GameObject _lockdownPanel;
         [SerializeField] GameObject _localLockdownButton;
         [SerializeField] GameObject _interstateLockdownButton;
         [SerializeField] GameObject _globalLockdownButton;
@@ -101,7 +101,7 @@ namespace SimCovid.UI
                 _selectedStateInHospitalText.text = LongToString(dataManager.SelectedState.InHospitalLong);
                 _selectedStateRecoveredText.text = LongToString(dataManager.SelectedState.RecoveredLong);
                 _selectedStateDeceasedText.text = LongToString(dataManager.SelectedState.DeceasedLong);
-            }   
+            }
         }
         private void UpdateLockdownUI(DataManager dataManager)
         {
@@ -151,7 +151,7 @@ namespace SimCovid.UI
         {
             if (button == _localLockdownButton) dataManager.SelectedState.LocalLockdown = !dataManager.SelectedState.LocalLockdown;
             if (button == _interstateLockdownButton) dataManager.SelectedState.InterstateLockdown = !dataManager.SelectedState.InterstateLockdown;
-            if (button == _globalLockdownButton) 
+            if (button == _globalLockdownButton)
             {
                 dataManager.SelectedState.GlobalLockdown = !dataManager.SelectedState.GlobalLockdown;
                 dataManager.SelectedState.DailyIncomingPeople = 0;
@@ -169,10 +169,10 @@ namespace SimCovid.UI
             1,000,000 = 1 Million (M)
             1,000 = 1 thousand (K)
         */
-            if (number >= 1000000000000 || number <= -100000000000) return $"{Math.Round((decimal)number/1000000000000, decimals: 3)}T";
-            else if (number >= 1000000000 || number <= -1000000000) return $"{Math.Round((decimal)number/1000000000, decimals: 3)}B";
-            else if (number >= 1000000 || number <= -100000) return $"{Math.Round((decimal)number/1000000, decimals: 3)}M";
-            else if (number >= 1000 || number <= -1000) return $"{Math.Round((decimal)number/1000, decimals: 3)}K";
+            if (number >= 1000000000000 || number <= -100000000000) return $"{Math.Round((decimal)number / 1000000000000, decimals: 3)}T";
+            else if (number >= 1000000000 || number <= -1000000000) return $"{Math.Round((decimal)number / 1000000000, decimals: 3)}B";
+            else if (number >= 1000000 || number <= -100000) return $"{Math.Round((decimal)number / 1000000, decimals: 3)}M";
+            else if (number >= 1000 || number <= -1000) return $"{Math.Round((decimal)number / 1000, decimals: 3)}K";
             else return $"{Math.Round(number, decimals: 3)}";
         }
         public void OnMandatoryMaskButtonClick(DataManager dataManager)
@@ -187,7 +187,7 @@ namespace SimCovid.UI
         {
             _allStatesDetailsUIPanel.SetActive(!_allStatesDetailsUIPanel.activeInHierarchy);
         }
-        private void InstantiateStateColumn(GameObject column,GameObject parent, int amount)
+        private void InstantiateStateColumn(GameObject column, GameObject parent, int amount)
         {
             GameObject target;
             for (int i = 0; i < amount; ++i)

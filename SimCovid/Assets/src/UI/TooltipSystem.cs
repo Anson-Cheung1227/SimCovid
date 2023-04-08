@@ -9,9 +9,9 @@ namespace SimCovid.UI
     {
         public static TooltipSystem Instance;
         [SerializeField] private GameObject _tooltip;
-        private void Awake() 
+        private void Awake()
         {
-            Instance = this;    
+            Instance = this;
         }
         public static void Show(string content, string header = "")
         {

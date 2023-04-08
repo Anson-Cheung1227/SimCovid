@@ -7,7 +7,7 @@ namespace SimCovid.Core
     /// <summary>
     /// Controls the Camera Movement
     /// </summary>
-    public class CameraController : MonoBehaviour 
+    public class CameraController : MonoBehaviour
     {
         [SerializeField] private Camera _mainCamera;
         //Camera uses Vector3
@@ -16,7 +16,7 @@ namespace SimCovid.Core
         private Vector3 _resultPosition;
         private bool _isDrag = false;
         [SerializeField] private LayerMask _uiLayerMask;
-        private void LateUpdate() 
+        private void LateUpdate()
         {
             HandlePointerDrag();
         }
@@ -40,12 +40,12 @@ namespace SimCovid.Core
                         _origin = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
                     }
                 }
-                _resultPosition =  _origin - _difference;
+                _resultPosition = _origin - _difference;
                 //Camera position is always -10
                 _resultPosition.z = -10;
                 _mainCamera.transform.position = _resultPosition;
             }
-            else 
+            else
             {
                 _isDrag = false;
             }

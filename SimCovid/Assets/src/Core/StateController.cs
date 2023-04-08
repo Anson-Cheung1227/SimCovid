@@ -8,7 +8,7 @@ namespace SimCovid.Core
     /// <summary>
     /// StateContoller for every State
     /// </summary>
-    public class StateController : MonoBehaviour 
+    public class StateController : MonoBehaviour
     {
         /// <summary>
         /// For Initialization use, implements ILoadOperation, call Load() to start loading

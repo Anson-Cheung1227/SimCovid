@@ -10,7 +10,7 @@ namespace SimCovid.Core
     [System.Serializable]
     public class Pool
     {
-        public GameObject Location; 
+        public GameObject Location;
         public GameObject Prefab;
         public List<GameObject> PoolObjects;
         public int Size;
@@ -38,8 +38,8 @@ namespace SimCovid.Core
             public string Name { get; set; }
             public float Operations { get; set; }
             public float DoneOperations { get; set; }
-            public MonoBehaviour Operator { get; set ; }
-            public List<Pool> Pools; 
+            public MonoBehaviour Operator { get; set; }
+            public List<Pool> Pools;
             public void Load()
             {
                 foreach (Pool pool in Pools)

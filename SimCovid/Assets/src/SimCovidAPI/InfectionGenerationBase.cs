@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace SimCovidAPI
 {
-    public abstract class InfectionGenerationBase: ISpreadableGenerationManager
+    public abstract class InfectionGenerationBase : ISpreadableGenerationManager
     {
         protected List<ILocation> _locations;
         public InfectionGenerationBase(List<ILocation> locationList)
@@ -45,7 +45,7 @@ namespace SimCovidAPI
                 }
                 eligibleLocations.Add(location);
             }
-            
+
             foreach (ILocation eligibleLocation in eligibleLocations)
             {
                 ILocation targetLocation = locationList[Random.Range(0, locationList.Count)];

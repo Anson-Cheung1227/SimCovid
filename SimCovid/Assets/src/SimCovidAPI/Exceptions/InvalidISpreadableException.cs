@@ -11,7 +11,7 @@ namespace SimCovidAPI.Exceptions
 
         public InvalidISpreadableException(string message) : base(message)
         {
-            
+
         }
 
         public InvalidISpreadableException(string message, Exception innerException) : base(message, innerException)

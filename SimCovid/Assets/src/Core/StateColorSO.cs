@@ -10,6 +10,6 @@ namespace SimCovid.Core
     {
         public Color OriginalColor;
         public Color HoveringColor;
-        public Color SelectedColor;    
+        public Color SelectedColor;
     }
 }

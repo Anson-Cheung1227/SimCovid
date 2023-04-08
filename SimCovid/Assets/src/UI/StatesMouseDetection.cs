@@ -10,9 +10,9 @@ namespace SimCovid.UI
     {
         // Start is called before the first frame update
         [SerializeField] private DataManager _dataManager;
-        [SerializeField] private StateColorSO _stateColorSORef; 
-        [SerializeField] private SpriteRenderer _spriteRenderer; 
-        [SerializeField] private StateController _stateController; 
+        [SerializeField] private StateColorSO _stateColorSORef;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private StateController _stateController;
         [SerializeField] private CameraController _cameraController;
 
         // Update is called once per frame
@@ -25,18 +25,18 @@ namespace SimCovid.UI
                 else _spriteRenderer.color = _stateColorSORef.OriginalColor;
             }
         }
-        private void OnMouseOver() 
+        private void OnMouseOver()
         {
             if (_cameraController.IsPointerOverUI()) return;
             _dataManager.HoveringState = _stateController.State;
             TooltipSystem.Show("", _dataManager.HoveringState.Name);
         }
-        private void OnMouseExit() 
+        private void OnMouseExit()
         {
             _dataManager.HoveringState = null;
             TooltipSystem.Hide();
         }
-        private void OnMouseDown() 
+        private void OnMouseDown()
         {
             if (_cameraController.IsPointerOverUI()) return;
             _dataManager.SelectedState = _stateController.State;

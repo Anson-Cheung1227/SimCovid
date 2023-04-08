@@ -23,10 +23,10 @@ namespace SimCovidAPI
         public void SetHasSpread(bool spread);
         public bool IsSameValue(ISpreadable a)
         {
-            return Date == a.Date && 
-                   InHospitalDate == a.InHospitalDate && 
-                   RecoveryDate == a.RecoveryDate && 
-                   DeceasedDate == a.DeceasedDate && 
+            return Date == a.Date &&
+                   InHospitalDate == a.InHospitalDate &&
+                   RecoveryDate == a.RecoveryDate &&
+                   DeceasedDate == a.DeceasedDate &&
                    HasSpread == a.HasSpread &&
                    Status == a.Status;
         }

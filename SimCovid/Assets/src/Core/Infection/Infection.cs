@@ -11,12 +11,12 @@ namespace SimCovid.Core.Infection
     public class Infection : ISpreadable
     {
         [field: SerializeField] public DateTime Date { get; private set; }
-        [field: SerializeField] public Nullable<DateTime> InHospitalDate {get; private set;}
-        [field: SerializeField] public Nullable<DateTime> RecoveryDate {get; private set;}
-        [field: SerializeField] public Nullable<DateTime> DeceasedDate {get; private set;}
+        [field: SerializeField] public Nullable<DateTime> InHospitalDate { get; private set; }
+        [field: SerializeField] public Nullable<DateTime> RecoveryDate { get; private set; }
+        [field: SerializeField] public Nullable<DateTime> DeceasedDate { get; private set; }
         [field: SerializeField] public ISpreadableStatus Status { get; private set; }
         [field: SerializeField] public long Amount { get; private set; }
-        [field: SerializeField] public bool HasSpread {get; private set; }
+        [field: SerializeField] public bool HasSpread { get; private set; }
 
         public void AddToInfection(long amount)
         {
@@ -65,17 +65,17 @@ namespace SimCovid.Core.Infection
     public struct InfectionStruct
     {
         [field: SerializeField] public DateTime Date { get; set; }
-        [field: SerializeField] public DateTime InHospitalDate {get; set;}
-        [field: SerializeField] public DateTime RecoveryDate {get; set;}
-        [field: SerializeField] public DateTime DeceasedDate {get; set;}
+        [field: SerializeField] public DateTime InHospitalDate { get; set; }
+        [field: SerializeField] public DateTime RecoveryDate { get; set; }
+        [field: SerializeField] public DateTime DeceasedDate { get; set; }
         [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
         [field: SerializeField] public long Amount { get; set; }
-        [field: SerializeField] public bool HasSpread {get; set;}
+        [field: SerializeField] public bool HasSpread { get; set; }
         public static explicit operator Infection(InfectionStruct infectionStruct)
         {
             return new Infection
             {
-                
+
             };
         }
     }

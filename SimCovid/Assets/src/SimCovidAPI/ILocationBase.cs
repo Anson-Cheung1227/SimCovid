@@ -13,7 +13,7 @@ namespace SimCovidAPI
         public ISpreadableManager InfectionManager { get; }
         protected ILocationBase()
         {
-            
+
         }
     }
 }

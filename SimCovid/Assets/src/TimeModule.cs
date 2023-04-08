@@ -157,7 +157,7 @@ public class TimeModule
         }
         public static Date operator +(Date a, Date b)
         {
-            var resultDate = new Date(0,0,0);
+            var resultDate = new Date(0, 0, 0);
             resultDate.Day = a.Day + b.Day;
             resultDate.Month = a.Month;
             resultDate.Year = a.Year;
@@ -171,12 +171,12 @@ public class TimeModule
                 --resultDate.Month;
                 if (resultDate.Month < 1)
                 {
-                    resultDate.Month += 12; 
+                    resultDate.Month += 12;
                     --resultDate.Year;
                 }
                 resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
-            resultDate.Month += b.Month; 
+            resultDate.Month += b.Month;
             if (resultDate.Month > 12 || resultDate.Month < 1)
             {
                 int multi = (int)Math.Truncate(resultDate.Month / 12);
@@ -184,16 +184,16 @@ public class TimeModule
                 resultDate.Year += multi;
                 if (resultDate.Month <= 0)
                 {
-                    resultDate.Month += 12; 
+                    resultDate.Month += 12;
                     --resultDate.Year;
-                } 
+                }
             }
             resultDate.Year += b.Year;
-            return resultDate; 
+            return resultDate;
         }
         public static Date operator -(Date a, Date b)
         {
-            var resultDate = new Date(0,0,0);
+            var resultDate = new Date(0, 0, 0);
             resultDate.Day = a.Day - b.Day;
             resultDate.Month = a.Month;
             resultDate.Year = a.Year;
@@ -212,7 +212,7 @@ public class TimeModule
                 }
                 resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
-            resultDate.Month -= b.Month; 
+            resultDate.Month -= b.Month;
             if (resultDate.Month > 12 || resultDate.Month < 1)
             {
                 int multi = (int)Math.Truncate(resultDate.Month / 12);
@@ -220,17 +220,17 @@ public class TimeModule
                 resultDate.Year += multi;
                 if (resultDate.Month <= 0)
                 {
-                    resultDate.Month += 12; 
+                    resultDate.Month += 12;
                     --resultDate.Year;
-                } 
+                }
             }
             resultDate.Year -= b.Year;
             return resultDate;
         }
         public static Date operator *(Date a, float multiplier)
         {
-            var resultDate = new Date(0,0,0);
-            resultDate.Day = a.Day * multiplier; 
+            var resultDate = new Date(0, 0, 0);
+            resultDate.Day = a.Day * multiplier;
             resultDate.Month = a.Month;
             resultDate.Year = a.Year;
             while (resultDate.Day > _dayList[((int)resultDate.Month - 1) % 12])
@@ -243,12 +243,12 @@ public class TimeModule
                 --resultDate.Month;
                 if (resultDate.Month < 1)
                 {
-                    resultDate.Month += 12; 
+                    resultDate.Month += 12;
                     --resultDate.Year;
                 }
                 resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
-            resultDate.Month *= multiplier; 
+            resultDate.Month *= multiplier;
             if (resultDate.Month > 12 || resultDate.Month < 1)
             {
                 int multi = (int)Math.Truncate(resultDate.Month / 12);
@@ -256,16 +256,16 @@ public class TimeModule
                 resultDate.Year += multi;
                 if (resultDate.Month <= 0)
                 {
-                    resultDate.Month += 12; 
+                    resultDate.Month += 12;
                     --resultDate.Year;
-                } 
+                }
             }
             resultDate.Year *= multiplier;
             return resultDate;
         }
         public static Date operator *(Date a, Date multiplier)
         {
-            var resultDate = new Date(0,0,0);
+            var resultDate = new Date(0, 0, 0);
             resultDate.Day = a.Day * multiplier.Day;
             resultDate.Month = a.Month;
             resultDate.Year = a.Year;
@@ -279,12 +279,12 @@ public class TimeModule
                 --resultDate.Month;
                 if (resultDate.Month < 1)
                 {
-                    resultDate.Month += 12; 
+                    resultDate.Month += 12;
                     --resultDate.Year;
                 }
                 resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
-            resultDate.Month *= multiplier.Month; 
+            resultDate.Month *= multiplier.Month;
             if (resultDate.Month > 12 || resultDate.Month < 1)
             {
                 int multi = (int)Math.Truncate(resultDate.Month / 12);
@@ -292,9 +292,9 @@ public class TimeModule
                 resultDate.Year += multi;
                 if (resultDate.Month <= 0)
                 {
-                    resultDate.Month += 12; 
+                    resultDate.Month += 12;
                     --resultDate.Year;
-                } 
+                }
             }
             resultDate.Year *= multiplier.Year;
             return resultDate;
@@ -302,7 +302,7 @@ public class TimeModule
 
         public static Date operator /(Date a, Date divisor)
         {
-            var resultDate = new Date(0,0,0);
+            var resultDate = new Date(0, 0, 0);
             if (divisor.Day == 0) resultDate.Day = a.Day;
             else resultDate.Day = a.Day / divisor.Day;
             resultDate.Month = a.Month;
@@ -317,13 +317,13 @@ public class TimeModule
                 --resultDate.Month;
                 if (resultDate.Month < 1)
                 {
-                    resultDate.Month += 12; 
+                    resultDate.Month += 12;
                     --resultDate.Year;
                 }
                 resultDate.Day += _dayList[((int)resultDate.Month - 1) % 12];
             }
             if (divisor.Month == 0) resultDate.Month = a.Month;
-            else resultDate.Month = a.Month / divisor.Month; 
+            else resultDate.Month = a.Month / divisor.Month;
             if (resultDate.Month > 12 || resultDate.Month < 1)
             {
                 int multi = (int)Math.Truncate(resultDate.Month / 12);
@@ -331,9 +331,9 @@ public class TimeModule
                 resultDate.Year += multi;
                 if (resultDate.Month <= 0)
                 {
-                    resultDate.Month += 12; 
+                    resultDate.Month += 12;
                     --resultDate.Year;
-                } 
+                }
             }
             if (divisor.Year == 0) resultDate.Year = a.Year;
             else resultDate.Year = a.Year / divisor.Year;
@@ -349,7 +349,7 @@ public class TimeModule
         {
             if (object.ReferenceEquals(a, null) || object.ReferenceEquals(b, null))
             {
-                return object.ReferenceEquals(a,b);
+                return object.ReferenceEquals(a, b);
             }
             return (a.Day == b.Day && a.Month == b.Month && a.Year == b.Year);
         }
@@ -357,7 +357,7 @@ public class TimeModule
         {
             if (object.ReferenceEquals(a, null) || object.ReferenceEquals(b, null))
             {
-                return !object.ReferenceEquals(a,b);
+                return !object.ReferenceEquals(a, b);
             }
             return !(a.Day == b.Day && a.Month == b.Month && a.Year == b.Year);
         }

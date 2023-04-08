@@ -8,9 +8,9 @@ namespace SimCovid.Core
     [System.Serializable]
     public class Airport
     {
-        [field: SerializeField] public string Name {get; set;}
-        [field: SerializeField] public string IATACode {get; set; }  
-        [field: SerializeField] public long YearlyPassengers {get; set;}
-        [field: SerializeField] public string CityServed {get; set; }      
+        [field: SerializeField] public string Name { get; set; }
+        [field: SerializeField] public string IATACode { get; set; }
+        [field: SerializeField] public long YearlyPassengers { get; set; }
+        [field: SerializeField] public string CityServed { get; set; }
     }
 }

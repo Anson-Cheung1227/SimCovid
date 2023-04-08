@@ -22,7 +22,7 @@ public class Zoom : MonoBehaviour
         float mapSize = slider.value * multiplier;
         Debug.Log(mapSize);
         map.localScale = new Vector2(mapSize, mapSize);
-         
+
     }
-    
+
 }

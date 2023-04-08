@@ -23,7 +23,7 @@ namespace SimCovid.Core
         public List<ILoadOperation> LoadOperations = new List<ILoadOperation>();
         public List<DataManager> DataManagerList;
         // Start is called before the first frame update
-        private void Awake() 
+        private void Awake()
         {
             Instance = this;
         }
@@ -70,7 +70,7 @@ namespace SimCovid.Core
                 while (!((LoadOperations[_currentOperation].DoneOperations / LoadOperations[_currentOperation].Operations) == 1))
                 {
                     _totalProgress = 0;
-                    foreach (ILoadOperation loadOperation in LoadOperations) 
+                    foreach (ILoadOperation loadOperation in LoadOperations)
                     {
                         _totalProgress += loadOperation.DoneOperations / loadOperation.Operations;
                     }
@@ -98,7 +98,7 @@ namespace SimCovid.Core
                 }
                 else
                 {
-                    _loadingTextProgress.text = "Loading Environment... " +_sceneProgress * 100 + "%";
+                    _loadingTextProgress.text = "Loading Environment... " + _sceneProgress * 100 + "%";
                 }
                 yield return null;
             }

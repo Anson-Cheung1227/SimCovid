@@ -30,7 +30,7 @@ namespace SimCovid.UI
             if (headerLength > _characterWrapLimit || contentLength > _characterWrapLimit) _tooltipLayout.enabled = true;
             else _tooltipLayout.enabled = false;
         }
-        private void Update() 
+        private void Update()
         {
             if (Application.isEditor)
             {
@@ -40,7 +40,7 @@ namespace SimCovid.UI
                 else _tooltipLayout.enabled = false;
             }
             Vector2 position = Input.mousePosition;
-            GetComponent<RectTransform>().pivot = new Vector2(position.x/Screen.width, position.y/Screen.height);
+            GetComponent<RectTransform>().pivot = new Vector2(position.x / Screen.width, position.y / Screen.height);
             GetComponent<RectTransform>().anchoredPosition = position;
         }
     }

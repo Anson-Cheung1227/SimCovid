@@ -6,8 +6,8 @@ using UnityEngine.Rendering;
 /// </summary>
 public class UnityErrorAvoid : MonoBehaviour
 {
-    private void Awake() 
+    private void Awake()
     {
-        DebugManager.instance.enableRuntimeUI = false;   
+        DebugManager.instance.enableRuntimeUI = false;
     }
 }

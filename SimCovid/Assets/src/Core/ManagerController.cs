@@ -18,7 +18,7 @@ namespace SimCovid.Core
         private void Awake()
         {
             Instance = this;
-            GameEventManager.Instance.OnGenerateInfection += delegate(DataManager dataManager)
+            GameEventManager.Instance.OnGenerateInfection += delegate (DataManager dataManager)
             {
                 foreach (ISpreadableGenerationManager spreadableGenerationManager in _spreadableGenerationManagers)
                 {

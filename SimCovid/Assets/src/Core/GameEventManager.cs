@@ -9,21 +9,21 @@ namespace SimCovid.Core
         public static GameEventManager Instance;
         public event Action<int> OnSetSceneId;
         public event Action OnDateChange;
-        public event Action<DataManager> OnGenerateInfection; 
+        public event Action<DataManager> OnGenerateInfection;
         public event Action<DataManager> OnGenerateInHospital;
         public event Action<DataManager> OnGenerateRecovery;
         public event Action<DataManager> OnGenerateDeath;
-        public event Action OnUpdateMorale; 
+        public event Action OnUpdateMorale;
         public event Action<DataManager> OnUpdateUI;
         public event Action<string, Sprite, string, string> OnActiveModalWindow;
         public event Action<List<State>> OnUpdateAllStatesDetailsTable;
-        private void Awake() 
+        private void Awake()
         {
-            Instance = this;    
+            Instance = this;
         }
         public void InvokeOnSetSceneId(int id)
         {
-            if (OnSetSceneId != null) 
+            if (OnSetSceneId != null)
             {
                 OnSetSceneId(id);
             }
@@ -39,21 +39,21 @@ namespace SimCovid.Core
         {
             if (OnGenerateInfection != null)
             {
-                OnGenerateInfection(dataManager);   
+                OnGenerateInfection(dataManager);
             }
         }
         public void InvokeOnGenerateInHospital(DataManager dataManager)
         {
             if (OnGenerateInHospital != null)
             {
-                OnGenerateInHospital(dataManager);   
+                OnGenerateInHospital(dataManager);
             }
         }
         public void InvokeOnGenerateRecovery(DataManager dataManager)
         {
             if (OnGenerateRecovery != null)
             {
-                OnGenerateRecovery(dataManager);   
+                OnGenerateRecovery(dataManager);
             }
         }
         public void InvokeOnGenerateDeath(DataManager dataManager)

@@ -23,8 +23,8 @@
             public int StatusValue { get { return 2; } }
         }
         public class DeceasedInfection : ISpreadableStatus
-        { 
-            public string StatusName { get { return "Deceased"; } } 
+        {
+            public string StatusName { get { return "Deceased"; } }
             public int StatusValue { get { return 3; } }
         }
     }

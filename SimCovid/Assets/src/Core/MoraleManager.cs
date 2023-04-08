@@ -8,7 +8,7 @@ namespace SimCovid.Core
     /// </summary>
     public class MoraleManager : MonoBehaviour
     {
-        [SerializeField] private List<StateController> _allStates; 
+        [SerializeField] private List<StateController> _allStates;
         // Start is called before the first frame update
         void Start()
         {
