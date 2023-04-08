@@ -76,3 +76,12 @@ SimCovid/crashlytics-build.properties
 
 #Jetbrain files
 /**/.idea
+
+#DocFX
+SimCovidDocFX/**/DROP/
+SimCovidDocFX/**/TEMP/
+SimCovidDocFX/**/packages/
+SimCovidDocFX/**/bin/
+SimCovidDocFXm/**/obj/
+SimCovidDocFX/*
+!SimCovidDocFX/_site/
