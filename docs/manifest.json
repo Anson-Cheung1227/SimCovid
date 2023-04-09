@@ -4,11 +4,661 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Airport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Airport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.AirportSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.AirportSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.AllStatesManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.AllStatesManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.CameraController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.CameraController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.CoreGameSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.CoreGameSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.DataManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.DataManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.GameEventManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.GameEventManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.GameManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.GameManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.GlobalStatsSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.GlobalStatsSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.Infection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.Infection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.ActiveSpreadableDataHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.ActiveSpreadableDataHandler-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.DeceasedSpreadableDataHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.DeceasedSpreadableDataHandler-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.InHospitalSpreadableDataHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.InHospitalSpreadableDataHandler-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.RecoveredSpreadableDataHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.RecoveredSpreadableDataHandler-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.InfectionDataHandlers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.InfectionGeneration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.InfectionGeneration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.InfectionManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.InfectionManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.InfectionStruct.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.InfectionStruct.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Infection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Infection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.ManagerController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.ManagerController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.MoraleManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.MoraleManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.ObjectPooler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.ObjectPooler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.Pool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.Pool.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.SceneEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.SceneEnum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.SceneIdHolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.SceneIdHolder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.SceneResourceLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.SceneResourceLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.State.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.State.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.StateColorSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.StateColorSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.StateController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.StateController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.StateSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.StateSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.TimeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.TimeController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core._BootLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core._BootLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Tests.EditMode.InfectionTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Tests.EditMode.InfectionTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.Tests.EditMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.Tests.EditMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.UI.AllStateDetailsTableTextController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.UI.AllStateDetailsTableTextController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.UI.ModalWindowController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.UI.ModalWindowController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.UI.StatesMouseDetection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.UI.StatesMouseDetection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.UI.Tooltip.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.UI.Tooltip.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.UI.TooltipSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.UI.TooltipSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.UI.UIManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.UI.UIManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovid.UI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovid.UI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.Exceptions.InvalidISpreadableException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.Exceptions.InvalidISpreadableException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.Exceptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.ILoadOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.ILoadOperation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.ILocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.ILocation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.ILocationBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.ILocationBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.IMod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.IMod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.ISpreadable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.ISpreadable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.ISpreadableDataHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.ISpreadableDataHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.ISpreadableGenerationManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.ISpreadableGenerationManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.ISpreadableManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.ISpreadableManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.ISpreadableStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.ISpreadableStatus.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.InHospitalGenerationBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.InHospitalGenerationBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.InfectionGenerationBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.InfectionGenerationBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.InfectionManagerBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.InfectionManagerBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.InfectionStatus.ActiveInfection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.InfectionStatus.ActiveInfection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.InfectionStatus.DeceasedInfection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.InfectionStatus.DeceasedInfection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.InfectionStatus.InHospitalInfection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.InfectionStatus.InHospitalInfection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.InfectionStatus.RecoveredInfection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.InfectionStatus.RecoveredInfection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.InfectionStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.InfectionStatus.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.SpreadableDataHandlerBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.SpreadableDataHandlerBase-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SimCovidAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SimCovidAPI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "api/toc.json"
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
         }
       },
       "version": ""
@@ -17,8 +667,18 @@
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "articles/toc.json"
+        ".html": {
+          "relative_path": "articles/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
         }
       },
       "version": ""
@@ -27,8 +687,8 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""

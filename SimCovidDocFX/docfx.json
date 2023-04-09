@@ -48,8 +48,12 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "templates/modern"
+      "default"
     ],
+    "globalMetadata": {
+      "_appTitle": "SimCovid Documentation",
+      "_appFooter": "SimCovid (c) 2022-2023"
+    },
     "postProcessors": [],
     "keepFileLink": false,
     "disableGitFeatures": false
