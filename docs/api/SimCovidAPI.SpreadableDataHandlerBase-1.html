@@ -1,0 +1,642 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class SpreadableDataHandlerBase&lt;TISpreadableTarget&gt;
+ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class SpreadableDataHandlerBase&lt;TISpreadableTarget&gt;
+ ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1">
+
+
+
+  <h1 id="SimCovidAPI_SpreadableDataHandlerBase_1" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1" class="text-break">Class SpreadableDataHandlerBase&lt;TISpreadableTarget&gt;
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">SpreadableDataHandlerBase&lt;TISpreadableTarget&gt;</span></div>
+      <div class="level2"><a class="xref" href="SimCovid.Core.Infection.InfectionDataHandlers.ActiveSpreadableDataHandler-1.html">ActiveSpreadableDataHandler&lt;TISpreadableTarget&gt;</a></div>
+      <div class="level2"><a class="xref" href="SimCovid.Core.Infection.InfectionDataHandlers.DeceasedSpreadableDataHandler-1.html">DeceasedSpreadableDataHandler&lt;TISpreadableTarget&gt;</a></div>
+      <div class="level2"><a class="xref" href="SimCovid.Core.Infection.InfectionDataHandlers.InHospitalSpreadableDataHandler-1.html">InHospitalSpreadableDataHandler&lt;TISpreadableTarget&gt;</a></div>
+      <div class="level2"><a class="xref" href="SimCovid.Core.Infection.InfectionDataHandlers.RecoveredSpreadableDataHandler-1.html">RecoveredSpreadableDataHandler&lt;TISpreadableTarget&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="SimCovidAPI.ISpreadableDataHandler.html">ISpreadableDataHandler</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="SimCovidAPI.html">SimCovidAPI</a></h6>
+  <h6><strong>Assembly</strong>: SimCovidAPI.dll</h6>
+  <h5 id="SimCovidAPI_SpreadableDataHandlerBase_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SpreadableDataHandlerBase&lt;TISpreadableTarget&gt; : ISpreadableDataHandler where TISpreadableTarget : class, ISpreadable, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TISpreadableTarget</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1__ctor_System_Int64_.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.%23ctor(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L10">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1__ctor_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.#ctor*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1__ctor_System_Int64_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.#ctor(System.Int64)">SpreadableDataHandlerBase(long)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SpreadableDataHandlerBase(long limit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">limit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_Spreadables.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.Spreadables%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L8">View Source</a>
+  </span>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_Spreadables" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.Spreadables">Spreadables</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;TISpreadableTarget&gt; Spreadables</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;TISpreadableTarget&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_Count.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.Count%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L15">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_Count_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.Count*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_Count" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.Count">Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_Limit.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.Limit%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L16">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_Limit_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.Limit*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_Limit" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.Limit">Limit</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long Limit { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_AddAmountToISpreadable_SimCovidAPI_ISpreadable_System_Int64_.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.AddAmountToISpreadable(SimCovidAPI.ISpreadable%2CSystem.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L34">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_AddAmountToISpreadable_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.AddAmountToISpreadable*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_AddAmountToISpreadable_SimCovidAPI_ISpreadable_System_Int64_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.AddAmountToISpreadable(SimCovidAPI.ISpreadable,System.Int64)">AddAmountToISpreadable(ISpreadable, long)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool AddAmountToISpreadable(ISpreadable spreadableTarget, long amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SimCovidAPI.ISpreadable.html">ISpreadable</a></td>
+        <td><span class="parametername">spreadableTarget</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">amount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_AddISpreadable_SimCovidAPI_ISpreadable_.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.AddISpreadable(SimCovidAPI.ISpreadable)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L18">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_AddISpreadable_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.AddISpreadable*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_AddISpreadable_SimCovidAPI_ISpreadable_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.AddISpreadable(SimCovidAPI.ISpreadable)">AddISpreadable(ISpreadable)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool AddISpreadable(ISpreadable spreadable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SimCovidAPI.ISpreadable.html">ISpreadable</a></td>
+        <td><span class="parametername">spreadable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_CreateISpreadable.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.CreateISpreadable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L75">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_CreateISpreadable_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.CreateISpreadable*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_CreateISpreadable" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.CreateISpreadable">CreateISpreadable()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ISpreadable CreateISpreadable()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SimCovidAPI.ISpreadable.html">ISpreadable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_FindExistingInstance_SimCovidAPI_ISpreadable_.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.FindExistingInstance(SimCovidAPI.ISpreadable)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L64">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_FindExistingInstance_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.FindExistingInstance*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_FindExistingInstance_SimCovidAPI_ISpreadable_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.FindExistingInstance(SimCovidAPI.ISpreadable)">FindExistingInstance(ISpreadable)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ISpreadable FindExistingInstance(ISpreadable instance)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SimCovidAPI.ISpreadable.html">ISpreadable</a></td>
+        <td><span class="parametername">instance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SimCovidAPI.ISpreadable.html">ISpreadable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_GetActualInfectionsCount.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.GetActualInfectionsCount%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L54">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_GetActualInfectionsCount_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.GetActualInfectionsCount*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_GetActualInfectionsCount" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.GetActualInfectionsCount">GetActualInfectionsCount()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long GetActualInfectionsCount()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_GetAll.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.GetAll%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L49">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_GetAll_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.GetAll*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_GetAll" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.GetAll">GetAll()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;ISpreadable&gt; GetAll()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SimCovidAPI.ISpreadable.html">ISpreadable</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_RemoveISpreadable_SimCovidAPI_ISpreadable_.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.RemoveISpreadable(SimCovidAPI.ISpreadable)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L26">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_RemoveISpreadable_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.RemoveISpreadable*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_RemoveISpreadable_SimCovidAPI_ISpreadable_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.RemoveISpreadable(SimCovidAPI.ISpreadable)">RemoveISpreadable(ISpreadable)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool RemoveISpreadable(ISpreadable spreadable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SimCovidAPI.ISpreadable.html">ISpreadable</a></td>
+        <td><span class="parametername">spreadable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1_SetLimit_System_Int64_.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601.SetLimit(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L41">View Source</a>
+  </span>
+  <a id="SimCovidAPI_SpreadableDataHandlerBase_1_SetLimit_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.SetLimit*"></a>
+  <h4 id="SimCovidAPI_SpreadableDataHandlerBase_1_SetLimit_System_Int64_" data-uid="SimCovidAPI.SpreadableDataHandlerBase`1.SetLimit(System.Int64)">SetLimit(long)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetLimit(long limit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">limit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="SimCovidAPI.ISpreadableDataHandler.html">ISpreadableDataHandler</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Anson-Cheung1227/SimCovid/new/dev/apiSpec/new?filename=SimCovidAPI_SpreadableDataHandlerBase_1.md&amp;value=---%0Auid%3A%20SimCovidAPI.SpreadableDataHandlerBase%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Anson-Cheung1227/SimCovid/blob/dev/SimCovid/Assets/src/SimCovidAPI/SpreadableDataHandlerBase.cs/#L5" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
