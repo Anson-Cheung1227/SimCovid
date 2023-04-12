@@ -32,5 +32,19 @@ namespace SimCovid.Tests.EditMode
             bool isSameValue = a.IsSameValue(b);
             Assert.AreEqual(true, isSameValue);
         }
+
+        [Test]
+        public void InfectionAreDifferent()
+        {
+            InfectionManager infectionManager = new InfectionManager(100);
+            ISpreadableDataHandler activeHandler = infectionManager.GetActive();
+            ISpreadable a = activeHandler.CreateISpreadable();
+            ISpreadable b = activeHandler.CreateISpreadable();
+            a.SetActive(new DateTime(2020, 12, 1));
+            b.SetActive(new DateTime(2020, 12, 1));
+            b.SetInHospital(new DateTime(2020, 12, 1));
+            bool isDifferentValue = !a.IsSameValue(b);
+            Assert.AreEqual(true, isDifferentValue);
+        }
     }
 }
