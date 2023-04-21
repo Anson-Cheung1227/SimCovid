@@ -14,6 +14,6 @@ namespace SimCovidAPI
         public ISpreadableDataHandler GetInHospital();
         public ISpreadableDataHandler GetRecovered();
         public ISpreadableDataHandler GetDeceased();
-        public long GetTotalInfections();
+        public long GetTotalISpreadableCount();
     }
 }

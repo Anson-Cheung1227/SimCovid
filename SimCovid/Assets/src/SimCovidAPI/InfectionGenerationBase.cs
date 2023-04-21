@@ -23,12 +23,12 @@ namespace SimCovidAPI
             foreach (ILocation eligibleLocation in eligibleLocations)
             {
                 ISpreadableDataHandler targetISpreadableHandler = eligibleLocation.InfectionManager.GetActive();
-                if (targetISpreadableHandler.GetActualInfectionsCount() == 0)
+                if (targetISpreadableHandler.GetActualISpreadablesCount() == 0)
                 {
                     continue;
                 }
                 ISpreadable infectionParam = targetISpreadableHandler.CreateISpreadable();
-                infectionParam.AddToInfection(targetISpreadableHandler.GetActualInfectionsCount());
+                infectionParam.AddToInfection(targetISpreadableHandler.GetActualISpreadablesCount());
                 AddInfection(targetISpreadableHandler, infectionParam);
             }
         }
@@ -39,7 +39,7 @@ namespace SimCovidAPI
             foreach (ILocation location in locationList)
             {
                 ISpreadableDataHandler spreadableDataHandler = location.InfectionManager.GetActive();
-                if (spreadableDataHandler.GetActualInfectionsCount() == 0)
+                if (spreadableDataHandler.GetActualISpreadablesCount() == 0)
                 {
                     continue;
                 }
@@ -51,7 +51,7 @@ namespace SimCovidAPI
                 ILocation targetLocation = locationList[Random.Range(0, locationList.Count)];
                 ISpreadableDataHandler targetSpreadableHandler = targetLocation.InfectionManager.GetActive();
                 ISpreadable infectionParam = targetSpreadableHandler.CreateISpreadable();
-                infectionParam.AddToInfection(eligibleLocation.InfectionManager.GetActive().GetActualInfectionsCount());
+                infectionParam.AddToInfection(eligibleLocation.InfectionManager.GetActive().GetActualISpreadablesCount());
                 AddInfection(targetSpreadableHandler, infectionParam);
             }
         }
@@ -73,7 +73,7 @@ namespace SimCovidAPI
 
         public virtual bool AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
         {
-            if (spreadableDataHandler.GetActualInfectionsCount() >= spreadableDataHandler.Limit) return false;
+            if (spreadableDataHandler.GetActualISpreadablesCount() >= spreadableDataHandler.Limit) return false;
             ISpreadable findResult = spreadableDataHandler.FindExistingInstance(param);
             if (findResult == null)
             {

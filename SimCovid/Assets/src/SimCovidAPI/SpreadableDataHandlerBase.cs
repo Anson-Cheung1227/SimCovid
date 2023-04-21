@@ -18,7 +18,7 @@ namespace SimCovidAPI
         public virtual bool AddISpreadable(ISpreadable spreadable)
         {
             TISpreadableTarget target = spreadable as TISpreadableTarget;
-            if (spreadable.Amount + GetActualInfectionsCount() > Limit || target == null) return false;
+            if (spreadable.Amount + GetActualISpreadablesCount() > Limit || target == null) return false;
             Spreadables.Add(target);
             return true;
         }
@@ -33,14 +33,14 @@ namespace SimCovidAPI
 
         public virtual bool AddAmountToISpreadable(ISpreadable spreadableTarget, long amount)
         {
-            bool overloaded = amount + GetActualInfectionsCount() > Limit;
+            bool overloaded = amount + GetActualISpreadablesCount() > Limit;
             if (!overloaded) spreadableTarget.AddToInfection(amount);
             bool success = !overloaded;
             return success;
         }
         public virtual bool SetLimit(long limit)
         {
-            bool overloaded = limit < GetActualInfectionsCount();
+            bool overloaded = limit < GetActualISpreadablesCount();
             if (!overloaded) Limit = limit;
             bool success = !overloaded;
             return success;
@@ -51,7 +51,7 @@ namespace SimCovidAPI
             return Spreadables;
         }
 
-        public virtual long GetActualInfectionsCount()
+        public virtual long GetActualISpreadablesCount()
         {
             long count = 0;
             foreach (TISpreadableTarget spreadable in Spreadables)

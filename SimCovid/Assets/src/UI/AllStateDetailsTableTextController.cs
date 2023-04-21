@@ -27,8 +27,8 @@ namespace SimCovid.UI
         private void OnUpdateStateDetailsTable(List<State> stateList)
         {
             _stateNameText.text = stateList[Id].Name;
-            _stateInfectionsText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetActive().GetActualInfectionsCount());
-            _stateInHospitalText.text = UIManager.LongToString(stateList[Id].InHospitalLong);
+            _stateInfectionsText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetTotalISpreadableCount());
+            _stateInHospitalText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetInHospital().GetActualISpreadablesCount());
             _stateRecoveredText.text = UIManager.LongToString(stateList[Id].RecoveredLong);
             _stateDeceasedText.text = UIManager.LongToString(stateList[Id].DeceasedLong);
         }

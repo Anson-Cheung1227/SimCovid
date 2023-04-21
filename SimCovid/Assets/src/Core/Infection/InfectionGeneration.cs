@@ -27,7 +27,7 @@ namespace SimCovid.Core.Infection
                 }
 
                 int iter = list.Count;
-                while (state.InfectionManager.GetTotalInfections() > list[iter - 1].InfectionManager.GetTotalInfections())
+                while (state.InfectionManager.GetTotalISpreadableCount() > list[iter - 1].InfectionManager.GetTotalISpreadableCount())
                 {
                     iter--;
                     if (iter == 0) break;

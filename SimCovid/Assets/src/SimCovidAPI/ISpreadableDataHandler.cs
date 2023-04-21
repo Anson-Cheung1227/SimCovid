@@ -16,7 +16,7 @@ namespace SimCovidAPI
         public bool AddISpreadable(ISpreadable spreadable);
         public bool RemoveISpreadable(ISpreadable spreadable);
         public bool AddAmountToISpreadable(ISpreadable spreadableTarget, long amount);
-        public long GetActualInfectionsCount();
+        public long GetActualISpreadablesCount();
         public ISpreadable CreateISpreadable();
     }
 }

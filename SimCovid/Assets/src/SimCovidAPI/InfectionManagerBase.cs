@@ -38,10 +38,10 @@ namespace SimCovidAPI
         public virtual ISpreadableDataHandler GetInHospital() => _inHospital;
         public virtual ISpreadableDataHandler GetRecovered() => _recovered;
 
-        public virtual long GetTotalInfections()
+        public virtual long GetTotalISpreadableCount()
         {
-            long total = _active.GetActualInfectionsCount() + _deceased.GetActualInfectionsCount() +
-                         _inHospital.GetActualInfectionsCount() + _recovered.GetActualInfectionsCount();
+            long total = _active.GetActualISpreadablesCount() + _deceased.GetActualISpreadablesCount() +
+                         _inHospital.GetActualISpreadablesCount() + _recovered.GetActualISpreadablesCount();
             return total;
         }
     }
