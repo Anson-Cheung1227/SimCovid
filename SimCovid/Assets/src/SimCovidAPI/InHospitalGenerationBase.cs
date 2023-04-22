@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SimCovidAPI
@@ -6,6 +7,8 @@ namespace SimCovidAPI
     public abstract class InHospitalGenerationBase : ISpreadableGenerationManager
     {
         protected float Rate = 0.9f;
+        protected int DaysUntilEligible = 4;
+        protected DateTime TargetDate;
         protected List<ILocation> Locations;
         public virtual void GenerateInHospital(ISpreadableDataHandler active, ISpreadableDataHandler inHospital)
         {
@@ -14,11 +17,17 @@ namespace SimCovidAPI
             while (iEnumeratorSpreadable.MoveNext())
             {
                 ISpreadable spreadable = iEnumeratorSpreadable.Current;
+                if ((TargetDate - spreadable.Date).TotalDays < DaysUntilEligible)
+                {
+                    continue;
+                }
                 long amount = (long)(spreadable.Amount * Rate);
                 if (amount < 1) continue;
                 spreadable.AddToInfection(amount * -1);
                 ISpreadable infectionParam = inHospital.CreateISpreadable();
                 infectionParam.AddToInfection(amount);
+                infectionParam.SetActive(spreadable.Date);
+                infectionParam.SetInHospital(TargetDate);
                 ISpreadable findResult = inHospital.FindExistingInstance(infectionParam);
                 if (findResult == null)
                 {
@@ -31,7 +40,7 @@ namespace SimCovidAPI
             }
             iEnumeratorSpreadable.Dispose();
         }
-        public void OnGenerate()
+        public virtual void OnGenerate()
         {
             foreach (ILocation location in Locations)
             {

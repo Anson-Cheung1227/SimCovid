@@ -34,7 +34,7 @@ namespace SimCovid.Core
                 _states.Add(stateController.State);
             }
             AddManager(new InfectionGeneration(_states, _dataManager));
-            AddManager(new InHospitalGeneration(_states));
+            AddManager(new InHospitalGeneration(_states, _dataManager));
         }
 
         public void AddManager(ISpreadableGenerationManager manager)

@@ -7,10 +7,11 @@ namespace SimCovidAPI
 {
     public abstract class InfectionGenerationBase : ISpreadableGenerationManager
     {
-        protected List<ILocation> _locations;
+        protected List<ILocation> Locations;
+        protected DateTime TargetDate;
         public InfectionGenerationBase(List<ILocation> locationList)
         {
-            _locations = locationList;
+            Locations = locationList;
         }
 
         public virtual void GenerateLocal(List<ILocation> locationList)
@@ -74,6 +75,7 @@ namespace SimCovidAPI
         public virtual bool AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
         {
             if (spreadableDataHandler.GetActualISpreadablesCount() >= spreadableDataHandler.Limit) return false;
+            param.SetActive(TargetDate);
             ISpreadable findResult = spreadableDataHandler.FindExistingInstance(param);
             if (findResult == null)
             {
@@ -83,15 +85,14 @@ namespace SimCovidAPI
             {
                 spreadableDataHandler.AddAmountToISpreadable(findResult, param.Amount);
             }
-
             return true;
         }
 
         public virtual void OnGenerate()
         {
-            GenerateLocal(_locations);
-            GenerateInterstate(_locations);
-            GenerateGlobal(_locations);
+            GenerateLocal(Locations);
+            GenerateInterstate(Locations);
+            GenerateGlobal(Locations);
         }
     }
 }

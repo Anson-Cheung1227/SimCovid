@@ -12,17 +12,17 @@ namespace SimCovid.Core.Infection
         public InfectionGeneration(List<ILocation> locationList, DataManager dataManager) : base(locationList)
         {
             _dataManager = dataManager;
-            UpdateInfectionList(_dataManager.StateInfectionsTable, _locations);
+            UpdateInfectionList(_dataManager.StateInfectionsTable, Locations);
         }
 
         private void UpdateInfectionList(List<State> list, List<ILocation> refState)
         {
             list.Clear();
-            foreach (State state in refState)
+            foreach (ILocation state in refState)
             {
                 if (list.Count == 0)
                 {
-                    list.Add(state);
+                    list.Add(state as State);
                     continue;
                 }
 
@@ -33,14 +33,15 @@ namespace SimCovid.Core.Infection
                     if (iter == 0) break;
                 }
 
-                list.Insert(iter, state);
+                list.Insert(iter, state as State);
             }
         }
 
         public override void OnGenerate()
         {
+            TargetDate = _dataManager.GameDateTime;
             base.OnGenerate();
-            UpdateInfectionList(_dataManager.StateInfectionsTable, _locations);
+            UpdateInfectionList(_dataManager.StateInfectionsTable, Locations);
         }
     }
 }
