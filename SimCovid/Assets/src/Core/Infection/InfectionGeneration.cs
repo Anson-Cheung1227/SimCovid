@@ -9,8 +9,9 @@ namespace SimCovid.Core.Infection
     public class InfectionGeneration : InfectionGenerationBase
     {
         private DataManager _dataManager;
-        public InfectionGeneration(List<ILocation> locationList, DataManager dataManager) : base(locationList)
+        public InfectionGeneration(List<ILocation> locationList, DataManager dataManager)
         {
+            Locations = locationList;
             _dataManager = dataManager;
             UpdateInfectionList(_dataManager.StateInfectionsTable, Locations);
         }

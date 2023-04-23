@@ -4,21 +4,21 @@ namespace SimCovidAPI
 {
     public abstract class InfectionManagerBase : ISpreadableManager
     {
-        protected virtual ISpreadableDataHandler _all { get; set; }
-        protected virtual ISpreadableDataHandler _active { get; set; }
-        protected virtual ISpreadableDataHandler _deceased { get; set; }
-        protected virtual ISpreadableDataHandler _inHospital { get; set; }
-        protected virtual ISpreadableDataHandler _recovered { get; set; }
+        protected virtual ISpreadableDataHandler All { get; set; }
+        protected virtual ISpreadableDataHandler Active { get; set; }
+        protected virtual ISpreadableDataHandler Deceased { get; set; }
+        protected virtual ISpreadableDataHandler InHospital { get; set; }
+        protected virtual ISpreadableDataHandler Recovered { get; set; }
 
         protected InfectionManagerBase(long limit, ISpreadableDataHandler active,
             ISpreadableDataHandler deceased, ISpreadableDataHandler inHospital,
             ISpreadableDataHandler recovered)
         {
             Limit = limit;
-            _active = active;
-            _deceased = deceased;
-            _inHospital = inHospital;
-            _recovered = recovered;
+            Active = active;
+            Deceased = deceased;
+            InHospital = inHospital;
+            Recovered = recovered;
         }
 
         public long Limit { get; set; }
@@ -26,22 +26,32 @@ namespace SimCovidAPI
         public virtual IEnumerable<ISpreadableDataHandler> GetAll()
         {
             List<ISpreadableDataHandler> returnList = new List<ISpreadableDataHandler>();
-            returnList.Add(_active);
-            returnList.Add(_deceased);
-            returnList.Add(_inHospital);
-            returnList.Add(_recovered);
+            returnList.Add(Active);
+            returnList.Add(Deceased);
+            returnList.Add(InHospital);
+            returnList.Add(Recovered);
             return returnList;
         }
 
-        public virtual ISpreadableDataHandler GetActive() => _active;
-        public virtual ISpreadableDataHandler GetDeceased() => _deceased;
-        public virtual ISpreadableDataHandler GetInHospital() => _inHospital;
-        public virtual ISpreadableDataHandler GetRecovered() => _recovered;
+        public virtual ISpreadableDataHandler GetActive() => Active;
+        public virtual ISpreadableDataHandler GetDeceased() => Deceased;
+        public virtual ISpreadableDataHandler GetInHospital() => InHospital;
+        public virtual ISpreadableDataHandler GetRecovered() => Recovered;
+
+        public virtual void UpdateLimit()
+        {
+            long limit = Limit - GetActive().GetActualISpreadablesCount() - GetDeceased().GetActualISpreadablesCount() -
+                         GetInHospital().GetActualISpreadablesCount() - GetRecovered().GetActualISpreadablesCount();
+            GetActive().SetLimit(limit);
+            GetDeceased().SetLimit(limit);
+            GetInHospital().SetLimit(limit);
+            GetRecovered().SetLimit(limit);
+        }
 
         public virtual long GetTotalISpreadableCount()
         {
-            long total = _active.GetActualISpreadablesCount() + _deceased.GetActualISpreadablesCount() +
-                         _inHospital.GetActualISpreadablesCount() + _recovered.GetActualISpreadablesCount();
+            long total = Active.GetActualISpreadablesCount() + Deceased.GetActualISpreadablesCount() +
+                         InHospital.GetActualISpreadablesCount() + Recovered.GetActualISpreadablesCount();
             return total;
         }
     }

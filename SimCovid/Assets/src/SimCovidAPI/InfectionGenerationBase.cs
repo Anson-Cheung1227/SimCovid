@@ -9,10 +9,6 @@ namespace SimCovidAPI
     {
         protected List<ILocation> Locations;
         protected DateTime TargetDate;
-        public InfectionGenerationBase(List<ILocation> locationList)
-        {
-            Locations = locationList;
-        }
 
         public virtual void GenerateLocal(List<ILocation> locationList)
         {
@@ -30,6 +26,7 @@ namespace SimCovidAPI
                 }
                 ISpreadable infectionParam = targetISpreadableHandler.CreateISpreadable();
                 infectionParam.AddToInfection(targetISpreadableHandler.GetActualISpreadablesCount());
+                eligibleLocation.InfectionManager.UpdateLimit();
                 AddInfection(targetISpreadableHandler, infectionParam);
             }
         }
@@ -53,6 +50,7 @@ namespace SimCovidAPI
                 ISpreadableDataHandler targetSpreadableHandler = targetLocation.InfectionManager.GetActive();
                 ISpreadable infectionParam = targetSpreadableHandler.CreateISpreadable();
                 infectionParam.AddToInfection(eligibleLocation.InfectionManager.GetActive().GetActualISpreadablesCount());
+                targetLocation.InfectionManager.UpdateLimit();
                 AddInfection(targetSpreadableHandler, infectionParam);
             }
         }
@@ -69,6 +67,7 @@ namespace SimCovidAPI
             ISpreadableDataHandler targetSpreadableHandler = targetLocation.InfectionManager.GetActive();
             ISpreadable infectionParam = targetSpreadableHandler.CreateISpreadable();
             infectionParam.AddToInfection(1);
+            targetLocation.InfectionManager.UpdateLimit();
             AddInfection(targetSpreadableHandler, infectionParam);
         }
 
