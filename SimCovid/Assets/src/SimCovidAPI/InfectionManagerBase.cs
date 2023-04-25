@@ -42,10 +42,10 @@ namespace SimCovidAPI
         {
             long limit = Limit - GetActive().GetActualISpreadablesCount() - GetDeceased().GetActualISpreadablesCount() -
                          GetInHospital().GetActualISpreadablesCount() - GetRecovered().GetActualISpreadablesCount();
-            GetActive().SetLimit(limit);
-            GetDeceased().SetLimit(limit);
-            GetInHospital().SetLimit(limit);
-            GetRecovered().SetLimit(limit);
+            GetActive().SetLimit(limit + GetActive().GetActualISpreadablesCount());
+            GetDeceased().SetLimit(limit + GetDeceased().GetActualISpreadablesCount());
+            GetInHospital().SetLimit(limit + GetInHospital().GetActualISpreadablesCount());
+            GetRecovered().SetLimit(limit + GetRecovered().GetActualISpreadablesCount());
         }
 
         public virtual long GetTotalISpreadableCount()

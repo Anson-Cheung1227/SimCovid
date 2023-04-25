@@ -23,7 +23,7 @@ namespace SimCovid.Core.Infection
             Amount += amount;
         }
 
-        public void SetDeceased(DateTime date)
+        public void SetDeceased(Nullable<DateTime> date)
         {
             Status = InfectionStatus.Deceased;
             DeceasedDate = date;
@@ -34,13 +34,13 @@ namespace SimCovid.Core.Infection
             HasSpread = spread;
         }
 
-        public void SetInHospital(DateTime date)
+        public void SetInHospital(Nullable<DateTime> date)
         {
             Status = InfectionStatus.InHospital;
             InHospitalDate = date;
         }
 
-        public void SetRecovery(DateTime date)
+        public void SetRecovery(Nullable<DateTime> date)
         {
             Status = InfectionStatus.Recovered;
             RecoveryDate = date;

@@ -17,9 +17,9 @@ namespace SimCovidAPI
         public bool HasSpread { get; }
         public void AddToInfection(long amount);
         public void SetActive(DateTime date);
-        public void SetInHospital(DateTime date);
-        public void SetRecovery(DateTime date);
-        public void SetDeceased(DateTime date);
+        public void SetInHospital(Nullable<DateTime> date);
+        public void SetRecovery(Nullable<DateTime> date);
+        public void SetDeceased(Nullable<DateTime> date);
         public void SetHasSpread(bool spread);
         public bool IsSameValue(ISpreadable a)
         {
@@ -30,7 +30,6 @@ namespace SimCovidAPI
                    HasSpread == a.HasSpread &&
                    Status == a.Status;
         }
-
         public bool ValidateISpreadable();
     }
 }

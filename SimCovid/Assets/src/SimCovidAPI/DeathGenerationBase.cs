@@ -26,7 +26,7 @@ namespace SimCovidAPI
                 spreadable.AddToInfection(amount * -1);
                 ISpreadable infectionParam = death.CreateISpreadable();
                 infectionParam.SetActive(spreadable.Date);
-                infectionParam.SetInHospital(spreadable.Date);
+                infectionParam.SetInHospital(spreadable.InHospitalDate);
                 infectionParam.SetDeceased(TargetDate);
                 infectionParam.AddToInfection(amount);
                 ISpreadable findResult = death.FindExistingInstance(infectionParam);
@@ -45,6 +45,7 @@ namespace SimCovidAPI
         {
             foreach (ILocation location in Locations)
             {
+                location.InfectionManager.UpdateLimit();
                 GenerateDeath(location.InfectionManager.GetInHospital(), location.InfectionManager.GetDeceased());
             }
         }

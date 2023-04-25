@@ -29,7 +29,7 @@ namespace SimCovid.UI
             _stateNameText.text = stateList[Id].Name;
             _stateInfectionsText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetTotalISpreadableCount());
             _stateInHospitalText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetInHospital().GetActualISpreadablesCount());
-            _stateRecoveredText.text = UIManager.LongToString(stateList[Id].RecoveredLong);
+            _stateRecoveredText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetRecovered().GetActualISpreadablesCount());
             _stateDeceasedText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetDeceased().GetActualISpreadablesCount());
         }
     }

@@ -1,42 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace SimCovidAPI
 {
-    public abstract class InHospitalGenerationBase : ISpreadableGenerationManager
+    public abstract class RecoveryGenerationBase : ISpreadableGenerationManager
     {
         protected float Rate = 0.9f;
         protected int DaysUntilEligible = 4;
         protected DateTime TargetDate;
         protected List<ILocation> Locations;
-        public virtual void GenerateInHospital(ISpreadableDataHandler active, ISpreadableDataHandler inHospital)
+        public virtual void GenerateRecovery(ISpreadableDataHandler inHospital, ISpreadableDataHandler recovered)
         {
-            IEnumerable<ISpreadable> iEnumerableSpreadable = active.GetAll();
+            IEnumerable<ISpreadable> iEnumerableSpreadable = inHospital.GetAll();
             IEnumerator<ISpreadable> iEnumeratorSpreadable = iEnumerableSpreadable.GetEnumerator();
             while (iEnumeratorSpreadable.MoveNext())
             {
                 ISpreadable spreadable = iEnumeratorSpreadable.Current;
-                if ((TargetDate - spreadable.Date).TotalDays < DaysUntilEligible)
+                if ((TargetDate - spreadable.InHospitalDate).Value.TotalDays < DaysUntilEligible)
                 {
                     continue;
                 }
+
                 long amount = (long)(spreadable.Amount * Rate);
                 if (amount < 1) continue;
-                spreadable.AddToInfection(amount * -1);
-                inHospital.SetLimit(inHospital.Limit - (amount * -1));
-                ISpreadable infectionParam = inHospital.CreateISpreadable();
-                infectionParam.AddToInfection(amount);
+                spreadable.AddToInfection(amount * - 1);
+                ISpreadable infectionParam = recovered.CreateISpreadable();
                 infectionParam.SetActive(spreadable.Date);
-                infectionParam.SetInHospital(TargetDate);
-                ISpreadable findResult = inHospital.FindExistingInstance(infectionParam);
+                infectionParam.SetInHospital(spreadable.InHospitalDate);
+                infectionParam.SetRecovery(TargetDate);
+                infectionParam.AddToInfection(amount);
+                ISpreadable findResult = recovered.FindExistingInstance(infectionParam);
                 if (findResult == null)
                 {
-                    inHospital.AddISpreadable(infectionParam);
+                    recovered.AddISpreadable(infectionParam);
                 }
                 else
                 {
-                    inHospital.AddAmountToISpreadable(findResult, infectionParam.Amount);
+                    recovered.AddAmountToISpreadable(findResult, infectionParam.Amount);
                 }
             }
             iEnumeratorSpreadable.Dispose();
@@ -46,7 +46,7 @@ namespace SimCovidAPI
             foreach (ILocation location in Locations)
             {
                 location.InfectionManager.UpdateLimit();
-                GenerateInHospital(location.InfectionManager.GetActive(), location.InfectionManager.GetInHospital());
+                GenerateRecovery(location.InfectionManager.GetInHospital(), location.InfectionManager.GetRecovered());
             }
         }
     }
