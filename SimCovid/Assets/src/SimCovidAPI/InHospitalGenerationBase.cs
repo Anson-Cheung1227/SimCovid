@@ -24,20 +24,12 @@ namespace SimCovidAPI
                 long amount = (long)(spreadable.Amount * Rate);
                 if (amount < 1) continue;
                 spreadable.AddToInfection(amount * -1);
-                inHospital.SetLimit(inHospital.Limit - (amount * -1));
+                inHospital.SetLimit(inHospital.Limit + amount);
                 ISpreadable infectionParam = inHospital.CreateISpreadable();
                 infectionParam.AddToInfection(amount);
                 infectionParam.SetActive(spreadable.Date);
                 infectionParam.SetInHospital(TargetDate);
-                ISpreadable findResult = inHospital.FindExistingInstance(infectionParam);
-                if (findResult == null)
-                {
-                    inHospital.AddISpreadable(infectionParam);
-                }
-                else
-                {
-                    inHospital.AddAmountToISpreadable(findResult, infectionParam.Amount);
-                }
+                AddInfection(inHospital, infectionParam);
             }
             iEnumeratorSpreadable.Dispose();
         }
@@ -48,6 +40,22 @@ namespace SimCovidAPI
                 location.InfectionManager.UpdateLimit();
                 GenerateInHospital(location.InfectionManager.GetActive(), location.InfectionManager.GetInHospital());
             }
+        }
+
+        public virtual bool AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
+        {
+            ISpreadable findResult = spreadableDataHandler.FindExistingInstance(param);
+            bool success; 
+            if (findResult == null)
+            {
+                success = spreadableDataHandler.AddISpreadable(param);
+            }
+            else
+            {
+                success = spreadableDataHandler.AddAmountToISpreadable(findResult, param.Amount);
+            }
+
+            return success;
         }
     }
 }

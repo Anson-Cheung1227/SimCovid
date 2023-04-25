@@ -24,6 +24,7 @@ namespace SimCovidAPI
                 long amount = (long)(spreadable.Amount * Rate);
                 if (amount < 1) continue;
                 spreadable.AddToInfection(amount * -1);
+                death.SetLimit(death.Limit + amount);
                 ISpreadable infectionParam = death.CreateISpreadable();
                 infectionParam.SetActive(spreadable.Date);
                 infectionParam.SetInHospital(spreadable.InHospitalDate);
