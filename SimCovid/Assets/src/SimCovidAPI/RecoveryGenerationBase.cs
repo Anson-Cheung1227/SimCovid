@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 namespace SimCovidAPI
 {
@@ -13,6 +14,7 @@ namespace SimCovidAPI
         {
             IEnumerable<ISpreadable> iEnumerableSpreadable = inHospital.GetAll();
             IEnumerator<ISpreadable> iEnumeratorSpreadable = iEnumerableSpreadable.GetEnumerator();
+            List<ISpreadable> disposableISpreadable = new List<ISpreadable>();
             while (iEnumeratorSpreadable.MoveNext())
             {
                 ISpreadable spreadable = iEnumeratorSpreadable.Current;
@@ -20,9 +22,23 @@ namespace SimCovidAPI
                 {
                     continue;
                 }
-
                 long amount = (long)(spreadable.Amount * Rate);
-                if (amount < 1) continue;
+                if (amount < 1 && spreadable.Amount != 1)
+                {
+                    continue;
+                }
+                if (spreadable.Amount == 1)
+                {
+                    if (Random.Range(0f, 100f) <= Rate * 100)
+                    {
+                        amount = 1;
+                        disposableISpreadable.Add(spreadable);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
                 spreadable.AddToInfection(amount * - 1);
                 recovered.SetLimit(recovered.Limit + amount);
                 ISpreadable infectionParam = recovered.CreateISpreadable();
@@ -34,6 +50,10 @@ namespace SimCovidAPI
                 AddInfection(recovered, infectionParam);
             }
             iEnumeratorSpreadable.Dispose();
+            foreach (ISpreadable spreadable in disposableISpreadable)
+            {
+                inHospital.RemoveISpreadable(spreadable);
+            }
         }
         public virtual void OnGenerate()
         {
