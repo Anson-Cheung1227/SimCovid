@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using SimCovid.Core.Infection;
 using SimCovidAPI;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace SimCovid.Core
             public float DoneOperations { get; set; }
             public MonoBehaviour Operator { get; set; }
             public StateSO StateTemplate;
-            public void Load()
+            public Task Load()
             {
                 ((StateController)Operator).State = (State)StateTemplate;
                 foreach (Airport airport in ((StateController)Operator).State.AirportList)
@@ -31,6 +32,7 @@ namespace SimCovid.Core
                 long population = ((StateController)Operator).State.Population;
                 ((StateController)Operator).State.InfectionManager = new InfectionManager(population);
                 DoneOperations = Operations;
+                return Task.CompletedTask;
             }
         }
         [field: SerializeField] public State State { get; private set; }

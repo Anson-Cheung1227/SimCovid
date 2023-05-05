@@ -17,9 +17,9 @@ namespace SimCovid.Core
             public float DoneOperations { get; set; }
             public MonoBehaviour Operator { get; set; }
             public List<ILoadOperation> AllStatesOperationList { get; set; }
-            public void Load()
+            public async Task Load()
             {
-                GetStateLoadProgress();
+                await GetStateLoadProgress();
             }
             private async Task GetStateLoadProgress()
             {

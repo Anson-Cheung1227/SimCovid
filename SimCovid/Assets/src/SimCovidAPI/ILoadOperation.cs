@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 namespace SimCovidAPI
 {
@@ -11,6 +12,11 @@ namespace SimCovidAPI
         public float Operations { get; set; }
         public float DoneOperations { get; set; }
         public MonoBehaviour Operator { get; set; }
-        public abstract void Load();
+        public Task Load();
+
+        public async Task LoadAsync()
+        {
+            
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using SimCovidAPI;
 using UnityEngine;
 
@@ -40,7 +41,7 @@ namespace SimCovid.Core
             public float DoneOperations { get; set; }
             public MonoBehaviour Operator { get; set; }
             public List<Pool> Pools;
-            public void Load()
+            public Task Load()
             {
                 foreach (Pool pool in Pools)
                 {
@@ -55,6 +56,8 @@ namespace SimCovid.Core
                     }
                     DoneOperations++;
                 }
+
+                return Task.CompletedTask;
             }
         }
         private void Awake()
