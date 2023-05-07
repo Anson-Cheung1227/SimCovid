@@ -37,8 +37,8 @@ namespace SimCovid.Core
         private class Initialization : ILoadOperation
         {
             public string Name { get; set; }
-            public float Operations { get; set; }
-            public float DoneOperations { get; set; }
+            public long Operations { get; set; }
+            public long DoneOperations { get; set; }
             public MonoBehaviour Operator { get; set; }
             public List<Pool> Pools;
             public Task Load()
@@ -70,8 +70,7 @@ namespace SimCovid.Core
                 Operator = this,
                 Pools = this.Pools
             };
-            if (GameManager.Instance != null) GameManager.Instance.LoadOperations.Add(initialization);
-            initialization.Load();
+            //GameManager.Instance.ResourceLoader.AddILoadOperation(initialization);
         }
     }
 }

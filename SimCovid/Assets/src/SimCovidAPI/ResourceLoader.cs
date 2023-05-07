@@ -8,7 +8,7 @@ namespace SimCovidAPI
     public abstract class ResourceLoader
     {
         public string Name { get; }
-        public long Operations { get; }
+        public long Operations { get; protected set; }
         public long DoneOperations { get; protected set; }
         protected List<ILoadOperation> OperationsList = new List<ILoadOperation>();
 
@@ -46,6 +46,16 @@ namespace SimCovidAPI
                 await finishedTask;
                 tasks.Remove(finishedTask);
             }
+        }
+
+        public void AddILoadOperation(ILoadOperation loadOperation)
+        {
+            OperationsList.Add(loadOperation);  
+            SetOperations();
+        }
+        public void SetOperations()
+        {
+            Operations = OperationsList.Count;
         }
     }
 }

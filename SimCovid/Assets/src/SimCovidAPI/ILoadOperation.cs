@@ -9,8 +9,8 @@ namespace SimCovidAPI
     public interface ILoadOperation
     {
         public string Name { get; set; }
-        public float Operations { get; set; }
-        public float DoneOperations { get; set; }
+        public long Operations { get; set; }
+        public long DoneOperations { get; set; }
         public MonoBehaviour Operator { get; set; }
         public Task Load();
     }
