@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -18,22 +19,26 @@ namespace SimCovidAPI
             DoneOperations = 0;
         }
 
-        public virtual void LoadAll()
+        public virtual Task LoadAll()
         {
             foreach (ILoadOperation loadOperation in OperationsList)
             {
-                loadOperation.Load();
+                Task task = loadOperation.Load();
+                task.Wait();
             }
+
+            return Task.CompletedTask;
         }
+
 
         public virtual async Task LoadAllAsync()
         {
             List<Task> tasks = new List<Task>();
             foreach (ILoadOperation loadOperation in OperationsList)
             {
-                tasks.Add(loadOperation.LoadAsync());
+                tasks.Add(Task.Run(loadOperation.Load));
             }
-
+            
             while (DoneOperations < Operations)
             {
                 Task finishedTask = await Task.WhenAny(tasks);

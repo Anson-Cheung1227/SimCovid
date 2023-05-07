@@ -13,10 +13,5 @@ namespace SimCovidAPI
         public float DoneOperations { get; set; }
         public MonoBehaviour Operator { get; set; }
         public Task Load();
-
-        public async Task LoadAsync()
-        {
-            
-        }
     }
 }
