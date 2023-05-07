@@ -32,7 +32,7 @@ namespace SimCovid.Core
                         finishedLoading = true;
                         foreach (ILoadOperation sceneLoadOperation in OperationsList)
                         {
-                            if (sceneLoadOperation.DoneOperations != Operations)
+                            if (sceneLoadOperation.DoneOperations != sceneLoadOperation.Operations)
                             {
                                 finishedLoading = false;
                             }
@@ -41,6 +41,7 @@ namespace SimCovid.Core
                     Debug.Log("done");
                 });
                 await task;
+                Debug.Log(false);
             }
 
             public override Task LoadAllAsync() => LoadAll();

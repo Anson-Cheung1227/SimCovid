@@ -70,7 +70,7 @@ namespace SimCovid.Core
                 Operator = this,
                 Pools = this.Pools
             };
-            //GameManager.Instance.ResourceLoader.AddILoadOperation(initialization);
+            GameManager.Instance.ResourceLoader.AddILoadOperation(initialization);
         }
     }
 }
