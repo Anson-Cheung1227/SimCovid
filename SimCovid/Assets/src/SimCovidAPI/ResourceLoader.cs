@@ -25,8 +25,9 @@ namespace SimCovidAPI
             {
                 Task task = loadOperation.Load();
                 task.Wait();
+                ++DoneOperations;
             }
-
+            
             return Task.CompletedTask;
         }
 
