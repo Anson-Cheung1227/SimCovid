@@ -1,4 +1,6 @@
-# SimCovid
+# SimCovid [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+![](https://github.com/Anson-Cheung1227/SimCovid/blob/dev/docs/SimCovid.png)
 
 SimCovid is a game that's in its early-stage of development that simulates the spread of Covid, and creates an experience to users on defending against Covid as the leader of the country. Currently, not a lot of features are implemented, contributions are welcomed!
 
