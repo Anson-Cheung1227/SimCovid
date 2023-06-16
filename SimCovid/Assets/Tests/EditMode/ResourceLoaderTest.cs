@@ -18,8 +18,9 @@ namespace SimCovid.Tests.EditMode
             public long Operations { get; set; }
             public long DoneOperations { get; set; }
             public MonoBehaviour Operator { get; set; }
+            public int WaitForMilliseconds { get; set; }
 
-            public OperationA()
+            public OperationA()  
             {
                 Operations = 1;
                 DoneOperations = 0;
@@ -28,8 +29,8 @@ namespace SimCovid.Tests.EditMode
             {
                 for (int i = 1; i <= 2; ++i)
                 {
-                    await Task.Delay(1000);
-                    Debug.Log(Name + i * 1000);
+                    await Task.Delay(WaitForMilliseconds);
+                    Debug.Log(Name + i * WaitForMilliseconds);
                 }
 
                 ++DoneOperations;
@@ -84,19 +85,19 @@ namespace SimCovid.Tests.EditMode
         public async Task ResourceLoaderLoadAsync()
         {
             List<ILoadOperation> operations = new List<ILoadOperation>();
-            operations.Add(new OperationA{Name = "Operation A"});
-            operations.Add(new OperationA{Name = "Operation B"});
+            operations.Add(new OperationA{Name = "Operation A", WaitForMilliseconds = 900});
+            operations.Add(new OperationA{Name = "Operation B", WaitForMilliseconds = 1000});
             TestResourceLoader loader = new TestResourceLoader("Async Loader", 2, operations);
-            LogAssert.Expect(LogType.Log, "Operation A1000");
+            LogAssert.Expect(LogType.Log, "Operation A900");
             LogAssert.Expect(LogType.Log, "Operation B1000");
-            LogAssert.Expect(LogType.Log, "Operation A2000");
+            LogAssert.Expect(LogType.Log, "Operation A1800");
             LogAssert.Expect(LogType.Log, "Operation B2000");
             await loader.LoadAllAsync();
             LogAssert.Expect(LogType.Log, "Done");
             Debug.Log("Done");
-            foreach (OperationA operationA in operations)
+            foreach (ILoadOperation operation in operations)
             {
-                Assert.AreEqual(1, operationA.DoneOperations);
+                Assert.AreEqual(1, operation.DoneOperations);
             }
             Assert.AreEqual(2, loader.DoneOperations);
         }
