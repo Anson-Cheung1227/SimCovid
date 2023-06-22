@@ -23,14 +23,11 @@ namespace SimCovidAPI
                 {
                     continue;
                 }
-                ISpreadable infectionParam = targetISpreadableHandler.CreateISpreadable();
-                infectionParam.AddToInfection(targetISpreadableHandler.GetActualISpreadablesCount());
+
+                ISpreadable infectionParam =
+                    SimCovidHelper.CreateISpreadableWithAmount(targetISpreadableHandler, targetISpreadableHandler.GetActualISpreadablesCount());
                 eligibleLocation.InfectionManager.UpdateLimit();
-                bool success = AddInfection(targetISpreadableHandler, infectionParam);
-                if (!success)
-                {
-                    AddInfectionOverload(targetISpreadableHandler, infectionParam);
-                }
+                AddInfection(targetISpreadableHandler, infectionParam);
             }
         }
 
@@ -51,14 +48,10 @@ namespace SimCovidAPI
             {
                 ILocation targetLocation = locationList[Random.Range(0, locationList.Count)];
                 ISpreadableDataHandler targetISpreadableHandler = targetLocation.InfectionManager.GetActive();
-                ISpreadable infectionParam = targetISpreadableHandler.CreateISpreadable();
-                infectionParam.AddToInfection(eligibleLocation.InfectionManager.GetActive().GetActualISpreadablesCount());
-                targetLocation.InfectionManager.UpdateLimit();
-                bool success = AddInfection(targetISpreadableHandler, infectionParam);
-                if (!success)
-                {
-                    AddInfectionOverload(targetISpreadableHandler, infectionParam);
-                }
+                ISpreadable infectionParam = SimCovidHelper.CreateISpreadableWithAmount(targetISpreadableHandler,
+                    eligibleLocation.InfectionManager.GetActive().GetActualISpreadablesCount());
+                targetLocation.InfectionManager.UpdateLimit(); 
+                AddInfection(targetISpreadableHandler, infectionParam);
             }
         }
         public virtual void GenerateGlobal(List<ILocation> locationList)
@@ -66,20 +59,14 @@ namespace SimCovidAPI
             List<ILocation> eligibleLocations = new List<ILocation>();
             foreach (ILocation location in locationList)
             {
-                ISpreadableDataHandler spreadableDataHandler = location.InfectionManager.GetActive();
                 eligibleLocations.Add(location);
             }
 
             ILocation targetLocation = eligibleLocations[Random.Range(0, eligibleLocations.Count)];
             ISpreadableDataHandler targetISpreadableHandler = targetLocation.InfectionManager.GetActive();
-            ISpreadable infectionParam = targetISpreadableHandler.CreateISpreadable();
-            infectionParam.AddToInfection(1);
-            targetLocation.InfectionManager.UpdateLimit();
-            bool success = AddInfection(targetISpreadableHandler, infectionParam);
-            if (!success)
-            {
-                AddInfectionOverload(targetISpreadableHandler, infectionParam);
-            }
+            ISpreadable infectionParam = SimCovidHelper.CreateISpreadableWithAmount(targetISpreadableHandler, 1);
+            targetLocation.InfectionManager.UpdateLimit(); 
+            AddInfection(targetISpreadableHandler, infectionParam);
         }
         public virtual void OnGenerate()
         {
@@ -88,37 +75,21 @@ namespace SimCovidAPI
             GenerateGlobal(Locations);
         }
 
-        public virtual bool AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
+        protected virtual void AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
         {
-            if (spreadableDataHandler.GetActualISpreadablesCount() >= spreadableDataHandler.Limit) return false;
-            param.SetActive(TargetDate);
-            ISpreadable findResult = spreadableDataHandler.FindExistingInstance(param);
-            bool success; 
-            if (findResult == null)
+            if (SimCovidHelper.CheckIfOverload(spreadableDataHandler, param))
             {
-                success = spreadableDataHandler.AddISpreadable(param);
+                AddInfectionOverload(spreadableDataHandler, param);
+                return;
             }
-            else
-            {
-                success = spreadableDataHandler.AddAmountToISpreadable(findResult, param.Amount);
-            }
-
-            return success;
+            SimCovidHelper.AddISpreadable(spreadableDataHandler, param);
         }
 
         protected virtual void AddInfectionOverload(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
         {
-            param.AddToInfection(param.Amount * -1); //Reset
+            param.AddToInfection(param.Amount * -1); //Reset to zero
             param.AddToInfection(spreadableDataHandler.Limit - spreadableDataHandler.GetActualISpreadablesCount());
-            ISpreadable findResult = spreadableDataHandler.FindExistingInstance(param);
-            if (findResult == null)
-            {
-                spreadableDataHandler.AddISpreadable(param);
-            }
-            else
-            {
-                spreadableDataHandler.AddAmountToISpreadable(findResult, param.Amount);
-            }
+            SimCovidHelper.AddISpreadable(spreadableDataHandler, param);
         }
     }
 }
