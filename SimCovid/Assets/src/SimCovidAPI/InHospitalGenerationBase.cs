@@ -7,12 +7,14 @@ namespace SimCovidAPI
 {
     public abstract class InHospitalGenerationBase : ISpreadableGenerationManager
     {
-        protected float Rate = 0.9f;
+        protected float Rate = 1.0f;
         protected int DaysUntilEligible = 4;
         protected DateTime TargetDate;
         protected List<ILocation> Locations;
-        public virtual void GenerateInHospital(ISpreadableDataHandler active, ISpreadableDataHandler inHospital)
+        public virtual void GenerateInHospital(ILocation location)
         {
+            ISpreadableDataHandler active = location.InfectionManager.GetActive();
+            ISpreadableDataHandler inHospital = location.InfectionManager.GetInHospital();
             IEnumerable<ISpreadable> iEnumerableSpreadable = active.GetAll();
             IEnumerator<ISpreadable> iEnumeratorSpreadable = iEnumerableSpreadable.GetEnumerator();
             List<ISpreadable> disposableISpreadable = new List<ISpreadable>();
@@ -30,7 +32,7 @@ namespace SimCovidAPI
                 }
                 if (spreadable.Amount == 1)
                 {
-                    if (Random.Range(0f, 100f) <= Rate * 100)
+                    if (SimCovidHelper.BoolFromChance((int)Rate * 100))
                     {
                         amount = 1;
                         disposableISpreadable.Add(spreadable);
@@ -41,9 +43,8 @@ namespace SimCovidAPI
                     }
                 }
                 spreadable.AddToInfection(amount * -1);
-                inHospital.SetLimit(inHospital.Limit + amount);
-                ISpreadable infectionParam = inHospital.CreateISpreadable();
-                infectionParam.AddToInfection(amount);
+                location.InfectionManager.UpdateLimit();
+                ISpreadable infectionParam = SimCovidHelper.CreateISpreadableWithAmount(inHospital, amount);
                 infectionParam.SetActive(spreadable.Date);
                 infectionParam.SetInHospital(TargetDate);
                 AddInfection(inHospital, infectionParam);
@@ -59,23 +60,13 @@ namespace SimCovidAPI
             foreach (ILocation location in Locations)
             {
                 location.InfectionManager.UpdateLimit();
-                GenerateInHospital(location.InfectionManager.GetActive(), location.InfectionManager.GetInHospital());
+                GenerateInHospital(location);
             }
         }
 
         public virtual bool AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
         {
-            ISpreadable findResult = spreadableDataHandler.FindExistingInstance(param);
-            bool success; 
-            if (findResult == null)
-            {
-                success = spreadableDataHandler.AddISpreadable(param);
-            }
-            else
-            {
-                success = spreadableDataHandler.AddAmountToISpreadable(findResult, param.Amount);
-            }
-
+            bool success = SimCovidHelper.AddISpreadable(spreadableDataHandler, param);
             return success;
         }
     }
