@@ -27,6 +27,7 @@ namespace SimCovidAPI
                 ISpreadable infectionParam =
                     SimCovidHelper.CreateISpreadableWithAmount(targetISpreadableHandler, targetISpreadableHandler.GetActualISpreadablesCount());
                 eligibleLocation.InfectionManager.UpdateLimit();
+                infectionParam.SetActive(TargetDate);
                 AddInfection(targetISpreadableHandler, infectionParam);
             }
         }
@@ -50,7 +51,8 @@ namespace SimCovidAPI
                 ISpreadableDataHandler targetISpreadableHandler = targetLocation.InfectionManager.GetActive();
                 ISpreadable infectionParam = SimCovidHelper.CreateISpreadableWithAmount(targetISpreadableHandler,
                     eligibleLocation.InfectionManager.GetActive().GetActualISpreadablesCount());
-                targetLocation.InfectionManager.UpdateLimit(); 
+                targetLocation.InfectionManager.UpdateLimit();
+                infectionParam.SetActive(TargetDate);
                 AddInfection(targetISpreadableHandler, infectionParam);
             }
         }
@@ -65,7 +67,8 @@ namespace SimCovidAPI
             ILocation targetLocation = eligibleLocations[Random.Range(0, eligibleLocations.Count)];
             ISpreadableDataHandler targetISpreadableHandler = targetLocation.InfectionManager.GetActive();
             ISpreadable infectionParam = SimCovidHelper.CreateISpreadableWithAmount(targetISpreadableHandler, 1);
-            targetLocation.InfectionManager.UpdateLimit(); 
+            targetLocation.InfectionManager.UpdateLimit();
+            infectionParam.SetActive(TargetDate);
             AddInfection(targetISpreadableHandler, infectionParam);
         }
         public virtual void OnGenerate()
