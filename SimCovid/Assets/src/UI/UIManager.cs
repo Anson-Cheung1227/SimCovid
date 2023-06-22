@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using SimCovid.Core;
+using SimCovid.Core.GameManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;

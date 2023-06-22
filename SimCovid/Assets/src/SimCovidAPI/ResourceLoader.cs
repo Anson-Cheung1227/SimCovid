@@ -37,8 +37,7 @@ namespace SimCovidAPI
             List<Task> tasks = new List<Task>();
             foreach (ILoadOperation loadOperation in OperationsList)
             {
-                Task task = loadOperation.Load();
-                tasks.Add(task);
+                tasks.Add(loadOperation.Load());
             }
             
             while (DoneOperations < Operations)
