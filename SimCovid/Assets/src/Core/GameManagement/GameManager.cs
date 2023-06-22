@@ -15,13 +15,12 @@ namespace SimCovid.Core.GameManagement
         [SerializeField] private TextMeshProUGUI _loadingTextProgress;
         private List<AsyncOperation> _scenesLoading = new List<AsyncOperation>();
         private int _currentOperation;
-        private float _totalProgress = 0;
-        private float _sceneProgress = 0;
-        private int currentSceneId = 0;
         public static GameManager Instance;
-        private ResourceLoader SceneLoader = new SceneResourceLoader("Scene loader", 0);
+        public ResourceLoader SceneLoader = new SceneResourceLoader("Scene loader", 0);
         public ResourceLoader ResourceLoader = new InitializationResourceLoader("Resource Loader", 0);
         public List<DataManager> DataManagerList;
+
+        [SerializeField] private LoadingUIManager _loadingUIManager;
         // Start is called before the first frame update
         private void Awake()
         {
@@ -43,12 +42,14 @@ namespace SimCovid.Core.GameManagement
             };
             SceneLoader.AddILoadOperation(sceneOperation);
             SceneLoader.SetOperations();
+            _loadingUIManager.enabled = true;
             await SceneLoader.LoadAll();
             Debug.Log("Scene Loading Done");
             ResourceLoader.SetOperations();
             await ResourceLoader.LoadAllAsync();
             Debug.Log("Resource Loading Done");
             _loadingScreen.SetActive(false);
+            _loadingUIManager.enabled = false;
         }
     }
 }

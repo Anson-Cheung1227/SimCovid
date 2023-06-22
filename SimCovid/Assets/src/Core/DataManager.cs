@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SimCovid.Core.GameManagement;
 using UnityEngine;
 
 namespace SimCovid.Core

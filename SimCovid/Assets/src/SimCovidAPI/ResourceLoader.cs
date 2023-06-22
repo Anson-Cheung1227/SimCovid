@@ -10,7 +10,7 @@ namespace SimCovidAPI
         public string Name { get; }
         public long Operations { get; protected set; }
         public long DoneOperations { get; protected set; }
-        protected List<ILoadOperation> OperationsList = new List<ILoadOperation>();
+        public List<ILoadOperation> OperationsList { get; protected set; }= new List<ILoadOperation>();
 
         protected ResourceLoader(string name, long operations)
         {
@@ -26,6 +26,7 @@ namespace SimCovidAPI
                 Task task = loadOperation.Load();
                 task.Wait();
                 ++DoneOperations;
+                OperationsList.Remove(loadOperation);
             }
             
             return Task.CompletedTask;
@@ -34,18 +35,19 @@ namespace SimCovidAPI
 
         public virtual async Task LoadAllAsync()
         {
-            List<Task> tasks = new List<Task>();
+            Dictionary<Task, ILoadOperation> dictionary = new Dictionary<Task, ILoadOperation>();
             foreach (ILoadOperation loadOperation in OperationsList)
             {
-                tasks.Add(loadOperation.Load());
+                dictionary.Add(loadOperation.Load(), loadOperation);
             }
             
             while (DoneOperations < Operations)
             {
-                Task finishedTask = await Task.WhenAny(tasks);
+                Task finishedTask = await Task.WhenAny(dictionary.Keys);
                 ++DoneOperations;
                 await finishedTask;
-                tasks.Remove(finishedTask);
+                OperationsList.Remove(dictionary[finishedTask]);
+                dictionary.Remove(finishedTask);
             }
         }
 

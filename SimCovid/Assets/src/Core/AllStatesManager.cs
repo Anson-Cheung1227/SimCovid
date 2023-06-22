@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SimCovid.Core.GameManagement;
 using SimCovidAPI;
 using UnityEngine;
 
@@ -38,7 +39,7 @@ namespace SimCovid.Core
         }
         public List<ILoadOperation> AllstateLoadOperations = new List<ILoadOperation>();
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             Initialization initialization = new Initialization
             {
