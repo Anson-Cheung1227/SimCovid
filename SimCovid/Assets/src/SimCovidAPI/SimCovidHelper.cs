@@ -4,7 +4,7 @@ namespace SimCovidAPI
 {
     public class SimCovidHelper
     {
-        private static Random _random;
+        private static Random _random = new Random();
         public static ISpreadable CreateISpreadableWithAmount(ISpreadableDataHandler spreadableDataHandler,long amount)
         {
             ISpreadable target = spreadableDataHandler.CreateISpreadable();
