@@ -1,7 +1,10 @@
-﻿namespace SimCovidAPI
+﻿using System;
+
+namespace SimCovidAPI
 {
     public class SimCovidHelper
     {
+        private static Random _random;
         public static ISpreadable CreateISpreadableWithAmount(ISpreadableDataHandler spreadableDataHandler,long amount)
         {
             ISpreadable target = spreadableDataHandler.CreateISpreadable();
@@ -26,6 +29,11 @@
         public static bool CheckIfOverload(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)
         {
             return spreadableDataHandler.GetActualISpreadablesCount() >= spreadableDataHandler.Limit;
+        }
+
+        public static bool BoolFromChance(int chance)
+        {
+            return _random.Next(0, 100) <= chance;
         }
     }
 }

@@ -11,10 +11,7 @@ namespace SimCovid.Core.GameManagement
     {
         [SerializeField] private CoreGameSO _coreGame;
         [SerializeField] private GameObject _loadingScreen;
-        [SerializeField] private Image _progressBar;
-        [SerializeField] private TextMeshProUGUI _loadingTextProgress;
         private List<AsyncOperation> _scenesLoading = new List<AsyncOperation>();
-        private int _currentOperation;
         public static GameManager Instance;
         public ResourceLoader SceneLoader = new SceneResourceLoader("Scene loader", 0);
         public ResourceLoader ResourceLoader = new InitializationResourceLoader("Resource Loader", 0);
