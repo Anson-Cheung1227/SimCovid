@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using SimCovid.Core;
+using SimCovidAPI;
 using TMPro;
 using UnityEngine;
 
@@ -28,9 +29,12 @@ namespace SimCovid.UI
         {
             _stateNameText.text = stateList[Id].Name;
             _stateInfectionsText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetTotalISpreadableCount());
-            _stateInHospitalText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetInHospital().GetActualISpreadablesCount());
-            _stateRecoveredText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetRecovered().GetActualISpreadablesCount());
-            _stateDeceasedText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetDeceased().GetActualISpreadablesCount());
+            _stateInHospitalText.text = UIManager.LongToString(stateList[Id].InfectionManager
+                .GetISpreadableDataHandler(InfectionStatus.InHospital).GetActualISpreadablesCount());
+            _stateRecoveredText.text = UIManager.LongToString(stateList[Id].InfectionManager
+                .GetISpreadableDataHandler(InfectionStatus.Recovered).GetActualISpreadablesCount());
+            _stateDeceasedText.text = UIManager.LongToString(stateList[Id].InfectionManager
+                .GetISpreadableDataHandler(InfectionStatus.Recovered).GetActualISpreadablesCount());
         }
     }
 }

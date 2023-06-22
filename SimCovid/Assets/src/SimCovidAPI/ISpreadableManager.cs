@@ -10,10 +10,12 @@ namespace SimCovidAPI
     {
         public long Limit { get; }
         public IEnumerable<ISpreadableDataHandler> GetAll();
-        public ISpreadableDataHandler GetActive();
-        public ISpreadableDataHandler GetInHospital();
-        public ISpreadableDataHandler GetRecovered();
-        public ISpreadableDataHandler GetDeceased();
+        /// <summary>
+        /// This methods assumes that the inherited member to use a Dictionary, accessed via keys.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public ISpreadableDataHandler GetISpreadableDataHandler(int key);
         public void UpdateLimit();
         public long GetTotalISpreadableCount();
     }

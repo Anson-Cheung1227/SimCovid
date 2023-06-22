@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEngine;
 
 namespace SimCovidAPI
 {
@@ -21,7 +19,13 @@ namespace SimCovidAPI
 
         public virtual Task LoadAll()
         {
-            foreach (ILoadOperation loadOperation in OperationsList)
+            List<ILoadOperation> internalLoadOperationList = new List<ILoadOperation>();
+            //Copy the list
+            foreach (ILoadOperation loadoperation in OperationsList)
+            {
+                internalLoadOperationList.Add(loadoperation);
+            }
+            foreach (ILoadOperation loadOperation in internalLoadOperationList)
             {
                 Task task = loadOperation.Load();
                 task.Wait();

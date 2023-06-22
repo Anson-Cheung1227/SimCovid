@@ -1,9 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using SimCovidAPI;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace SimCovid.Core.GameManagement
 {

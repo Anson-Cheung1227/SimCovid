@@ -60,7 +60,8 @@ namespace SimCovidAPI
             foreach (ILocation location in Locations)
             {
                 location.InfectionManager.UpdateLimit();
-                GenerateRecovery(location.InfectionManager.GetInHospital(), location.InfectionManager.GetRecovered());
+                GenerateRecovery(location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.InHospital),
+                    location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.Recovered));
             }
         }
         public virtual bool AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)

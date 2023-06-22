@@ -68,7 +68,8 @@ namespace SimCovidAPI
             foreach (ILocation location in Locations)
             {
                 location.InfectionManager.UpdateLimit();
-                GenerateDeath(location.InfectionManager.GetInHospital(), location.InfectionManager.GetDeceased());
+                GenerateDeath(location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.InHospital),
+                    location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.Deceased));
             }
         }
     }

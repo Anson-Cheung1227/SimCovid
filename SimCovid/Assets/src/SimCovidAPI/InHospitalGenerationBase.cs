@@ -13,8 +13,8 @@ namespace SimCovidAPI
         protected List<ILocation> Locations;
         public virtual void GenerateInHospital(ILocation location)
         {
-            ISpreadableDataHandler active = location.InfectionManager.GetActive();
-            ISpreadableDataHandler inHospital = location.InfectionManager.GetInHospital();
+            ISpreadableDataHandler active = location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.Active);
+            ISpreadableDataHandler inHospital = location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.InHospital);
             IEnumerable<ISpreadable> iEnumerableSpreadable = active.GetAll();
             IEnumerator<ISpreadable> iEnumeratorSpreadable = iEnumerableSpreadable.GetEnumerator();
             List<ISpreadable> disposableISpreadable = new List<ISpreadable>();
