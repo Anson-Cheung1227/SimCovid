@@ -9538,10 +9538,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2663843148473914354}
   m_HandleRect: {fileID: 8236496556883009599}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.1
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9676,7 +9676,7 @@ GameObject:
   - component: {fileID: 5553648363668411185}
   - component: {fileID: 5553648363668411186}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ZoomPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9762,14 +9762,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4961323908373457050}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc1901b4d4459ae4881889c93e01ba6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  map: {fileID: 0}
-  multiplier: 0
+  _slider: {fileID: 2430661136321016001}
+  _map: {fileID: 0}
+  multiplier: 10
 --- !u!224 &6016747291375804064
 RectTransform:
   m_ObjectHideFlags: 0
