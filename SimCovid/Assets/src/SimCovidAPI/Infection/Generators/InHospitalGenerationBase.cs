@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
-using Random = UnityEngine.Random;
 
-namespace SimCovidAPI
+namespace SimCovidAPI.Infection.Generators
 {
     public abstract class InHospitalGenerationBase : ISpreadableGenerationManager
     {

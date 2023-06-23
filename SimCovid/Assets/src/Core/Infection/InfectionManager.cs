@@ -1,5 +1,6 @@
 ﻿using SimCovid.Core.Infection.InfectionDataHandlers;
 using SimCovidAPI;
+using SimCovidAPI.Infection;
 
 namespace SimCovid.Core.Infection
 {

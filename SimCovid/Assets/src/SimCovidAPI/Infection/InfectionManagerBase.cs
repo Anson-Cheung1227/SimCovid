@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SimCovidAPI
+namespace SimCovidAPI.Infection
 {
     public abstract class InfectionManagerBase : ISpreadableManager
     {

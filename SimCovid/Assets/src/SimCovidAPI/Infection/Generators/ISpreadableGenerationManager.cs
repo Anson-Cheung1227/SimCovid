@@ -1,4 +1,4 @@
-﻿namespace SimCovidAPI
+﻿namespace SimCovidAPI.Infection.Generators
 {
     public interface ISpreadableGenerationManager
     {

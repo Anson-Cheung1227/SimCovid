@@ -1,4 +1,4 @@
-﻿namespace SimCovidAPI
+﻿namespace SimCovidAPI.Infection
 {
     public class InfectionStatus
     {

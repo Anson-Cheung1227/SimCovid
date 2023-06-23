@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SimCovid.Core;
 using SimCovid.Core.GameManagement;
 using SimCovidAPI;
+using SimCovidAPI.Infection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;

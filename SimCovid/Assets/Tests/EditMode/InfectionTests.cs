@@ -2,6 +2,7 @@ using System;
 using NUnit.Framework;
 using SimCovid.Core.Infection;
 using SimCovidAPI;
+using SimCovidAPI.Infection;
 
 namespace SimCovid.Tests.EditMode
 {

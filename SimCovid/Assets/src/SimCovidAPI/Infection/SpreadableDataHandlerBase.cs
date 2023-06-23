@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SimCovidAPI
+namespace SimCovidAPI.Infection
 {
     public abstract class SpreadableDataHandlerBase<TISpreadableTarget> : ISpreadableDataHandler
         where TISpreadableTarget : class, ISpreadable, new()

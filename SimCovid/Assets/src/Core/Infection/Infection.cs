@@ -1,5 +1,6 @@
 using System;
 using SimCovidAPI;
+using SimCovidAPI.Infection;
 using UnityEngine;
 
 namespace SimCovid.Core.Infection

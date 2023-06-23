@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 
-namespace SimCovidAPI
+namespace SimCovidAPI.Infection.Generators
 {
     public abstract class RecoveryGenerationBase : ISpreadableGenerationManager
     {

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using SimCovidAPI;
+using SimCovidAPI.Infection;
 using UnityEngine;
 
 namespace SimCovid.Core
