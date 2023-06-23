@@ -16,11 +16,6 @@ namespace SimCovid.Core
         [field: SerializeField] public float LocalSpreadRate { get; set; }
         [field: SerializeField] public long DailyIncomingPeople { get; set; }
         [field: SerializeField] public ISpreadableManager InfectionManager { get; set; }
-        [field: SerializeField] public long InfectionsLong { get; set; }
-        [field: SerializeField] public long ActiveInfectionsLong { get; set; }
-        [field: SerializeField] public long InHospitalLong { get; set; }
-        [field: SerializeField] public long RecoveredLong { get; set; }
-        [field: SerializeField] public long DeceasedLong { get; set; }
         [field: SerializeField] public List<Airport> AirportList { get; set; } = new List<Airport>();
         #endregion Infection
         #region Civilian

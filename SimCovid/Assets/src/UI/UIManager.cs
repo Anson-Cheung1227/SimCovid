@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using SimCovid.Core;
 using SimCovid.Core.GameManagement;
+using SimCovidAPI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -96,12 +97,17 @@ namespace SimCovid.UI
             }
             else
             {
+                if (dataManager.SelectedState.InfectionManager == null) return;
                 _selectedStateNameText.text = dataManager.SelectedState.Name;
                 _selectedStatePopulationText.text = LongToString(dataManager.SelectedState.Population);
-                _selectedStateInfectionsText.text = LongToString(dataManager.SelectedState.InfectionsLong);
-                _selectedStateInHospitalText.text = LongToString(dataManager.SelectedState.InHospitalLong);
-                _selectedStateRecoveredText.text = LongToString(dataManager.SelectedState.RecoveredLong);
-                _selectedStateDeceasedText.text = LongToString(dataManager.SelectedState.DeceasedLong);
+                _selectedStateInfectionsText.text = LongToString(dataManager.SelectedState.InfectionManager
+                    .GetTotalISpreadableCount());
+                _selectedStateInHospitalText.text = LongToString(dataManager.SelectedState.InfectionManager
+                    .GetISpreadableDataHandler(InfectionStatus.InHospital).GetActualISpreadablesCount());
+                _selectedStateRecoveredText.text = LongToString(dataManager.SelectedState.InfectionManager
+                    .GetISpreadableDataHandler(InfectionStatus.Recovered).GetActualISpreadablesCount());
+                _selectedStateDeceasedText.text = LongToString(dataManager.SelectedState.InfectionManager
+                    .GetISpreadableDataHandler(InfectionStatus.Deceased).GetActualISpreadablesCount());
             }
         }
         private void UpdateLockdownUI(DataManager dataManager)

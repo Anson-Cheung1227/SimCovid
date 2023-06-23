@@ -58,25 +58,4 @@ namespace SimCovid.Core.Infection
             return validISpreadable;
         }
     }
-    /// <summary>
-    /// Infection struct
-    /// </summary>
-    [System.Serializable]
-    public struct InfectionStruct
-    {
-        [field: SerializeField] public DateTime Date { get; set; }
-        [field: SerializeField] public DateTime InHospitalDate { get; set; }
-        [field: SerializeField] public DateTime RecoveryDate { get; set; }
-        [field: SerializeField] public DateTime DeceasedDate { get; set; }
-        [field: SerializeField] public InfectionStatus InfectionStatus { get; set; }
-        [field: SerializeField] public long Amount { get; set; }
-        [field: SerializeField] public bool HasSpread { get; set; }
-        public static explicit operator Infection(InfectionStruct infectionStruct)
-        {
-            return new Infection
-            {
-
-            };
-        }
-    }
 }

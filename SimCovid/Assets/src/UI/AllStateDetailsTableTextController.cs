@@ -34,7 +34,7 @@ namespace SimCovid.UI
             _stateRecoveredText.text = UIManager.LongToString(stateList[Id].InfectionManager
                 .GetISpreadableDataHandler(InfectionStatus.Recovered).GetActualISpreadablesCount());
             _stateDeceasedText.text = UIManager.LongToString(stateList[Id].InfectionManager
-                .GetISpreadableDataHandler(InfectionStatus.Recovered).GetActualISpreadablesCount());
+                .GetISpreadableDataHandler(InfectionStatus.Deceased).GetActualISpreadablesCount());
         }
     }
 }

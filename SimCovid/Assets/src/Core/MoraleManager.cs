@@ -18,7 +18,7 @@ namespace SimCovid.Core
         {
             foreach (StateController stateController in _allStates)
             {
-                stateController.State.Morale = ((float)1 - (float)stateController.State.InfectionsLong / (float)stateController.State.Population) * (float)100;
+                stateController.State.Morale = (1 - (float)stateController.State.InfectionManager.GetTotalISpreadableCount() /stateController.State.Population) * (float)100;
             }
         }
     }
