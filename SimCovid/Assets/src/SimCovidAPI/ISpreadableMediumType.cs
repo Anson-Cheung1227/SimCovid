@@ -5,7 +5,13 @@
     /// </summary>
     public interface ISpreadableMediumType
     {
+        /// <summary>
+        /// Unique identifier name for the Medium of Infection. It MUST NOT conflict with other types.
+        /// </summary>
         public string MediumName { get; }
+        /// <summary>
+        /// Unique identifier integer for the Medium of Infection. It MUST NOT conflict with other types. 
+        /// </summary>
         public int MediumValue { get; }
     }
 }
