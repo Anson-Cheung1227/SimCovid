@@ -5,7 +5,6 @@ namespace SimCovidAPI
     public abstract class InfectionManagerBase : ISpreadableManager
     {
         protected Dictionary<int, ISpreadableDataHandler> SpreadableDataHandlerDictionary { get; set; }
-        protected virtual ISpreadableDataHandler All { get; set; }
 
         protected InfectionManagerBase(long limit, ISpreadableDataHandler active,
             ISpreadableDataHandler deceased, ISpreadableDataHandler inHospital,

@@ -152,7 +152,7 @@ namespace SimCovid.UI
         }
         public void OnLockdownUpdateButtonClickUnityEvent(GameObject button)
         {
-            OnLockdownUpdateButtonClick(GameManager.Instance.DataManagerList[0], button);
+            OnLockdownUpdateButtonClick(GameManager.Instance.DataManager, button);
         }
         public void OnLockdownUpdateButtonClick(DataManager dataManager, GameObject button)
         {

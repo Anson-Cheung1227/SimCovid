@@ -20,7 +20,7 @@ namespace SimCovid.Core
         public List<State> StateInfectionsTable = new List<State>();
         private void Awake()
         {
-            GameManager.Instance.DataManagerList.Add(this);
+            GameManager.Instance.DataManager = this;
         }
         void Start()
         {
