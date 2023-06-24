@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f791783768b084d974708133fd16c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tooltip: {fileID: 598510204}
+  <_tooltip>k__BackingField: {fileID: 598510204}
 --- !u!4 &129937371
 Transform:
   m_ObjectHideFlags: 0

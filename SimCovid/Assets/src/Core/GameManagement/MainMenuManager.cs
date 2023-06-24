@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 namespace SimCovid.Core.GameManagement
@@ -7,7 +8,8 @@ namespace SimCovid.Core.GameManagement
     {
         public void Play()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadSceneAsync((int)SceneEnum.GlobalScene, LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync((int)SceneEnum.StartMenu);
         }
 
         public void Quit()

@@ -8,7 +8,7 @@ namespace SimCovid.UI
     public class TooltipSystem : MonoBehaviour
     {
         public static TooltipSystem Instance;
-        [SerializeField] private GameObject _tooltip;
+        [field:SerializeField] public GameObject _tooltip { get; private set; }
         private void Awake()
         {
             Instance = this;
