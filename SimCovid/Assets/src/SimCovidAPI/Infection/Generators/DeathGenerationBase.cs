@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SimCovidAPI.Locations;
 using Random = UnityEngine.Random;
 
 namespace SimCovidAPI.Infection.Generators

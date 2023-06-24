@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using SimCovid.Core;
 using SimCovid.Core.GameManagement;
-using SimCovidAPI;
 using SimCovidAPI.Infection;
+using SimCovidAPI.Locations.Policies;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -113,9 +113,12 @@ namespace SimCovid.UI
         }
         private void UpdateLockdownUI(DataManager dataManager)
         {
+            //TODO:
+            /*
             boolToActiveText(_localLockdownText, dataManager.SelectedState.LocalLockdown);
             boolToActiveText(_interstateLockdownText, dataManager.SelectedState.InterstateLockdown);
             boolToActiveText(_globalLockdownText, dataManager.SelectedState.GlobalLockdown);
+            */
         }
         /*  
         This function takes a boolean, if it's true, set the text to active, and the corresponding color, 
@@ -157,13 +160,18 @@ namespace SimCovid.UI
         }
         public void OnLockdownUpdateButtonClick(DataManager dataManager, GameObject button)
         {
-            if (button == _localLockdownButton) dataManager.SelectedState.LocalLockdown = !dataManager.SelectedState.LocalLockdown;
+            if (button == _localLockdownButton)
+                dataManager.SelectedState.PolicyManager.GetPolicy(PolicyDefaultTypes.Lockdown)
+                    .SetActive(!dataManager.SelectedState.PolicyManager.GetPolicy(PolicyDefaultTypes.Lockdown).Active);
+            //TODO:
+            /*
             if (button == _interstateLockdownButton) dataManager.SelectedState.InterstateLockdown = !dataManager.SelectedState.InterstateLockdown;
             if (button == _globalLockdownButton)
             {
                 dataManager.SelectedState.GlobalLockdown = !dataManager.SelectedState.GlobalLockdown;
                 dataManager.SelectedState.DailyIncomingPeople = 0;
             }
+            */
         }
         public void OnStateDetailExitClick(DataManager dataManager)
         {
@@ -185,7 +193,8 @@ namespace SimCovid.UI
         }
         public void OnMandatoryMaskButtonClick(DataManager dataManager)
         {
-            dataManager.SelectedState.MandatoryMask = !dataManager.SelectedState.MandatoryMask;
+            //TODO:
+            //dataManager.SelectedState.MandatoryMask = !dataManager.SelectedState.MandatoryMask;
         }
         public void OnModalWindowButtonClick(GameObject modalWindow)
         {
