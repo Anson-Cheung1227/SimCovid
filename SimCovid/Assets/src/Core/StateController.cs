@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Threading.Tasks;
 using SimCovid.Core.Infection;
+using SimCovid.Core.Policies;
 using SimCovidAPI;
 using UnityEngine;
 
@@ -31,6 +32,7 @@ namespace SimCovid.Core
 
                 long population = ((StateController)Operator).State.Population;
                 ((StateController)Operator).State.InfectionManager = new InfectionManager(population);
+                ((StateController)Operator).State.PolicyManager = new PolicyManager(new LockdownPolicy());
                 DoneOperations = Operations;
                 return Task.CompletedTask;
             }

@@ -22,14 +22,13 @@ namespace SimCovid.Core
             {
                 airports.Add((Airport)airportSO);
             }
-            return new State
-            {
-                Name = stateSO.Name,
-                Population = stateSO.Population,
-                LocalSpreadRate = stateSO.LocalSpreadRate,
-                DailyIncomingPeople = stateSO.DailyIncomingPeople,
-                AirportList = airports,
-            };
+
+            State target = new State(stateSO.Name);
+            target.Population = stateSO.Population;
+            target.LocalSpreadRate = stateSO.LocalSpreadRate;
+            target.DailyIncomingPeople = stateSO.DailyIncomingPeople;
+            target.AirportList = airports;
+            return target;
         }
     }
 }
