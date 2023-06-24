@@ -23,7 +23,7 @@ namespace SimCovid.Core.GameManagement
         }
         async void Start()
         {
-            await LoadLevel(_coreGame);
+            
         }
         public async Task LoadLevel(CoreGameSO coreGameSO)
         {

@@ -6,10 +6,11 @@ namespace SimCovid.Core.GameManagement
 {
     public class MainMenuManager : MonoBehaviour
     {
-        public void Play()
+        [SerializeField] private CoreGameSO _coreGameSO;
+        public async void Play()
         {
-            SceneManager.LoadSceneAsync((int)SceneEnum.GlobalScene, LoadSceneMode.Additive);
             SceneManager.UnloadSceneAsync((int)SceneEnum.StartMenu);
+            await GameManager.Instance.LoadLevel(_coreGameSO);
         }
 
         public void Quit()

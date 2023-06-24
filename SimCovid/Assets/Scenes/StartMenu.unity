@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b450dabb96862c4d89aa9908fcdaff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventSystem: {fileID: 0}
+  _coreGameSO: {fileID: 11400000, guid: 4ed7a166b9ac7e94f9c771a068188aa6, type: 2}
 --- !u!4 &1936919786
 Transform:
   m_ObjectHideFlags: 0

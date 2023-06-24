@@ -8,6 +8,7 @@ namespace SimCovid.Core
         // Start is called before the first frame update
         void Start()
         {
+            SceneManager.LoadSceneAsync((int)SceneEnum.GlobalScene, LoadSceneMode.Single);
             SceneManager.LoadSceneAsync((int)SceneEnum.StartMenu, LoadSceneMode.Additive);
         }
     }
