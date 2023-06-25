@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f791783768b084d974708133fd16c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tooltip: {fileID: 598510204}
+  <_tooltip>k__BackingField: {fileID: 598510204}
 --- !u!4 &129937371
 Transform:
   m_ObjectHideFlags: 0
@@ -1566,8 +1566,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Decisions
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c0da81122c8e1b14a89fd9b1f6fa475e, type: 2}
+  m_sharedMaterial: {fileID: 4735395947287106742, guid: c0da81122c8e1b14a89fd9b1f6fa475e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2380,7 +2380,7 @@ GameObject:
   - component: {fileID: 579587584}
   - component: {fileID: 579587583}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DecisionsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2930,7 +2930,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1270950126}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &758988519
@@ -3175,7 +3175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &795315463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5040,7 +5040,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1033688941
 GameObject:
@@ -5807,7 +5807,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1546029580}
-  - {fileID: 1471961673}
+  - {fileID: 675114451}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6299,7 +6299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1461028031
 Transform:
   m_ObjectHideFlags: 0
@@ -6326,6 +6326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471961673}
   - component: {fileID: 1471961672}
+  - component: {fileID: 1471961674}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -6388,9 +6389,42 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1270950126}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1471961674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471961671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 1
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1492774303
 GameObject:
   m_ObjectHideFlags: 0
@@ -9621,7 +9655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -757.44, y: -489.99997}
+  m_AnchoredPosition: {x: -757.44, y: -490}
   m_SizeDelta: {x: -1514.87, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4830384786031790504
@@ -9767,8 +9801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1901b4d4459ae4881889c93e01ba6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 2430661136321016001}
-  map: {fileID: 0}
+  _slider: {fileID: 2430661136321016001}
+  _map: {fileID: 0}
   multiplier: 10
 --- !u!224 &6016747291375804064
 RectTransform:

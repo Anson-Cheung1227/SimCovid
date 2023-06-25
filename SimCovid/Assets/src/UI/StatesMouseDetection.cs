@@ -29,11 +29,13 @@ namespace SimCovid.UI
         {
             if (_cameraController.IsPointerOverUI()) return;
             _dataManager.HoveringState = _stateController.State;
+            if (TooltipSystem.Instance == null) return;
             TooltipSystem.Show("", _dataManager.HoveringState.Name);
         }
         private void OnMouseExit()
         {
             _dataManager.HoveringState = null;
+            if (TooltipSystem.Instance == null) return;
             TooltipSystem.Hide();
         }
         private void OnMouseDown()

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimCovidAPI.Infection;
+﻿using SimCovidAPI.Infection;
+using SimCovidAPI.Locations.Policies;
 
-namespace SimCovidAPI
+namespace SimCovidAPI.Locations
 {
     public interface ILocation
     {
@@ -14,5 +10,7 @@ namespace SimCovidAPI
         public float LocalSpreadRate { get; }
         public long DailyIncomingPeople { get; }
         public ISpreadableManager InfectionManager { get; }
+        public IPolicyManager PolicyManager { get; }
+        public IEligibilityManager EligibilityManager { get; }
     }
 }

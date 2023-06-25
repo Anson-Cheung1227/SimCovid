@@ -4,7 +4,8 @@ namespace SimCovid.Core
     {
         _boot = 0,
         GlobalScene = 1,
-        Core = 2,
-        UI = 3,
+        StartMenu = 2,
+        Core = 3,
+        UI = 4,
     }
 }

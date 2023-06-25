@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SimCovidAPI.Locations;
 using Random = UnityEngine.Random;
 
 namespace SimCovidAPI.Infection.Generators
@@ -14,7 +15,8 @@ namespace SimCovidAPI.Infection.Generators
             List<ILocation> eligibleLocations = new List<ILocation>();
             foreach (ILocation location in locationList)
             {
-                eligibleLocations.Add(location);
+                if (location.EligibilityManager.GetEligibility(InfectionMediumType.Local))
+                    eligibleLocations.Add(location);
             }
             foreach (ILocation eligibleLocation in eligibleLocations)
             {
