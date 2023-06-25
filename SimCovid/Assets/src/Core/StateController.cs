@@ -33,6 +33,8 @@ namespace SimCovid.Core
                 long population = ((StateController)Operator).State.Population;
                 ((StateController)Operator).State.InfectionManager = new InfectionManager(population);
                 ((StateController)Operator).State.PolicyManager = new PolicyManager(new LockdownPolicy());
+                ((StateController)Operator).State.EligibilityManager =
+                    new EligibilityManager(((StateController)Operator).State);
                 DoneOperations = Operations;
                 return Task.CompletedTask;
             }

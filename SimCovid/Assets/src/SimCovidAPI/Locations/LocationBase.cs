@@ -11,5 +11,6 @@ namespace SimCovidAPI.Locations
         public virtual long DailyIncomingPeople { get; set; }
         public ISpreadableManager InfectionManager { get; set; }
         public IPolicyManager PolicyManager { get; set; }
+        public IEligibilityManager EligibilityManager { get; set; }
     }
 }
