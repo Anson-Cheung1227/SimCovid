@@ -1,4 +1,4 @@
-﻿namespace SimCovidAPI.Locations.Policies
+﻿namespace SimCovidAPI.Policies
 {
     /// <summary>
     /// Represents a implementable policy of a state

@@ -1,4 +1,4 @@
-﻿namespace SimCovidAPI.Locations.Policies
+﻿namespace SimCovidAPI.Policies
 {
     /// <summary>
     /// Base class for Lockdown policy

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace SimCovidAPI.Locations.Policies
+namespace SimCovidAPI.Policies
 {
     /// <summary>
     /// Manager for a group of IPolicy

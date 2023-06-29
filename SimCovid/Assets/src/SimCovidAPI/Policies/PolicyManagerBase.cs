@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace SimCovidAPI.Locations.Policies
+namespace SimCovidAPI.Policies
 {
     /// <summary>
     /// Default implementation for IPolicyManager

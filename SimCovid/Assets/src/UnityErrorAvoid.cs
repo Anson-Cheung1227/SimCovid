@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-/// <summary>
-/// Avoid build errors
-/// </summary>
-public class UnityErrorAvoid : MonoBehaviour
+namespace SimCovid
 {
-    private void Awake()
+    /// <summary>
+    /// Avoid build errors
+    /// </summary>
+    public class UnityErrorAvoid : MonoBehaviour
     {
-        DebugManager.instance.enableRuntimeUI = false;
+        private void Awake()
+        {
+            DebugManager.instance.enableRuntimeUI = false;
+        }
     }
 }

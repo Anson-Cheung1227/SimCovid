@@ -1,4 +1,4 @@
-﻿using SimCovidAPI.Locations.Policies;
+﻿using SimCovidAPI.Policies;
 
 namespace SimCovidAPI.Locations
 {

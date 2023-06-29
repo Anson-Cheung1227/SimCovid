@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace SimCovidAPI.Locations.Policies
+﻿namespace SimCovidAPI.Policies
 {
     /// <summary>
     /// Base class for a Policy
