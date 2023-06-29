@@ -2,7 +2,7 @@
 
 namespace SimCovid.Core.Policies
 {
-    public class LockdownPolicy : LockdownPolicyBase
+    public class LockdownPolicy : LockdownPolicyDraftableBase
     {
         
     }
