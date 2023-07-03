@@ -2,7 +2,7 @@
 {
     public class PolicyDefaultTypes
     {
-        public static LockdownPolicyType Lockdown = new LockdownPolicyType();
+        public static readonly LockdownPolicyType Lockdown = new LockdownPolicyType();
         public class LockdownPolicyType : IPolicyType
         {
             ///<inheritdoc />
