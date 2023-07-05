@@ -2,6 +2,6 @@
 {
     public interface IEligibilityManager
     {
-        bool GetEligibility(int key);
+        bool GetEligibility(string tag);
     }
 }

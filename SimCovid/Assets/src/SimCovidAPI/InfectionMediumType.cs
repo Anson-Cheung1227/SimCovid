@@ -15,9 +15,7 @@
         public class LocalMediumType : ISpreadableMediumType
         {
             public string MediumName { get { return "Local"; } }
-            public int MediumValue { get { return 1; } }
-            public static implicit operator string(LocalMediumType localMediumType) => localMediumType.MediumName;
-            public static implicit operator int(LocalMediumType localMediumType) => localMediumType.MediumValue;
+            public string MediumTag { get { return "Core_Local"; } }
         }
         /// <summary>
         /// Interstate infection. The infection occured through traveling across states.
@@ -25,9 +23,7 @@
         public class InterstateMediumType : ISpreadableMediumType
         {
             public string MediumName { get { return "Interstate"; } }
-            public int MediumValue { get { return 2; } }
-            public static implicit operator string(InterstateMediumType interstateMediumType) => interstateMediumType.MediumName;
-            public static implicit operator int(InterstateMediumType interstateMediumType) => interstateMediumType.MediumValue;
+            public string MediumTag { get { return "Core_Interstate"; } }
         }
         /// <summary>
         /// Global infection. The infection occured through traveling across countries. 
@@ -35,9 +31,7 @@
         public class GlobalMediumType : ISpreadableMediumType
         {
             public string MediumName { get { return "Global"; } }
-            public int MediumValue { get { return 3; } }
-            public static implicit operator string(GlobalMediumType globalMediumType) => globalMediumType.MediumName;
-            public static implicit operator int(GlobalMediumType globalMediumType) => globalMediumType.MediumValue;
+            public string MediumTag { get { return "Core_Global"; } }
         }
     }
 }

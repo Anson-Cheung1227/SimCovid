@@ -5,7 +5,12 @@
         public int DaysNeeded { get; } = 5;
         public void Draft()
         {
-            SetActive(true);
+            
+        }
+
+        public void EnforceDraft()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

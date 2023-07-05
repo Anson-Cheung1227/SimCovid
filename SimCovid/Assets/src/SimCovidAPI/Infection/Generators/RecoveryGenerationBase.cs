@@ -61,8 +61,9 @@ namespace SimCovidAPI.Infection.Generators
             foreach (ILocation location in Locations)
             {
                 location.InfectionManager.UpdateLimit();
-                GenerateRecovery(location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.InHospital),
-                    location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.Recovered));
+                GenerateRecovery(location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.InHospital.StatusTag),
+                    location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.Recovered.StatusTag));
+                    location.InfectionManager.GetISpreadableDataHandler(InfectionStatus.Recovered.StatusTag);
             }
         }
         public virtual bool AddInfection(ISpreadableDataHandler spreadableDataHandler, ISpreadable param)

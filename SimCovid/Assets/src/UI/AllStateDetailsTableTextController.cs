@@ -31,11 +31,11 @@ namespace SimCovid.UI
             _stateNameText.text = stateList[Id].Name;
             _stateInfectionsText.text = UIManager.LongToString(stateList[Id].InfectionManager.GetTotalISpreadableCount());
             _stateInHospitalText.text = UIManager.LongToString(stateList[Id].InfectionManager
-                .GetISpreadableDataHandler(InfectionStatus.InHospital).GetActualISpreadablesCount());
+                .GetISpreadableDataHandler(InfectionStatus.InHospital.StatusTag).GetActualISpreadablesCount());
             _stateRecoveredText.text = UIManager.LongToString(stateList[Id].InfectionManager
-                .GetISpreadableDataHandler(InfectionStatus.Recovered).GetActualISpreadablesCount());
+                .GetISpreadableDataHandler(InfectionStatus.Recovered.StatusTag).GetActualISpreadablesCount());
             _stateDeceasedText.text = UIManager.LongToString(stateList[Id].InfectionManager
-                .GetISpreadableDataHandler(InfectionStatus.Deceased).GetActualISpreadablesCount());
+                .GetISpreadableDataHandler(InfectionStatus.Deceased.StatusTag).GetActualISpreadablesCount());
         }
     }
 }

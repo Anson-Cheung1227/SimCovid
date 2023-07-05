@@ -104,11 +104,11 @@ namespace SimCovid.UI
                 _selectedStateInfectionsText.text = LongToString(dataManager.SelectedState.InfectionManager
                     .GetTotalISpreadableCount());
                 _selectedStateInHospitalText.text = LongToString(dataManager.SelectedState.InfectionManager
-                    .GetISpreadableDataHandler(InfectionStatus.InHospital).GetActualISpreadablesCount());
+                    .GetISpreadableDataHandler(InfectionStatus.InHospital.StatusTag).GetActualISpreadablesCount());
                 _selectedStateRecoveredText.text = LongToString(dataManager.SelectedState.InfectionManager
-                    .GetISpreadableDataHandler(InfectionStatus.Recovered).GetActualISpreadablesCount());
+                    .GetISpreadableDataHandler(InfectionStatus.Recovered.StatusTag).GetActualISpreadablesCount());
                 _selectedStateDeceasedText.text = LongToString(dataManager.SelectedState.InfectionManager
-                    .GetISpreadableDataHandler(InfectionStatus.Deceased).GetActualISpreadablesCount());
+                    .GetISpreadableDataHandler(InfectionStatus.Deceased.StatusTag).GetActualISpreadablesCount());
             }
         }
         private void UpdateLockdownUI(DataManager dataManager)

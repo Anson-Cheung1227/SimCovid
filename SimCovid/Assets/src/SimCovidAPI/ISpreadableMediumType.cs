@@ -12,6 +12,6 @@
         /// <summary>
         /// Unique identifier integer for the Medium of Infection. It MUST NOT conflict with other types. 
         /// </summary>
-        public int MediumValue { get; }
+        public string MediumTag { get; }
     }
 }

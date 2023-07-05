@@ -9,9 +9,9 @@ namespace SimCovidAPI.Infection
         /// <summary>
         /// This methods assumes that the inherited member to use a Dictionary, accessed via keys.
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="tag"></param>
         /// <returns></returns>
-        public ISpreadableDataHandler GetISpreadableDataHandler(int key);
+        public ISpreadableDataHandler GetISpreadableDataHandler(string tag);
         public void UpdateLimit();
         public long GetTotalISpreadableCount();
     }

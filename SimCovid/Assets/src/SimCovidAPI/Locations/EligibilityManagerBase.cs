@@ -1,20 +1,19 @@
 ﻿using System.Collections.Generic;
-using NUnit.Framework;
 
 namespace SimCovidAPI.Locations
 {
     public abstract class EligibilityManagerBase : IEligibilityManager
     {
-        protected readonly Dictionary<int,IEligibilityCalculator> EligibilityDictionary;
+        protected readonly Dictionary<string,IEligibilityCalculator> EligibilityDictionary;
 
         public EligibilityManagerBase(IEligibilityCalculator local)
         {
-            EligibilityDictionary = new Dictionary<int, IEligibilityCalculator>();
-            EligibilityDictionary.Add(local.MediumType.MediumValue, local);
+            EligibilityDictionary = new Dictionary<string, IEligibilityCalculator>();
+            EligibilityDictionary.Add(local.MediumType.MediumTag, local);
         }
-        public virtual bool GetEligibility(int key)
+        public virtual bool GetEligibility(string tag)
         {
-            return EligibilityDictionary[key].Calculate();
+            return EligibilityDictionary[tag].Calculate();
         }
     }
 }
