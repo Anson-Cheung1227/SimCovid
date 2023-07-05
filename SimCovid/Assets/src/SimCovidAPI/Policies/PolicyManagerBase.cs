@@ -13,7 +13,7 @@ namespace SimCovidAPI.Policies
         public PolicyManagerBase(IPolicy lockdown)
         {
             _policies = new Dictionary<string, IPolicy>();
-            _policies.Add(PolicyDefaultTypes.Lockdown, lockdown);
+            _policies.Add(PolicyDefaultTypes.Lockdown.PolicyTag, lockdown);
         }
         /// <summary>
         /// Returns all the policies managed

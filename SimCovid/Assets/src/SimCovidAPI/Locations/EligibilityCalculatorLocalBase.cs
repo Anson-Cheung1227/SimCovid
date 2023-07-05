@@ -18,7 +18,7 @@ namespace SimCovidAPI.Locations
         /// <inheritdoc />
         public bool Calculate()
         {
-            return !Location.PolicyManager.GetPolicy(PolicyDefaultTypes.Lockdown).Active;
+            return !Location.PolicyManager.GetPolicy(PolicyDefaultTypes.Lockdown.PolicyTag).Active;
         }
     }
 }

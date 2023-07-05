@@ -8,9 +8,7 @@
             ///<inheritdoc />
             public string PolicyName { get { return "Lockdown"; } }
             public string PolicyDescription { get { return "Citizens are not allowed to move locally, unless emergencies"; } }
-
-            public static implicit operator string(LockdownPolicyType lockdownPolicyType) =>
-                lockdownPolicyType.PolicyName;
+            public string PolicyTag { get { return "Core_Lockdown"; } }
         }
     }
 }

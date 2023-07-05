@@ -161,10 +161,12 @@ namespace SimCovid.UI
         public void OnLockdownUpdateButtonClick(DataManager dataManager, GameObject button)
         {
             if (button == _localLockdownButton)
-                dataManager.SelectedState.PolicyManager.GetPolicy(PolicyDefaultTypes.Lockdown)
-                    .SetActive(!dataManager.SelectedState.PolicyManager.GetPolicy(PolicyDefaultTypes.Lockdown).Active);
-            Debug.Log(dataManager.SelectedState.Name + ": updated Local lockdown policy to " + dataManager.SelectedState
-                .PolicyManager.GetPolicy(PolicyDefaultTypes.Lockdown).Active);
+            {
+                IPolicy targetPolicy =
+                    dataManager.SelectedState.PolicyManager.GetPolicy(PolicyDefaultTypes.Lockdown.PolicyTag);
+                targetPolicy.SetActive(!targetPolicy.Active);
+                Debug.Log(dataManager.SelectedState.Name + ": updated Local lockdown policy to " + targetPolicy.Active);
+            }
             //TODO:
             /*
             if (button == _interstateLockdownButton) dataManager.SelectedState.InterstateLockdown = !dataManager.SelectedState.InterstateLockdown;

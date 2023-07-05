@@ -15,8 +15,8 @@ namespace SimCovidAPI.Policies
         /// <summary>
         /// Get a policy via its name
         /// </summary>
-        /// <param name="name">Name of policy</param>
+        /// <param name="tag">Tag of policy</param>
         /// <returns></returns>
-        public IPolicy GetPolicy(string name);
+        public IPolicy GetPolicy(string tag);
     }
 }

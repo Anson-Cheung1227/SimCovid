@@ -6,12 +6,13 @@
     public interface IPolicyType
     {
         /// <summary>
-        /// Name of the policy, it MUST NOT conflict with any other policy
+        /// Name of the policy
         /// </summary>
         public string PolicyName { get; }
         /// <summary>
         /// Description of the policy
         /// </summary>
         public string PolicyDescription { get; }
+        public string PolicyTag { get; }
     }
 }
