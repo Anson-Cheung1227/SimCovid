@@ -13,7 +13,7 @@ namespace SimCovid.Core.GameManagement
         public static GameManager Instance;
         public ResourceLoader SceneLoader = new SceneResourceLoader("Scene loader", 0);
         public ResourceLoader ResourceLoader = new InitializationResourceLoader("Resource Loader", 0);
-        public List<DataManager> DataManagerList;
+        public DataManager DataManager;
 
         [SerializeField] private LoadingUIManager _loadingUIManager;
         // Start is called before the first frame update
@@ -23,7 +23,7 @@ namespace SimCovid.Core.GameManagement
         }
         async void Start()
         {
-            await LoadLevel(_coreGame);
+            
         }
         public async Task LoadLevel(CoreGameSO coreGameSO)
         {

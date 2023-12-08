@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using SimCovid.Core.Infection;
 using SimCovid.Core.Infection.Generators;
-using SimCovidAPI;
+using SimCovidAPI.Infection.Generators;
+using SimCovidAPI.Locations;
 using UnityEngine;
 
 namespace SimCovid.Core

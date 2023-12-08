@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using SimCovid.Core;
 using SimCovid.Core.GameManagement;
+using SimCovidAPI.Infection;
+using SimCovidAPI.Policies;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -96,19 +98,27 @@ namespace SimCovid.UI
             }
             else
             {
+                if (dataManager.SelectedState.InfectionManager == null) return;
                 _selectedStateNameText.text = dataManager.SelectedState.Name;
                 _selectedStatePopulationText.text = LongToString(dataManager.SelectedState.Population);
-                _selectedStateInfectionsText.text = LongToString(dataManager.SelectedState.InfectionsLong);
-                _selectedStateInHospitalText.text = LongToString(dataManager.SelectedState.InHospitalLong);
-                _selectedStateRecoveredText.text = LongToString(dataManager.SelectedState.RecoveredLong);
-                _selectedStateDeceasedText.text = LongToString(dataManager.SelectedState.DeceasedLong);
+                _selectedStateInfectionsText.text = LongToString(dataManager.SelectedState.InfectionManager
+                    .GetTotalISpreadableCount());
+                _selectedStateInHospitalText.text = LongToString(dataManager.SelectedState.InfectionManager
+                    .GetISpreadableDataHandler(InfectionStatus.InHospital.StatusTag).GetActualISpreadablesCount());
+                _selectedStateRecoveredText.text = LongToString(dataManager.SelectedState.InfectionManager
+                    .GetISpreadableDataHandler(InfectionStatus.Recovered.StatusTag).GetActualISpreadablesCount());
+                _selectedStateDeceasedText.text = LongToString(dataManager.SelectedState.InfectionManager
+                    .GetISpreadableDataHandler(InfectionStatus.Deceased.StatusTag).GetActualISpreadablesCount());
             }
         }
         private void UpdateLockdownUI(DataManager dataManager)
         {
+            //TODO:
+            /*
             boolToActiveText(_localLockdownText, dataManager.SelectedState.LocalLockdown);
             boolToActiveText(_interstateLockdownText, dataManager.SelectedState.InterstateLockdown);
             boolToActiveText(_globalLockdownText, dataManager.SelectedState.GlobalLockdown);
+            */
         }
         /*  
         This function takes a boolean, if it's true, set the text to active, and the corresponding color, 
@@ -146,17 +156,26 @@ namespace SimCovid.UI
         }
         public void OnLockdownUpdateButtonClickUnityEvent(GameObject button)
         {
-            OnLockdownUpdateButtonClick(GameManager.Instance.DataManagerList[0], button);
+            OnLockdownUpdateButtonClick(GameManager.Instance.DataManager, button);
         }
         public void OnLockdownUpdateButtonClick(DataManager dataManager, GameObject button)
         {
-            if (button == _localLockdownButton) dataManager.SelectedState.LocalLockdown = !dataManager.SelectedState.LocalLockdown;
+            if (button == _localLockdownButton)
+            {
+                IPolicy targetPolicy =
+                    dataManager.SelectedState.PolicyManager.GetPolicy(PolicyDefaultTypes.Lockdown.PolicyTag);
+                targetPolicy.SetActive(!targetPolicy.Active);
+                Debug.Log(dataManager.SelectedState.Name + ": updated Local lockdown policy to " + targetPolicy.Active);
+            }
+            //TODO:
+            /*
             if (button == _interstateLockdownButton) dataManager.SelectedState.InterstateLockdown = !dataManager.SelectedState.InterstateLockdown;
             if (button == _globalLockdownButton)
             {
                 dataManager.SelectedState.GlobalLockdown = !dataManager.SelectedState.GlobalLockdown;
                 dataManager.SelectedState.DailyIncomingPeople = 0;
             }
+            */
         }
         public void OnStateDetailExitClick(DataManager dataManager)
         {
@@ -178,7 +197,8 @@ namespace SimCovid.UI
         }
         public void OnMandatoryMaskButtonClick(DataManager dataManager)
         {
-            dataManager.SelectedState.MandatoryMask = !dataManager.SelectedState.MandatoryMask;
+            //TODO:
+            //dataManager.SelectedState.MandatoryMask = !dataManager.SelectedState.MandatoryMask;
         }
         public void OnModalWindowButtonClick(GameObject modalWindow)
         {

@@ -1,4 +1,5 @@
 ﻿using System;
+using SimCovidAPI.Infection;
 
 namespace SimCovidAPI
 {

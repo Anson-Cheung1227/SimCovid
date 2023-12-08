@@ -40,7 +40,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 620.8298, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2788737240609173767
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 6547639890908824262}
   - component: {fileID: 6547639890908824257}
   - component: {fileID: 4553617754870503292}
-  - component: {fileID: 920478684572876751}
+  - component: {fileID: 4663304265287307934}
   m_Layer: 5
   m_Name: StateColumn
   m_TagString: Untagged
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &920478684572876751
+--- !u!114 &4663304265287307934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
